@@ -124,14 +124,38 @@ else
     print_warning "ECUSim binary not found in package"
 fi
 
-# Run the full install script
-print_status "Running installer..."
-if [ -f "install.sh" ]; then
-    chmod +x install.sh
-    ./install.sh --prefix "$INSTALL_DIR"
-else
-    print_error "Install script not found in release package"
+# Install tf-build
+print_status "Installing tf-build..."
+
+# Check if binary exists
+if [ ! -f "tf-build" ]; then
+    print_error "tf-build binary not found in release package"
     exit 1
+fi
+
+# Verify binary works
+if ! ./tf-build --version >/dev/null 2>&1; then
+    print_error "tf-build binary is not executable or corrupted"
+    exit 1
+fi
+
+# Copy binary to bin directory
+cp tf-build "$BIN_DIR/tf-build"
+chmod +x "$BIN_DIR/tf-build"
+print_success "Binary installed to: $BIN_DIR/tf-build"
+
+# Copy resources to install directory
+if [ -d "resources" ]; then
+    print_status "Installing resources..."
+    cp -r resources "$INSTALL_DIR/"
+    print_success "Resources installed to: $INSTALL_DIR/resources"
+fi
+
+# Install configuration
+if [ -f "resources/config/tf-build.yml" ]; then
+    print_status "Installing configuration..."
+    cp resources/config/tf-build.yml "$CONFIG_DIR/tf-build.yml"
+    print_success "Configuration installed to: $CONFIG_DIR/tf-build.yml"
 fi
 
 print_success "tf-build installed successfully!"
