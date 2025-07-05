@@ -77,7 +77,7 @@ print_status "Installing tf-build $VERSION"
 mkdir -p "$INSTALL_DIR" "$BIN_DIR"
 
 # Download release
-DOWNLOAD_URL="https://github.com/NebulaTechSolutions/TwinForge/releases/download/$VERSION/tf-build-${VERSION#v}-linux-x64.tar.gz"
+DOWNLOAD_URL="https://github.com/NebulaTechSolutions/TwinForge/releases/download/$VERSION/tf-build-$VERSION-linux-x64.tar.gz"
 TEMP_DIR=$(mktemp -d)
 trap 'rm -rf "$TEMP_DIR"' EXIT
 
