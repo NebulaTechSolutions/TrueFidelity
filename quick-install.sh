@@ -28,6 +28,7 @@ print_warning() { echo -e "${YELLOW}[!]${NC} $1"; }
 VERSION="latest"
 INSTALL_DIR="$HOME/.local/share/tf-build"
 BIN_DIR="$HOME/.local/bin"
+CONFIG_DIR="$HOME/.config/tf-build"
 
 # Parse arguments
 while [[ $# -gt 0 ]]; do
@@ -61,6 +62,27 @@ for cmd in curl tar; do
     fi
 done
 
+# Check if Docker is installed and running
+if ! command -v docker &> /dev/null; then
+    print_warning "Docker is not installed. tf-build requires Docker to build ECU firmware."
+    print_warning "Please install Docker and ensure it's running."
+    echo ""
+    read -p "Continue anyway? [y/N] " -n 1 -r
+    echo ""
+    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+        exit 1
+    fi
+elif ! docker info &> /dev/null; then
+    print_warning "Docker is installed but not running."
+    print_warning "Please start Docker before using tf-build."
+    echo ""
+    read -p "Continue anyway? [y/N] " -n 1 -r
+    echo ""
+    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+        exit 1
+    fi
+fi
+
 # Determine latest version if not specified
 if [ "$VERSION" = "latest" ]; then
     print_status "Fetching latest version..."
@@ -74,13 +96,14 @@ fi
 print_status "Installing tf-build $VERSION"
 
 # Create directories
-mkdir -p "$INSTALL_DIR" "$BIN_DIR"
+mkdir -p "$INSTALL_DIR" "$BIN_DIR" "$CONFIG_DIR"
 
-# Download release
-DOWNLOAD_URL="https://github.com/NebulaTechSolutions/TwinForge/releases/download/$VERSION/tf-build-$VERSION-linux-x64.tar.gz"
+# Create temp directory for downloads
 TEMP_DIR=$(mktemp -d)
 trap 'rm -rf "$TEMP_DIR"' EXIT
 
+# Download release
+DOWNLOAD_URL="https://github.com/NebulaTechSolutions/TwinForge/releases/download/$VERSION/tf-build-$VERSION-linux-x64.tar.gz"
 print_status "Downloading from: $DOWNLOAD_URL"
 cd "$TEMP_DIR"
 if ! curl -fsSL "$DOWNLOAD_URL" -o tf-build.tar.gz; then
@@ -88,10 +111,31 @@ if ! curl -fsSL "$DOWNLOAD_URL" -o tf-build.tar.gz; then
     exit 1
 fi
 
+# Download ECUSim binary if available
+ECUSIM_URL="https://github.com/NebulaTechSolutions/TwinForge/releases/download/$VERSION/qemu-system-arm"
+print_status "Downloading ECUSim binary..."
+if curl -fsSL "$ECUSIM_URL" -o qemu-system-arm 2>/dev/null; then
+    chmod +x qemu-system-arm
+    print_success "ECUSim binary downloaded"
+else
+    print_warning "ECUSim binary not found in release (optional)"
+fi
+
 # Extract
 print_status "Extracting..."
 tar -xzf tf-build.tar.gz
 cd tf-build-*
+
+# Copy ECUSim binary to package if downloaded
+if [ -f ../qemu-system-arm ]; then
+    # Create the ecusim directory in the extracted package
+    if [ ! -d resources/ecusim ]; then
+        mkdir -p resources/ecusim
+    fi
+    cp ../qemu-system-arm resources/ecusim/
+    chmod +x resources/ecusim/qemu-system-arm
+    print_status "ECUSim binary added to installation package"
+fi
 
 # Run the full install script
 print_status "Running installer..."
@@ -105,9 +149,53 @@ fi
 
 print_success "tf-build installed successfully!"
 echo
+
+# Setup PATH in shell profile if needed
+if [[ ":$PATH:" != *":$BIN_DIR:"* ]]; then
+    print_status "Setting up PATH..."
+    
+    # Detect shell and update profile
+    SHELL_PROFILE=""
+    CURRENT_SHELL=$(basename "$SHELL" 2>/dev/null || echo "")
+    
+    if [ "$CURRENT_SHELL" = "zsh" ] && [ -f "$HOME/.zshrc" ]; then
+        SHELL_PROFILE="$HOME/.zshrc"
+    elif [ "$CURRENT_SHELL" = "bash" ] && [ -f "$HOME/.bashrc" ]; then
+        SHELL_PROFILE="$HOME/.bashrc"
+    elif [ -f "$HOME/.profile" ]; then
+        SHELL_PROFILE="$HOME/.profile"
+    elif [ -f "$HOME/.bash_profile" ]; then
+        SHELL_PROFILE="$HOME/.bash_profile"
+    fi
+    
+    if [ -n "$SHELL_PROFILE" ]; then
+        echo "" >> "$SHELL_PROFILE"
+        echo "# TwinForge tf-build environment" >> "$SHELL_PROFILE"
+        echo "export PATH=\"$BIN_DIR:\$PATH\"" >> "$SHELL_PROFILE"
+        echo "export TF_BUILD_CONFIG_DIR=\"$CONFIG_DIR\"" >> "$SHELL_PROFILE"
+        print_success "Added tf-build to PATH in $SHELL_PROFILE"
+        echo
+        print_warning "Please run: source $SHELL_PROFILE"
+        print_warning "Or restart your terminal for PATH changes to take effect"
+    else
+        print_warning "Could not detect shell profile. Please add $BIN_DIR to your PATH manually."
+    fi
+else
+    print_success "tf-build is already in your PATH"
+fi
+
+echo
+print_status "Installation Summary:"
+echo "  Binary: $BIN_DIR/tf-build"
+echo "  Config: $CONFIG_DIR/tf-build.yml"
+echo "  Resources: $INSTALL_DIR"
+if [ -f "$INSTALL_DIR/resources/ecusim/qemu-system-arm" ]; then
+    echo "  ECUSim: Installed"
+fi
+echo
 print_status "Next steps:"
-echo "1. Add $BIN_DIR to your PATH if not already done"
-echo "2. Run 'tf-build --version' to verify installation"
+echo "1. Run 'tf-build --version' to verify installation"
+echo "2. Run 'tf-build init' to set up the build environment"
 echo "3. Run 'tf-build --help' for usage information"
 echo
 echo "For more information, visit: https://github.com/NebulaTechSolutions/TwinForge"
