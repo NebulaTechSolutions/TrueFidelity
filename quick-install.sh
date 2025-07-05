@@ -12,11 +12,17 @@ YELLOW='\033[0;33m'
 NC='\033[0m'
 
 print_banner() {
-    echo -e "${BLUE}"
-    echo "╔═══════════════════════════════════════════╗"
-    echo "║        TwinForge Build Tool Setup         ║"
-    echo "╚═══════════════════════════════════════════╝"
-    echo -e "${NC}"
+    if command -v figlet >/dev/null 2>&1; then
+        echo -e "${BLUE}"
+        figlet -f slant "TF-BUILD"
+        echo -e "${NC}"
+    else
+        echo -e "${BLUE}"
+        echo "╔═══════════════════════════════════════════╗"
+        echo "║        TwinForge Build Tool Setup         ║"
+        echo "╚═══════════════════════════════════════════╝"
+        echo -e "${NC}"
+    fi
 }
 
 print_status() { echo -e "${BLUE}[*]${NC} $1"; }
@@ -100,7 +106,7 @@ mkdir -p "$INSTALL_DIR" "$BIN_DIR" "$CONFIG_DIR"
 
 # Create temp directory for downloads
 TEMP_DIR=$(mktemp -d)
-trap 'rm -rf "$TEMP_DIR"' EXIT
+trap 'rm -rf "$TEMP_DIR"' EXIT INT TERM
 
 # Download release
 DOWNLOAD_URL="https://github.com/NebulaTechSolutions/TwinForge/releases/download/$VERSION/tf-build-$VERSION-linux-x64.tar.gz"
@@ -125,6 +131,15 @@ else
 fi
 
 # Install tf-build
+if command -v figlet >/dev/null 2>&1; then
+    figlet -f small "Installation"
+    echo
+else
+    echo
+    echo "=== Installation ==="
+    echo
+fi
+
 print_status "Installing tf-build..."
 
 # Check if binary exists
@@ -139,16 +154,19 @@ if ! ./tf-build --version >/dev/null 2>&1; then
     exit 1
 fi
 
+TF_BUILD_VERSION=$(./tf-build --version)
+print_success "tf-build binary verified: $TF_BUILD_VERSION"
+
 # Copy binary to bin directory
 cp tf-build "$BIN_DIR/tf-build"
 chmod +x "$BIN_DIR/tf-build"
 print_success "Binary installed to: $BIN_DIR/tf-build"
 
-# Copy resources to install directory
+# Copy resources to config directory (not install directory)
 if [ -d "resources" ]; then
     print_status "Installing resources..."
-    cp -r resources "$INSTALL_DIR/"
-    print_success "Resources installed to: $INSTALL_DIR/resources"
+    cp -r resources "$CONFIG_DIR/"
+    print_success "Resources installed to: $CONFIG_DIR/resources"
 fi
 
 # Install configuration
@@ -156,6 +174,214 @@ if [ -f "resources/config/tf-build.yml" ]; then
     print_status "Installing configuration..."
     cp resources/config/tf-build.yml "$CONFIG_DIR/tf-build.yml"
     print_success "Configuration installed to: $CONFIG_DIR/tf-build.yml"
+fi
+
+# OS Support Installation
+cd - >/dev/null  # Return to temp directory
+
+# Get Zephyr version from config
+ZEPHYR_VERSION=""
+if [ -f "$CONFIG_DIR/tf-build.yml" ]; then
+    ZEPHYR_VERSION=$(grep -A1 "sdks:" "$CONFIG_DIR/tf-build.yml" | grep "zephyr_rtos_version:" | awk '{print $2}')
+fi
+ZEPHYR_VERSION="${ZEPHYR_VERSION:-v4.1.0}"
+
+# Ask if user wants Zephyr support
+INSTALL_ZEPHYR=false
+echo
+if command -v figlet >/dev/null 2>&1; then
+    figlet -f small "OS Support"
+    echo
+fi
+
+if command -v gum >/dev/null 2>&1; then
+    gum style --foreground 212 --bold "Would you like to install Zephyr RTOS support?"
+    echo ""
+    gum style --foreground 99 "This will download and set up the Zephyr workspace"
+    gum style --foreground 99 "Download size: ~2GB (includes all HAL modules)"
+    gum style --foreground 99 "Installation time: 10-20 minutes"
+    echo ""
+    if gum confirm "Install Zephyr RTOS support?"; then
+        INSTALL_ZEPHYR=true
+    fi
+else
+    echo "Would you like to install Zephyr RTOS support?"
+    echo ""
+    echo "This will download and set up the Zephyr workspace"
+    echo "Download size: ~2GB (includes all HAL modules)"
+    echo "Installation time: 10-20 minutes"
+    echo ""
+    read -p "Install Zephyr RTOS support? [Y/n] " -n 1 -r
+    echo ""
+    if [[ ! $REPLY =~ ^[Nn]$ ]]; then
+        INSTALL_ZEPHYR=true
+    fi
+fi
+
+# Set up Zephyr workspace if requested
+if [ "$INSTALL_ZEPHYR" = true ]; then
+    ZEPHYR_WORKSPACE="$CONFIG_DIR/resources/os/zephyr"
+    if [ ! -d "$ZEPHYR_WORKSPACE/.west" ]; then
+        print_status "Setting up Zephyr workspace (this may take a while)..."
+        mkdir -p "$ZEPHYR_WORKSPACE"
+        
+        # Check if west is installed
+        if ! command -v west >/dev/null 2>&1; then
+            print_status "Installing west..."
+            pip3 install --user west || {
+                print_error "Failed to install west"
+                exit 1
+            }
+        fi
+        
+        # Initialize Zephyr workspace
+        cd "$ZEPHYR_WORKSPACE"
+        print_status "Initializing Zephyr workspace for version $ZEPHYR_VERSION..."
+        export GIT_CONFIG_PARAMETERS="'advice.detachedHead=false'"
+        if west init -m https://github.com/zephyrproject-rtos/zephyr.git --mr "$ZEPHYR_VERSION" 2>&1 | grep -v "warning: refs/tags"; then
+            print_success "Zephyr workspace initialized"
+        else
+            print_error "Failed to initialize Zephyr workspace"
+            exit 1
+        fi
+        unset GIT_CONFIG_PARAMETERS
+        
+        # Update workspace to fetch all modules
+        print_status "Fetching Zephyr modules (this will take several minutes)..."
+        if west update 2>&1; then
+            print_success "Zephyr modules fetched successfully"
+        else
+            print_error "Failed to fetch Zephyr modules"
+            exit 1
+        fi
+        
+        cd - >/dev/null
+        print_success "Zephyr workspace setup complete"
+    else
+        print_success "Zephyr workspace already present"
+    fi
+else
+    print_status "Skipping Zephyr RTOS installation"
+fi
+
+# Ask if user wants FreeRTOS support
+INSTALL_FREERTOS=false
+echo
+if command -v gum >/dev/null 2>&1; then
+    gum style --foreground 212 --bold "Would you like to install FreeRTOS support?"
+    echo ""
+    gum style --foreground 99 "This will download and set up FreeRTOS"
+    gum style --foreground 99 "Download size: ~50MB"
+    gum style --foreground 99 "Installation time: 1-2 minutes"
+    echo ""
+    if gum confirm "Install FreeRTOS support?"; then
+        INSTALL_FREERTOS=true
+    fi
+else
+    echo "Would you like to install FreeRTOS support?"
+    echo ""
+    echo "This will download and set up FreeRTOS"
+    echo "Download size: ~50MB"
+    echo "Installation time: 1-2 minutes"
+    echo ""
+    read -p "Install FreeRTOS support? [Y/n] " -n 1 -r
+    echo ""
+    if [[ ! $REPLY =~ ^[Nn]$ ]]; then
+        INSTALL_FREERTOS=true
+    fi
+fi
+
+# Set up FreeRTOS if requested
+if [ "$INSTALL_FREERTOS" = true ]; then
+    FREERTOS_DIR="$CONFIG_DIR/resources/os/freertos"
+    if [ ! -d "$FREERTOS_DIR" ]; then
+        print_status "Setting up FreeRTOS..."
+        mkdir -p "$FREERTOS_DIR"
+        
+        # Download FreeRTOS
+        FREERTOS_VERSION="10.5.1"
+        FREERTOS_URL="https://github.com/FreeRTOS/FreeRTOS-Kernel/archive/refs/tags/V${FREERTOS_VERSION}.tar.gz"
+        FREERTOS_TARBALL="$FREERTOS_DIR/freertos-${FREERTOS_VERSION}.tar.gz"
+        
+        print_status "Downloading FreeRTOS v${FREERTOS_VERSION}..."
+        if curl -L -o "$FREERTOS_TARBALL" "$FREERTOS_URL"; then
+            print_status "Extracting FreeRTOS..."
+            tar -xzf "$FREERTOS_TARBALL" -C "$FREERTOS_DIR" --strip-components=1 || {
+                print_error "Failed to extract FreeRTOS"
+                rm -f "$FREERTOS_TARBALL"
+                exit 1
+            }
+            rm -f "$FREERTOS_TARBALL"
+            print_success "FreeRTOS v${FREERTOS_VERSION} installed successfully"
+        else
+            print_error "Failed to download FreeRTOS"
+            exit 1
+        fi
+    else
+        print_success "FreeRTOS already present"
+    fi
+else
+    print_status "Skipping FreeRTOS installation"
+fi
+
+# Download Zephyr SDK if Zephyr support was installed
+if [ "$INSTALL_ZEPHYR" = true ]; then
+    SDK_VERSION=""
+    if [ -f "$CONFIG_DIR/tf-build.yml" ]; then
+        SDK_VERSION=$(grep -A1 "sdks:" "$CONFIG_DIR/tf-build.yml" | grep "zephyr_sdk_version:" | awk '{print $2}')
+    fi
+    SDK_VERSION="${SDK_VERSION:-0.16.8}"
+    
+    if [ ! -d "$CONFIG_DIR/resources/sdks/zephyr/zephyr-sdk-$SDK_VERSION" ]; then
+        print_status "Downloading Zephyr SDK v$SDK_VERSION (this may take a while)..."
+        mkdir -p "$CONFIG_DIR/resources/sdks/zephyr"
+        
+        # Determine architecture
+        ARCH=$(uname -m)
+        case $ARCH in
+            x86_64)
+                SDK_ARCH="x86_64"
+                ;;
+            aarch64)
+                SDK_ARCH="aarch64"
+                ;;
+            *)
+                print_error "Unsupported architecture: $ARCH"
+                exit 1
+                ;;
+        esac
+        
+        SDK_URL="https://github.com/zephyrproject-rtos/sdk-ng/releases/download/v${SDK_VERSION}/zephyr-sdk-${SDK_VERSION}_linux-${SDK_ARCH}_minimal.tar.xz"
+        SDK_TARBALL="$CONFIG_DIR/resources/sdks/zephyr/zephyr-sdk-${SDK_VERSION}.tar.xz"
+        
+        print_status "Downloading from: $SDK_URL"
+        if curl -L -o "$SDK_TARBALL" "$SDK_URL"; then
+            print_status "Extracting Zephyr SDK..."
+            tar -xf "$SDK_TARBALL" -C "$CONFIG_DIR/resources/sdks/zephyr/" || {
+                print_error "Failed to extract Zephyr SDK"
+                rm -f "$SDK_TARBALL"
+                exit 1
+            }
+            rm -f "$SDK_TARBALL"
+            
+            # Run SDK setup script
+            if [ -f "$CONFIG_DIR/resources/sdks/zephyr/zephyr-sdk-$SDK_VERSION/setup.sh" ]; then
+                print_status "Setting up Zephyr SDK..."
+                cd "$CONFIG_DIR/resources/sdks/zephyr/zephyr-sdk-$SDK_VERSION"
+                ./setup.sh -h -c || {
+                    print_warning "SDK setup script failed, but continuing..."
+                }
+                cd - >/dev/null
+            fi
+            
+            print_success "Zephyr SDK v$SDK_VERSION installed successfully"
+        else
+            print_error "Failed to download Zephyr SDK"
+            exit 1
+        fi
+    else
+        print_success "Zephyr SDK v$SDK_VERSION already present"
+    fi
 fi
 
 print_success "tf-build installed successfully!"
@@ -196,17 +422,28 @@ else
 fi
 
 echo
+if command -v figlet >/dev/null 2>&1; then
+    figlet -f small "Complete!"
+    echo
+fi
+
 print_status "Installation Summary:"
 echo "  Binary: $BIN_DIR/tf-build"
 echo "  Config: $CONFIG_DIR/tf-build.yml"
-echo "  Resources: $INSTALL_DIR"
-if [ -f "$INSTALL_DIR/resources/ecusim/qemu-system-arm" ]; then
+echo "  Resources: $CONFIG_DIR/resources"
+if [ -f "$CONFIG_DIR/resources/ecusim/qemu-system-arm" ]; then
     echo "  ECUSim: Installed"
+fi
+if [ "$INSTALL_ZEPHYR" = true ]; then
+    echo "  Zephyr RTOS: Installed (v$ZEPHYR_VERSION)"
+fi
+if [ "$INSTALL_FREERTOS" = true ]; then
+    echo "  FreeRTOS: Installed (v10.5.1)"
 fi
 echo
 print_status "Next steps:"
 echo "1. Run 'tf-build --version' to verify installation"
-echo "2. Run 'tf-build init' to set up the build environment"
+echo "2. Run 'tf-build init' to set up the Docker build environment"
 echo "3. Run 'tf-build --help' for usage information"
 echo
 echo "For more information, visit: https://github.com/NebulaTechSolutions/TwinForge"
