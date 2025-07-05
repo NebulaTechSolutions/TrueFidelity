@@ -63,6 +63,44 @@ print_banner
 # Check and install prerequisites
 print_status "Checking prerequisites..."
 
+# Detect distribution
+DISTRO=""
+DISTRO_NAME=""
+if [ -f /etc/os-release ]; then
+    . /etc/os-release
+    DISTRO=$ID
+    DISTRO_NAME="${NAME:-$ID}"
+elif [ -f /etc/debian_version ]; then
+    DISTRO="debian"
+    DISTRO_NAME="Debian"
+elif [ -f /etc/fedora-release ]; then
+    DISTRO="fedora"
+    DISTRO_NAME="Fedora"
+elif [ -f /etc/redhat-release ]; then
+    DISTRO="rhel"
+    DISTRO_NAME="Red Hat"
+elif [ -f /etc/arch-release ]; then
+    DISTRO="arch"
+    DISTRO_NAME="Arch Linux"
+elif [ -f /etc/alpine-release ]; then
+    DISTRO="alpine"
+    DISTRO_NAME="Alpine Linux"
+elif [ -f /etc/gentoo-release ]; then
+    DISTRO="gentoo"
+    DISTRO_NAME="Gentoo"
+elif [ -f /etc/SuSE-release ] || [ -f /etc/SUSE-brand ]; then
+    DISTRO="opensuse"
+    DISTRO_NAME="openSUSE"
+elif [ "$(uname)" = "Darwin" ]; then
+    DISTRO="macos"
+    DISTRO_NAME="macOS"
+else
+    DISTRO="unknown"
+    DISTRO_NAME="Unknown"
+fi
+
+print_status "Detected OS: $DISTRO_NAME"
+
 # Essential tools that must be present
 MISSING_ESSENTIAL=""
 for cmd in curl tar; do
@@ -84,27 +122,69 @@ INSTALL_COMMANDS=""
 # Check Docker
 if ! command -v docker &> /dev/null; then
     MISSING_TOOLS="$MISSING_TOOLS docker"
-    if [ -f /etc/debian_version ]; then
-        INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo apt update && sudo apt install -y docker.io"
-    elif [ -f /etc/fedora-release ] || [ -f /etc/redhat-release ]; then
-        INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo dnf install -y docker"
-    elif [ -f /etc/arch-release ]; then
-        INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo pacman -S docker"
-    elif [ "$(uname)" = "Darwin" ]; then
-        INSTALL_COMMANDS="$INSTALL_COMMANDS\n  brew install --cask docker"
-    fi
+    case "$DISTRO" in
+        ubuntu|debian|linuxmint|pop)
+            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo apt update && sudo apt install -y docker.io"
+            ;;
+        fedora)
+            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo dnf install -y docker"
+            ;;
+        rhel|centos|rocky|almalinux)
+            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo yum install -y docker"
+            ;;
+        arch|manjaro|endeavouros)
+            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo pacman -S docker"
+            ;;
+        opensuse|suse)
+            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo zypper install -y docker"
+            ;;
+        alpine)
+            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo apk add docker"
+            ;;
+        gentoo)
+            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo emerge -av app-containers/docker"
+            ;;
+        macos)
+            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  brew install --cask docker"
+            ;;
+        *)
+            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  # Please install Docker using your package manager"
+            ;;
+    esac
 fi
 
 # Check Python3 and pip3 (needed for west)
 if ! command -v python3 &> /dev/null; then
     MISSING_TOOLS="$MISSING_TOOLS python3"
-    if [ -f /etc/debian_version ]; then
-        INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo apt install -y python3 python3-pip"
-    elif [ -f /etc/fedora-release ] || [ -f /etc/redhat-release ]; then
-        INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo dnf install -y python3 python3-pip"
-    elif [ -f /etc/arch-release ]; then
-        INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo pacman -S python python-pip"
-    fi
+    case "$DISTRO" in
+        ubuntu|debian|linuxmint|pop)
+            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo apt install -y python3 python3-pip"
+            ;;
+        fedora)
+            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo dnf install -y python3 python3-pip"
+            ;;
+        rhel|centos|rocky|almalinux)
+            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo yum install -y python3 python3-pip"
+            ;;
+        arch|manjaro|endeavouros)
+            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo pacman -S python python-pip"
+            ;;
+        opensuse|suse)
+            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo zypper install -y python3 python3-pip"
+            ;;
+        alpine)
+            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo apk add python3 py3-pip"
+            ;;
+        gentoo)
+            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo emerge -av dev-lang/python dev-python/pip"
+            ;;
+        macos)
+            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  brew install python3"
+            ;;
+        *)
+            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  # Please install Python3 and pip3 using your package manager"
+            ;;
+    esac
 fi
 
 if ! command -v pip3 &> /dev/null && ! command -v pip &> /dev/null; then
@@ -114,13 +194,35 @@ fi
 # Check git (needed for west/Zephyr)
 if ! command -v git &> /dev/null; then
     MISSING_TOOLS="$MISSING_TOOLS git"
-    if [ -f /etc/debian_version ]; then
-        INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo apt install -y git"
-    elif [ -f /etc/fedora-release ] || [ -f /etc/redhat-release ]; then
-        INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo dnf install -y git"
-    elif [ -f /etc/arch-release ]; then
-        INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo pacman -S git"
-    fi
+    case "$DISTRO" in
+        ubuntu|debian|linuxmint|pop)
+            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo apt install -y git"
+            ;;
+        fedora)
+            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo dnf install -y git"
+            ;;
+        rhel|centos|rocky|almalinux)
+            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo yum install -y git"
+            ;;
+        arch|manjaro|endeavouros)
+            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo pacman -S git"
+            ;;
+        opensuse|suse)
+            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo zypper install -y git"
+            ;;
+        alpine)
+            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo apk add git"
+            ;;
+        gentoo)
+            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo emerge -av dev-vcs/git"
+            ;;
+        macos)
+            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  xcode-select --install  # or: brew install git"
+            ;;
+        *)
+            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  # Please install git using your package manager"
+            ;;
+    esac
 fi
 
 # Check for nice-to-have tools
