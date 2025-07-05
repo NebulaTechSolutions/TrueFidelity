@@ -60,33 +60,143 @@ done
 
 print_banner
 
-# Check prerequisites
+# Check and install prerequisites
+print_status "Checking prerequisites..."
+
+# Essential tools that must be present
+MISSING_ESSENTIAL=""
 for cmd in curl tar; do
     if ! command -v $cmd &> /dev/null; then
-        print_error "$cmd is required but not installed"
-        exit 1
+        MISSING_ESSENTIAL="$MISSING_ESSENTIAL $cmd"
     fi
 done
 
-# Check if Docker is installed and running
+if [ -n "$MISSING_ESSENTIAL" ]; then
+    print_error "Essential tools missing:$MISSING_ESSENTIAL"
+    print_error "Please install these tools first"
+    exit 1
+fi
+
+# Check for optional but recommended tools
+MISSING_TOOLS=""
+INSTALL_COMMANDS=""
+
+# Check Docker
 if ! command -v docker &> /dev/null; then
-    print_warning "Docker is not installed. tf-build requires Docker to build ECU firmware."
-    print_warning "Please install Docker and ensure it's running."
-    echo ""
-    read -p "Continue anyway? [y/N] " -n 1 -r
-    echo ""
-    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
-        exit 1
+    MISSING_TOOLS="$MISSING_TOOLS docker"
+    if [ -f /etc/debian_version ]; then
+        INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo apt update && sudo apt install -y docker.io"
+    elif [ -f /etc/fedora-release ] || [ -f /etc/redhat-release ]; then
+        INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo dnf install -y docker"
+    elif [ -f /etc/arch-release ]; then
+        INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo pacman -S docker"
+    elif [ "$(uname)" = "Darwin" ]; then
+        INSTALL_COMMANDS="$INSTALL_COMMANDS\n  brew install --cask docker"
     fi
-elif ! docker info &> /dev/null; then
-    print_warning "Docker is installed but not running."
-    print_warning "Please start Docker before using tf-build."
-    echo ""
-    read -p "Continue anyway? [y/N] " -n 1 -r
-    echo ""
-    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
-        exit 1
+fi
+
+# Check Python3 and pip3 (needed for west)
+if ! command -v python3 &> /dev/null; then
+    MISSING_TOOLS="$MISSING_TOOLS python3"
+    if [ -f /etc/debian_version ]; then
+        INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo apt install -y python3 python3-pip"
+    elif [ -f /etc/fedora-release ] || [ -f /etc/redhat-release ]; then
+        INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo dnf install -y python3 python3-pip"
+    elif [ -f /etc/arch-release ]; then
+        INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo pacman -S python python-pip"
     fi
+fi
+
+if ! command -v pip3 &> /dev/null && ! command -v pip &> /dev/null; then
+    MISSING_TOOLS="$MISSING_TOOLS pip3"
+fi
+
+# Check git (needed for west/Zephyr)
+if ! command -v git &> /dev/null; then
+    MISSING_TOOLS="$MISSING_TOOLS git"
+    if [ -f /etc/debian_version ]; then
+        INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo apt install -y git"
+    elif [ -f /etc/fedora-release ] || [ -f /etc/redhat-release ]; then
+        INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo dnf install -y git"
+    elif [ -f /etc/arch-release ]; then
+        INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo pacman -S git"
+    fi
+fi
+
+# Check for nice-to-have tools
+OPTIONAL_MISSING=""
+if ! command -v figlet &> /dev/null; then
+    OPTIONAL_MISSING="$OPTIONAL_MISSING figlet"
+fi
+if ! command -v gum &> /dev/null; then
+    OPTIONAL_MISSING="$OPTIONAL_MISSING gum"
+fi
+
+# Report missing tools
+if [ -n "$MISSING_TOOLS" ] || [ -n "$OPTIONAL_MISSING" ]; then
+    echo
+    if [ -n "$MISSING_TOOLS" ]; then
+        print_warning "Missing required tools:$MISSING_TOOLS"
+        echo
+        echo "Suggested installation commands:"
+        echo -e "$INSTALL_COMMANDS"
+        echo
+        
+        if command -v gum &> /dev/null; then
+            if ! gum confirm "Continue without installing these tools?"; then
+                print_status "Installation cancelled. Please install the missing tools and try again."
+                exit 1
+            fi
+        else
+            read -p "Continue without installing these tools? [y/N] " -n 1 -r
+            echo ""
+            if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+                print_status "Installation cancelled. Please install the missing tools and try again."
+                exit 1
+            fi
+        fi
+    fi
+    
+    if [ -n "$OPTIONAL_MISSING" ]; then
+        print_status "Optional tools not found:$OPTIONAL_MISSING"
+        print_status "For a better experience, consider installing:"
+        if [[ "$OPTIONAL_MISSING" == *"figlet"* ]]; then
+            echo "  - figlet: ASCII art headers (apt/brew install figlet)"
+        fi
+        if [[ "$OPTIONAL_MISSING" == *"gum"* ]]; then
+            echo "  - gum: Beautiful CLI prompts (https://github.com/charmbracelet/gum)"
+        fi
+        echo
+    fi
+fi
+
+# Special Docker checks
+if command -v docker &> /dev/null; then
+    if ! docker info &> /dev/null 2>&1; then
+        print_warning "Docker is installed but not running or accessible."
+        echo
+        echo "Possible solutions:"
+        echo "  1. Start Docker daemon: sudo systemctl start docker"
+        echo "  2. Add user to docker group: sudo usermod -aG docker $USER"
+        echo "  3. Log out and back in for group changes to take effect"
+        echo
+        
+        if command -v gum &> /dev/null; then
+            if ! gum confirm "Continue anyway?"; then
+                exit 1
+            fi
+        else
+            read -p "Continue anyway? [y/N] " -n 1 -r
+            echo ""
+            if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+                exit 1
+            fi
+        fi
+    else
+        print_success "Docker is installed and running"
+    fi
+else
+    print_warning "Docker not found - tf-build requires Docker to build firmware"
 fi
 
 # Determine latest version if not specified
