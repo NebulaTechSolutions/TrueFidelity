@@ -115,118 +115,157 @@ if [ -n "$MISSING_ESSENTIAL" ]; then
     exit 1
 fi
 
-# Check for optional but recommended tools
+# Check for all required tools
 MISSING_TOOLS=""
-INSTALL_COMMANDS=""
+MISSING_PACKAGES=()
 
-# Check Docker
+# Check each tool and build list of missing packages
 if ! command -v docker &> /dev/null; then
     MISSING_TOOLS="$MISSING_TOOLS docker"
-    case "$DISTRO" in
-        ubuntu|debian|linuxmint|pop)
-            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo apt update && sudo apt install -y docker.io"
-            ;;
-        fedora)
-            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo dnf install -y docker"
-            ;;
-        rhel|centos|rocky|almalinux)
-            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo yum install -y docker"
-            ;;
-        arch|manjaro|endeavouros)
-            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo pacman -S docker"
-            ;;
-        opensuse|suse)
-            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo zypper install -y docker"
-            ;;
-        alpine)
-            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo apk add docker"
-            ;;
-        gentoo)
-            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo emerge -av app-containers/docker"
-            ;;
-        macos)
-            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  brew install --cask docker"
-            ;;
-        *)
-            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  # Please install Docker using your package manager"
-            ;;
-    esac
+    MISSING_PACKAGES+=("docker")
 fi
 
-# Check Python3 and pip3 (needed for west)
 if ! command -v python3 &> /dev/null; then
     MISSING_TOOLS="$MISSING_TOOLS python3"
-    case "$DISTRO" in
-        ubuntu|debian|linuxmint|pop)
-            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo apt install -y python3 python3-pip"
-            ;;
-        fedora)
-            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo dnf install -y python3 python3-pip"
-            ;;
-        rhel|centos|rocky|almalinux)
-            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo yum install -y python3 python3-pip"
-            ;;
-        arch|manjaro|endeavouros)
-            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo pacman -S python python-pip"
-            ;;
-        opensuse|suse)
-            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo zypper install -y python3 python3-pip"
-            ;;
-        alpine)
-            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo apk add python3 py3-pip"
-            ;;
-        gentoo)
-            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo emerge -av dev-lang/python dev-python/pip"
-            ;;
-        macos)
-            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  brew install python3"
-            ;;
-        *)
-            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  # Please install Python3 and pip3 using your package manager"
-            ;;
-    esac
+    MISSING_PACKAGES+=("python3")
 fi
 
 if ! command -v pip3 &> /dev/null && ! command -v pip &> /dev/null; then
     MISSING_TOOLS="$MISSING_TOOLS pip3"
+    MISSING_PACKAGES+=("pip3")
 fi
 
-# Check git (needed for west/Zephyr)
 if ! command -v git &> /dev/null; then
     MISSING_TOOLS="$MISSING_TOOLS git"
+    MISSING_PACKAGES+=("git")
+fi
+
+if ! command -v wget &> /dev/null && ! command -v curl &> /dev/null; then
+    MISSING_TOOLS="$MISSING_TOOLS wget/curl"
+    MISSING_PACKAGES+=("wget" "curl")
+fi
+
+if ! command -v cmake &> /dev/null; then
+    MISSING_TOOLS="$MISSING_TOOLS cmake"
+    MISSING_PACKAGES+=("cmake")
+fi
+
+if ! command -v ninja &> /dev/null; then
+    MISSING_TOOLS="$MISSING_TOOLS ninja"
+    MISSING_PACKAGES+=("ninja")
+fi
+
+# Build single install command based on distribution
+INSTALL_COMMAND=""
+if [ ${#MISSING_PACKAGES[@]} -gt 0 ]; then
     case "$DISTRO" in
         ubuntu|debian|linuxmint|pop)
-            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo apt install -y git"
+            INSTALL_COMMAND="sudo apt update && sudo apt install -y"
+            for pkg in "${MISSING_PACKAGES[@]}"; do
+                case "$pkg" in
+                    docker) INSTALL_COMMAND="$INSTALL_COMMAND docker.io" ;;
+                    python3) INSTALL_COMMAND="$INSTALL_COMMAND python3" ;;
+                    pip3) INSTALL_COMMAND="$INSTALL_COMMAND python3-pip" ;;
+                    ninja) INSTALL_COMMAND="$INSTALL_COMMAND ninja-build" ;;
+                    *) INSTALL_COMMAND="$INSTALL_COMMAND $pkg" ;;
+                esac
+            done
             ;;
         fedora)
-            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo dnf install -y git"
+            INSTALL_COMMAND="sudo dnf install -y"
+            for pkg in "${MISSING_PACKAGES[@]}"; do
+                case "$pkg" in
+                    pip3) INSTALL_COMMAND="$INSTALL_COMMAND python3-pip" ;;
+                    ninja) INSTALL_COMMAND="$INSTALL_COMMAND ninja-build" ;;
+                    *) INSTALL_COMMAND="$INSTALL_COMMAND $pkg" ;;
+                esac
+            done
             ;;
         rhel|centos|rocky|almalinux)
-            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo yum install -y git"
+            INSTALL_COMMAND="sudo yum install -y"
+            for pkg in "${MISSING_PACKAGES[@]}"; do
+                case "$pkg" in
+                    pip3) INSTALL_COMMAND="$INSTALL_COMMAND python3-pip" ;;
+                    ninja) INSTALL_COMMAND="$INSTALL_COMMAND ninja-build" ;;
+                    *) INSTALL_COMMAND="$INSTALL_COMMAND $pkg" ;;
+                esac
+            done
             ;;
         arch|manjaro|endeavouros)
-            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo pacman -S git"
+            INSTALL_COMMAND="sudo pacman -S --noconfirm"
+            for pkg in "${MISSING_PACKAGES[@]}"; do
+                case "$pkg" in
+                    python3) INSTALL_COMMAND="$INSTALL_COMMAND python" ;;
+                    pip3) INSTALL_COMMAND="$INSTALL_COMMAND python-pip" ;;
+                    *) INSTALL_COMMAND="$INSTALL_COMMAND $pkg" ;;
+                esac
+            done
             ;;
         opensuse|suse)
-            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo zypper install -y git"
+            INSTALL_COMMAND="sudo zypper install -y"
+            for pkg in "${MISSING_PACKAGES[@]}"; do
+                case "$pkg" in
+                    pip3) INSTALL_COMMAND="$INSTALL_COMMAND python3-pip" ;;
+                    *) INSTALL_COMMAND="$INSTALL_COMMAND $pkg" ;;
+                esac
+            done
             ;;
         alpine)
-            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo apk add git"
+            INSTALL_COMMAND="sudo apk add"
+            for pkg in "${MISSING_PACKAGES[@]}"; do
+                case "$pkg" in
+                    pip3) INSTALL_COMMAND="$INSTALL_COMMAND py3-pip" ;;
+                    ninja) INSTALL_COMMAND="$INSTALL_COMMAND samurai" ;;
+                    *) INSTALL_COMMAND="$INSTALL_COMMAND $pkg" ;;
+                esac
+            done
             ;;
         gentoo)
-            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  sudo emerge -av dev-vcs/git"
+            INSTALL_COMMAND="sudo emerge -av"
+            for pkg in "${MISSING_PACKAGES[@]}"; do
+                case "$pkg" in
+                    docker) INSTALL_COMMAND="$INSTALL_COMMAND app-containers/docker" ;;
+                    python3) INSTALL_COMMAND="$INSTALL_COMMAND dev-lang/python" ;;
+                    pip3) INSTALL_COMMAND="$INSTALL_COMMAND dev-python/pip" ;;
+                    git) INSTALL_COMMAND="$INSTALL_COMMAND dev-vcs/git" ;;
+                    wget) INSTALL_COMMAND="$INSTALL_COMMAND net-misc/wget" ;;
+                    curl) INSTALL_COMMAND="$INSTALL_COMMAND net-misc/curl" ;;
+                    cmake) INSTALL_COMMAND="$INSTALL_COMMAND dev-util/cmake" ;;
+                    ninja) INSTALL_COMMAND="$INSTALL_COMMAND dev-util/ninja" ;;
+                esac
+            done
             ;;
         macos)
-            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  xcode-select --install  # or: brew install git"
+            # Special handling for macOS
+            if [[ " ${MISSING_PACKAGES[@]} " =~ " docker " ]]; then
+                INSTALL_COMMAND="brew install --cask docker"
+            fi
+            # Remove docker from the list for brew install
+            MISSING_PACKAGES=("${MISSING_PACKAGES[@]/docker}")
+            if [ ${#MISSING_PACKAGES[@]} -gt 0 ]; then
+                if [ -n "$INSTALL_COMMAND" ]; then
+                    INSTALL_COMMAND="$INSTALL_COMMAND && brew install"
+                else
+                    INSTALL_COMMAND="brew install"
+                fi
+                for pkg in "${MISSING_PACKAGES[@]}"; do
+                    if [ -n "$pkg" ]; then
+                        INSTALL_COMMAND="$INSTALL_COMMAND $pkg"
+                    fi
+                done
+            fi
             ;;
         *)
-            INSTALL_COMMANDS="$INSTALL_COMMANDS\n  # Please install git using your package manager"
+            INSTALL_COMMAND="# Please install the following packages using your package manager: ${MISSING_PACKAGES[*]}"
             ;;
     esac
 fi
 
 # Check for nice-to-have tools
 OPTIONAL_MISSING=""
+if ! command -v rsync &> /dev/null; then
+    OPTIONAL_MISSING="$OPTIONAL_MISSING rsync"
+fi
 if ! command -v figlet &> /dev/null; then
     OPTIONAL_MISSING="$OPTIONAL_MISSING figlet"
 fi
@@ -240,9 +279,12 @@ if [ -n "$MISSING_TOOLS" ] || [ -n "$OPTIONAL_MISSING" ]; then
     if [ -n "$MISSING_TOOLS" ]; then
         print_warning "Missing required tools:$MISSING_TOOLS"
         echo
-        echo "Suggested installation commands:"
-        echo -e "$INSTALL_COMMANDS"
-        echo
+        if [ -n "$INSTALL_COMMAND" ]; then
+            echo "To install all missing packages, run:"
+            echo
+            echo "  $INSTALL_COMMAND"
+            echo
+        fi
         
         if command -v gum &> /dev/null; then
             if ! gum confirm "Continue without installing these tools?"; then
@@ -262,6 +304,9 @@ if [ -n "$MISSING_TOOLS" ] || [ -n "$OPTIONAL_MISSING" ]; then
     if [ -n "$OPTIONAL_MISSING" ]; then
         print_status "Optional tools not found:$OPTIONAL_MISSING"
         print_status "For a better experience, consider installing:"
+        if [[ "$OPTIONAL_MISSING" == *"rsync"* ]]; then
+            echo "  - rsync: Faster file copying (usually pre-installed)"
+        fi
         if [[ "$OPTIONAL_MISSING" == *"figlet"* ]]; then
             echo "  - figlet: ASCII art headers (apt/brew install figlet)"
         fi
