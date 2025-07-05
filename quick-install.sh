@@ -97,7 +97,7 @@ cd tf-build-*
 print_status "Running installer..."
 if [ -f "install.sh" ]; then
     chmod +x install.sh
-    ./install.sh --custom "$INSTALL_DIR" "$BIN_DIR"
+    ./install.sh --prefix "$INSTALL_DIR"
 else
     print_error "Install script not found in release package"
     exit 1
