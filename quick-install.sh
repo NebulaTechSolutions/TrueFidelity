@@ -111,30 +111,17 @@ if ! curl -fsSL "$DOWNLOAD_URL" -o tf-build.tar.gz; then
     exit 1
 fi
 
-# Download ECUSim binary if available
-ECUSIM_URL="https://github.com/NebulaTechSolutions/TwinForge/releases/download/$VERSION/qemu-system-arm"
-print_status "Downloading ECUSim binary..."
-if curl -fsSL "$ECUSIM_URL" -o qemu-system-arm 2>/dev/null; then
-    chmod +x qemu-system-arm
-    print_success "ECUSim binary downloaded"
-else
-    print_warning "ECUSim binary not found in release (optional)"
-fi
-
 # Extract
 print_status "Extracting..."
 tar -xzf tf-build.tar.gz
 cd tf-build-*
 
-# Copy ECUSim binary to package if downloaded
-if [ -f ../qemu-system-arm ]; then
-    # Create the ecusim directory in the extracted package
-    if [ ! -d resources/ecusim ]; then
-        mkdir -p resources/ecusim
-    fi
-    cp ../qemu-system-arm resources/ecusim/
+# Check if ECUSim binary is included in the package
+if [ -f "resources/ecusim/qemu-system-arm" ]; then
+    print_success "ECUSim binary included in package"
     chmod +x resources/ecusim/qemu-system-arm
-    print_status "ECUSim binary added to installation package"
+else
+    print_warning "ECUSim binary not found in package"
 fi
 
 # Run the full install script
