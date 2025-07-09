@@ -11,7 +11,7 @@
 ## Quick Installation
 
 ```bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/NebulaTechSolutions/TwinForge/main/quick-install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/NebulaTechSolutions/TrueFidelity/main/quick-install.sh)"
 ```
 
 ## What Gets Installed
@@ -30,12 +30,12 @@ All dependencies are installed to `~/.config/tf-build/resources/` by default.
 
 ### Install Specific Version
 ```bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/NebulaTechSolutions/TwinForge/main/quick-install.sh)" -- --version v0.1.0
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/NebulaTechSolutions/TrueFidelity/main/quick-install.sh)" -- --version v0.1.0
 ```
 
 ### Custom Installation Directory
 ```bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/NebulaTechSolutions/TwinForge/main/quick-install.sh)" -- \
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/NebulaTechSolutions/TrueFidelity/main/quick-install.sh)" -- \
   --install-dir /opt/tf-build \
   --bin-dir /usr/local/bin
 ```
@@ -44,7 +44,7 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/NebulaTechSolutions/Twin
 
 1. Download the release tarball:
 ```bash
-curl -L https://github.com/NebulaTechSolutions/TwinForge/releases/download/v0.1.0/tf-build-v0.1.0-linux-x64.tar.gz -o tf-build.tar.gz
+curl -L https://github.com/NebulaTechSolutions/TrueFidelity/releases/download/v0.1.0/tf-build-v0.1.0-linux-x64.tar.gz -o tf-build.tar.gz
 ```
 
 2. Extract:

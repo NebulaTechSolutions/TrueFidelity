@@ -1,8 +1,8 @@
-# 🚀 TwinForge: High-Fidelity Digital Twin Platform
+# 🚀 TrueFidelity: High-Fidelity Digital Twin Platform
 
-**TwinForge is a cloud-native platform designed to replicate full embedded systems virtually, enabling scalable, deterministic testing and validation for automotive OEMs.**
+**TrueFidelity is a cloud-native platform designed to replicate full embedded systems virtually, enabling scalable, deterministic testing and validation for automotive OEMs.**
 
-Physical test benches are expensive, limited, and hard to automate. TwinForge addresses these challenges by providing:
+Physical test benches are expensive, limited, and hard to automate. TrueFidelity addresses these challenges by providing:
 
 * **High-Fidelity Replication:** Run actual ECU binaries on virtual hardware
 * **Cloud-Native Scalability:** Launch and manage virtual test benches on demand
@@ -14,20 +14,20 @@ Physical test benches are expensive, limited, and hard to automate. TwinForge ad
 
 ### Installing TF-Build
 
-TF-Build is the firmware build tool for TwinForge that enables building Zephyr-based firmware for supported boards.
+TF-Build is the firmware build tool for TrueFidelity that enables building Zephyr-based firmware for supported boards.
 
 #### Quick Install (Recommended)
 
 Install the latest version with a single command:
 
 ```bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/NebulaTechSolutions/TwinForge/main/quick-install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/NebulaTechSolutions/TrueFidelity/main/quick-install.sh)"
 ```
 
 #### Install Specific Version
 
 ```bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/NebulaTechSolutions/TwinForge/main/quick-install.sh)" -- --version v0.1.0
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/NebulaTechSolutions/TrueFidelity/main/quick-install.sh)" -- --version v0.1.0
 ```
 
 #### Verify Installation
@@ -54,21 +54,21 @@ tf-build build --board s32k3x4evb --source ./my-ecu-project --output ./build-out
 
 ## 📦 Releases
 
-All releases are available in the [Releases](https://github.com/NebulaTechSolutions/TwinForge/releases) section.
+All releases are available in the [Releases](https://github.com/NebulaTechSolutions/TrueFidelity/releases) section.
 
 ## 📚 Documentation
 
-For more information about TwinForge, visit our documentation site (coming soon).
+For more information about TrueFidelity, visit our documentation site (coming soon).
 
 ## 🔧 Support
 
 For support and questions:
 - Open an issue in this repository
-- Contact us at support@twinforge.io
+- Contact us at support@truefidelity.io
 
 ## 📄 License
 
-TwinForge is proprietary software. Contact us for licensing information.
+TrueFidelity is proprietary software. Contact us for licensing information.
 
 ---
 

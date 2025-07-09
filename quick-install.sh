@@ -1,6 +1,6 @@
 #!/bin/bash
 # Quick install script for tf-build
-# Usage: bash -c "$(curl -fsSL https://raw.githubusercontent.com/NebulaTechSolutions/TwinForge/main/quick-install.sh)"
+# Usage: bash -c "$(curl -fsSL https://raw.githubusercontent.com/NebulaTechSolutions/TrueFidelity/main/quick-install.sh)"
 
 set -e
 
@@ -19,7 +19,7 @@ print_banner() {
     else
         echo -e "${BLUE}"
         echo "╔═══════════════════════════════════════════╗"
-        echo "║        TwinForge Build Tool Setup         ║"
+        echo "║        TrueFidelity Build Tool Setup      ║"
         echo "╚═══════════════════════════════════════════╝"
         echo -e "${NC}"
     fi
@@ -349,7 +349,7 @@ fi
 # Determine latest version if not specified
 if [ "$VERSION" = "latest" ]; then
     print_status "Fetching latest version..."
-    VERSION=$(curl -s https://api.github.com/repos/NebulaTechSolutions/TwinForge/releases/latest | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+    VERSION=$(curl -s https://api.github.com/repos/NebulaTechSolutions/TrueFidelity/releases/latest | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
     if [ -z "$VERSION" ]; then
         print_error "Failed to determine latest version"
         exit 1
@@ -366,7 +366,7 @@ TEMP_DIR=$(mktemp -d)
 trap 'rm -rf "$TEMP_DIR"' EXIT INT TERM
 
 # Download release
-DOWNLOAD_URL="https://github.com/NebulaTechSolutions/TwinForge/releases/download/$VERSION/tf-build-$VERSION-linux-x64.tar.gz"
+DOWNLOAD_URL="https://github.com/NebulaTechSolutions/TrueFidelity/releases/download/$VERSION/tf-build-$VERSION-linux-x64.tar.gz"
 print_status "Downloading from: $DOWNLOAD_URL"
 cd "$TEMP_DIR"
 if ! curl -fsSL "$DOWNLOAD_URL" -o tf-build.tar.gz; then
@@ -664,7 +664,7 @@ if [[ ":$PATH:" != *":$BIN_DIR:"* ]]; then
     
     if [ -n "$SHELL_PROFILE" ]; then
         echo "" >> "$SHELL_PROFILE"
-        echo "# TwinForge tf-build environment" >> "$SHELL_PROFILE"
+        echo "# TrueFidelity tf-build environment" >> "$SHELL_PROFILE"
         echo "export PATH=\"$BIN_DIR:\$PATH\"" >> "$SHELL_PROFILE"
         echo "export TF_BUILD_CONFIG_DIR=\"$CONFIG_DIR\"" >> "$SHELL_PROFILE"
         print_success "Added tf-build to PATH in $SHELL_PROFILE"
@@ -703,4 +703,4 @@ echo "1. Run 'tf-build --version' to verify installation"
 echo "2. Run 'tf-build init' to set up the Docker build environment"
 echo "3. Run 'tf-build --help' for usage information"
 echo
-echo "For more information, visit: https://github.com/NebulaTechSolutions/TwinForge"
+echo "For more information, visit: https://github.com/NebulaTechSolutions/TrueFidelity"
