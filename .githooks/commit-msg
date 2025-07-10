@@ -1,0 +1,24 @@
+#!/bin/bash
+# Commit-msg hook to prevent Claude/AI assistant mentions in commit messages
+
+# Colors for output
+RED='\033[0;31m'
+YELLOW='\033[0;33m'
+NC='\033[0m' # No Color
+
+commit_msg_file=$1
+commit_msg=$(cat "$commit_msg_file")
+
+# Check for prohibited terms
+prohibited_terms="claude|anthropic\.com|Co-Authored-By:.*anthropic|Generated with.*Claude|🤖.*Claude"
+
+if echo "$commit_msg" | grep -E -i "$prohibited_terms" > /dev/null; then
+    echo -e "${RED}ERROR: Commit message contains prohibited AI assistant references:${NC}"
+    echo -e "${YELLOW}$commit_msg${NC}"
+    echo
+    echo -e "${RED}Please remove all references to AI assistants from your commit message.${NC}"
+    echo "Prohibited terms: Claude, anthropic.com, AI-generated signatures"
+    exit 1
+fi
+
+exit 0
