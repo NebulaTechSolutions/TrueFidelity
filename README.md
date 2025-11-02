@@ -71,7 +71,7 @@ All releases are available in the [Releases](https://github.com/NebulaTechSoluti
 
 ## 📚 Documentation
 
-For more information about TrueFidelity, visit our documentation site (coming soon).
+For more information about TrueFidelity, visit our [documentation](https://nebulatechsolutions.github.io/TrueFidelity/) site
 
 ## 🔧 Support
 
