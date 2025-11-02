@@ -77,7 +77,7 @@ For more information about TrueFidelity, visit our [documentation](https://nebul
 
 For support and questions:
 - Open an issue in this repository
-- Contact us at support@truefidelity.io
+- Contact us at support@nebula-automotive.com
 
 ## 📄 License
 
