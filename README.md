@@ -14,30 +14,31 @@ Physical test benches are expensive, limited, and hard to automate. TrueFidelity
 
 ### Install TrueFidelity Desktop
 
-Grab the platform installer from the latest release and run it locally. Each script automatically detects whether it should use the public (`NebulaTechSolutions/TrueFidelity`) or private (`NebulaTechSolutions/TrueFidelity-private`) repository and supports installing multiple versions side-by-side.
+Grab the platform installer from the production `v0.1.4` release and run it locally.
 
 **Linux**
 ```bash
-curl -fsSLO https://github.com/NebulaTechSolutions/TrueFidelity/releases/latest/download/install-linux.sh
-chmod +x install-linux.sh
-./install-linux.sh --yes
+curl -fsSL https://github.com/NebulaTechSolutions/TrueFidelity/releases/download/v0.1.4/install-linux.sh | bash -s -- --yes
 ```
 
 **macOS**
 ```bash
-curl -fsSLO https://github.com/NebulaTechSolutions/TrueFidelity/releases/latest/download/install-macos.sh
-chmod +x install-macos.sh
-./install-macos.sh --scope user --yes
+curl -fsSL https://github.com/NebulaTechSolutions/TrueFidelity/releases/download/v0.1.4/install-macos.sh | bash -s -- --yes
 ```
 
 **Windows (PowerShell)**
 ```powershell
-Invoke-WebRequest -Uri "https://github.com/NebulaTechSolutions/TrueFidelity/releases/latest/download/install-windows.ps1" -OutFile install-windows.ps1
+Invoke-WebRequest -Uri "https://github.com/NebulaTechSolutions/TrueFidelity/releases/download/v0.1.4/install-windows.ps1" -OutFile install-windows.ps1
 Set-ExecutionPolicy Bypass -Scope Process -Force
 ./install-windows.ps1 -Yes
 ```
 
-> **Tip:** Use `--install-dir`/`--bin-name` (Linux), `--app-name`/`--bin-name` (macOS), or `-InstallDirectory`/`-LauncherName` (Windows) to install different channels alongside each other (e.g., `truefidelity-beta`).
+To install into a custom directory (for example, system-wide on Linux):
+
+```bash
+sudo mkdir -p /opt/truefidelity
+curl -fsSL https://github.com/NebulaTechSolutions/TrueFidelity/releases/download/v0.1.4/install-linux.sh | sudo bash -s -- --install-dir /opt/truefidelity --bin-name truefidelity --yes
+```
 
 ### Hardware Info Helper (tf-hwinfo)
 
