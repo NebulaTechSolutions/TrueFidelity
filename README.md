@@ -39,7 +39,7 @@ curl -fsSL https://github.com/NebulaTechSolutions/TrueFidelity/releases/latest/d
 curl -fsSL https://github.com/NebulaTechSolutions/TrueFidelity/releases/download/v0.1.4/install-linux.sh | bash -s -- --version v0.1.4 --yes
 ```
 
-**Custom Installation (side-by-side)**
+**Custom Installation Directory**
 ```bash
 curl -fsSL https://github.com/NebulaTechSolutions/TrueFidelity/releases/latest/download/install-linux.sh -o /tmp/install-linux.sh
 chmod +x /tmp/install-linux.sh
