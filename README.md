@@ -88,7 +88,7 @@ Installs to `%LOCALAPPDATA%\TrueFidelity` and adds that to your user PATH; resta
 
 #### Verify & Launch
 
-Run the CLI to confirm the install and launch the desktop UI:
+Run the CLI to confirm the install and open the desktop app:
 
 ```bash
 truefidelity --version
@@ -96,8 +96,6 @@ truefidelity
 ```
 
 You can also start TrueFidelity from your system's application menu or Start menu.
-
-
 
 ## 📦 Releases
 
@@ -144,4 +142,8 @@ TrueFidelity is proprietary software. Contact us for licensing information.
 
 ---
 
+<<<<<<< HEAD
 © 2025 Nebula Automotive Ltd. All rights reserved.
+=======
+© 2025 Nebula Automotive Ltd. All rights reserved.
+>>>>>>> 7235431 (docs: refresh public readme)
