@@ -142,8 +142,4 @@ TrueFidelity is proprietary software. Contact us for licensing information.
 
 ---
 
-<<<<<<< HEAD
 © 2025 Nebula Automotive Ltd. All rights reserved.
-=======
-© 2025 Nebula Automotive Ltd. All rights reserved.
->>>>>>> 7235431 (docs: refresh public readme)
