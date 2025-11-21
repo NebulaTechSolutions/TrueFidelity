@@ -12,53 +12,125 @@ Physical test benches are expensive, limited, and hard to automate. TrueFidelity
 
 ## 🚀 Quick Start
 
-### Install TrueFidelity Desktop
+To get up and running:
+1. Install the TrueFidelity Desktop app for your platform.
+2. Activate your license (see [Getting a License](#-getting-a-license)).
 
-Grab the platform installer from the production `v0.1.4` release and run it locally.
+### Before You Begin
 
-**Linux**
+- 64-bit Linux, macOS, or Windows 10/11
+- Administrator/root privileges (required by the installers)
+- Active internet connection to download installers and updates
+- License file or license server credentials
+
+### Installing TrueFidelity Desktop
+
+The TrueFidelity Desktop application provides a GUI for managing virtual ECUs, CAN network simulation, and data playback/injection.
+
+#### Linux Installation
+
+**Latest Release**
 ```bash
-curl -fsSL https://github.com/NebulaTechSolutions/TrueFidelity/releases/download/v0.1.4/install-linux.sh | bash -s -- --yes
+curl -fsSL https://github.com/NebulaTechSolutions/TrueFidelity/releases/latest/download/install-linux.sh | bash -s -- --yes
 ```
 
-**macOS**
+**Specific Version**
 ```bash
-curl -fsSL https://github.com/NebulaTechSolutions/TrueFidelity/releases/download/v0.1.4/install-macos.sh | bash -s -- --yes
+curl -fsSL https://github.com/NebulaTechSolutions/TrueFidelity/releases/download/v0.1.4/install-linux.sh | bash -s -- --version v0.1.4 --yes
 ```
 
-**Windows (PowerShell)**
+**Custom Installation (side-by-side)**
+```bash
+curl -fsSL https://github.com/NebulaTechSolutions/TrueFidelity/releases/latest/download/install-linux.sh -o /tmp/install-linux.sh
+chmod +x /tmp/install-linux.sh
+/tmp/install-linux.sh \
+  --install-dir "$HOME/.local/share/truefidelity" \
+  --bin-name truefidelity \
+  --yes
+```
+
+#### macOS Installation
+
+**Latest Release**
+```bash
+curl -fsSL https://github.com/NebulaTechSolutions/TrueFidelity/releases/latest/download/install-macos.sh | bash -s -- --yes
+```
+
+**Specific Version**
+```bash
+curl -fsSL https://github.com/NebulaTechSolutions/TrueFidelity/releases/download/v0.1.4/install-macos.sh | bash -s -- --version v0.1.4 --yes
+```
+
+#### Windows Installation
+
+PowerShell can be run normally (per-user install) or as Administrator (all-users install + system PATH). We recommend running as Administrator when possible; without elevation the installer falls back to your user profile and only updates the user PATH (open a new PowerShell session afterward).
+
+**All users (recommended, run PowerShell as Administrator)**
+
+**Latest Release**
 ```powershell
-Invoke-WebRequest -Uri "https://github.com/NebulaTechSolutions/TrueFidelity/releases/download/v0.1.4/install-windows.ps1" -OutFile install-windows.ps1
-Set-ExecutionPolicy Bypass -Scope Process -Force
-./install-windows.ps1 -Yes
+Invoke-WebRequest -Uri "https://github.com/NebulaTechSolutions/TrueFidelity/releases/latest/download/install-windows.ps1" -OutFile "$env:TEMP\install-windows.ps1"
+& "$env:TEMP\install-windows.ps1" -Yes
 ```
 
-To install into a custom directory (for example, system-wide on Linux):
+**Specific Version**
+```powershell
+Invoke-WebRequest -Uri "https://github.com/NebulaTechSolutions/TrueFidelity/releases/download/v0.1.4/install-windows.ps1" -OutFile "$env:TEMP\install-windows.ps1"
+& "$env:TEMP\install-windows.ps1" -Version v0.1.4 -Yes
+```
+
+**Per-user install (no admin rights)**
+```powershell
+Invoke-WebRequest -Uri "https://github.com/NebulaTechSolutions/TrueFidelity/releases/latest/download/install-windows.ps1" -OutFile "$env:TEMP\install-windows.ps1"
+& "$env:TEMP\install-windows.ps1" -Yes
+```
+Installs to `%LOCALAPPDATA%\TrueFidelity` and adds that to your user PATH; restart PowerShell to pick up the change.
+
+#### Verify & Launch
+
+Run the CLI to confirm the install and launch the desktop UI:
 
 ```bash
-sudo mkdir -p /opt/truefidelity
-curl -fsSL https://github.com/NebulaTechSolutions/TrueFidelity/releases/download/v0.1.4/install-linux.sh | sudo bash -s -- --install-dir /opt/truefidelity --bin-name truefidelity --yes
+truefidelity --version
+truefidelity
 ```
 
-### Hardware Info Helper (tf-hwinfo)
+You can also start TrueFidelity from your system's application menu or Start menu.
 
-Users only need the hardware info helper when requesting node-locked licenses. A convenience script downloads the correct binary, caches it locally, and forwards any arguments to `tf-hwinfo`.
 
-```bash
-curl -fsSLO https://raw.githubusercontent.com/NebulaTechSolutions/TrueFidelity/main/scripts/run-tf-hwinfo.sh
-chmod +x run-tf-hwinfo.sh
-./run-tf-hwinfo.sh collect --output hardware-info.json
-```
-
-The script accepts `--version <tag>` to pin a specific release and stores binaries under `~/.cache/truefidelity/tf-hwinfo` by default. On Windows, download the appropriate `tf-hwinfo-windows-*.exe` asset from the latest release and run it from PowerShell.
 
 ## 📦 Releases
 
 All releases are available in the [Releases](https://github.com/NebulaTechSolutions/TrueFidelity/releases) section.
 
+Each release includes:
+- **Desktop application** for your platform (Linux, macOS, Windows)
+- **Platform-specific installers** (`install-linux.sh`, `install-macos.sh`, `install-windows.ps1`)
+- **Version manifest** with Docker image tags and configuration
+
 ## 📚 Documentation
 
-For more information about TrueFidelity, visit our [documentation](https://nebulatechsolutions.github.io/TrueFidelity/) site
+For more information about TrueFidelity, visit our [documentation site](https://nebulatechsolutions.github.io/TrueFidelity/).
+
+## 🔐 Getting a License
+
+TrueFidelity Desktop requires a valid license to run. Choose the track that matches your entitlement.
+
+**Node-Locked License (single machine)**
+
+1. Install and launch the TrueFidelity Desktop app.
+2. When the License dialog appears, click **Collect Hardware Info**. The fingerprint is displayed immediately.
+3. Click **Save to File** to export `hardware-info.json`.
+4. Send the file to your TrueFidelity representative or support@nebula-automotive.com along with the desired edition (for example, Professional or Enterprise).
+5. We will return a signed license file. Load it from the same License dialog (you can reopen it later from the menu).
+
+**Floating/Server License**
+
+1. Launch the TrueFidelity Desktop app and open the License dialog.
+2. Enter the license server URL (and API key if required) provided by your administrator or TrueFidelity representative.
+3. Click **Validate License** to complete activation.
+
+Need to switch license types later? Reopen the License dialog from the menu to update the configuration.
 
 ## 🔧 Support
 
@@ -72,4 +144,4 @@ TrueFidelity is proprietary software. Contact us for licensing information.
 
 ---
 
-© 2025 Nebula Tech Solutions. All rights reserved.
+© 2025 Nebula Automotive Ltd. All rights reserved.
