@@ -86,6 +86,9 @@ Invoke-WebRequest -Uri "https://github.com/NebulaTechSolutions/TrueFidelity/rele
 ```
 Installs to `%LOCALAPPDATA%\TrueFidelity` and adds that to your user PATH; restart PowerShell to pick up the change.
 
+#### Prerequisites before launch
+- Docker installed on the client, for windows this is the Docker Desktop app.
+  
 #### Verify & Launch
 
 Run the CLI to confirm the install and open the desktop app:
