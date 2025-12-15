@@ -32,8 +32,7 @@ The TrueFidelity Desktop application provides a GUI for managing virtual ECUs, C
   
 **Prerequisites Windows**
 - Docker Desktop app
-- WSL2 with custom kernel provided by Nebula
-To install WSL, open PowerShell as an administrator and run the command
+- WSL2 with custom kernel provided by Nebula (to install WSL, open PowerShell as an administrator and run the command)
 ```powershell
 wsl --install
 ```
