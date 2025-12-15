@@ -57,18 +57,21 @@ PowerShell can be run normally (per-user install) or as Administrator (all-users
 
 **Latest Release**
 ```powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 Invoke-WebRequest -Uri "https://github.com/NebulaTechSolutions/TrueFidelity/releases/latest/download/install-windows.ps1" -OutFile "$env:TEMP\install-windows.ps1"
 & "$env:TEMP\install-windows.ps1" -Yes
 ```
 
 **Specific Version**
 ```powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 Invoke-WebRequest -Uri "https://github.com/NebulaTechSolutions/TrueFidelity/releases/download/v0.1.4/install-windows.ps1" -OutFile "$env:TEMP\install-windows.ps1"
 & "$env:TEMP\install-windows.ps1" -Version v0.1.4 -Yes
 ```
 
 **Per-user install (no admin rights)**
 ```powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 Invoke-WebRequest -Uri "https://github.com/NebulaTechSolutions/TrueFidelity/releases/latest/download/install-windows.ps1" -OutFile "$env:TEMP\install-windows.ps1"
 & "$env:TEMP\install-windows.ps1" -Yes
 ```
@@ -77,7 +80,11 @@ Installs to `%LOCALAPPDATA%\TrueFidelity` and adds that to your user PATH; resta
 #### macOS Installation (coming soon)
 
 #### Prerequisites before launch
-- Docker installed on the client, for windows this is the Docker Desktop app.
+- Docker installed on the client
+  
+**Windows**
+- Docker Desktop app
+- WSL2 with custom kernel provided by Nebula
   
 #### Verify & Launch
 
