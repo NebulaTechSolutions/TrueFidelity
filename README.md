@@ -27,12 +27,13 @@ To get up and running:
 
 The TrueFidelity Desktop application provides a GUI for managing virtual ECUs, CAN network simulation, and data playback/injection.
 
-#### Prerequisites before launch
+#### Prerequisites
 - Docker installed on the client
   
 **Prerequisites Windows**
 - Docker Desktop app
 - WSL2 with custom kernel provided by Nebula
+To install WSL, open PowerShell as an administrator and run the command
 ```powershell
 wsl --install
 ```
