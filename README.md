@@ -27,6 +27,16 @@ To get up and running:
 
 The TrueFidelity Desktop application provides a GUI for managing virtual ECUs, CAN network simulation, and data playback/injection.
 
+#### Prerequisites before launch
+- Docker installed on the client
+  
+**Prerequisites Windows**
+- Docker Desktop app
+- WSL2 with custom kernel provided by Nebula
+```powershell
+wsl --install
+```
+
 #### Linux Installation
 
 **Latest Release**
@@ -79,13 +89,6 @@ Installs to `%LOCALAPPDATA%\TrueFidelity` and adds that to your user PATH; resta
 
 #### macOS Installation (coming soon)
 
-#### Prerequisites before launch
-- Docker installed on the client
-  
-**Windows**
-- Docker Desktop app
-- WSL2 with custom kernel provided by Nebula
-  
 #### Verify & Launch
 
 Run the CLI to confirm the install and open the desktop app:
