@@ -49,18 +49,6 @@ chmod +x /tmp/install-linux.sh
   --yes
 ```
 
-#### macOS Installation
-
-**Latest Release**
-```bash
-curl -fsSL https://github.com/NebulaTechSolutions/TrueFidelity/releases/latest/download/install-macos.sh | bash -s -- --yes
-```
-
-**Specific Version**
-```bash
-curl -fsSL https://github.com/NebulaTechSolutions/TrueFidelity/releases/download/v0.1.4/install-macos.sh | bash -s -- --version v0.1.4 --yes
-```
-
 #### Windows Installation
 
 PowerShell can be run normally (per-user install) or as Administrator (all-users install + system PATH). We recommend running as Administrator when possible; without elevation the installer falls back to your user profile and only updates the user PATH (open a new PowerShell session afterward).
@@ -86,6 +74,8 @@ Invoke-WebRequest -Uri "https://github.com/NebulaTechSolutions/TrueFidelity/rele
 ```
 Installs to `%LOCALAPPDATA%\TrueFidelity` and adds that to your user PATH; restart PowerShell to pick up the change.
 
+#### macOS Installation (comong soon)
+
 #### Prerequisites before launch
 - Docker installed on the client, for windows this is the Docker Desktop app.
   
@@ -109,9 +99,9 @@ Each release includes:
 - **Platform-specific installers** (`install-linux.sh`, `install-macos.sh`, `install-windows.ps1`)
 - **Version manifest** with Docker image tags and configuration
 
-## 📚 Documentation
+## 📚 Documentation (coming soon)
 
-For more information about TrueFidelity, visit our [documentation site](https://nebulatechsolutions.github.io/TrueFidelity/).
+For more information about TrueFidelity, there will soon be a site here with documentation and examples
 
 ## 🔐 Getting a License
 
