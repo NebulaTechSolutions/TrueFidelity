@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -780,34 +780,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../using-the-app/annotations-and-bookmarks/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Annotations & Bookmarks
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../using-the-app/dbc-and-signal-definitions/" class="md-nav__link">
         
   
@@ -1386,22 +1358,33 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#supported-log-formats" class="md-nav__link">
+  <a href="#system-configuration-formats" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Supported Log Formats
+        System Configuration Formats
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Supported Log Formats">
+    <nav class="md-nav" aria-label="System Configuration Formats">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#import-tips" class="md-nav__link">
+  <a href="#truefidelity-system-files" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Import Tips
+        TrueFidelity System Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-file-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System File Details
       
     </span>
   </a>
@@ -1414,13 +1397,52 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#definition-formats" class="md-nav__link">
+  <a href="#supported-log-formats" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Definition Formats
+        Supported Log Formats
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Supported Log Formats">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#primary-capture-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Primary Capture Formats
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#format-characteristics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Format Characteristics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#import-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Import Considerations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1433,27 +1455,139 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mixed-bus-multi-channel-logs" class="md-nav__link">
+    <nav class="md-nav" aria-label="Export Formats">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#available-export-options" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Mixed-Bus / Multi-Channel Logs
+        Available Export Options
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#handling-very-large-files" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#export-details" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Handling Very Large Files
+        Export Details
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Flow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#typical-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Typical Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-channel-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-Channel Support
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Multi-Channel Support">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#channel-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Channel Handling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#channel-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Channel Mapping
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-size-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Size Guidelines
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="File Size Guidelines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recommended-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Limits
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#large-file-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Large File Handling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1466,27 +1600,228 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conversion-tools" class="md-nav__link">
+    <nav class="md-nav" aria-label="Compatibility Matrix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#format-support-by-feature" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Conversion Tools
+        Format Support by Feature
       
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#time-synchronization" class="md-nav__link">
+  <a href="#integration-with-external-tools" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Time Synchronization
+        Integration with External Tools
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Integration with External Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matlab-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MATLAB Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#canalyzercanoe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CANalyzer/CANoe
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-organization-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Organization Best Practices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="File Organization Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recommended-directory-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Directory Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#naming-conventions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Naming Conventions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-control-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version Control Considerations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version Control Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#files-to-track" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Files to Track
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-file-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting File Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting File Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-problems-and-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Problems and Solutions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Problems and Solutions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-wont-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Won't Load
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signal-decoding-fails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Signal Decoding Fails
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#export-fails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export Fails
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#large-file-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Large File Performance
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1499,13 +1834,69 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Known Limitations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#current-restrictions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Current Restrictions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workarounds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workarounds
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#best-practices" class="md-nav__link">
+  <a href="#future-compatibility" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Best Practices
+        Future Compatibility
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Future Compatibility">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#roadmap-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Roadmap Considerations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
       
     </span>
   </a>
@@ -1513,10 +1904,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#related-pages" class="md-nav__link">
+  <a href="#related-documentation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Related Pages
+        Related Documentation
       
     </span>
   </a>
@@ -1812,213 +2203,522 @@
 
 
 <h1 id="file-formats-compatibility">File Formats &amp; Compatibility<a class="headerlink" href="#file-formats-compatibility" title="Permanent link">&para;</a></h1>
-<p>TrueFidelity supports numerous log, definition, and export formats. Use this reference to understand capabilities, limitations, and best practices.</p>
-<h2 id="supported-log-formats">Supported Log Formats<a class="headerlink" href="#supported-log-formats" title="Permanent link">&para;</a></h2>
+<p>This reference guide details the file formats supported by TrueFidelity for system configuration, data capture, playback, and export. Understanding these formats helps you work effectively with the platform and integrate with other tools in your workflow.</p>
+<h2 id="system-configuration-formats">System Configuration Formats<a class="headerlink" href="#system-configuration-formats" title="Permanent link">&para;</a></h2>
+<h3 id="truefidelity-system-files">TrueFidelity System Files<a class="headerlink" href="#truefidelity-system-files" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
 <th>Format</th>
 <th>Extension</th>
+<th>Purpose</th>
 <th>Notes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>MDF4</td>
-<td><code>.mf4</code>, <code>.mdf</code></td>
-<td>Recommended for large datasets; supports metadata and multiple buses.</td>
+<td>System Definition</td>
+<td><code>.json</code></td>
+<td>Complete system configuration</td>
+<td>Contains ECUs, networks, and connections</td>
 </tr>
-<tr>
-<td>BLF</td>
-<td><code>.blf</code></td>
-<td>Vector Binary Logger format; efficient for long captures.</td>
-</tr>
-<tr>
-<td>ASC</td>
-<td><code>.asc</code></td>
-<td>Text-based; easy to inspect manually but larger in size.</td>
-</tr>
-<tr>
-<td>CSV</td>
-<td><code>.csv</code></td>
-<td>Column-based logs; requires column mapping during import.</td>
-</tr>
-<tr>
-<td>CANalyzer Logging</td>
-<td><code>.log</code></td>
-<td>Support varies by release (converted internally).</td>
-</tr>
-</tbody>
-</table>
-<h3 id="import-tips">Import Tips<a class="headerlink" href="#import-tips" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Place logs on local SSD storage to improve load times.</li>
-<li>For CSV, map columns to timestamp, ID, DLC, payload, and channel when prompted.</li>
-<li>If timestamps are relative, use the <strong>Normalize</strong> option to align to absolute time.</li>
-</ul>
-<h2 id="definition-formats">Definition Formats<a class="headerlink" href="#definition-formats" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Format</th>
-<th>Extension</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td>DBC</td>
 <td><code>.dbc</code></td>
-<td>Primary method for decoding signals; supports tags and comments.</td>
-</tr>
-<tr>
-<td>ARXML</td>
-<td><code>.arxml</code></td>
-<td>Partial support; complex structures may require preprocessing.</td>
-</tr>
-<tr>
-<td>JSON/XML</td>
-<td>Varies</td>
-<td>Custom mapping supported if provided by your distribution.</td>
+<td>CAN signal definitions</td>
+<td>Industry-standard format for signal decoding</td>
 </tr>
 </tbody>
 </table>
-<h2 id="export-formats">Export Formats<a class="headerlink" href="#export-formats" title="Permanent link">&para;</a></h2>
+<h3 id="system-file-details">System File Details<a class="headerlink" href="#system-file-details" title="Permanent link">&para;</a></h3>
+<p><strong>System Definition (<code>.json</code>) Files</strong>:
+- Stores complete system topology
+- Includes ECU configurations
+- Network settings and DBC associations
+- Created through System Design mode
+- Portable between TrueFidelity installations
+- Human-readable JSON format</p>
+<p><strong><code>.dbc</code> Files</strong>:
+- Vector CANdb++ format
+- Defines CAN messages and signals
+- Required for signal decoding
+- Associates with network configuration
+- Supports signal scaling and units</p>
+<h2 id="supported-log-formats">Supported Log Formats<a class="headerlink" href="#supported-log-formats" title="Permanent link">&para;</a></h2>
+<h3 id="primary-capture-formats">Primary Capture Formats<a class="headerlink" href="#primary-capture-formats" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Export</th>
+<th>Format</th>
 <th>Extension</th>
 <th>Usage</th>
+<th>Best For</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Segment CSV</td>
-<td><code>.csv</code></td>
-<td>Share subsets with spreadsheets or scripts.</td>
+<td>BLF</td>
+<td><code>.blf</code></td>
+<td>Vector Binary Logger format</td>
+<td>Efficient storage, fast playback</td>
 </tr>
 <tr>
-<td>Segment MDF4</td>
-<td><code>.mf4</code></td>
-<td>Maintain binary fidelity for analytics tools.</td>
-</tr>
-<tr>
-<td>Message CSV</td>
-<td><code>.csv</code></td>
-<td>Filtered frames from Messages panel.</td>
-</tr>
-<tr>
-<td>Annotation CSV</td>
-<td><code>.csv</code></td>
-<td>Documentation of bookmarks and notes.</td>
-</tr>
-<tr>
-<td>Report</td>
-<td><code>.pdf</code>, <code>.html</code></td>
-<td>Formal output suitable for reviews.</td>
-</tr>
-<tr>
-<td>Injection Profile</td>
-<td><code>.tfinject</code></td>
-<td>Saved injection scenarios.</td>
-</tr>
-<tr>
-<td>Layout</td>
-<td><code>.tflayout</code></td>
-<td>Saved workspace arrangements.</td>
+<td>MDF4</td>
+<td><code>.mf4</code>, <code>.mdf</code></td>
+<td>Measurement Data Format v4</td>
+<td>Large datasets, metadata support</td>
 </tr>
 </tbody>
 </table>
-<h2 id="mixed-bus-multi-channel-logs">Mixed-Bus / Multi-Channel Logs<a class="headerlink" href="#mixed-bus-multi-channel-logs" title="Permanent link">&para;</a></h2>
+<h3 id="format-characteristics">Format Characteristics<a class="headerlink" href="#format-characteristics" title="Permanent link">&para;</a></h3>
+<p><strong>BLF (Binary Logging Format)</strong>:
+- Primary format in TrueFidelity
+- Optimized for CAN data
+- Compact binary storage
+- Fast loading and playback
+- Supported by Signal Player panel</p>
+<p><strong>MDF4 (Measurement Data Format)</strong>:
+- ASAM standard format
+- Supports multiple data channels
+- Includes metadata and timestamps
+- Good for long-duration captures
+- Handles large file sizes efficiently</p>
+<h3 id="import-considerations">Import Considerations<a class="headerlink" href="#import-considerations" title="Permanent link">&para;</a></h3>
+<p>When importing log files:</p>
+<ol>
+<li><strong>File Location</strong>:</li>
+<li>Store on local SSD for best performance</li>
+<li>Network drives may cause playback delays</li>
+<li>
+<p>Keep working copies separate from archives</p>
+</li>
+<li>
+<p><strong>File Size</strong>:</p>
+</li>
+<li>BLF: Handles large files well (tested up to 2GB)</li>
+<li>MDF4: Efficient for very large datasets</li>
+<li>
+<p>Consider splitting extremely large logs</p>
+</li>
+<li>
+<p><strong>Timestamp Handling</strong>:</p>
+</li>
+<li>Absolute timestamps preferred</li>
+<li>Relative timestamps supported</li>
+<li>Consistent time base required</li>
+</ol>
+<h2 id="export-formats">Export Formats<a class="headerlink" href="#export-formats" title="Permanent link">&para;</a></h2>
+<h3 id="available-export-options">Available Export Options<a class="headerlink" href="#available-export-options" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Export Type</th>
+<th>Format</th>
+<th>Extension</th>
+<th>Exported From</th>
+<th>Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Network Traffic</td>
+<td>CSV</td>
+<td><code>.csv</code></td>
+<td>Network Traffic panel</td>
+<td>Raw CAN frames with timestamps</td>
+</tr>
+<tr>
+<td>Network Traffic</td>
+<td>BLF</td>
+<td><code>.blf</code></td>
+<td>Network Traffic panel</td>
+<td>Binary log for replay</td>
+</tr>
+<tr>
+<td>Signal Data</td>
+<td>CSV</td>
+<td><code>.csv</code></td>
+<td>Signal export</td>
+<td>Decoded signal values with units</td>
+</tr>
+<tr>
+<td>Chart Image</td>
+<td>PNG</td>
+<td><code>.png</code></td>
+<td>Signal Chart panel</td>
+<td>Visualization screenshot</td>
+</tr>
+<tr>
+<td>Chart Image</td>
+<td>PDF</td>
+<td><code>.pdf</code></td>
+<td>Signal Chart panel</td>
+<td>Vector graphics export</td>
+</tr>
+</tbody>
+</table>
+<h3 id="export-details">Export Details<a class="headerlink" href="#export-details" title="Permanent link">&para;</a></h3>
+<p><strong>CSV Exports</strong>:
+- Human-readable format
+- Compatible with Excel, MATLAB, Python
+- Includes headers with signal names
+- Timestamps in first column
+- Proper scaling applied to signals</p>
+<p><strong>BLF Re-export</strong>:
+- Maintains binary efficiency
+- Can be replayed in TrueFidelity
+- Preserves exact timing
+- Useful for sharing test scenarios</p>
+<p><strong>Chart Exports</strong>:
+- PNG for documentation
+- PDF for reports
+- Includes legend and axes
+- Time window as displayed</p>
+<h2 id="data-flow">Data Flow<a class="headerlink" href="#data-flow" title="Permanent link">&para;</a></h2>
+<h3 id="typical-workflow">Typical Workflow<a class="headerlink" href="#typical-workflow" title="Permanent link">&para;</a></h3>
+<pre><code>Input Files:
+├── System Configuration (.json)
+├── Signal Definitions (.dbc)
+└── Captured Data (.blf or .mf4)
+    ↓
+TrueFidelity Processing:
+├── System Loading
+├── Playback/Analysis
+└── Signal Decoding
+    ↓
+Output Files:
+├── Analyzed Data (.csv)
+├── Filtered Traffic (.csv or .blf)
+└── Visualizations (.png or .pdf)
+</code></pre>
+<h2 id="multi-channel-support">Multi-Channel Support<a class="headerlink" href="#multi-channel-support" title="Permanent link">&para;</a></h2>
+<h3 id="channel-handling">Channel Handling<a class="headerlink" href="#channel-handling" title="Permanent link">&para;</a></h3>
+<p>TrueFidelity supports logs with multiple CAN channels:</p>
 <ul>
-<li>TrueFidelity supports multiple CAN channels within a single file.</li>
-<li>Channel metadata is displayed in the Messages panel and timeline.</li>
-<li>Use filters to analyze one channel at a time if the bus is noisy.</li>
+<li>Channels identified in log files</li>
+<li>Each channel can have different baud rates</li>
+<li>DBC files associate per network</li>
+<li>Filter by channel in Network Traffic</li>
+<li>Signal Viewer shows channel source</li>
 </ul>
-<h2 id="handling-very-large-files">Handling Very Large Files<a class="headerlink" href="#handling-very-large-files" title="Permanent link">&para;</a></h2>
-<ul>
-<li>MDF4 and BLF are most efficient for large logs (&gt;10 GB).</li>
-<li>Use <strong>Incremental Loading</strong> to decode on demand.</li>
-<li>Split logs into chunks using the export feature if your system has limited RAM.</li>
-</ul>
+<h3 id="channel-mapping">Channel Mapping<a class="headerlink" href="#channel-mapping" title="Permanent link">&para;</a></h3>
+<p>When working with multi-channel logs:
+1. Verify channel assignments in log
+2. Map channels to networks in system
+3. Apply appropriate DBC per channel
+4. Use filtering to isolate channels</p>
+<h2 id="file-size-guidelines">File Size Guidelines<a class="headerlink" href="#file-size-guidelines" title="Permanent link">&para;</a></h2>
+<h3 id="recommended-limits">Recommended Limits<a class="headerlink" href="#recommended-limits" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>File Type</th>
+<th>Recommended Max</th>
+<th>Hard Limit</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BLF Log</td>
+<td>2 GB</td>
+<td>4 GB</td>
+<td>Performance degrades above 2GB</td>
+</tr>
+<tr>
+<td>MDF4 Log</td>
+<td>5 GB</td>
+<td>10 GB</td>
+<td>Memory dependent</td>
+</tr>
+<tr>
+<td>CSV Export</td>
+<td>500 MB</td>
+<td>1 GB</td>
+<td>Excel compatibility</td>
+</tr>
+<tr>
+<td>System File</td>
+<td>10 MB</td>
+<td>50 MB</td>
+<td>Complex systems</td>
+</tr>
+</tbody>
+</table>
+<h3 id="large-file-handling">Large File Handling<a class="headerlink" href="#large-file-handling" title="Permanent link">&para;</a></h3>
+<p>For files exceeding recommendations:</p>
+<ol>
+<li><strong>Split Before Import</strong>:</li>
+<li>Use external tools to split</li>
+<li>Process in segments</li>
+<li>
+<p>Maintain time continuity</p>
+</li>
+<li>
+<p><strong>Optimize Playback</strong>:</p>
+</li>
+<li>Close unnecessary panels</li>
+<li>Limit selected signals</li>
+<li>Clear Network Traffic periodically</li>
+<li>
+<p>Use filtering aggressively</p>
+</li>
+<li>
+<p><strong>Memory Management</strong>:</p>
+</li>
+<li>Monitor system RAM usage</li>
+<li>Increase Docker memory allocation</li>
+<li>Process on capable hardware</li>
+</ol>
 <h2 id="compatibility-matrix">Compatibility Matrix<a class="headerlink" href="#compatibility-matrix" title="Permanent link">&para;</a></h2>
+<h3 id="format-support-by-feature">Format Support by Feature<a class="headerlink" href="#format-support-by-feature" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
 <th>Feature</th>
-<th>MDF4</th>
 <th>BLF</th>
-<th>ASC</th>
-<th>CSV</th>
+<th>MDF4</th>
+<th>CSV Export</th>
+<th>DBC</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Signal decoding</td>
-<td>✔</td>
-<td>✔</td>
-<td>✔</td>
-<td>Requires mapping</td>
+<td>Playback</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Signal Decoding</td>
+<td>✅</td>
+<td>✅</td>
+<td>N/A</td>
+<td>Required</td>
 </tr>
 <tr>
 <td>Multi-channel</td>
-<td>✔</td>
-<td>✔</td>
-<td>✔ (with metadata)</td>
-<td>✔</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
 </tr>
 <tr>
-<td>High-frequency support</td>
-<td>✔</td>
-<td>✔</td>
-<td>Limited (text parsing)</td>
-<td>Depends on sampling</td>
+<td>Export Source</td>
+<td>✅</td>
+<td>❌</td>
+<td>N/A</td>
+<td>N/A</td>
 </tr>
 <tr>
-<td>Compression</td>
-<td>✔</td>
-<td>✔</td>
-<td>✖</td>
-<td>✖</td>
+<td>Import to TrueFidelity</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌</td>
+<td>✅</td>
 </tr>
 <tr>
-<td>Append mode</td>
-<td>✖</td>
-<td>✔ (Vector loggers)</td>
-<td>✖</td>
-<td>✔ (manual)</td>
+<td>External Tool Compatible</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
 </tr>
 </tbody>
 </table>
-<h2 id="conversion-tools">Conversion Tools<a class="headerlink" href="#conversion-tools" title="Permanent link">&para;</a></h2>
+<p>Legend:
+- ✅ Fully supported
+- ❌ Not supported
+- N/A Not applicable</p>
+<h2 id="integration-with-external-tools">Integration with External Tools<a class="headerlink" href="#integration-with-external-tools" title="Permanent link">&para;</a></h2>
+<h3 id="matlab-integration">MATLAB Integration<a class="headerlink" href="#matlab-integration" title="Permanent link">&para;</a></h3>
+<pre><code class="language-matlab">% Import TrueFidelity CSV export
+data = readtable('exported_signals.csv');
+
+% Access timestamp and signals
+time = data.Timestamp;
+signal1 = data.Signal_Name_1;
+
+% Process and visualize
+plot(time, signal1);
+</code></pre>
+<h3 id="python-integration">Python Integration<a class="headerlink" href="#python-integration" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">import pandas as pd
+
+# Load exported CSV
+df = pd.read_csv('exported_signals.csv')
+
+# Access signals by name
+timestamps = df['Timestamp']
+signal_values = df['Engine_RPM']
+
+# Analyze data
+mean_rpm = signal_values.mean()
+</code></pre>
+<h3 id="canalyzercanoe">CANalyzer/CANoe<a class="headerlink" href="#canalyzercanoe" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Use vendor utilities or open-source tools (e.g., <code>mdfconvert</code>, <code>can-utils</code>) to convert between formats.</li>
-<li>After conversion, re-import into TrueFidelity to confirm fidelity before archiving original logs.</li>
+<li>Export as BLF for direct import</li>
+<li>Maintain timing precision</li>
+<li>Compatible with Vector tools</li>
+<li>DBC files transfer directly</li>
 </ul>
-<h2 id="time-synchronization">Time Synchronization<a class="headerlink" href="#time-synchronization" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Logs may use absolute or relative timestamps. Use the normalization options to align them.</li>
-<li>For multi-logger setups, export to a synced format (MDF4 with global time) or provide offset metadata.</li>
-</ul>
+<h2 id="file-organization-best-practices">File Organization Best Practices<a class="headerlink" href="#file-organization-best-practices" title="Permanent link">&para;</a></h2>
+<h3 id="recommended-directory-structure">Recommended Directory Structure<a class="headerlink" href="#recommended-directory-structure" title="Permanent link">&para;</a></h3>
+<pre><code>Project/
+├── Systems/
+│   └── test_system.json
+├── DBCs/
+│   ├── powertrain.dbc
+│   └── chassis.dbc
+├── Logs/
+│   ├── Original/
+│   │   ├── test_run_001.blf
+│   │   └── test_run_002.mf4
+│   └── Working/
+│       └── filtered_subset.blf
+├── Exports/
+│   ├── CSV/
+│   │   ├── signal_data_001.csv
+│   │   └── network_traffic_001.csv
+│   └── Charts/
+│       ├── rpm_analysis.png
+│       └── temperature_trend.pdf
+└── Documentation/
+    └── test_reports.txt
+</code></pre>
+<h3 id="naming-conventions">Naming Conventions<a class="headerlink" href="#naming-conventions" title="Permanent link">&para;</a></h3>
+<p><strong>Log Files</strong>:
+- Format: <code>YYYYMMDD_testname_run#.blf</code>
+- Example: <code>20240315_brake_test_run3.blf</code></p>
+<p><strong>Export Files</strong>:
+- Format: <code>YYYYMMDD_datatype_description.csv</code>
+- Example: <code>20240315_signals_rpm_analysis.csv</code></p>
+<p><strong>System Files</strong>:
+- Format: <code>system_name_v#.json</code>
+- Example: <code>powertrain_test_v2.json</code></p>
+<h2 id="version-control-considerations">Version Control Considerations<a class="headerlink" href="#version-control-considerations" title="Permanent link">&para;</a></h2>
+<h3 id="files-to-track">Files to Track<a class="headerlink" href="#files-to-track" title="Permanent link">&para;</a></h3>
+<p><strong>Include in Version Control</strong>:
+- System files (<code>.json</code>)
+- DBC files (<code>.dbc</code>)
+- Test documentation
+- Analysis scripts
+- Small reference logs</p>
+<p><strong>Exclude from Version Control</strong>:
+- Large log files (&gt;100MB)
+- Temporary exports
+- Generated charts (regenerate instead)
+- Working copies of logs</p>
+<h3 id="git-example">Git Example<a class="headerlink" href="#git-example" title="Permanent link">&para;</a></h3>
+<p><code>.gitignore</code> for TrueFidelity project:</p>
+<pre><code># Large log files
+*.blf
+*.mf4
+*.mdf
+
+# Temporary exports
+exports/temp/
+*.tmp.csv
+
+# Keep small test logs
+!test_data/*.blf
+
+# Keep system and DBC files
+!systems/*.json
+!*.dbc
+</code></pre>
+<h2 id="troubleshooting-file-issues">Troubleshooting File Issues<a class="headerlink" href="#troubleshooting-file-issues" title="Permanent link">&para;</a></h2>
+<h3 id="common-problems-and-solutions">Common Problems and Solutions<a class="headerlink" href="#common-problems-and-solutions" title="Permanent link">&para;</a></h3>
+<h4 id="file-wont-load">File Won't Load<a class="headerlink" href="#file-wont-load" title="Permanent link">&para;</a></h4>
+<p><strong>Symptom</strong>: Error when loading BLF or MDF4</p>
+<p><strong>Solutions</strong>:
+1. Check file isn't corrupted (verify size)
+2. Ensure sufficient disk space
+3. Verify file permissions
+4. Try copying to local drive
+5. Check format version compatibility</p>
+<h4 id="signal-decoding-fails">Signal Decoding Fails<a class="headerlink" href="#signal-decoding-fails" title="Permanent link">&para;</a></h4>
+<p><strong>Symptom</strong>: Signals show as raw values</p>
+<p><strong>Solutions</strong>:
+1. Verify DBC file is loaded
+2. Check DBC matches log file
+3. Ensure CAN IDs align
+4. Verify signal definitions exist
+5. Check byte order settings</p>
+<h4 id="export-fails">Export Fails<a class="headerlink" href="#export-fails" title="Permanent link">&para;</a></h4>
+<p><strong>Symptom</strong>: Cannot export data</p>
+<p><strong>Solutions</strong>:
+1. Check disk space
+2. Verify write permissions
+3. Close file in other applications
+4. Reduce export size
+5. Try different format</p>
+<h4 id="large-file-performance">Large File Performance<a class="headerlink" href="#large-file-performance" title="Permanent link">&para;</a></h4>
+<p><strong>Symptom</strong>: Slow loading or playback</p>
+<p><strong>Solutions</strong>:
+1. Use SSD storage
+2. Increase available RAM
+3. Close other applications
+4. Filter before export
+5. Split file externally</p>
 <h2 id="known-limitations">Known Limitations<a class="headerlink" href="#known-limitations" title="Permanent link">&para;</a></h2>
+<h3 id="current-restrictions">Current Restrictions<a class="headerlink" href="#current-restrictions" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Import Formats</strong>:</li>
+<li>No direct CSV import for playback</li>
+<li>ASCII log formats not supported</li>
+<li>
+<p>Encrypted logs must be decrypted externally</p>
+</li>
+<li>
+<p><strong>Export Limitations</strong>:</p>
+</li>
+<li>No MDF4 export option</li>
+<li>Chart exports limited to visible window</li>
+<li>
+<p>No batch export automation</p>
+</li>
+<li>
+<p><strong>Size Constraints</strong>:</p>
+</li>
+<li>Performance degrades with very large files</li>
+<li>Memory limitations for simultaneous logs</li>
+<li>Export size limited by available RAM</li>
+</ol>
+<h3 id="workarounds">Workarounds<a class="headerlink" href="#workarounds" title="Permanent link">&para;</a></h3>
+<p><strong>For Unsupported Formats</strong>:
+- Use external converters to BLF/MDF4
+- Process through intermediate tools
+- Contact support for conversion assistance</p>
+<p><strong>For Size Issues</strong>:
+- Pre-filter logs before import
+- Process in segments
+- Use dedicated analysis hardware</p>
+<h2 id="future-compatibility">Future Compatibility<a class="headerlink" href="#future-compatibility" title="Permanent link">&para;</a></h2>
+<h3 id="roadmap-considerations">Roadmap Considerations<a class="headerlink" href="#roadmap-considerations" title="Permanent link">&para;</a></h3>
+<p>While not currently supported, future versions may include:
+- Additional import formats
+- Enhanced export options
+- Streaming for large files
+- Cloud storage integration
+- Automated conversion tools</p>
+<p>Check release notes for updates to format support.</p>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>TrueFidelity's file format support focuses on:</p>
 <ul>
-<li>Extremely large CSV files (&gt;2 GB) may load slowly due to text parsing overhead.</li>
-<li>Some ARXML constructs (complex data types) require preprocessing; contact your data team for supported converters.</li>
-<li>Logs with encrypted payloads must be decrypted before import; TrueFidelity does not include decryption utilities.</li>
+<li><strong>System Configuration</strong>: JSON files for complete system definition</li>
+<li><strong>Signal Definitions</strong>: <code>.dbc</code> files for CAN signal decoding</li>
+<li><strong>Log Formats</strong>: BLF and MDF4 for efficient data capture and playback</li>
+<li><strong>Export Options</strong>: CSV for analysis, BLF for replay, PNG/PDF for documentation</li>
 </ul>
-<h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h2>
+<p>Understanding these formats and their appropriate use cases ensures efficient workflow and successful integration with your existing toolchain.</p>
+<h2 id="related-documentation">Related Documentation<a class="headerlink" href="#related-documentation" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Keep a manifest of captured logs (file name, format, channels, description, checksum).</li>
-<li>Use consistent naming conventions, e.g., <code>YYYYMMDD_vehicle_testcase_runX.mf4</code>.</li>
-<li>Store original logs in an immutable location; analyze copies to prevent accidental edits.</li>
-<li>Record tool versions used for capture and analysis for reproducibility.</li>
-</ul>
-<h2 id="related-pages">Related Pages<a class="headerlink" href="#related-pages" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>Settings</strong> – Configure import/export defaults.</li>
-<li><strong>Performance Tips</strong> – Optimize handling of large or numerous files.</li>
-<li><strong>Glossary</strong> – Definitions for terms like MDF, DBC, and payload.</li>
+<li><strong>System Design Guide</strong> - Creating and managing system JSON files</li>
+<li><strong>Playback Analysis</strong> - Working with BLF and MDF4 logs</li>
+<li><strong>Signal Viewer</strong> - Using DBC files for decoding</li>
+<li><strong>Performance Guide</strong> - Optimizing for large files</li>
 </ul>
 
 
@@ -2117,10 +2817,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "toc.integrate", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "toc.integrate", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

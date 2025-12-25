@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -562,10 +562,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#launching-the-app-for-the-first-time" class="md-nav__link">
+  <a href="#launching-the-app" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Launching the App for the First Time
+        Launching the App
       
     </span>
   </a>
@@ -573,33 +573,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#license-agreement" class="md-nav__link">
+  <a href="#license-activation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        License Agreement
+        License &amp; Activation
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#activation-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Activation Options
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Activation Options">
+    <nav class="md-nav" aria-label="License &amp; Activation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#online-activation" class="md-nav__link">
+  <a href="#file-based-license" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Online Activation
+        File-Based License
       
     </span>
   </a>
@@ -607,10 +596,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#offline-activation" class="md-nav__link">
+  <a href="#self-hosted-license" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Offline Activation
+        Self-Hosted License
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloud-license" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cloud License
       
     </span>
   </a>
@@ -623,21 +623,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#initial-setup-wizard" class="md-nav__link">
+  <a href="#verify-docker-connectivity" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Initial Setup Wizard
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#verifying-hardware-and-permissions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Verifying Hardware and Permissions
+        Verify Docker Connectivity
       
     </span>
   </a>
@@ -707,10 +696,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#option-a-can-log-analysis-test" class="md-nav__link">
+  <a href="#option-a-system-design-smoke-test" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Option A: CAN Log Analysis Test
+        Option A: System Design Smoke Test
       
     </span>
   </a>
@@ -718,10 +707,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#option-b-system-design-test" class="md-nav__link">
+  <a href="#option-b-playback-smoke-test" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Option B: System Design Test
+        Option B: Playback Smoke Test
       
     </span>
   </a>
@@ -759,7 +748,7 @@
   <a href="#whats-next" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What’s Next?
+        What’s Next
       
     </span>
   </a>
@@ -1017,34 +1006,6 @@
     
   
     Filters & Search
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../using-the-app/annotations-and-bookmarks/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Annotations & Bookmarks
   
 
     
@@ -1879,127 +1840,93 @@
 
 
 <h1 id="first-launch-activation">First Launch &amp; Activation<a class="headerlink" href="#first-launch-activation" title="Permanent link">&para;</a></h1>
-<p>Use this guide immediately after installing TrueFidelity to complete activation, set defaults, and verify your environment. All steps are user-facing and omit internal implementation details.</p>
-<h2 id="launching-the-app-for-the-first-time">Launching the App for the First Time<a class="headerlink" href="#launching-the-app-for-the-first-time" title="Permanent link">&para;</a></h2>
+<p>Use this guide after installing TrueFidelity to complete activation, confirm Docker connectivity, and understand the default layouts you will see on day one.</p>
+<h2 id="launching-the-app">Launching the App<a class="headerlink" href="#launching-the-app" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Start TrueFidelity from your platform’s application menu.</li>
-<li>A splash screen appears for a few seconds; then the main window opens with the default layout.</li>
-<li>If the splash screen hangs for longer than 30 seconds, see the troubleshooting section below.</li>
+<li>Start TrueFidelity from your platform application menu.</li>
+<li>A splash screen appears briefly, then the main window opens.</li>
+<li>If the splash screen hangs longer than 30 seconds, see Troubleshooting.</li>
 </ol>
-<h2 id="license-agreement">License Agreement<a class="headerlink" href="#license-agreement" title="Permanent link">&para;</a></h2>
+<p>If the app cannot reach Docker, you will see a connection error screen. Start Docker and relaunch the app.</p>
+<h2 id="license-activation">License &amp; Activation<a class="headerlink" href="#license-activation" title="Permanent link">&para;</a></h2>
+<p>TrueFidelity uses a license dialog on first launch (or any time a valid license is missing). The dialog supports file, self-hosted, and cloud activation.</p>
+<h3 id="file-based-license">File-Based License<a class="headerlink" href="#file-based-license" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Open the license dialog if it is not already visible.</li>
+<li>Select <strong>File</strong> mode.</li>
+<li>Click <strong>Browse</strong> and select the license file provided by your admin.</li>
+<li>Click <strong>Validate</strong> to activate.</li>
+</ol>
+<h3 id="self-hosted-license">Self-Hosted License<a class="headerlink" href="#self-hosted-license" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Select <strong>Self-hosted</strong> mode.</li>
+<li>Enter the license server URL and any required API key.</li>
+<li>Click <strong>Validate</strong> and confirm the status is valid.</li>
+</ol>
+<h3 id="cloud-license">Cloud License<a class="headerlink" href="#cloud-license" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Select <strong>Cloud</strong> mode.</li>
+<li>Enter your API key or token.</li>
+<li>Click <strong>Validate</strong> to complete activation.</li>
+</ol>
+<p>When activation succeeds, the status bar shows the license tier and state.</p>
+<h2 id="verify-docker-connectivity">Verify Docker Connectivity<a class="headerlink" href="#verify-docker-connectivity" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Review the license agreement presented on first launch.</li>
-<li>Click <strong>I agree</strong> to continue. If you do not agree, close the application—no changes are written.</li>
-<li>For an enterprise distribution, ensure legal teams capture the agreement text outside the application for auditing.</li>
-</ul>
-<h2 id="activation-options">Activation Options<a class="headerlink" href="#activation-options" title="Permanent link">&para;</a></h2>
-<p>TrueFidelity can operate with online or offline activation depending on your deployment.</p>
-<h3 id="online-activation">Online Activation<a class="headerlink" href="#online-activation" title="Permanent link">&para;</a></h3>
-<p><img alt="TODO: Show activation dialog with license key input field, Proxy Settings button, and Activate button visible" src="images/first-launch-activation-dialog.png" /></p>
-<ol>
-<li>Locate your license key (usually delivered via email or portal).</li>
-<li>Paste the key into the activation prompt.</li>
-</ol>
-<p><img alt="TODO: Show activation dialog with license key pasted into field and Activate button highlighted" src="images/first-launch-activation-key-entered.png" /></p>
-<ol>
-<li>If your network requires a proxy, click <strong>Proxy Settings</strong>, provide the host/port, and credentials if needed.</li>
-</ol>
-<p><img alt="TODO: Show proxy settings dialog with host, port, and credentials fields" src="images/first-launch-activation-proxy-settings.png" /></p>
-<ol>
-<li>Click <strong>Activate</strong>. Online activation completes within seconds.</li>
-<li>The license status indicator in the lower-right corner turns green when successful.</li>
-</ol>
-<p><img alt="TODO: Show status bar with green license indicator and activation success message" src="images/first-launch-activation-success.png" /></p>
-<h3 id="offline-activation">Offline Activation<a class="headerlink" href="#offline-activation" title="Permanent link">&para;</a></h3>
-<ol>
-<li>On a connected machine, generate an offline license file from your distribution portal.</li>
-<li>Transfer the file to the air-gapped workstation.</li>
-<li>Choose <strong>Offline activation</strong> and select the license file.</li>
-<li>Confirm the activation summary shows your organization name and expiration (if any).</li>
-</ol>
-<div class="admonition note">
-<p class="admonition-title">License grace period</p>
-<p>If you accidentally close the activation window, TrueFidelity allows a short trial period before requiring activation. A banner will remind you until activation is complete.</p>
-</div>
-<h2 id="initial-setup-wizard">Initial Setup Wizard<a class="headerlink" href="#initial-setup-wizard" title="Permanent link">&para;</a></h2>
-<p><img alt="TODO: Show setup wizard dialog with welcome message and Next button" src="images/first-launch-setup-wizard-welcome.png" /></p>
-<p>After activation you will see a short wizard to set preferred defaults. These choices can be changed later under <strong>Settings</strong>.</p>
-<ol>
-<li><strong>Default project folder:</strong> Select a location on fast storage (SSD). All new projects use this path unless you override it.</li>
-</ol>
-<p><img alt="TODO: Show setup wizard folder selection page with project folder browse button and path field" src="images/first-launch-setup-wizard-project-folder.png" /></p>
-<ol>
-<li><strong>Default log folder:</strong> Choose where incoming CAN logs are usually stored.</li>
-</ol>
-<p><img alt="TODO: Show setup wizard log folder selection page" src="images/first-launch-setup-wizard-log-folder.png" /></p>
-<ol>
-<li><strong>Default export folder:</strong> Define a destination for exported segments, reports, and annotations.</li>
-</ol>
-<p><img alt="TODO: Show setup wizard export folder selection page" src="images/first-launch-setup-wizard-export-folder.png" /></p>
-<ol>
-<li><strong>Telemetry preference:</strong> Opt in or out of anonymous usage metrics (if offered in your distribution).</li>
-</ol>
-<p><img alt="TODO: Show setup wizard telemetry preference page with opt-in checkbox" src="images/first-launch-setup-wizard-telemetry.png" /></p>
-<ol>
-<li><strong>Automatic updates:</strong> Keep enabled for most environments; disable if you operate under release control.</li>
-</ol>
-<p><img alt="TODO: Show setup wizard automatic updates preference page with enable/disable option" src="images/first-launch-setup-wizard-updates.png" /></p>
-<h2 id="verifying-hardware-and-permissions">Verifying Hardware and Permissions<a class="headerlink" href="#verifying-hardware-and-permissions" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Open <strong>Help → About</strong> to confirm version number and license details.</li>
-<li>Create a test project (<code>File → New Project</code>), save it in your project folder, then close and reopen the project to ensure read/write access.</li>
-<li>Open <strong>Settings → General</strong> and verify the UI language, theme, and time display preferences.</li>
-<li>Navigate to <strong>Settings → Playback</strong> to confirm default playback speed, looping behavior, and cursor display options.</li>
-<li>If you plan to inject data, ensure the user has necessary OS-level permissions for network interfaces.</li>
+<li>Confirm the status bar shows <strong>Docker Connected</strong>.</li>
+<li>If Docker is disconnected, start Docker and relaunch the app.</li>
+<li>Container counts remain zero until you start a system.</li>
 </ul>
 <h2 id="default-layout-walkthrough">Default Layout Walkthrough<a class="headerlink" href="#default-layout-walkthrough" title="Permanent link">&para;</a></h2>
-<p>The default workspace adapts based on your workflow mode:</p>
+<p>The default workspace adapts based on your workflow mode.</p>
 <h3 id="system-design-mode-when-creating-new-systems">System Design Mode (when creating new systems)<a class="headerlink" href="#system-design-mode-when-creating-new-systems" title="Permanent link">&para;</a></h3>
+<p>System design mode is the workspace for building ECU topologies, wiring networks, and configuring each element before you run the system.</p>
+<p><img alt="System Design mode showing the default layout with Project Explorer, Toolbox, the empty canvas, and Properties" src="../../images/first-launch-system-design.png" /></p>
 <ul>
-<li><strong>System Canvas</strong> – Visual editor for placing ECUs and configuring networks</li>
-<li><strong>Toolbox</strong> – Component library for adding ECUs and network elements</li>
-<li><strong>Properties Panel</strong> – Configuration for selected ECU or network</li>
-<li><strong>Project Explorer</strong> – File tree for system files and assets</li>
+<li><strong>Project Explorer (left)</strong> – System tree with Diagrams, ECUs, Networks, and Configurations. Double-click a diagram to open it.</li>
+<li><strong>Toolbox (left, next to explorer)</strong> – Searchable component library for dragging ECUs and networks onto the canvas.</li>
+<li><strong>System Canvas (center)</strong> – Shows an empty-state prompt until a diagram is opened; becomes the visual editor once active.</li>
+<li><strong>Properties (right)</strong> – Empty until you select an element; then exposes configuration for the selected node or connection.</li>
+<li><strong>Toolbar (top)</strong> – Quick actions for new/open/save, build, start/stop, validate, and refresh.</li>
+<li><strong>Status bar (bottom)</strong> – Docker status, container count, license tier, and app version.</li>
 </ul>
 <h3 id="monitoring-mode-when-systems-are-running">Monitoring Mode (when systems are running)<a class="headerlink" href="#monitoring-mode-when-systems-are-running" title="Permanent link">&para;</a></h3>
+<p>Monitoring mode surfaces runtime health, performance, and logs for your active ECU system at a glance.</p>
+<p><img alt="Monitoring mode showing the full layout" src="../../images/first-launch-monitoring.png" /></p>
 <ul>
-<li><strong>ECU Status</strong> – Overview of running ECU containers</li>
-<li><strong>Console</strong> – Aggregated logs from all ECUs</li>
-<li><strong>Resource Monitor</strong> – Real-time CPU and memory graphs</li>
-<li><strong>Network Traffic</strong> – CAN message monitoring</li>
+<li><strong>ECU Hardware Status (top left)</strong> – Table of ECUs with container state, architecture, board, cores, memory, and OS type.</li>
+<li><strong>ECU Resource Monitor (top right)</strong> – Per-ECU CPU and memory usage charts plus active task count.</li>
+<li><strong>ECU Task Monitor (bottom left)</strong> – Process list for the selected ECU with CPU usage and stack metrics.</li>
+<li><strong>ECU Console (bottom right)</strong> – Runtime log stream with filter, pause, clear, export, and auto-scroll.</li>
 </ul>
 <h3 id="can-log-analysis-mode-when-analyzing-log-files">CAN Log Analysis Mode (when analyzing log files)<a class="headerlink" href="#can-log-analysis-mode-when-analyzing-log-files" title="Permanent link">&para;</a></h3>
+<p>CAN log analysis mode helps you inspect live or recorded CAN traffic, select signals from DBCs, and plot them over time.</p>
+<p><img alt="CAN Log Analysis mode showing Signal Viewer, Network Traffic, and Signal Chart" src="../../images/first-launch-can-log-analysis.png" /></p>
 <ul>
-<li><strong>Timeline</strong> – Playback timeline with playhead and selection</li>
-<li><strong>Messages</strong> – Raw CAN frames in timestamp order</li>
-<li><strong>Charts</strong> – Signal visualization and plotting</li>
-<li><strong>Signals</strong> – Browse decoded signals from DBC files</li>
+<li><strong>Signal Viewer (left)</strong> – DBC-backed tree of frames and signals with filters and selection.</li>
+<li><strong>Network Traffic (top right)</strong> – Live frame table with bus filters, recording controls, and export actions.</li>
+<li><strong>Signal Chart (bottom right)</strong> – Time-series plots of selected signals with pause, auto-scale, and export.</li>
 </ul>
-<p>Take a moment to expand and collapse panels, open the context menus, and familiarize yourself with the UI. The <strong>UI Tour</strong> page provides screenshots and descriptions of each region.</p>
 <h2 id="first-run-test-workflows">First Run Test Workflows<a class="headerlink" href="#first-run-test-workflows" title="Permanent link">&para;</a></h2>
-<h3 id="option-a-can-log-analysis-test">Option A: CAN Log Analysis Test<a class="headerlink" href="#option-a-can-log-analysis-test" title="Permanent link">&para;</a></h3>
+<h3 id="option-a-system-design-smoke-test">Option A: System Design Smoke Test<a class="headerlink" href="#option-a-system-design-smoke-test" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>Open a sample log:</strong> Use <code>File → Open</code> to select a known-good CAN log file.</li>
-<li><strong>Play:</strong> Press the space bar or click the play button. Confirm the timeline moves and message counters update.</li>
-<li><strong>Seek:</strong> Click at different points on the timeline and watch the data in Messages and Charts change.</li>
-<li><strong>Add a signal:</strong> Open the Signals panel, search for a familiar signal, and pin it to the watch list.</li>
-<li><strong>Plot:</strong> Add the signal to Charts to confirm decoding is working.</li>
-<li><strong>Export test segment:</strong> Drag-select five seconds on the timeline, then export to CSV and verify the file is written to your export folder.</li>
-<li><strong>Close project:</strong> Ensure there are no errors when closing the application; reopen it to confirm your preferences persist.</li>
+<li>Create a new system with <strong>File → New</strong>.</li>
+<li>Double-click the default diagram to open it on the canvas.</li>
+<li>Drag an ECU and a CAN network from the Toolbox onto the canvas.</li>
+<li>Select the CAN network and set a DBC file in Properties.</li>
+<li>Save the system (<strong>Ctrl/Cmd + S</strong>) and confirm the file path.</li>
 </ol>
-<h3 id="option-b-system-design-test">Option B: System Design Test<a class="headerlink" href="#option-b-system-design-test" title="Permanent link">&para;</a></h3>
+<h3 id="option-b-playback-smoke-test">Option B: Playback Smoke Test<a class="headerlink" href="#option-b-playback-smoke-test" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>Create a new system:</strong> Use <code>File → New</code> to create a test system.</li>
-<li><strong>Add an ECU:</strong> Drag an ECU from the Toolbox onto the System Canvas.</li>
-<li><strong>Configure properties:</strong> Select the ECU and verify the Properties panel shows editable fields.</li>
-<li><strong>Save system:</strong> Press <code>Ctrl/Cmd + S</code> and confirm the system file is created.</li>
-<li><strong>Start ECU (if Docker available):</strong> Right-click the ECU and select Start to verify container launch.</li>
-<li><strong>View monitoring:</strong> Open ECU Status and Console panels to see runtime data.</li>
-<li><strong>Close system:</strong> Ensure no errors when closing; reopen to verify persistence.</li>
+<li>Open an existing system with a CAN network and DBC configured.</li>
+<li>Switch to the <strong>Signal Player &amp; Injection</strong> panel (use the Network Analysis layout if needed).</li>
+<li>Click <strong>Select BLF...</strong> and choose a dataset.</li>
+<li>Click <strong>Inspect bundle</strong>, then <strong>Auto-select channels</strong> for the network.</li>
+<li>Start the system from the toolbar, then press <strong>Play</strong> in Signal Player.</li>
+<li>Verify frames appear in <strong>Network Traffic</strong> and signals plot in <strong>Signal Chart</strong>.</li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The System Design workflow requires Docker Desktop to be running for ECU containers to start. CAN Log Analysis works independently of Docker.</p>
+<p>Playback controls stay disabled until a system is running.</p>
 </div>
 <h2 id="troubleshooting-first-launch">Troubleshooting First Launch<a class="headerlink" href="#troubleshooting-first-launch" title="Permanent link">&para;</a></h2>
 <table>
@@ -2015,20 +1942,16 @@
 <td>Launch from a terminal with <code>truefidelity --disable-gpu</code> (Linux/macOS) or <code>"TrueFidelity.exe" --disable-gpu</code> (Windows). Update GPU drivers afterwards.</td>
 </tr>
 <tr>
-<td>Activation fails</td>
-<td>Check internet connectivity or proxy credentials. If activating offline, verify the license file matches the machine.</td>
+<td>License dialog keeps appearing</td>
+<td>Validate the license and confirm the status bar shows a license tier.</td>
 </tr>
 <tr>
-<td>Wizard cannot save defaults</td>
-<td>Confirm write access to the selected folders or choose alternate directories.</td>
+<td>Docker disconnected</td>
+<td>Start Docker and relaunch the app.</td>
 </tr>
 <tr>
 <td>Missing panels</td>
-<td>Select <strong>View → Reset Layout</strong> to restore the default arrangement.</td>
-</tr>
-<tr>
-<td>Fonts or UI scaling is off</td>
-<td>Adjust OS display scaling or use <strong>Settings → Accessibility → UI scaling</strong> inside the app.</td>
+<td>Select <strong>View → Reset Windows</strong> to restore the default arrangement.</td>
 </tr>
 </tbody>
 </table>
@@ -2038,14 +1961,14 @@
 <li>Use <strong>Help → Show Logs</strong> to open the log directory.</li>
 <li>Compress the most recent log files.</li>
 <li>Capture screenshots of any error dialogs.</li>
-<li>Document the steps taken and include the app version from <strong>Help → About</strong>.</li>
+<li>Include the app version from <strong>Help → About</strong>.</li>
 <li>Submit the bundle to your support channel.</li>
 </ol>
-<h2 id="whats-next">What’s Next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
+<h2 id="whats-next">What’s Next<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Move on to the <strong>Quick Start</strong> guide for a five-minute workflow that covers playback and exporting.</li>
 <li>Read <strong>Workspaces &amp; Layouts</strong> to learn how to customize the interface.</li>
-<li>Schedule time with your team to import shared DBC files using the instructions in <strong>DBC &amp; Signal Definitions</strong>.</li>
+<li>Review <strong>DBC &amp; Signal Definitions</strong> to prepare shared DBC files.</li>
 </ul>
 
 
@@ -2144,10 +2067,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "toc.integrate", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "toc.integrate", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

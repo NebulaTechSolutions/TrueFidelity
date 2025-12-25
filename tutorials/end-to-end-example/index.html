@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#end-to-end-example" class="md-skip">
+        <a href="#end-to-end-example-can-log-analysis-workflow" class="md-skip">
           Skip to content
         </a>
       
@@ -780,34 +780,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../using-the-app/annotations-and-bookmarks/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Annotations & Bookmarks
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../using-the-app/dbc-and-signal-definitions/" class="md-nav__link">
         
   
@@ -1243,10 +1215,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#scenario" class="md-nav__link">
+  <a href="#time-estimate" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Scenario
+        Time Estimate
       
     </span>
   </a>
@@ -1254,10 +1226,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-1-prepare-the-project" class="md-nav__link">
+  <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1 – Prepare the Project
+        Prerequisites
       
     </span>
   </a>
@@ -1265,10 +1237,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-configure-layout" class="md-nav__link">
+  <a href="#scenario-overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2 – Configure Layout
+        Scenario Overview
       
     </span>
   </a>
@@ -1276,10 +1248,499 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-compare-baseline-vs-suspect" class="md-nav__link">
+  <a href="#part-1-system-setup-and-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 3 – Compare Baseline vs. Suspect
+        Part 1: System Setup and Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: System Setup and Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-a-new-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Create a New System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-add-the-can-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Add the CAN Network
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-add-ecus-to-the-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Add ECUs to the System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-connect-ecus-to-the-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Connect ECUs to the Network
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-save-the-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Save the System
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-system-deployment-and-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 2: System Deployment and Monitoring
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2: System Deployment and Monitoring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-6-build-and-deploy-the-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6: Build and Deploy the System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7-start-the-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7: Start the System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-8-switch-to-monitoring-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 8: Switch to Monitoring Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-can-log-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 3: CAN Log Analysis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3: CAN Log Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-9-switch-to-can-log-analysis-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 9: Switch to CAN Log Analysis Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-10-load-and-configure-playback-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 10: Load and Configure Playback Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-11-start-playback-and-monitor-signals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 11: Start Playback and Monitor Signals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-12-analyze-decoded-signals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 12: Analyze Decoded Signals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-13-chart-and-analyze-signal-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 13: Chart and Analyze Signal Patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4-signal-injection-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 4: Signal Injection Testing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 4: Signal Injection Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-14-prepare-for-signal-injection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 14: Prepare for Signal Injection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-15-configure-and-execute-injection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 15: Configure and Execute Injection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-5-data-export-and-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 5: Data Export and Documentation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 5: Data Export and Documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-16-export-analysis-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 16: Export Analysis Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-17-create-analysis-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 17: Create Analysis Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-6-system-cleanup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 6: System Cleanup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 6: System Cleanup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-18-stop-and-clean-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 18: Stop and Clean Up
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting Guide
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-issues-and-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Issues and Solutions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Issues and Solutions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-wont-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Won't Start
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no-can-traffic-visible" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        No CAN Traffic Visible
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signals-not-decoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Signals Not Decoding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#playback-not-working" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Playback Not Working
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chart-not-updating" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chart Not Updating
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#injection-not-sending" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Injection Not Sending
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tips-for-effective-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tips for Effective Analysis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tips for Effective Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#performance-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Optimization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analysis-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Analysis Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-topics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Topics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Topics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#working-with-multiple-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Working with Multiple Networks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-ecu-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom ECU Applications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integration-with-external-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration with External Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Steps
       
     </span>
   </a>
@@ -1287,10 +1748,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-annotate-events" class="md-nav__link">
+  <a href="#additional-resources" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 4 – Annotate Events
+        Additional Resources
       
     </span>
   </a>
@@ -1298,87 +1759,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-5-filter-for-related-signals" class="md-nav__link">
+  <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 5 – Filter for Related Signals
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-6-injection-reproduction-bench-setup" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 6 – Injection Reproduction (Bench Setup)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-7-export-data" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 7 – Export Data
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-8-build-the-report" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 8 – Build the Report
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-9-archive-share" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 9 – Archive &amp; Share
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reflection" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reflection
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#variations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Variations
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#next-tutorials" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Next Tutorials
+        Summary
       
     </span>
   </a>
@@ -1816,104 +2200,862 @@
 
 
 
-<h1 id="end-to-end-example">End-to-End Example<a class="headerlink" href="#end-to-end-example" title="Permanent link">&para;</a></h1>
-<p>This tutorial walks through a complete TrueFidelity workflow: project creation, playback analysis, signal inspection, data injection, annotation, and reporting. Expect to spend 20–30 minutes.</p>
-<h2 id="scenario">Scenario<a class="headerlink" href="#scenario" title="Permanent link">&para;</a></h2>
-<p>You’re investigating intermittent braking anomalies captured during a proving-ground test. You have:
-- Two CAN log files (baseline and suspect run)
-- A DBC file with signal definitions
-- A test plan requiring annotations, injection replay, and a formal report</p>
-<h2 id="step-1-prepare-the-project">Step 1 – Prepare the Project<a class="headerlink" href="#step-1-prepare-the-project" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Create a new project named <code>Brake-Analysis</code> in your project workspace.</li>
-<li>Import the baseline log (<code>baseline.mf4</code>) and the suspect log (<code>suspect.mf4</code>).</li>
-<li>Import the <code>braking.dbc</code> definition file.</li>
-<li>Save the project.</li>
-</ol>
-<h2 id="step-2-configure-layout">Step 2 – Configure Layout<a class="headerlink" href="#step-2-configure-layout" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Load the <strong>Analysis</strong> layout (or create one):</li>
-<li>Timeline top</li>
-<li>Messages left</li>
-<li>Charts right</li>
-<li>Signals docked below Messages</li>
-<li>Annotations bottom</li>
-<li>Pin key signals: <code>brake_pedal</code>, <code>wheel_speed_fl</code>, <code>wheel_speed_fr</code>, <code>hydraulic_pressure</code>.</li>
-<li>Drag the pinned signals into Charts.</li>
-</ol>
-<h2 id="step-3-compare-baseline-vs-suspect">Step 3 – Compare Baseline vs. Suspect<a class="headerlink" href="#step-3-compare-baseline-vs-suspect" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Enable both logs; color-coding distinguishes them.</li>
-<li>Align them by timestamp. Use the <strong>Align logs</strong> feature with the start of the test run.</li>
-<li>Play both logs at 1× speed.</li>
-<li>Watch for diverging wheel speeds or pressure spikes.</li>
-<li>Pause when you spot a discrepancy (e.g., hydraulic pressure spike without pedal input).</li>
-</ol>
-<h2 id="step-4-annotate-events">Step 4 – Annotate Events<a class="headerlink" href="#step-4-annotate-events" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Add an annotation named “Pressure spike without pedal” at the anomaly.</li>
-<li>Tag with <code>braking</code>, <code>investigate</code>, <code>suspect</code>.</li>
-<li>Capture a chart screenshot for later.</li>
-<li>Add a bookmark slightly earlier labeled “Baseline reference” for comparison.</li>
-</ol>
-<h2 id="step-5-filter-for-related-signals">Step 5 – Filter for Related Signals<a class="headerlink" href="#step-5-filter-for-related-signals" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Apply a message filter for IDs associated with the braking ECU.</li>
-<li>Enable <strong>Filter to Range</strong> around the anomaly (10 seconds window).</li>
-<li>Inspect payload differences between baseline and suspect logs.</li>
-<li>Add a second annotation if you notice a diagnostic code or unusual payload bit set.</li>
-</ol>
-<h2 id="step-6-injection-reproduction-bench-setup">Step 6 – Injection Reproduction (Bench Setup)<a class="headerlink" href="#step-6-injection-reproduction-bench-setup" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Switch to the <strong>Injection</strong> layout (Data Injection panel left, Messages center, Charts right).</li>
-<li>Create a message template replicating the suspect payload.</li>
-<li>Configure a burst schedule: send 20 frames at 20 Hz.</li>
-<li>Start injection on the bench ECU (ensure it’s disconnected from the vehicle).</li>
-<li>Monitor the ECU response. Chart <code>hydraulic_pressure</code> and <code>brake_warning_flag</code> signals (from live feed or recorded response).</li>
-<li>Annotate the start/end of the injection and note whether the anomaly reproduces.</li>
-</ol>
-<h2 id="step-7-export-data">Step 7 – Export Data<a class="headerlink" href="#step-7-export-data" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Select the anomaly range on the timeline.</li>
-<li>Export to CSV with decoded signals and annotations included.</li>
-<li>Export annotation CSV for the entire session.</li>
-<li>Save injection profile (<code>pressure_spike_replay.tfinject</code>) for future use.</li>
-</ol>
-<h2 id="step-8-build-the-report">Step 8 – Build the Report<a class="headerlink" href="#step-8-build-the-report" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Open <strong>Report Builder</strong>.</li>
-<li>Choose the <code>Validation</code> template.</li>
-<li>Fill in overview information: test objective, logs used, hardware setup.</li>
-<li>Add the annotations created earlier.</li>
-<li>Insert the chart screenshot showing baseline vs. suspect difference.</li>
-<li>Attach the CSV export and injection profile as supporting files.</li>
-<li>Generate the PDF report and review for accuracy.</li>
-</ol>
-<h2 id="step-9-archive-share">Step 9 – Archive &amp; Share<a class="headerlink" href="#step-9-archive-share" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Save the project.</li>
-<li>Zip the project folder including exports, profiles, and report.</li>
-<li>Upload to your collaboration platform or attach to the investigation ticket.</li>
-<li>Document next steps (e.g., replicate on hardware-in-the-loop rig).</li>
-</ol>
-<h2 id="reflection">Reflection<a class="headerlink" href="#reflection" title="Permanent link">&para;</a></h2>
+<h1 id="end-to-end-example-can-log-analysis-workflow">End-to-End Example: CAN Log Analysis Workflow<a class="headerlink" href="#end-to-end-example-can-log-analysis-workflow" title="Permanent link">&para;</a></h1>
+<p>This comprehensive tutorial demonstrates a complete TrueFidelity workflow for analyzing CAN bus data. You'll learn how to create a system, configure networks, deploy ECUs, capture live data, analyze logs with playback, and perform signal injection testing. This tutorial represents a realistic debugging scenario that automotive engineers face daily.</p>
+<h2 id="time-estimate">Time Estimate<a class="headerlink" href="#time-estimate" title="Permanent link">&para;</a></h2>
 <ul>
-<li>What triggered the anomaly? Document hypotheses in the project notes.</li>
-<li>Did the injection reproduce the issue? If not, what differed between bench and road conditions?</li>
-<li>Are additional logs needed? Plan follow-up captures if necessary.</li>
+<li><strong>Initial Setup</strong>: 10-15 minutes</li>
+<li><strong>System Configuration</strong>: 15-20 minutes</li>
+<li><strong>Data Analysis</strong>: 20-30 minutes</li>
+<li><strong>Total Time</strong>: 45-65 minutes</li>
 </ul>
-<h2 id="variations">Variations<a class="headerlink" href="#variations" title="Permanent link">&para;</a></h2>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>Before starting this tutorial, ensure you have:</p>
 <ul>
-<li>Swap logs to evaluate other subsystems (steering, acceleration).</li>
-<li>Extend the workflow with automated CLI exports.</li>
-<li>Integrate hardware signals from auxiliary bus captures (LIN, FlexRay) if your build supports it.</li>
+<li>TrueFidelity Desktop application installed and licensed</li>
+<li>Docker Desktop running (or Mock Mode enabled for simulation)</li>
+<li>Sample BLF log files (available in the examples folder)</li>
+<li>A DBC file with signal definitions for your CAN network</li>
+<li>Basic familiarity with CAN bus concepts and signal analysis</li>
 </ul>
-<h2 id="next-tutorials">Next Tutorials<a class="headerlink" href="#next-tutorials" title="Permanent link">&para;</a></h2>
+<h2 id="scenario-overview">Scenario Overview<a class="headerlink" href="#scenario-overview" title="Permanent link">&para;</a></h2>
+<p>You're investigating intermittent issues in a vehicle's powertrain system. The symptoms include:</p>
 <ul>
-<li><strong>Playback Analysis Walkthrough</strong> – Focuses on deep-dive signal inspection.</li>
-<li><strong>Injection Scenario Walkthrough</strong> – Broader injection scenario with safety guardrails.</li>
-<li><strong>Report Builder Deep Dive</strong> – Customize templates and embed corporate branding.</li>
+<li>Unexpected RPM fluctuations during steady-state cruise</li>
+<li>Occasional throttle response delays</li>
+<li>Diagnostic trouble codes that appear and clear randomly</li>
 </ul>
+<p>Your task is to:</p>
+<ol>
+<li>Create a test bench system that mimics the vehicle network</li>
+<li>Replay captured log data to reproduce the issue</li>
+<li>Analyze signal patterns to identify root causes</li>
+<li>Test potential fixes using signal injection</li>
+<li>Document findings for the engineering team</li>
+</ol>
+<h2 id="part-1-system-setup-and-configuration">Part 1: System Setup and Configuration<a class="headerlink" href="#part-1-system-setup-and-configuration" title="Permanent link">&para;</a></h2>
+<p><img alt="System Design mode layout" src="../../images/first-launch-system-design.png" /></p>
+<h3 id="step-1-create-a-new-system">Step 1: Create a New System<a class="headerlink" href="#step-1-create-a-new-system" title="Permanent link">&para;</a></h3>
+<p>Start by creating a fresh system for your analysis work.</p>
+<ol>
+<li><strong>Launch TrueFidelity Desktop</strong>:</li>
+<li>If you see an existing system, save any changes first</li>
+<li>
+<p>The application starts in System Design mode by default</p>
+</li>
+<li>
+<p><strong>Create the new system</strong>:</p>
+</li>
+<li>Click <strong>File → New System</strong> from the menu bar</li>
+<li>
+<p>Or use the keyboard shortcut <strong>Ctrl+N</strong> (Cmd+N on Mac)</p>
+</li>
+<li>
+<p><strong>Configure system properties in the dialog</strong>:</p>
+</li>
+<li><strong>System Name</strong>: Enter <code>PowertrainAnalysis</code></li>
+<li><strong>Description</strong>: "Investigation of RPM fluctuations and throttle response"</li>
+<li><strong>Author</strong>: Your name</li>
+<li><strong>Version</strong>: Leave as 1.0.0</li>
+<li>Click <strong>Create</strong></li>
+</ol>
+<p><img alt="New System dialog with fields filled" src="../../images/projects-files-new-system-dialog.png" /></p>
+<p>The System Canvas opens with an empty diagram, ready for you to build the network topology.</p>
+<p><img alt="System Canvas with empty diagram" src="../../images/first-launch-system-design-canvas.png" /></p>
+<h3 id="step-2-add-the-can-network">Step 2: Add the CAN Network<a class="headerlink" href="#step-2-add-the-can-network" title="Permanent link">&para;</a></h3>
+<p>You'll need a CAN bus to connect your ECUs and carry the vehicle signals.</p>
+<ol>
+<li><strong>Open the Toolbox panel</strong> (left sidebar):</li>
+<li>If not visible, use <strong>View → Panels → Toolbox</strong></li>
+<li>The Toolbox contains draggable components</li>
+</ol>
+<p><img alt="Toolbox with components" src="../../images/first-launch-system-design-toolbox.png" /></p>
+<ol>
+<li><strong>Add a CAN bus to the canvas</strong>:</li>
+<li>In the Toolbox, expand the <strong>Networks</strong> section</li>
+<li>Find <strong>CAN Bus</strong> in the list</li>
+<li>Drag it onto the center of the canvas</li>
+<li>The bus appears as a horizontal line with connection points</li>
+</ol>
+<p><img alt="Dragging ECU from Toolbox" src="../../images/tutorial-step2-drag-ecu.png" /></p>
+<ol>
+<li><strong>Configure the CAN network</strong>:</li>
+<li>Click on the CAN bus to select it</li>
+<li>The Properties panel (right side) shows network settings</li>
+<li>Set these properties:<ul>
+<li><strong>Name</strong>: <code>Powertrain-CAN</code></li>
+<li><strong>Baud Rate</strong>: Will auto-populate from DBC</li>
+<li><strong>DBC File</strong>: Click <strong>Browse</strong> and select your <code>powertrain.dbc</code> file</li>
+<li>Click <strong>Apply Changes</strong> at the bottom of Properties</li>
+</ul>
+</li>
+</ol>
+<p><img alt="CAN bus on canvas with Properties panel" src="../../images/projects-files-can-properties.png" /></p>
+<h3 id="step-3-add-ecus-to-the-system">Step 3: Add ECUs to the System<a class="headerlink" href="#step-3-add-ecus-to-the-system" title="Permanent link">&para;</a></h3>
+<p>Now add the ECUs that will participate in the network communication.</p>
+<ol>
+<li><strong>Add the Engine ECU</strong>:</li>
+<li>In Toolbox under <strong>Components</strong>, find <strong>Generic ECU</strong></li>
+<li>Drag it above the CAN bus on the canvas</li>
+<li>
+<p>Position it centrally above the bus</p>
+</li>
+<li>
+<p><strong>Configure the Engine ECU</strong>:</p>
+</li>
+<li>Click the ECU to select it</li>
+<li>In Properties, set:<ul>
+<li><strong>Name</strong>: <code>Engine-ECU</code></li>
+<li><strong>Type</strong>: Select <code>Linux Generic x86_64</code></li>
+<li><strong>Container Base</strong>: <code>ubuntu:22.04</code> (or your preferred base)</li>
+</ul>
+</li>
+<li>Click <strong>Apply Changes</strong></li>
+</ol>
+<p><img alt="ECU selected with Properties panel" src="../../images/tutorial-step3-ecu-selected.png" /></p>
+<ol>
+<li><strong>Add the Transmission ECU</strong>:</li>
+<li>Drag another Generic ECU from Toolbox</li>
+<li>Place it to the right of the Engine ECU</li>
+<li>
+<p>Configure in Properties:</p>
+<ul>
+<li><strong>Name</strong>: <code>Transmission-ECU</code></li>
+<li><strong>Type</strong>: <code>Linux Generic x86_64</code></li>
+<li>Click <strong>Apply Changes</strong></li>
+</ul>
+</li>
+<li>
+<p><strong>Add the Gateway ECU</strong>:</p>
+</li>
+<li>Drag a third Generic ECU from Toolbox</li>
+<li>Place it to the left of the Engine ECU</li>
+<li>Configure:<ul>
+<li><strong>Name</strong>: <code>Gateway-ECU</code></li>
+<li><strong>Type</strong>: <code>Linux Generic x86_64</code></li>
+<li>Click <strong>Apply Changes</strong></li>
+</ul>
+</li>
+</ol>
+<p><img alt="Three ECUs positioned above CAN bus" src="../../images/tutorial-step2-three-ecus.png" /></p>
+<h3 id="step-4-connect-ecus-to-the-network">Step 4: Connect ECUs to the Network<a class="headerlink" href="#step-4-connect-ecus-to-the-network" title="Permanent link">&para;</a></h3>
+<p>Each ECU needs to be connected to the CAN bus to communicate.</p>
+<ol>
+<li><strong>Connect the Engine ECU</strong>:</li>
+<li>Hover over the Engine ECU box</li>
+<li>Small blue connection handles appear on the edges</li>
+<li>Click and drag from the bottom handle</li>
+<li>Drag the connection line down to the CAN bus</li>
+<li>Release when the bus highlights green (valid connection)</li>
+<li>A connection line appears linking them</li>
+</ol>
+<p><img alt="Gateway ECU connected to CAN bus" src="../../images/tutorial-step4-gateway-to-can.png" /></p>
+<ol>
+<li><strong>Connect the Transmission ECU</strong>:</li>
+<li>Repeat the same process:</li>
+<li>Hover over Transmission ECU</li>
+<li>Drag from bottom handle to CAN bus</li>
+<li>
+<p>Release when highlighted</p>
+</li>
+<li>
+<p><strong>Connect the Gateway ECU</strong>:</p>
+</li>
+<li>Connect it the same way to complete the network</li>
+<li>All three ECUs should now be connected to the CAN bus</li>
+</ol>
+<p><img alt="Complete system with all ECUs connected" src="../../images/tutorial-step5-complete-network.png" /></p>
+<ol>
+<li><strong>Verify connections in Project Explorer</strong>:</li>
+<li>Look at the Project Explorer (left panel)</li>
+<li>Expand <strong>Networks</strong> → <strong>Powertrain-CAN</strong></li>
+<li>You should see all three ECUs listed as connected</li>
+</ol>
+<p><img alt="Project Explorer showing system structure" src="../../images/first-launch-system-design-project-explorer.png" /></p>
+<h3 id="step-5-save-the-system">Step 5: Save the System<a class="headerlink" href="#step-5-save-the-system" title="Permanent link">&para;</a></h3>
+<p>Before proceeding, save your work to prevent data loss.</p>
+<ol>
+<li><strong>Save the system</strong>:</li>
+<li>Click <strong>File → Save</strong> or press <strong>Ctrl+S</strong></li>
+<li>Choose a location for your <code>.tfsys</code> file</li>
+<li>Name it <code>PowertrainAnalysis.tfsys</code></li>
+<li>
+<p>Click <strong>Save</strong></p>
+</li>
+<li>
+<p><strong>Verify save status</strong>:</p>
+</li>
+<li>The title bar should show "PowertrainAnalysis" without an asterisk</li>
+<li>The status bar (bottom) confirms "System saved"</li>
+</ol>
+<p><img alt="Status bar showing system state" src="../../images/first-launch-system-design-status-bar.png" /></p>
+<h2 id="part-2-system-deployment-and-monitoring">Part 2: System Deployment and Monitoring<a class="headerlink" href="#part-2-system-deployment-and-monitoring" title="Permanent link">&para;</a></h2>
+<h3 id="step-6-build-and-deploy-the-system">Step 6: Build and Deploy the System<a class="headerlink" href="#step-6-build-and-deploy-the-system" title="Permanent link">&para;</a></h3>
+<p>Transform your design into running containers.</p>
+<p><img alt="Toolbar with Build System button" src="../../images/first-launch-system-design-toolbar.png" /></p>
+<ol>
+<li><strong>Start the build process</strong>:</li>
+<li>Click the <strong>Build System</strong> button in the toolbar</li>
+<li>Or use <strong>System → Build</strong> from the menu</li>
+<li>
+<p>The build console appears at the bottom</p>
+</li>
+<li>
+<p><strong>Monitor build progress</strong>:</p>
+</li>
+<li>Watch for "Building ECU firmware..." messages</li>
+<li>Each ECU shows "Firmware ready" when complete</li>
+<li>Look for "Build completed successfully"</li>
+<li>If errors occur, check:<ul>
+<li>Docker Desktop is running</li>
+<li>Network connectivity is available</li>
+<li>Sufficient disk space exists</li>
+</ul>
+</li>
+</ol>
+<p><img alt="Build console showing successful build" src="../../images/first-launch-system-design-status-bar.png" /></p>
+<ol>
+<li><strong>Troubleshooting build failures</strong>:</li>
+</ol>
+<p><strong>Docker not running</strong>:
+   <code>Error: Cannot connect to Docker daemon
+   Solution: Start Docker Desktop and retry</code></p>
+<p><strong>Network issues</strong>:
+   <code>Error: Failed to pull base image
+   Solution: Check internet connection, retry</code></p>
+<p><strong>Disk space</strong>:
+   <code>Error: No space left on device
+   Solution: Clear Docker cache with: docker system prune</code></p>
+<h3 id="step-7-start-the-system">Step 7: Start the System<a class="headerlink" href="#step-7-start-the-system" title="Permanent link">&para;</a></h3>
+<p>Deploy and run your ECU containers.</p>
+<ol>
+<li><strong>Start the system</strong>:</li>
+<li>Click the <strong>Start</strong> button in the toolbar (green play icon)</li>
+<li>Or use <strong>System → Start</strong> from the menu</li>
+<li>
+<p>Status bar shows "Starting system..."</p>
+</li>
+<li>
+<p><strong>Monitor startup</strong>:</p>
+</li>
+<li>The ECU Console opens automatically</li>
+<li>Watch for startup messages from each ECU</li>
+<li>Look for "ECU initialized" messages</li>
+<li>
+<p>Typical startup takes 10-30 seconds</p>
+</li>
+<li>
+<p><strong>Verify all ECUs are running</strong>:</p>
+</li>
+<li>Check the status bar: "3 of 3 containers running"</li>
+<li>In Mock Mode, you'll see simulated container status</li>
+</ol>
+<h3 id="step-8-switch-to-monitoring-mode">Step 8: Switch to Monitoring Mode<a class="headerlink" href="#step-8-switch-to-monitoring-mode" title="Permanent link">&para;</a></h3>
+<p>Monitor the health and status of your running system.</p>
+<ol>
+<li><strong>Switch to Monitoring mode</strong>:</li>
+<li>Click <strong>View → Monitoring</strong> from the menu</li>
+<li>Or click the Monitoring button if available in toolbar</li>
+<li>
+<p>The layout changes to show monitoring panels</p>
+</li>
+<li>
+<p><strong>Review the monitoring panels</strong>:</p>
+</li>
+<li><strong>ECU Hardware Status</strong> (top) - Shows all ECUs and their states</li>
+<li><strong>ECU Resource Monitor</strong> (middle left) - CPU and memory graphs</li>
+<li><strong>ECU Task Monitor</strong> (middle right) - Running processes</li>
+<li><strong>ECU Console</strong> (bottom) - Live log output</li>
+</ol>
+<p><img alt="Monitoring mode with all panels visible" src="../../images/first-launch-monitoring.png" /></p>
+<ol>
+<li><strong>Verify system health</strong>:</li>
+</ol>
+<p>In ECU Hardware Status:
+   - All ECUs should show "Running" state
+   - CPU and Memory columns display values
+   - No error indicators present</p>
+<p><img alt="ECUs running in Hardware Status" src="../../images/tutorial-step8-ecus-running.png" /></p>
+<p>In ECU Console:
+   - Normal startup messages appear
+   - No error messages in red</p>
+<p><img alt="Console with filtered logs" src="../../images/tutorial-step9-console-filtered.png" /></p>
+<p>Additional monitoring panels show detailed information:</p>
+<p><img alt="ECU Hardware Status panel" src="../../images/first-launch-monitoring-hardware-status.png" /></p>
+<p><img alt="ECU Resource Monitor" src="../../images/first-launch-monitoring-resource-monitor.png" /></p>
+<p><img alt="ECU Console with logs" src="../../images/first-launch-monitoring-ecu-console.png" /></p>
+<h2 id="part-3-can-log-analysis">Part 3: CAN Log Analysis<a class="headerlink" href="#part-3-can-log-analysis" title="Permanent link">&para;</a></h2>
+<h3 id="step-9-switch-to-can-log-analysis-mode">Step 9: Switch to CAN Log Analysis Mode<a class="headerlink" href="#step-9-switch-to-can-log-analysis-mode" title="Permanent link">&para;</a></h3>
+<p>Prepare for data analysis and playback.</p>
+<ol>
+<li><strong>Switch modes</strong>:</li>
+<li>Click <strong>View → CAN Log Analysis</strong> from the menu</li>
+<li>
+<p>The layout reconfigures for signal analysis</p>
+</li>
+<li>
+<p><strong>Understand the new layout</strong>:</p>
+</li>
+<li><strong>Signal Viewer</strong> (left) - Hierarchical signal tree</li>
+<li><strong>Network Traffic</strong> (center) - Live CAN frames</li>
+<li><strong>Signal Chart</strong> (right) - Time-series plots</li>
+<li><strong>Signal Player &amp; Injection</strong> (bottom) - Playback controls</li>
+</ol>
+<p><img alt="CAN Analysis mode panels" src="../../images/ui-tour-can-analysis-mode.png" /></p>
+<h3 id="step-10-load-and-configure-playback-data">Step 10: Load and Configure Playback Data<a class="headerlink" href="#step-10-load-and-configure-playback-data" title="Permanent link">&para;</a></h3>
+<p>Load your captured BLF log file for analysis.</p>
+<ol>
+<li><strong>Open the Signal Player panel</strong>:</li>
+<li>Locate it at the bottom of the screen</li>
+<li>
+<p>If not visible, use <strong>View → Panels → Signal Player</strong></p>
+</li>
+<li>
+<p><strong>Load the BLF file</strong>:</p>
+</li>
+<li>Click <strong>Select BLF</strong> button</li>
+<li>Navigate to your log file: <code>rpm_fluctuation_capture.blf</code></li>
+<li>Click <strong>Open</strong></li>
+<li>
+<p>The file loads and displays statistics</p>
+</li>
+<li>
+<p><strong>Inspect the loaded data</strong>:</p>
+</li>
+<li>Click <strong>Inspect bundle</strong> to see details:<ul>
+<li>Total frames in the log</li>
+<li>Duration of the capture</li>
+<li>Detected CAN channels</li>
+<li>Frame rate statistics</li>
+</ul>
+</li>
+</ol>
+<p><img alt="Signal Player with loaded BLF file" src="../../images/playback-signal-player.png" /></p>
+<ol>
+<li><strong>Verify DBC mapping</strong>:</li>
+<li>The Networks list shows your Powertrain-CAN</li>
+<li>Confirm the DBC file is properly associated</li>
+<li>Check that signal decoding is active</li>
+</ol>
+<h3 id="step-11-start-playback-and-monitor-signals">Step 11: Start Playback and Monitor Signals<a class="headerlink" href="#step-11-start-playback-and-monitor-signals" title="Permanent link">&para;</a></h3>
+<p>Begin replaying the captured data through your system.</p>
+<ol>
+<li><strong>Start playback</strong>:</li>
+<li>Ensure the system is running (toolbar shows Stop button)</li>
+<li>In Signal Player, click the <strong>Play</strong> button</li>
+<li>Playback begins at 1x speed</li>
+<li>
+<p>The progress bar shows current position</p>
+</li>
+<li>
+<p><strong>Monitor live traffic</strong>:</p>
+</li>
+<li>Switch to the <strong>Network Traffic</strong> panel</li>
+<li>CAN frames appear as they're replayed:<ul>
+<li>Timestamp updates continuously</li>
+<li>CAN IDs show in hexadecimal</li>
+<li>Data bytes display in the data column</li>
+<li>Frame count increments</li>
+</ul>
+</li>
+</ol>
+<p><img alt="Network Traffic showing live frames" src="../../images/ui-tour-messages-panel.png" /></p>
+<ol>
+<li><strong>Use traffic filters</strong> (if needed):</li>
+<li>To focus on specific messages:<ul>
+<li>Enter a CAN ID in the filter field (e.g., <code>0x100</code>)</li>
+<li>Or filter by data pattern</li>
+<li>Click <strong>Apply Filter</strong></li>
+</ul>
+</li>
+<li>To see all traffic again:<ul>
+<li>Clear the filter field</li>
+<li>Click <strong>Clear Filter</strong></li>
+</ul>
+</li>
+</ol>
+<h3 id="step-12-analyze-decoded-signals">Step 12: Analyze Decoded Signals<a class="headerlink" href="#step-12-analyze-decoded-signals" title="Permanent link">&para;</a></h3>
+<p>Examine the decoded signal values to identify issues.</p>
+<ol>
+<li><strong>Open Signal Viewer</strong>:</li>
+<li>Click on the <strong>Signal Viewer</strong> panel (left side)</li>
+<li>
+<p>The tree shows all signals from your DBC</p>
+</li>
+<li>
+<p><strong>Find relevant signals</strong>:</p>
+</li>
+<li>Use the search box at the top</li>
+<li>Search for "RPM" to find engine speed</li>
+<li>The tree filters to matching signals</li>
+<li>
+<p>Clear search to see all signals again</p>
+</li>
+<li>
+<p><strong>Examine signal details</strong>:</p>
+</li>
+<li>Expand CAN frames to see their signals:<ul>
+<li>Click the arrow next to frame <code>0x100</code> (EngineData)</li>
+<li>Signals appear indented below</li>
+<li>Live values update during playback</li>
+</ul>
+</li>
+<li>Key signals to monitor:<ul>
+<li><code>Engine_RPM</code> - Current engine speed</li>
+<li><code>Throttle_Position</code> - Accelerator pedal position</li>
+<li><code>Vehicle_Speed</code> - Current vehicle speed</li>
+</ul>
+</li>
+</ol>
+<p><img alt="Signal Viewer with expanded frames" src="../../images/dbc-signal-viewer-decoded.png" /></p>
+<ol>
+<li><strong>Select signals for charting</strong>:</li>
+<li>Click the checkbox next to <code>Engine_RPM</code></li>
+<li>Select <code>Throttle_Position</code></li>
+<li>Select <code>Vehicle_Speed</code></li>
+<li>These signals are now ready for plotting</li>
+</ol>
+<h3 id="step-13-chart-and-analyze-signal-patterns">Step 13: Chart and Analyze Signal Patterns<a class="headerlink" href="#step-13-chart-and-analyze-signal-patterns" title="Permanent link">&para;</a></h3>
+<p>Visualize signal behavior over time to identify anomalies.</p>
+<ol>
+<li><strong>View the Signal Chart</strong>:</li>
+<li>Click on the <strong>Signal Chart</strong> panel (right side)</li>
+<li>Selected signals appear as colored lines</li>
+<li>Time axis shows along the bottom</li>
+<li>
+<p>Value axis shows on the left</p>
+</li>
+<li>
+<p><strong>Configure chart settings</strong>:</p>
+</li>
+<li><strong>Time Window</strong>: Set to 30 seconds for detail</li>
+<li><strong>Auto-scale</strong>: Enable to fit all values</li>
+<li><strong>Grid</strong>: Enable for easier reading</li>
+<li>
+<p><strong>Legend</strong>: Shows signal names and colors</p>
+</li>
+<li>
+<p><strong>Identify the anomaly</strong>:</p>
+</li>
+<li>Play through the log while watching the chart</li>
+<li>Look for unusual patterns:<ul>
+<li>RPM spikes without throttle input</li>
+<li>Delayed throttle response</li>
+<li>Oscillations in steady-state</li>
+</ul>
+</li>
+<li>When you spot an issue:<ul>
+<li>Click <strong>Pause</strong> in Signal Player</li>
+<li>Note the timestamp</li>
+</ul>
+</li>
+</ol>
+<p><img alt="Signal Chart showing RPM anomaly" src="../../images/ui-tour-charts-panel.png" /></p>
+<ol>
+<li><strong>Zoom into the problem area</strong>:</li>
+<li>Use mouse wheel to zoom time axis</li>
+<li>Click and drag to pan along timeline</li>
+<li>Adjust Time Window to 5 seconds for detail</li>
+<li>
+<p>The anomaly should be clearly visible</p>
+</li>
+<li>
+<p><strong>Document findings</strong>:</p>
+</li>
+<li>Take a screenshot of the chart:<ul>
+<li>Right-click on chart</li>
+<li>Select <strong>Export Chart</strong></li>
+<li>Save as <code>rpm_anomaly_chart.png</code></li>
+</ul>
+</li>
+<li>Note the exact timestamp range</li>
+<li>Record signal values at the anomaly</li>
+</ol>
+<h2 id="part-4-signal-injection-testing">Part 4: Signal Injection Testing<a class="headerlink" href="#part-4-signal-injection-testing" title="Permanent link">&para;</a></h2>
+<h3 id="step-14-prepare-for-signal-injection">Step 14: Prepare for Signal Injection<a class="headerlink" href="#step-14-prepare-for-signal-injection" title="Permanent link">&para;</a></h3>
+<p>Test how the system responds to controlled inputs.</p>
+<ol>
+<li><strong>Understanding injection capabilities</strong>:</li>
+<li>Signal injection sends CAN frames to the network</li>
+<li>Useful for testing ECU responses</li>
+<li>Can replay specific signal patterns</li>
+<li>
+<p>Helps validate fixes and theories</p>
+</li>
+<li>
+<p><strong>Access injection controls</strong>:</p>
+</li>
+<li>In the Signal Player &amp; Injection panel</li>
+<li>Look for the <strong>Injection</strong> section</li>
+<li>Controls include:<ul>
+<li><strong>Start all</strong> - Begin injection</li>
+<li><strong>Pause all</strong> - Temporarily stop</li>
+<li><strong>Stop all</strong> - End injection</li>
+<li>Signal configuration options</li>
+</ul>
+</li>
+</ol>
+<p><img alt="Signal Injection controls" src="../../images/injection-signal-options.png" /></p>
+<ol>
+<li><strong>Safety considerations</strong>:</li>
+</ol>
+<p><strong>WARNING</strong>: Signal injection can affect running ECUs.
+   - Only inject into test bench systems
+   - Never inject into production vehicles
+   - Verify ECU configuration allows test inputs
+   - Monitor system response carefully</p>
+<h3 id="step-15-configure-and-execute-injection">Step 15: Configure and Execute Injection<a class="headerlink" href="#step-15-configure-and-execute-injection" title="Permanent link">&para;</a></h3>
+<p>Set up a controlled test to reproduce the issue.</p>
+<ol>
+<li><strong>Select signals for injection</strong>:</li>
+<li>In Signal Viewer, identify the signals to inject</li>
+<li>
+<p>Common injection targets:</p>
+<ul>
+<li>Throttle position sensor values</li>
+<li>Speed sensor inputs</li>
+<li>Temperature readings</li>
+</ul>
+</li>
+<li>
+<p><strong>Configure injection parameters</strong>:</p>
+</li>
+<li>Signal values to inject</li>
+<li>Injection rate (messages per second)</li>
+<li>Duration of injection</li>
+<li>
+<p>Pattern (constant, ramp, sine wave)</p>
+</li>
+<li>
+<p><strong>Start injection</strong>:</p>
+</li>
+<li>Ensure system is running</li>
+<li>Clear Network Traffic to see new data</li>
+<li>Click <strong>Start all</strong> in injection controls</li>
+<li>
+<p>Monitor the response:</p>
+<ul>
+<li>Network Traffic shows injected frames</li>
+<li>Signal Chart displays the injected values</li>
+<li>ECU Console may show diagnostic messages</li>
+</ul>
+</li>
+<li>
+<p><strong>Analyze system response</strong>:</p>
+</li>
+<li>Does the RPM fluctuation reproduce?</li>
+<li>How do other signals respond?</li>
+<li>Any error codes generated?</li>
+<li>
+<p>System stability maintained?</p>
+</li>
+<li>
+<p><strong>Stop injection</strong>:</p>
+</li>
+<li>Click <strong>Stop all</strong> when test completes</li>
+<li>Allow system to return to idle state</li>
+<li>Document the results</li>
+</ol>
+<h2 id="part-5-data-export-and-documentation">Part 5: Data Export and Documentation<a class="headerlink" href="#part-5-data-export-and-documentation" title="Permanent link">&para;</a></h2>
+<h3 id="step-16-export-analysis-data">Step 16: Export Analysis Data<a class="headerlink" href="#step-16-export-analysis-data" title="Permanent link">&para;</a></h3>
+<p>Save your findings for reporting and further analysis.</p>
+<ol>
+<li><strong>Export network traffic</strong>:</li>
+<li>In Network Traffic panel</li>
+<li>Click <strong>Export</strong> button</li>
+<li>Choose format:<ul>
+<li>CSV for spreadsheet analysis</li>
+<li>BLF for replay in other tools</li>
+</ul>
+</li>
+<li>Name file: <code>analysis_traffic_export.csv</code></li>
+<li>
+<p>Click <strong>Save</strong></p>
+</li>
+<li>
+<p><strong>Export signal data</strong>:</p>
+</li>
+<li>Ensure relevant signals are selected</li>
+<li>Time range includes the anomaly</li>
+<li>Export includes decoded values</li>
+<li>
+<p>Save as: <code>signal_analysis_export.csv</code></p>
+</li>
+<li>
+<p><strong>Export chart images</strong>:</p>
+</li>
+<li>Right-click on Signal Chart</li>
+<li>Select <strong>Export Chart</strong></li>
+<li>Save as PNG or PDF</li>
+<li>Name: <code>rpm_anomaly_chart.png</code></li>
+</ol>
+<h3 id="step-17-create-analysis-summary">Step 17: Create Analysis Summary<a class="headerlink" href="#step-17-create-analysis-summary" title="Permanent link">&para;</a></h3>
+<p>Document your findings for the team.</p>
+<ol>
+<li><strong>Compile findings</strong>:</li>
+<li>Anomaly timestamp: Exact time of issue</li>
+<li>Affected signals: List all involved signals</li>
+<li>Pattern description: What happened</li>
+<li>Injection results: How system responded</li>
+<li>
+<p>Potential causes: Your analysis</p>
+</li>
+<li>
+<p><strong>Prepare deliverables</strong> - organize your files in this structure:</p>
+</li>
+<li>
+<p><code>PowertrainAnalysis/</code> - Main project directory</p>
+<ul>
+<li><code>PowertrainAnalysis.json</code> - System configuration file</li>
+<li><code>exports/</code> - Export directory</li>
+<li><code>analysis_traffic_export.csv</code> - Network traffic data</li>
+<li><code>signal_analysis_export.csv</code> - Signal analysis data</li>
+<li><code>rpm_anomaly_chart.png</code> - Chart screenshot</li>
+<li><code>logs/</code> - Log files directory</li>
+<li><code>rpm_fluctuation_capture.blf</code> - Original capture file</li>
+<li><code>analysis_summary.txt</code> - Analysis summary document</li>
+</ul>
+</li>
+<li>
+<p><strong>Write summary document</strong> with the following sections:</p>
+</li>
+</ol>
+<p><strong>Document Header:</strong></p>
+<ul>
+<li>Title: "Powertrain Analysis Summary"</li>
+<li>Date: [Current Date]</li>
+<li>Engineer: [Your Name]</li>
+</ul>
+<p><strong>Issue Description:</strong></p>
+<ul>
+<li>Primary issue: RPM fluctuations during steady-state cruise</li>
+<li>Symptoms observed during testing</li>
+</ul>
+<p><strong>Key Findings:</strong></p>
+<ul>
+<li>Anomaly timestamp: 14:32:15.234</li>
+<li>RPM spike details: 2000 to 2500 RPM without throttle input</li>
+<li>Pattern frequency: Repeats every 30-45 seconds</li>
+<li>Correlation: Linked to transmission shift points</li>
+</ul>
+<p><strong>Injection Testing Results:</strong></p>
+<ul>
+<li>Test performed: Throttle position injection</li>
+<li>Result: Successfully reproduced the issue</li>
+<li>Observation: System response delayed by 200ms</li>
+<li>Conclusion: Suggests control loop timing issue</li>
+</ul>
+<p><strong>Recommendations:</strong></p>
+<ul>
+<li>Review transmission ECU shift logic</li>
+<li>Check CAN bus utilization during shifts</li>
+<li>Verify control loop timing parameters</li>
+<li>Consider adjusting control loop response time</li>
+</ul>
+<h2 id="part-6-system-cleanup">Part 6: System Cleanup<a class="headerlink" href="#part-6-system-cleanup" title="Permanent link">&para;</a></h2>
+<h3 id="step-18-stop-and-clean-up">Step 18: Stop and Clean Up<a class="headerlink" href="#step-18-stop-and-clean-up" title="Permanent link">&para;</a></h3>
+<p>Properly shut down the system after analysis.</p>
+<ol>
+<li><strong>Stop the running system</strong>:</li>
+<li>Click the <strong>Stop</strong> button in toolbar</li>
+<li>Confirm when prompted</li>
+<li>Wait for "System stopped" message</li>
+<li>
+<p>All containers terminate gracefully</p>
+</li>
+<li>
+<p><strong>Save final system state</strong>:</p>
+</li>
+<li><strong>File → Save</strong> to preserve any changes</li>
+<li>System configuration is updated</li>
+<li>
+<p>Analysis setup is preserved</p>
+</li>
+<li>
+<p><strong>Clean up resources</strong> (if needed):</p>
+</li>
+<li>In terminal: <code>docker ps</code> to check containers</li>
+<li><code>docker system prune</code> to free space</li>
+<li>Remove temporary export files if not needed</li>
+</ol>
+<h2 id="troubleshooting-guide">Troubleshooting Guide<a class="headerlink" href="#troubleshooting-guide" title="Permanent link">&para;</a></h2>
+<h3 id="common-issues-and-solutions">Common Issues and Solutions<a class="headerlink" href="#common-issues-and-solutions" title="Permanent link">&para;</a></h3>
+<h4 id="system-wont-start">System Won't Start<a class="headerlink" href="#system-wont-start" title="Permanent link">&para;</a></h4>
+<p><strong>Symptom</strong>: Start button clicked but ECUs don't run</p>
+<p><strong>Solutions</strong>:</p>
+<ol>
+<li>Check Docker Desktop is running</li>
+<li>Verify no port conflicts (8080, 8081)</li>
+<li>Review ECU Console for error messages</li>
+<li>Try Mock Mode if Docker issues persist</li>
+</ol>
+<h4 id="no-can-traffic-visible">No CAN Traffic Visible<a class="headerlink" href="#no-can-traffic-visible" title="Permanent link">&para;</a></h4>
+<p><strong>Symptom</strong>: Network Traffic panel stays empty</p>
+<p><strong>Solutions</strong>:</p>
+<ol>
+<li>Verify system is running (not just built)</li>
+<li>Check BLF file is loaded in Signal Player</li>
+<li>Press Play in Signal Player (not just load)</li>
+<li>Confirm DBC file is properly associated</li>
+<li>Check Network Traffic filters aren't too restrictive</li>
+</ol>
+<h4 id="signals-not-decoding">Signals Not Decoding<a class="headerlink" href="#signals-not-decoding" title="Permanent link">&para;</a></h4>
+<p><strong>Symptom</strong>: See CAN IDs but no signal names</p>
+<p><strong>Solutions</strong>:</p>
+<ol>
+<li>Verify DBC file path in network properties</li>
+<li>Check DBC file contains definitions for your CAN IDs</li>
+<li>Reload the system after DBC changes</li>
+<li>Ensure Signal Viewer panel is refreshed</li>
+</ol>
+<h4 id="playback-not-working">Playback Not Working<a class="headerlink" href="#playback-not-working" title="Permanent link">&para;</a></h4>
+<p><strong>Symptom</strong>: Play button disabled or nothing happens</p>
+<p><strong>Solutions</strong>:</p>
+<ol>
+<li>System must be running first</li>
+<li>BLF file must be loaded</li>
+<li>Check file isn't corrupted</li>
+<li>Verify sufficient memory for large logs</li>
+<li>Try smaller BLF file to test</li>
+</ol>
+<h4 id="chart-not-updating">Chart Not Updating<a class="headerlink" href="#chart-not-updating" title="Permanent link">&para;</a></h4>
+<p><strong>Symptom</strong>: Signal Chart remains empty</p>
+<p><strong>Solutions</strong>:</p>
+<ol>
+<li>Select signals in Signal Viewer first</li>
+<li>Ensure playback is running</li>
+<li>Check time window settings</li>
+<li>Verify Auto-scale is enabled</li>
+<li>Refresh the chart panel</li>
+</ol>
+<h4 id="injection-not-sending">Injection Not Sending<a class="headerlink" href="#injection-not-sending" title="Permanent link">&para;</a></h4>
+<p><strong>Symptom</strong>: Start injection but no frames appear</p>
+<p><strong>Solutions</strong>:</p>
+<ol>
+<li>System must be running</li>
+<li>Network must be properly configured</li>
+<li>Check injection isn't paused</li>
+<li>Verify signal configuration</li>
+<li>Monitor ECU Console for errors</li>
+</ol>
+<h2 id="tips-for-effective-analysis">Tips for Effective Analysis<a class="headerlink" href="#tips-for-effective-analysis" title="Permanent link">&para;</a></h2>
+<h3 id="performance-optimization">Performance Optimization<a class="headerlink" href="#performance-optimization" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>For large BLF files</strong>:</li>
+<li>Close unnecessary panels to free memory</li>
+<li>Use filters to reduce displayed data</li>
+<li>Export smaller time ranges</li>
+<li>
+<p>Process in segments if needed</p>
+</li>
+<li>
+<p><strong>For smooth playback</strong>:</p>
+</li>
+<li>Limit number of charted signals</li>
+<li>Reduce Signal Chart time window</li>
+<li>Disable auto-scroll in Network Traffic</li>
+<li>Close other applications</li>
+</ol>
+<h3 id="analysis-best-practices">Analysis Best Practices<a class="headerlink" href="#analysis-best-practices" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Signal selection</strong>:</li>
+<li>Start with key signals only</li>
+<li>Add related signals as needed</li>
+<li>Group similar signals for comparison</li>
+<li>
+<p>Use consistent time windows</p>
+</li>
+<li>
+<p><strong>Documentation</strong>:</p>
+</li>
+<li>Screenshot important findings immediately</li>
+<li>Note exact timestamps</li>
+<li>Export data before making changes</li>
+<li>
+<p>Keep analysis notes in text file</p>
+</li>
+<li>
+<p><strong>Injection testing</strong>:</p>
+</li>
+<li>Start with known-good values</li>
+<li>Change one parameter at a time</li>
+<li>Monitor all related signals</li>
+<li>Stop immediately if instability occurs</li>
+</ol>
+<h2 id="advanced-topics">Advanced Topics<a class="headerlink" href="#advanced-topics" title="Permanent link">&para;</a></h2>
+<h3 id="working-with-multiple-networks">Working with Multiple Networks<a class="headerlink" href="#working-with-multiple-networks" title="Permanent link">&para;</a></h3>
+<p>If your system has multiple CAN buses:</p>
+<ol>
+<li>Add additional CAN networks to canvas</li>
+<li>Connect ECUs to appropriate buses</li>
+<li>Load separate DBC for each network</li>
+<li>Switch between networks in Network Traffic</li>
+<li>Filter signals by network in Signal Viewer</li>
+</ol>
+<h3 id="custom-ecu-applications">Custom ECU Applications<a class="headerlink" href="#custom-ecu-applications" title="Permanent link">&para;</a></h3>
+<p>For ECUs running custom applications:</p>
+<ol>
+<li>Ensure application uses SocketCAN</li>
+<li>Configure CAN interface in ECU</li>
+<li>Build application into container</li>
+<li>Monitor application logs in ECU Console</li>
+<li>Use Terminal panel for debugging</li>
+</ol>
+<p><img alt="Terminal panel for ECU access" src="../../images/controls-terminal-panel.png" /></p>
+<h3 id="integration-with-external-tools">Integration with External Tools<a class="headerlink" href="#integration-with-external-tools" title="Permanent link">&para;</a></h3>
+<p>Export data for analysis in other tools:</p>
+<ol>
+<li><strong>MATLAB/Simulink</strong>:</li>
+<li>Export as CSV with timestamps</li>
+<li>Import into MATLAB workspace</li>
+<li>
+<p>Process with Signal Processing Toolbox</p>
+</li>
+<li>
+<p><strong>Python Analysis</strong>:</p>
+</li>
+<li>Export as CSV</li>
+<li>Use pandas for data manipulation</li>
+<li>Plot with matplotlib</li>
+<li>
+<p>Perform statistical analysis</p>
+</li>
+<li>
+<p><strong>CANalyzer/CANoe</strong>:</p>
+</li>
+<li>Export as BLF</li>
+<li>Import into Vector tools</li>
+<li>Apply existing test configurations</li>
+</ol>
+<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
+<p>After completing this tutorial, you're ready to:</p>
+<ol>
+<li><strong>Create complex multi-bus systems</strong> with various ECU types</li>
+<li><strong>Analyze real vehicle logs</strong> from road tests or bench testing</li>
+<li><strong>Develop injection test sequences</strong> for validation</li>
+<li><strong>Build custom monitoring dashboards</strong> with preferred panel layouts</li>
+<li><strong>Integrate with CI/CD pipelines</strong> for automated testing</li>
+</ol>
+<h2 id="additional-resources">Additional Resources<a class="headerlink" href="#additional-resources" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>System Design Guide</strong>: Details on network topologies and ECU configuration</li>
+<li><strong>Monitoring Guide</strong>: Deep dive into performance analysis and debugging</li>
+<li><strong>Signal Analysis Guide</strong>: Advanced filtering and pattern recognition</li>
+<li><strong>Docker Integration</strong>: Custom container configuration and optimization</li>
+</ul>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>You've successfully completed a full CAN analysis workflow in TrueFidelity:</p>
+<ul>
+<li>✅ Created and configured a multi-ECU system</li>
+<li>✅ Connected ECUs to a CAN network with DBC definitions</li>
+<li>✅ Built and deployed the system using Docker containers</li>
+<li>✅ Monitored system health and resource usage</li>
+<li>✅ Loaded and played back captured CAN logs</li>
+<li>✅ Analyzed decoded signals and identified anomalies</li>
+<li>✅ Performed signal injection testing</li>
+<li>✅ Exported data for documentation and reporting</li>
+</ul>
+<p>This workflow forms the foundation for more complex automotive testing, validation, and debugging tasks. Practice with different log files and signal patterns to build expertise with the TrueFidelity platform.</p>
 
 
 
@@ -2011,10 +3153,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "toc.integrate", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "toc.integrate", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

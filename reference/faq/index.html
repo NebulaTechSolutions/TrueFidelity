@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -780,34 +780,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../using-the-app/annotations-and-bookmarks/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Annotations & Bookmarks
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../using-the-app/dbc-and-signal-definitions/" class="md-nav__link">
         
   
@@ -1509,10 +1481,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#projects-files" class="md-nav__link">
+  <a href="#system-design-files" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Projects &amp; Files
+        System Design &amp; Files
       
     </span>
   </a>
@@ -1520,10 +1492,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#playback" class="md-nav__link">
+  <a href="#ecu-management" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Playback
+        ECU Management
       
     </span>
   </a>
@@ -1531,10 +1503,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#signals-definitions" class="md-nav__link">
+  <a href="#monitoring-terminal" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Signals &amp; Definitions
+        Monitoring &amp; Terminal
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playback-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Playback &amp; Analysis
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signals-dbc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Signals &amp; DBC
       
     </span>
   </a>
@@ -1575,10 +1569,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#support" class="md-nav__link">
+  <a href="#docker-containers" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Support
+        Docker &amp; Containers
       
     </span>
   </a>
@@ -1586,10 +1580,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#updates-licensing" class="md-nav__link">
+  <a href="#settings-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Updates &amp; Licensing
+        Settings &amp; Configuration
       
     </span>
   </a>
@@ -1597,10 +1591,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#system-design-ecu-management" class="md-nav__link">
+  <a href="#troubleshooting" class="md-nav__link">
     <span class="md-ellipsis">
       
-        System Design &amp; ECU Management
+        Troubleshooting
       
     </span>
   </a>
@@ -1608,10 +1602,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ecu-monitoring-terminal-access" class="md-nav__link">
+  <a href="#updates-installation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ECU Monitoring &amp; Terminal Access
+        Updates &amp; Installation
       
     </span>
   </a>
@@ -1619,10 +1613,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#miscellaneous" class="md-nav__link">
+  <a href="#keyboard-shortcuts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Miscellaneous
+        Keyboard Shortcuts
       
     </span>
   </a>
@@ -1817,95 +1811,218 @@
 
 
 <h1 id="frequently-asked-questions">Frequently Asked Questions<a class="headerlink" href="#frequently-asked-questions" title="Permanent link">&para;</a></h1>
-<p>Find answers to common user questions about TrueFidelity.</p>
+<p>Find answers to common questions about TrueFidelity Desktop.</p>
 <h2 id="general">General<a class="headerlink" href="#general" title="Permanent link">&para;</a></h2>
-<p><strong>Q: Which operating systems are supported?</strong><br />
-A: Windows 10/11 (x64), macOS 12+, and Linux (x86_64). Use the latest patches for best results.</p>
-<p><strong>Q: Does TrueFidelity require administrative privileges?</strong><br />
-A: Installation may require elevated permissions; day-to-day usage does not unless you access protected CAN interfaces.</p>
-<p><strong>Q: Where are configuration files stored?</strong><br />
-A: Typically under the user profile: <code>%APPDATA%\TrueFidelity</code> (Windows), <code>~/Library/Application Support/TrueFidelity</code> (macOS), <code>~/.config/truefidelity</code> (Linux).</p>
-<h2 id="projects-files">Projects &amp; Files<a class="headerlink" href="#projects-files" title="Permanent link">&para;</a></h2>
-<p><strong>Q: How do I share a project with colleagues?</strong><br />
-A: Zip the <code>.tfproj</code> file along with referenced logs, definitions, screenshots, and exports. Use relative paths to keep links intact.</p>
-<p><strong>Q: Can I open multiple projects at once?</strong><br />
-A: TrueFidelity opens one project per window. You can run multiple instances if your system resources allow it.</p>
-<p><strong>Q: How do I recover a project after a crash?</strong><br />
-A: Reopen TrueFidelity; autosave restores the last checkpoint. If autosave was disabled, manually load the most recent <code>.tfproj</code> backup.</p>
-<h2 id="playback">Playback<a class="headerlink" href="#playback" title="Permanent link">&para;</a></h2>
-<p><strong>Q: Why does playback stutter on large logs?</strong><br />
-A: Ensure logs reside on an SSD, close unused panels, and reduce chart complexity. See <strong>Performance Tips</strong> for more suggestions.</p>
-<p><strong>Q: Can I sync playback across multiple machines?</strong><br />
-A: Not directly. Export segments or share projects so teammates can run the same playback on their machines.</p>
-<h2 id="signals-definitions">Signals &amp; Definitions<a class="headerlink" href="#signals-definitions" title="Permanent link">&para;</a></h2>
-<p><strong>Q: What happens if multiple DBC files define the same signal?</strong><br />
-A: TrueFidelity uses the highest-priority definition. Reorder or disable definitions in the sidebar to select the correct one.</p>
-<p><strong>Q: How do I handle encrypted payloads?</strong><br />
-A: Decrypt them using your organization’s tooling before importing; TrueFidelity doesn’t perform decryption.</p>
+<p><strong>Q: Which operating systems are supported?</strong></p>
+<p>A: Windows 10/11 (x64), macOS 10.15+, and Linux (x86_64 with GUI). Docker Desktop is required for ECU simulation.</p>
+<p><strong>Q: Does TrueFidelity require administrative privileges?</strong></p>
+<p>A: Installation may require elevated permissions. Day-to-day usage requires Docker Desktop running, which may need admin setup initially.</p>
+<p><strong>Q: Where are application settings stored?</strong></p>
+<p>A: Settings are stored in browser local storage under the key <code>truefidelity-settings</code>. Application cache locations vary by OS:
+- Windows: <code>%APPDATA%\TrueFidelity</code>
+- macOS: <code>~/Library/Application Support/TrueFidelity</code>
+- Linux: <code>~/.config/TrueFidelity</code></p>
+<p><strong>Q: Does TrueFidelity require Docker?</strong></p>
+<p>A: Yes, Docker Desktop is required for ECU simulation. However, you can use Mock Mode for UI testing without Docker.</p>
+<h2 id="system-design-files">System Design &amp; Files<a class="headerlink" href="#system-design-files" title="Permanent link">&para;</a></h2>
+<p><strong>Q: How do I share a system design with colleagues?</strong></p>
+<p>A: Share the <code>.json</code> system definition file. Include any referenced BLF/MDF4 log files and DBC signal definition files.</p>
+<p><strong>Q: Can I open multiple systems at once?</strong></p>
+<p>A: TrueFidelity Desktop works with one system at a time. Switch between saved systems using File → Open System.</p>
+<p><strong>Q: How do I recover a system after a crash?</strong></p>
+<p>A: Reload the last saved <code>.json</code> system file. Always save your work frequently as there's no autosave feature currently.</p>
+<p><strong>Q: What file formats are supported?</strong></p>
+<p>A:
+- System definitions: JSON format
+- Log files: BLF and MDF4 (version 4.x)
+- Signal definitions: DBC files
+- Exports: CSV and BLF</p>
+<h2 id="ecu-management">ECU Management<a class="headerlink" href="#ecu-management" title="Permanent link">&para;</a></h2>
+<p><strong>Q: How do I add an ECU to my system?</strong></p>
+<p>A: In System Design mode, drag an ECU from the Toolbox onto the System Canvas. Configure its properties in the Properties panel.</p>
+<p><strong>Q: Why won't my ECUs start?</strong></p>
+<p>A:
+1. Ensure Docker Desktop is running
+2. Check Docker has sufficient resources (8+ GB RAM, 4+ CPU cores)
+3. Review Terminal panel for error messages
+4. Try Mock Mode if Docker has issues</p>
+<p><strong>Q: How do I connect ECUs to networks?</strong></p>
+<p>A: ECUs connect to bus nodes, not directly to each other:
+- Drag from ECU port to a bus node on the network
+- CAN networks need CAN bus nodes
+- Ethernet networks need switch ports
+- LIN networks need LIN bus nodes</p>
+<p><strong>Q: Can I run multiple ECU systems simultaneously?</strong></p>
+<p>A: Yes, but each ECU container consumes CPU and memory. Monitor resources using the Resource Monitor panel and Docker stats.</p>
+<p><strong>Q: What happens if an ECU crashes?</strong></p>
+<p>A: The ECU Hardware Status panel shows error state (red indicator). Check Terminal panel for error messages. Stop and restart the system from the toolbar.</p>
+<p><strong>Q: Can I modify ECU configuration while running?</strong></p>
+<p>A: No, you must stop the system first. Make changes, save the system, then restart.</p>
+<h2 id="monitoring-terminal">Monitoring &amp; Terminal<a class="headerlink" href="#monitoring-terminal" title="Permanent link">&para;</a></h2>
+<p><strong>Q: Why can't I connect to an ECU terminal?</strong></p>
+<p>A:
+- Verify ECU is running (green status in ECU Hardware Status panel)
+- Some ECU images don't have terminal support
+- Check Terminal panel for connection errors
+- Try the reconnect button</p>
+<p><strong>Q: How do I filter logs from a specific ECU?</strong></p>
+<p>A: In the Terminal panel, select the ECU from the dropdown menu at the top. Each ECU has its own terminal output.</p>
+<p><strong>Q: Why are Resource Monitor graphs showing zero?</strong></p>
+<p>A:
+- Ensure ECUs are actually running
+- Check time range dropdown includes recent activity
+- Verify Resource Monitor panel is visible
+- Docker stats must be accessible</p>
+<p><strong>Q: Can I export monitoring data?</strong></p>
+<p>A: Yes, you can export:
+- Network Traffic as BLF or CSV
+- Signal data as CSV
+- Screenshots of charts and graphs</p>
+<h2 id="playback-analysis">Playback &amp; Analysis<a class="headerlink" href="#playback-analysis" title="Permanent link">&para;</a></h2>
+<p><strong>Q: Why does playback stutter on large logs?</strong></p>
+<p>A:
+- Move BLF/MDF4 files to local SSD (avoid network drives)
+- Start with 1x playback speed
+- Close unused panels
+- Clear Network Traffic panel if full
+- Limit charted signals to 4-6</p>
+<p><strong>Q: Can I play multiple logs simultaneously?</strong></p>
+<p>A: No, the Signal Player works with one log file at a time. You can switch between files but not play them concurrently.</p>
+<p><strong>Q: How do I handle very large BLF files?</strong></p>
+<p>A:
+- Files over 2 GB may cause performance issues
+- Consider splitting into smaller segments externally
+- Work with filtered subsets when possible
+- Ensure adequate system memory (16+ GB recommended)</p>
+<h2 id="signals-dbc">Signals &amp; DBC<a class="headerlink" href="#signals-dbc" title="Permanent link">&para;</a></h2>
+<p><strong>Q: What happens if multiple DBC files define the same signal?</strong></p>
+<p>A: The first loaded DBC takes precedence. Remove and re-add DBC files to change priority.</p>
+<p><strong>Q: How do I handle encrypted CAN messages?</strong></p>
+<p>A: TrueFidelity doesn't decrypt messages. Decrypt using external tools before importing.</p>
+<p><strong>Q: Why aren't my signals decoding?</strong></p>
+<p>A:
+- Verify correct DBC file is loaded
+- Check CAN IDs in DBC match those in log
+- Ensure standard vs. extended ID format matches
+- Verify byte order (Intel vs. Motorola) is correct</p>
+<p><strong>Q: Can I edit DBC files within TrueFidelity?</strong></p>
+<p>A: No, use external DBC editors. TrueFidelity imports DBC files for signal decoding only.</p>
 <h2 id="data-injection">Data Injection<a class="headerlink" href="#data-injection" title="Permanent link">&para;</a></h2>
-<p><strong>Q: Is injection available in all editions?</strong><br />
-A: Injection requires a license tier that enables it. Check your activation status or contact your admin.</p>
-<p><strong>Q: Can I run injection and playback simultaneously?</strong><br />
-A: Yes. Use separate channels or annotate injected frames to keep them organized.</p>
-<p><strong>Q: How do I stop injection quickly?</strong><br />
-A: Click <strong>Stop</strong> in the injection panel or use the emergency hardware cutoff on your test bench.</p>
+<p><strong>Q: How do I inject CAN messages?</strong></p>
+<p>A: Use the Signal Player panel's injection controls:
+1. Load a BLF file or configure messages
+2. Start the system (ECUs must be running)
+3. Use Start/Pause/Stop injection controls</p>
+<p><strong>Q: Can I schedule injection patterns?</strong></p>
+<p>A: Currently only simple Start/Pause/Stop controls are available. Complex scheduling features are not yet implemented.</p>
+<p><strong>Q: How do I stop injection quickly?</strong></p>
+<p>A: Click Stop in the Signal Player panel or stop the entire system from the toolbar.</p>
 <h2 id="exports-reports">Exports &amp; Reports<a class="headerlink" href="#exports-reports" title="Permanent link">&para;</a></h2>
-<p><strong>Q: Why is my export empty?</strong><br />
-A: Ensure the selected timeline range contains data and filters aren’t excluding everything.</p>
-<p><strong>Q: Can I customize report templates?</strong><br />
-A: Yes. Clone a template in the Report Builder and adjust branding, sections, and default text.</p>
-<p><strong>Q: Where are exports saved?</strong><br />
-A: By default, in the export folder set under <strong>Settings → Exports</strong>. The status bar displays the path after each export.</p>
+<p><strong>Q: Why is my export empty?</strong></p>
+<p>A:
+- Verify the timeline range contains data
+- Check that signals are selected
+- Ensure filters aren't excluding all data
+- Confirm the source file has loaded properly</p>
+<p><strong>Q: Where are exports saved?</strong></p>
+<p>A: You choose the location when exporting. There's no default export folder setting.</p>
+<p><strong>Q: What export formats are available?</strong></p>
+<p>A:
+- CSV for signal data (human-readable)
+- BLF for raw CAN data (binary format)
+- Screenshots for charts and visualizations</p>
+<p><strong>Q: Can I customize export formats?</strong></p>
+<p>A: No, export formats are fixed. CSV includes timestamps and signal values. BLF maintains raw CAN frame data.</p>
 <h2 id="performance-stability">Performance &amp; Stability<a class="headerlink" href="#performance-stability" title="Permanent link">&para;</a></h2>
-<p><strong>Q: How do I speed up large exports?</strong><br />
-A: Use binary formats (MDF4), run exports from fast storage, and queue them during off-hours.</p>
-<p><strong>Q: The app feels sluggish after hours of use.</strong><br />
-A: Restart TrueFidelity to release cached resources and review <strong>Performance Tips</strong> for proactive tuning.</p>
-<h2 id="support">Support<a class="headerlink" href="#support" title="Permanent link">&para;</a></h2>
-<p><strong>Q: How do I capture logs for support?</strong><br />
-A: Use <strong>Help → Show Logs</strong>, compress the folder, and include it with your support request.</p>
-<p><strong>Q: What information should I provide to support?</strong><br />
-A: Include OS version, app version, reproduction steps, logs, project or sample logs (if possible), and relevant screenshots.</p>
-<h2 id="updates-licensing">Updates &amp; Licensing<a class="headerlink" href="#updates-licensing" title="Permanent link">&para;</a></h2>
-<p><strong>Q: How do I update TrueFidelity?</strong><br />
-A: Download the latest installer from your distribution portal and run it. Your settings and projects remain intact.</p>
-<p><strong>Q: Will updates modify my project files?</strong><br />
-A: Projects are forward compatible; however, always keep backups before upgrading.</p>
-<p><strong>Q: How can I transfer a license to a new machine?</strong><br />
-A: Deactivate on the old machine (Help → License) and activate on the new one using your license credentials.</p>
-<h2 id="system-design-ecu-management">System Design &amp; ECU Management<a class="headerlink" href="#system-design-ecu-management" title="Permanent link">&para;</a></h2>
-<p><strong>Q: How do I add an ECU to my system?</strong><br />
-A: Drag an ECU component from the Toolbox onto the System Canvas. Then configure its properties (binary path, network interfaces) in the Properties panel.</p>
-<p><strong>Q: Can I run multiple ECU systems simultaneously?</strong><br />
-A: Yes, but resource usage scales with the number of ECUs. Each ECU container consumes CPU and memory. Monitor resources using the Resource Monitor panel.</p>
-<p><strong>Q: How do I connect ECUs on different networks?</strong><br />
-A: Use a Gateway ECU component in the Toolbox. Connect it to ECUs on different network segments. Configure network edges (CAN channels) in the Properties panel.</p>
-<p><strong>Q: What happens if an ECU crashes or stops?</strong><br />
-A: The ECU Status panel shows the error state (red indicator). Check the Console panel for error messages. You can restart the ECU from the context menu.</p>
-<p><strong>Q: Can I modify ECU configuration while it's running?</strong><br />
-A: Some changes require stopping the ECU first (e.g., network configuration). Others may take effect on restart. Stop the ECU, modify properties, save the system, then restart.</p>
-<h2 id="ecu-monitoring-terminal-access">ECU Monitoring &amp; Terminal Access<a class="headerlink" href="#ecu-monitoring-terminal-access" title="Permanent link">&para;</a></h2>
-<p><strong>Q: Why can't I connect to an ECU terminal?</strong><br />
-A: Verify the ECU is running (green status). Check Console logs for terminal service errors. Some ECU images may not have terminal support enabled. Ensure appropriate permissions.</p>
-<p><strong>Q: How do I filter logs from a specific ECU?</strong><br />
-A: In the Console panel, type the ECU name in the filter bar. You can also use log level toggles to show only errors, warnings, etc.</p>
-<p><strong>Q: Can I export monitoring data?</strong><br />
-A: Yes. Export Console logs as text/CSV. Export Resource Monitor metrics as CSV or PNG. Export Network Traffic as BLF, MDF4, or CSV.</p>
-<p><strong>Q: Why are my resource graphs showing zero?</strong><br />
-A: Ensure ECUs are running. Check that the Resource Monitor panel is visible and time range includes recent activity. Refresh the panel if needed.</p>
-<p><strong>Q: How do I access terminal for multiple ECUs?</strong><br />
-A: The Terminal panel has one tab per ECU. Click different tabs to switch between ECU terminals. Each tab maintains its own connection and command history.</p>
-<p><strong>Q: Can I run automated commands in terminals?</strong><br />
-A: Terminal access is interactive. For automation, consider using the CLI tools or scripting against the TrueFidelity APIs (if available in your edition).</p>
-<h2 id="miscellaneous">Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permanent link">&para;</a></h2>
-<p><strong>Q: Can I integrate scripts or automation?</strong><br />
-A: Some editions include CLI utilities. Consult your release notes or support representative for availability.</p>
-<p><strong>Q: Does TrueFidelity support other bus types (LIN, FlexRay)?</strong><br />
-A: Support varies by release. Check the release notes or contact support for the current bus compatibility list.</p>
-<p><strong>Q: How do I change the Catppuccin theme colors?</strong><br />
-A: Edit <code>docs/styles/extra.css</code> or use <strong>Settings → Theme</strong> if exposed in your build.</p>
+<p><strong>Q: How do I improve performance?</strong></p>
+<p>A:
+- Increase Docker Desktop resources (memory and CPU)
+- Use local SSD storage for files
+- Clear accumulated data in panels
+- Close unnecessary panels
+- Enable Mock Mode for testing without Docker</p>
+<p><strong>Q: The app feels sluggish after hours of use.</strong></p>
+<p>A:
+- Clear Network Traffic panel
+- Restart TrueFidelity Desktop
+- Clean Docker containers: <code>docker system prune</code>
+- Check system memory usage</p>
+<p><strong>Q: How much memory does TrueFidelity need?</strong></p>
+<p>A:
+- Minimum: 8 GB system RAM
+- Recommended: 16 GB for large files
+- Docker Desktop should have 8+ GB allocated</p>
+<h2 id="docker-containers">Docker &amp; Containers<a class="headerlink" href="#docker-containers" title="Permanent link">&para;</a></h2>
+<p><strong>Q: Do I need Docker Desktop?</strong></p>
+<p>A: Yes, for ECU simulation. You can use Mock Mode for UI testing without Docker.</p>
+<p><strong>Q: How do I configure Docker resources?</strong></p>
+<p>A: Open Docker Desktop Settings:
+- Memory: Allocate at least 8 GB
+- CPU: Allocate at least 4 cores
+- Disk: Ensure adequate space for images</p>
+<p><strong>Q: What if Docker won't start?</strong></p>
+<p>A:
+- Check Docker Desktop is installed
+- Verify virtualization is enabled in BIOS
+- On Linux, ensure user is in docker group
+- Try restarting Docker service</p>
+<p><strong>Q: How do I clean up Docker resources?</strong></p>
+<p>A: Run these commands:</p>
+<pre><code class="language-bash">docker container prune  # Remove stopped containers
+docker image prune -a   # Remove unused images
+docker system prune -a  # Complete cleanup
+</code></pre>
+<h2 id="settings-configuration">Settings &amp; Configuration<a class="headerlink" href="#settings-configuration" title="Permanent link">&para;</a></h2>
+<p><strong>Q: What settings can I customize?</strong></p>
+<p>A: Currently only delete confirmations can be toggled in Settings. More options are planned for future releases.</p>
+<p><strong>Q: How do I reset settings?</strong></p>
+<p>A: In Settings dialog, click "Reset to Defaults" or clear browser local storage.</p>
+<p><strong>Q: Is there a light theme?</strong></p>
+<p>A: Currently only dark theme is available. Light theme is planned for a future update.</p>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<p><strong>Q: How do I capture logs for support?</strong></p>
+<p>A:
+1. Open browser console (F12)
+2. Reproduce the issue
+3. Copy console output
+4. Include Docker logs: <code>docker logs &lt;container-id&gt;</code></p>
+<p><strong>Q: What information should I provide to support?</strong></p>
+<p>A:
+- OS and version
+- Docker Desktop version
+- TrueFidelity Desktop version
+- Steps to reproduce
+- Browser console logs
+- Screenshots of the issue</p>
+<p><strong>Q: Where can I find more help?</strong></p>
+<p>A:
+- Check the Troubleshooting guide for detailed solutions
+- Review other documentation pages
+- Contact support with diagnostic information</p>
+<h2 id="updates-installation">Updates &amp; Installation<a class="headerlink" href="#updates-installation" title="Permanent link">&para;</a></h2>
+<p><strong>Q: How do I update TrueFidelity?</strong></p>
+<p>A: Download and run the latest installer. Your settings and system files remain intact.</p>
+<p><strong>Q: Will updates modify my system files?</strong></p>
+<p>A: No, JSON system files are forward compatible. Always keep backups as a best practice.</p>
+<p><strong>Q: Can I run multiple versions?</strong></p>
+<p>A: Not recommended. Use one version at a time to avoid conflicts.</p>
+<h2 id="keyboard-shortcuts">Keyboard Shortcuts<a class="headerlink" href="#keyboard-shortcuts" title="Permanent link">&para;</a></h2>
+<p><strong>Q: What keyboard shortcuts are available?</strong></p>
+<p>A:
+- <strong>Ctrl/Cmd + R</strong>: Refresh application
+- <strong>F12</strong>: Open developer console
+- <strong>Escape</strong>: Close dialogs
+- <strong>Delete</strong>: Remove selected element (with confirmation)</p>
+<p><strong>Q: Can I customize shortcuts?</strong></p>
+<p>A: No, keyboard shortcuts are currently fixed. Customization is planned for future releases.</p>
 <h2 id="still-need-help">Still Need Help?<a class="headerlink" href="#still-need-help" title="Permanent link">&para;</a></h2>
-<p>Visit the <strong>Support</strong> page for contact details, escalation paths, and SLA information.</p>
+<p>If your question isn't answered here:</p>
+<ol>
+<li>Check the <strong>Troubleshooting</strong> guide for detailed problem solutions</li>
+<li>Review other documentation sections</li>
+<li>Gather diagnostic information (logs, screenshots, system info)</li>
+<li>Contact your support representative with complete details</li>
+</ol>
 
 
 
@@ -2003,10 +2120,10 @@ A: Edit <code>docs/styles/extra.css</code> or use <strong>Settings → Theme</st
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "toc.integrate", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "toc.integrate", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

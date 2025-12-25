@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -780,34 +780,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../using-the-app/annotations-and-bookmarks/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Annotations & Bookmarks
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../using-the-app/dbc-and-signal-definitions/" class="md-nav__link">
         
   
@@ -1066,10 +1038,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#hardware-permissions" class="md-nav__link">
+  <a href="#where-injection-lives-in-the-ui" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Hardware &amp; Permissions
+        Where Injection Lives in the UI
       
     </span>
   </a>
@@ -1077,10 +1049,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#panel-overview" class="md-nav__link">
+  <a href="#starting-injection" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Panel Overview
+        Starting Injection
       
     </span>
   </a>
@@ -1088,65 +1060,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#creating-a-message-template" class="md-nav__link">
+  <a href="#verifying-injection" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Creating a Message Template
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#scheduling-injection" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Scheduling Injection
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#starting-monitoring-injection" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Starting &amp; Monitoring Injection
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#profiles" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Profiles
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#integration-with-playback" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Integration with Playback
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#logs-audit-trail" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Logs &amp; Audit Trail
+        Verifying Injection
       
     </span>
   </a>
@@ -1806,114 +1723,79 @@
 
 
 <h1 id="data-injection-overview">Data Injection Overview<a class="headerlink" href="#data-injection-overview" title="Permanent link">&para;</a></h1>
-<p>Data injection lets you transmit CAN frames from TrueFidelity while you monitor playback or live systems. Use it to simulate sensors, reproduce edge cases, or validate control strategies in controlled environments.</p>
+<p>Data injection lets you transmit CAN frames from TrueFidelity while a system is running. Use it to simulate sensors, reproduce edge cases, or validate control strategies in a controlled environment. Injection is managed inside the <strong>Signal Player &amp; Injection</strong> panel rather than a separate window.</p>
 <h2 id="when-to-use-injection">When to Use Injection<a class="headerlink" href="#when-to-use-injection" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Simulating missing sensors or altered signals during bench testing</li>
-<li>Reproducing field issues without waiting for the exact conditions</li>
-<li>Stress-testing ECUs by increasing message rates</li>
-<li>Validating firmware updates that rely on specific message sequences</li>
+<li>Simulate missing sensors or altered signals during bench testing.</li>
+<li>Reproduce field issues without waiting for exact conditions.</li>
+<li>Validate firmware responses to specific message sequences.</li>
+<li>Blend simulated messages with recorded playback traffic.</li>
 </ul>
 <h2 id="safety-first">Safety First<a class="headerlink" href="#safety-first" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Perform injection only in controlled test environments.</li>
-<li>Keep a quick way to disconnect hardware or stop injection.</li>
-<li>Document all injected messages to ensure traceability and avoid confusion during analysis.</li>
+<li>Keep a quick way to stop the system if something goes wrong.</li>
+<li>Document injected signals so results are traceable.</li>
 </ul>
-<h2 id="hardware-permissions">Hardware &amp; Permissions<a class="headerlink" href="#hardware-permissions" title="Permanent link">&para;</a></h2>
+<h2 id="where-injection-lives-in-the-ui">Where Injection Lives in the UI<a class="headerlink" href="#where-injection-lives-in-the-ui" title="Permanent link">&para;</a></h2>
+<p>Injection controls sit next to playback controls in the <strong>Signal Player &amp; Injection</strong> panel. This panel is usually opened from the Network Analysis layout.</p>
+<p><img alt="Signal Player &amp; Injection panel with playback and injection controls" src="../../images/playback-signal-player.png" /></p>
+<p>Key items to notice in the panel:</p>
 <ul>
-<li>Ensure your machine has permissions to access the CAN interface (SocketCAN on Linux, driver packages on Windows).</li>
-<li>Confirm your hardware supports injection and is not set to monitor-only mode.</li>
-<li>In multi-user environments, coordinate access to avoid conflicting injections.</li>
+<li><strong>Injection controls</strong> on the right (Start all, Pause all, Stop all, Clear all).</li>
+<li><strong>Sync with playback</strong> toggle to align injection start with playback.</li>
+<li><strong>Networks list</strong> to confirm which CAN bus is active and mapped.</li>
+<li><strong>Dataset selector</strong> for playback (injection controls stay disabled until the system is running).</li>
 </ul>
-<h2 id="panel-overview">Panel Overview<a class="headerlink" href="#panel-overview" title="Permanent link">&para;</a></h2>
-<p>Open the <strong>Data Injection</strong> panel from the sidebar. The panel includes:</p>
+<h2 id="starting-injection">Starting Injection<a class="headerlink" href="#starting-injection" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>Channel selector</strong> – Choose the CAN bus (<code>can0</code>, <code>can1</code>, etc.).</li>
-<li><strong>Message list</strong> – Each entry defines ID, DLC, payload, and flags.</li>
-<li><strong>Schedule controls</strong> – Configure timing (once, interval, burst, ramp).</li>
-<li><strong>Counters</strong> – Sent frames, failures, current rate, elapsed time.</li>
-<li><strong>Status log</strong> – Inline log showing start/stop events and errors.</li>
+<li>Start your system from the main toolbar so the runtime is active.</li>
+<li>Open <strong>Signal Player &amp; Injection</strong>.</li>
+<li>Confirm the correct network is selected in the Networks list.</li>
+<li>Use <strong>Start all</strong> to begin injection.</li>
+<li>If needed, use <strong>Pause all</strong> to temporarily stop sending without clearing state.</li>
+<li>Use <strong>Stop all</strong> to end injection and reset the run.</li>
+<li>Use <strong>Clear all</strong> to remove pending injection items from the queue.</li>
 </ol>
-<h2 id="creating-a-message-template">Creating a Message Template<a class="headerlink" href="#creating-a-message-template" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Click <strong>Add Message</strong>.</li>
-<li>Enter ID (hex or decimal) and select standard vs. extended.</li>
-<li>Set DLC (0–8 for classic CAN).</li>
-<li>Enter payload as hex bytes (<code>AA FF 00 01 ...</code>).</li>
-<li>Optional: Set flags (RTR, BRS) depending on your build.</li>
-</ol>
-<h2 id="scheduling-injection">Scheduling Injection<a class="headerlink" href="#scheduling-injection" title="Permanent link">&para;</a></h2>
+<p>If you need injection to line up with playback, enable <strong>Sync with playback</strong> before you press Play.</p>
+<h2 id="verifying-injection">Verifying Injection<a class="headerlink" href="#verifying-injection" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Once:</strong> Sends the message once after a specified delay.</li>
-<li><strong>Interval:</strong> Repeats at a fixed rate (e.g., every 100 ms).</li>
-<li><strong>Burst:</strong> Sends N frames rapidly, then pauses for M seconds.</li>
-<li><strong>Ramp:</strong> Gradually increases or decreases the rate across a defined duration.</li>
-<li><strong>Custom script:</strong> Some deployments allow importing a script for complex patterns.</li>
-</ul>
-<p>Configure the schedule in the lower portion of the panel; preview charts show expected timing.</p>
-<h2 id="starting-monitoring-injection">Starting &amp; Monitoring Injection<a class="headerlink" href="#starting-monitoring-injection" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Review hardware connection and message templates.</li>
-<li>Click <strong>Start</strong>. The status indicator turns green.</li>
-<li>Monitor counters to confirm messages are being sent.</li>
-<li>Watch the Messages panel to verify the injected frames appear as expected.</li>
-<li>Click <strong>Stop</strong> to end injection immediately.</li>
-</ol>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>If you see transmission errors or failures incrementing rapidly, stop injection and inspect hardware or bus load.</p>
-</div>
-<h2 id="profiles">Profiles<a class="headerlink" href="#profiles" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Use <strong>Save Profile</strong> to store a set of messages and schedules as a <code>.tfinject</code> file.</li>
-<li>Load profiles to reproduce scenarios quickly (e.g., <code>ABS_failover</code>, <code>Sensor_spike_test</code>).</li>
-<li>Profiles capture message templates, schedules, and channel selection.</li>
-</ul>
-<h2 id="integration-with-playback">Integration with Playback<a class="headerlink" href="#integration-with-playback" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Run injection while playing back logs to blend simulated messages with recorded data.</li>
-<li>Use different channels to separate injected frames from recorded ones if needed.</li>
-<li>Annotate injection start/stop times to maintain traceability.</li>
-</ul>
-<h2 id="logs-audit-trail">Logs &amp; Audit Trail<a class="headerlink" href="#logs-audit-trail" title="Permanent link">&para;</a></h2>
-<ul>
-<li>The injection panel logs start/stop events, errors, and parameter changes.</li>
-<li>Export injection logs from the panel or <strong>Help → Show Logs</strong> for audits.</li>
-<li>Include injection profiles and logs in project archives.</li>
+<li>Watch <strong>Network Traffic</strong> to confirm frames are being transmitted.</li>
+<li>Use <strong>Signal Viewer</strong> to see decoded signals update in real time.</li>
+<li>Keep <strong>ECU Console</strong> open when testing to catch runtime errors as they occur.</li>
 </ul>
 <h2 id="troubleshooting-injection">Troubleshooting Injection<a class="headerlink" href="#troubleshooting-injection" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
 <th>Issue</th>
-<th>Solution</th>
+<th>Suggested Fix</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Messages not appearing</td>
-<td>Verify the correct channel is selected and not in listen-only mode. Check for bus-off conditions.</td>
+<td>Injection controls disabled</td>
+<td>Start the system and confirm the runtime is connected.</td>
 </tr>
 <tr>
-<td>Injection stops unexpectedly</td>
-<td>Look for hardware errors in the status log; ensure other tools are not controlling the interface.</td>
+<td>Frames not visible</td>
+<td>Check the selected network and verify traffic appears in Network Traffic.</td>
 </tr>
 <tr>
-<td>Rate inaccurate</td>
-<td>Adjust schedule settings; confirm the system clock is stable and the machine is not under heavy CPU load.</td>
+<td>Playback works but injection does not</td>
+<td>Disable Sync with playback and try Start all manually.</td>
 </tr>
 <tr>
-<td>Unable to start</td>
-<td>Confirm activation license includes injection features and the profile is valid.</td>
+<td>Injection causes instability</td>
+<td>Stop injection and verify ECU configuration and bus load.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Read <strong>Schedules &amp; Profiles</strong> to master timing options.</li>
-<li>Review <strong>Safety &amp; Best Practices</strong> for operational guidelines.</li>
-<li>Combine injection tests with <strong>Annotations &amp; Bookmarks</strong> to document outcomes.</li>
+<li>Review <strong>Playback</strong> for dataset setup and channel mapping.</li>
+<li>Use <strong>Filters &amp; Search</strong> to isolate injected frames quickly.</li>
+<li>Refer to <strong>Controls &amp; Panels</strong> for a deeper panel walkthrough.</li>
 </ul>
 
 
@@ -2012,10 +1894,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "toc.integrate", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "toc.integrate", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -780,34 +780,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../using-the-app/annotations-and-bookmarks/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Annotations & Bookmarks
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../using-the-app/dbc-and-signal-definitions/" class="md-nav__link">
         
   
@@ -1100,6 +1072,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#why-injection-requires-extra-care" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Injection Requires Extra Care
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#general-safety-rules" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1122,10 +1105,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#during-injection" class="md-nav__link">
+  <a href="#safe-operating-flow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        During Injection
+        Safe Operating Flow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitoring-during-injection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitoring During Injection
       
     </span>
   </a>
@@ -1155,10 +1149,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#compliance-traceability" class="md-nav__link">
+  <a href="#traceability-documentation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Compliance &amp; Traceability
+        Traceability &amp; Documentation
       
     </span>
   </a>
@@ -1177,17 +1171,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#automation-safeguards" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Automation Safeguards
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#legal-ethical-considerations" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1199,10 +1182,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#additional-resources" class="md-nav__link">
+  <a href="#next-steps" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Additional Resources
+        Next Steps
       
     </span>
   </a>
@@ -1784,94 +1767,109 @@
 
 
 <h1 id="safety-best-practices">Safety &amp; Best Practices<a class="headerlink" href="#safety-best-practices" title="Permanent link">&para;</a></h1>
-<p>Data injection can influence real systems. Use this checklist to run tests safely, protect equipment, and maintain clear documentation.</p>
+<p>Data injection directly influences ECU behavior. Treat it as a controlled test activity, not a casual feature. This guide explains how to plan, execute, and document injection in the current UI so results are safe, repeatable, and defensible.</p>
+<h2 id="why-injection-requires-extra-care">Why Injection Requires Extra Care<a class="headerlink" href="#why-injection-requires-extra-care" title="Permanent link">&para;</a></h2>
+<p>Injected signals can override real inputs or recorded data. That means the system can behave differently than expected, especially if an ECU interprets a signal as a fault or a critical state. Even in a bench setup, unexpected behavior can damage hardware, corrupt test results, or hide real issues. The goal is to inject with intent, observe carefully, and stop quickly if results look wrong.</p>
 <h2 id="general-safety-rules">General Safety Rules<a class="headerlink" href="#general-safety-rules" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>Test Environment Only</strong> – Perform injection on bench setups or controlled environments unless explicitly approved for vehicle testing.</li>
-<li><strong>Physical Safeguards</strong> – Ensure an emergency stop, power cut, or hardware disconnect is within reach.</li>
-<li><strong>Document Intent</strong> – Record why you are injecting, which messages, and expected results before starting.</li>
-<li><strong>Team Communication</strong> – Notify everyone connected to the bus that injection is active.</li>
-<li><strong>Monitor Continuously</strong> – Watch the status indicators and message counters to catch unexpected behavior.</li>
+<li><strong>Test environment only</strong>: Run injection on bench setups or controlled environments unless you have explicit approval for vehicle testing.</li>
+<li><strong>Physical safeguards</strong>: Keep a hardware disconnect or emergency stop within reach. Know how to cut power fast.</li>
+<li><strong>Clear intent</strong>: Write down which signals you plan to override and why before you start.</li>
+<li><strong>Communicate</strong>: Notify anyone else on the bus that injection will be active.</li>
+<li><strong>Monitor continuously</strong>: Keep Network Traffic, Signal Chart, and ECU Console visible while you inject.</li>
 </ol>
 <h2 id="pre-test-checklist">Pre-Test Checklist<a class="headerlink" href="#pre-test-checklist" title="Permanent link">&para;</a></h2>
+<p>Before you press Start, confirm the basics:</p>
 <ul>
-<li>Verify activation and user permissions allow injection.</li>
-<li>Confirm hardware connections (interface cables, termination resistors) are secure.</li>
-<li>Backup original logs and profile configurations.</li>
-<li>Load the appropriate injection profile and review message templates.</li>
-<li>Ensure the system under test is ready (ECUs powered, simulation running).</li>
+<li><strong>Activation and permissions</strong>: Make sure your license and user role allow injection.</li>
+<li><strong>Hardware readiness</strong>: Verify CAN interface cables, termination, and power to ECUs.</li>
+<li><strong>DBC alignment</strong>: Confirm the correct DBC is loaded so physical values map correctly to raw data.</li>
+<li><strong>Signal selection</strong>: Only enable injection for signals you intend to override.</li>
+<li><strong>Length settings</strong>: Use Frames or Duration for temporary overrides when possible.</li>
 </ul>
-<h2 id="during-injection">During Injection<a class="headerlink" href="#during-injection" title="Permanent link">&para;</a></h2>
+<p>A small setup mistake (like a wrong DBC or a mis-typed physical value) can quickly snowball into confusing results.</p>
+<h2 id="safe-operating-flow">Safe Operating Flow<a class="headerlink" href="#safe-operating-flow" title="Permanent link">&para;</a></h2>
+<p>Use this basic runbook for every injection session:</p>
+<ol>
+<li>Start the system from the main toolbar.</li>
+<li>Open <strong>Signal Player &amp; Injection</strong> and locate the target signals.</li>
+<li>Open the signal injection options and set override value, encoding, and length.</li>
+<li>Decide if <strong>Start with playback</strong> is required, then click <strong>Save</strong>.</li>
+<li>Begin injection with <strong>Start all</strong> (or start one signal manually if needed).</li>
+<li>Watch live feedback in <strong>Network Traffic</strong> and <strong>Signal Chart</strong>.</li>
+<li>Stop injection immediately if results are unexpected or unsafe.</li>
+</ol>
+<h2 id="monitoring-during-injection">Monitoring During Injection<a class="headerlink" href="#monitoring-during-injection" title="Permanent link">&para;</a></h2>
+<p>Injection should never run unattended. Keep these panels visible:</p>
 <ul>
-<li>Start with low frequencies; ramp up only after confirming stability.</li>
-<li>Observe the system response in real time via Messages and Charts.</li>
-<li>Keep annotations of notable responses or anomalies with timestamps.</li>
-<li>If errors or warnings appear in the injection log, stop immediately.</li>
+<li><strong>Network Traffic</strong> confirms frames are actually being transmitted on the expected bus.</li>
+<li><strong>Signal Chart</strong> shows whether decoded values match the override values you configured.</li>
+<li><strong>ECU Console</strong> provides early warnings if an ECU detects faults or rejects messages.</li>
 </ul>
+<p>If you see errors or no traffic, stop injection first, then investigate.</p>
 <h2 id="post-test-actions">Post-Test Actions<a class="headerlink" href="#post-test-actions" title="Permanent link">&para;</a></h2>
+<p>After the run, clean up and document:</p>
 <ul>
-<li>Stop injection and confirm the status indicator returns to idle.</li>
-<li>Save project changes, including annotations and profile adjustments.</li>
-<li>Export injection logs and include them in your project documentation.</li>
-<li>Reset the system under test to a known safe state.</li>
+<li><strong>Stop injection</strong> and confirm the system returns to normal behavior.</li>
+<li><strong>Save system changes</strong> if any configuration was updated.</li>
+<li><strong>Export relevant evidence</strong> such as Network Traffic captures, chart images, or console logs.</li>
+<li><strong>Record the injection settings</strong> (signals, values, length, and whether Start with playback was used).</li>
 </ul>
+<p>The goal is to leave a clear trail for anyone who needs to reproduce your test.</p>
 <h2 id="handling-failures">Handling Failures<a class="headerlink" href="#handling-failures" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
 <th>Scenario</th>
-<th>Response</th>
+<th>Recommended Response</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Hardware enters bus-off</td>
-<td>Stop injection, reset the CAN interface, and verify bus load.</td>
+<td>ECU enters bus-off or resets</td>
+<td>Stop injection, reset the CAN interface, and check bus load.</td>
 </tr>
 <tr>
-<td>System under test behaves unexpectedly</td>
-<td>Stop injection, document behavior, and analyze logs before repeating.</td>
+<td>Unexpected behavior or unstable system</td>
+<td>Stop injection immediately and document what you observed.</td>
 </tr>
 <tr>
-<td>Application crashes</td>
-<td>Gather logs from <strong>Help → Show Logs</strong> and report to support.</td>
+<td>No injected frames appear</td>
+<td>Verify the selected network and DBC; check that injection is started.</td>
 </tr>
 <tr>
-<td>Injection schedule misfires</td>
-<td>Review profile settings; run a dry simulation without hardware to validate timing.</td>
+<td>Values look incorrect</td>
+<td>Confirm encoding type and ensure the DBC matches the ECU firmware.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="compliance-traceability">Compliance &amp; Traceability<a class="headerlink" href="#compliance-traceability" title="Permanent link">&para;</a></h2>
+<h2 id="traceability-documentation">Traceability &amp; Documentation<a class="headerlink" href="#traceability-documentation" title="Permanent link">&para;</a></h2>
+<p>Injection is most useful when the results are easy to explain. Keep a short test record that answers:</p>
 <ul>
-<li>Assign a unique test ID to each injection session.</li>
-<li>Store profiles, logs, annotations, and exports together.</li>
-<li>Keep a changelog of profile revisions (date, author, purpose).</li>
-<li>Follow your organization’s safety review process before running high-risk injections.</li>
+<li>Which signals were injected?</li>
+<li>What override values and lengths were used?</li>
+<li>Did injection start with playback or manually?</li>
+<li>What did the ECU do as a result?</li>
+<li>Where are the exported logs or charts saved?</li>
 </ul>
+<p>This can be as simple as a markdown file stored alongside the system or a ticket comment with links to exported artifacts.</p>
 <h2 id="team-practices">Team Practices<a class="headerlink" href="#team-practices" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Use shared templates for annotations and reports to maintain consistency.</li>
-<li>Conduct regular reviews of injection profiles to retire outdated scenarios.</li>
-<li>Pair new engineers with experienced operators before granting independent injection access.</li>
-</ul>
-<h2 id="automation-safeguards">Automation Safeguards<a class="headerlink" href="#automation-safeguards" title="Permanent link">&para;</a></h2>
-<ul>
-<li>When running automated scripts, include timeouts and fail-safe checks.</li>
-<li>Log every automated injection run with timestamps and outcome.</li>
-<li>Schedule automated runs outside of active working hours unless supervised.</li>
+<li>Standardize naming for test runs and exports so multiple engineers can compare results.</li>
+<li>Share a short template for injection notes so everyone documents consistently.</li>
+<li>Review injection outcomes during regular team check-ins to prevent repeated mistakes.</li>
 </ul>
 <h2 id="legal-ethical-considerations">Legal &amp; Ethical Considerations<a class="headerlink" href="#legal-ethical-considerations" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Do not deploy injection against live production vehicles or customer equipment without explicit authorization.</li>
-<li>Follow regional regulations regarding CAN manipulation and data privacy.</li>
-<li>Ensure encryption keys or security tokens remain protected if your platform uses encrypted channels.</li>
+<li>Do not inject on live customer vehicles or production hardware without explicit authorization.</li>
+<li>Follow regional regulations on CAN manipulation and data handling.</li>
+<li>Keep credentials and tokens secured if your environment uses authenticated interfaces.</li>
 </ul>
-<h2 id="additional-resources">Additional Resources<a class="headerlink" href="#additional-resources" title="Permanent link">&para;</a></h2>
+<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Support</strong> – How to reach the support team with logs and profile files.</li>
-<li><strong>Release Channels</strong> – Stay updated with patches that may affect injection safety.</li>
-<li><strong>Tutorial: Injection Scenario Walkthrough</strong> – Step-by-step example combining these best practices.</li>
+<li>Review <strong>Schedules &amp; Profiles</strong> to understand signal-level injection options and length settings.</li>
+<li>Use <strong>Controls &amp; Panels</strong> for a full walkthrough of monitoring panels.</li>
+<li>Refer to <strong>Exports &amp; Reports</strong> to package evidence from injection tests.</li>
 </ul>
 
 
@@ -1970,10 +1968,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "toc.integrate", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "toc.integrate", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

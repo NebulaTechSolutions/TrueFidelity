@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -780,34 +780,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../using-the-app/annotations-and-bookmarks/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Annotations & Bookmarks
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../using-the-app/dbc-and-signal-definitions/" class="md-nav__link">
         
   
@@ -1271,10 +1243,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#scenario" class="md-nav__link">
+  <a href="#time-estimate" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Scenario
+        Time Estimate
       
     </span>
   </a>
@@ -1282,10 +1254,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-1-setup-project-layout" class="md-nav__link">
+  <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1 – Setup Project &amp; Layout
+        Prerequisites
       
     </span>
   </a>
@@ -1293,10 +1265,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-pin-key-signals" class="md-nav__link">
+  <a href="#learning-objectives" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2 – Pin Key Signals
+        Learning Objectives
       
     </span>
   </a>
@@ -1304,10 +1276,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-establish-baseline" class="md-nav__link">
+  <a href="#scenario-overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 3 – Establish Baseline
+        Scenario Overview
       
     </span>
   </a>
@@ -1315,10 +1287,605 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-analyze-suspect-log" class="md-nav__link">
+  <a href="#part-1-system-preparation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 4 – Analyze Suspect Log
+        Part 1: System Preparation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: System Preparation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-or-load-a-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Create or Load a System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-build-and-start-the-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Build and Start the System
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-can-log-analysis-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 2: CAN Log Analysis Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2: CAN Log Analysis Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-3-switch-to-can-log-analysis-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Switch to CAN Log Analysis Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-load-the-blf-log-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Load the BLF Log File
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-configure-playback-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Configure Playback Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-signal-identification-and-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 3: Signal Identification and Selection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3: Signal Identification and Selection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-6-locate-cooling-system-signals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6: Locate Cooling System Signals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7-select-signals-for-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7: Select Signals for Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4-playback-and-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 4: Playback and Analysis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 4: Playback and Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-8-start-playback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 8: Start Playback
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-9-identify-anomalies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 9: Identify Anomalies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-10-detailed-investigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 10: Detailed Investigation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-11-filter-network-traffic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 11: Filter Network Traffic
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-5-quantitative-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 5: Quantitative Analysis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 5: Quantitative Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-12-measure-temperature-variations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 12: Measure Temperature Variations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-13-pattern-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 13: Pattern Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-6-data-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 6: Data Export
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 6: Data Export">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-14-export-network-traffic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 14: Export Network Traffic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-15-export-signal-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 15: Export Signal Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-16-export-visualizations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 16: Export Visualizations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-7-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 7: Documentation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 7: Documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-17-create-analysis-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 17: Create Analysis Report
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting Guide
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-playback-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Playback Issues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Playback Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#blf-file-wont-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BLF File Won't Load
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no-signals-appearing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        No Signals Appearing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#playback-stutters-or-freezes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Playback Stutters or Freezes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signal-values-dont-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Signal Values Don't Update
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chart-not-displaying" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chart Not Displaying
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#export-fails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export Fails
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Optimization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Performance Optimization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-large-log-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For Large Log Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-complex-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For Complex Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Techniques
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Techniques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multi-stage-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-Stage Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signal-correlation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Signal Correlation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pattern-recognition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern Recognition
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-with-external-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration with External Tools
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integration with External Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matlab-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MATLAB Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#excel-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Excel Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#systematic-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Systematic Approach
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation-standards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation Standards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
       
     </span>
   </a>
@@ -1326,98 +1893,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-5-filtering" class="md-nav__link">
+  <a href="#next-steps" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 5 – Filtering
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-6-quantify-temperature-rise" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 6 – Quantify Temperature Rise
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-7-compare-against-baseline" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 7 – Compare Against Baseline
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-8-export-data-for-review" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 8 – Export Data for Review
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-9-summarize-findings" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 9 – Summarize Findings
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-10-report" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 10 – Report
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#optional-enhancements" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Optional Enhancements
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-you-learned" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What You Learned
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#next-tutorial" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Next Tutorial
+        Next Steps
       
     </span>
   </a>
@@ -1828,96 +2307,934 @@
 
 
 <h1 id="playback-analysis-walkthrough">Playback Analysis Walkthrough<a class="headerlink" href="#playback-analysis-walkthrough" title="Permanent link">&para;</a></h1>
-<p>This tutorial focuses on advanced playback analysis techniques—filtering, charting, and comparing signals across multiple logs—to pinpoint anomalies quickly. Estimated time: 15–20 minutes.</p>
-<h2 id="scenario">Scenario<a class="headerlink" href="#scenario" title="Permanent link">&para;</a></h2>
-<p>You have a 15-minute CAN log from a thermal endurance test. Engineers suspect intermittent cooling fan dropouts leading to engine temperature spikes. Goal: confirm the issue, quantify severity, and prepare a summary.</p>
-<h2 id="step-1-setup-project-layout">Step 1 – Setup Project &amp; Layout<a class="headerlink" href="#step-1-setup-project-layout" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Create a project named <code>Cooling-Fan-Analysis</code>.</li>
-<li>Import <code>cooling_run.mf4</code> and <code>cooling_baseline.mf4</code>.</li>
-<li>Import <code>powertrain.dbc</code>.</li>
-<li>Load the <strong>Analysis</strong> layout (Messages left, Charts right, Signals bottom).</li>
-</ol>
-<h2 id="step-2-pin-key-signals">Step 2 – Pin Key Signals<a class="headerlink" href="#step-2-pin-key-signals" title="Permanent link">&para;</a></h2>
+<p>This comprehensive tutorial focuses on analyzing CAN bus data through log playback, signal decoding, and pattern identification. You'll learn how to load captured logs, decode signals using DBC files, identify anomalies through visualization, and export findings for further analysis. This walkthrough represents a typical debugging workflow that automotive engineers use to diagnose system issues.</p>
+<h2 id="time-estimate">Time Estimate<a class="headerlink" href="#time-estimate" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>engine_coolant_temp</code></li>
-<li><code>cooling_fan_command</code></li>
-<li><code>cooling_fan_feedback</code></li>
-<li><code>vehicle_speed</code></li>
+<li><strong>Initial Setup</strong>: 5-10 minutes</li>
+<li><strong>Playback Configuration</strong>: 10-15 minutes</li>
+<li><strong>Signal Analysis</strong>: 15-20 minutes</li>
+<li><strong>Data Export</strong>: 5-10 minutes</li>
+<li><strong>Total Time</strong>: 35-55 minutes</li>
 </ul>
-<p>Add these signals to the chart. Arrange them on separate axes if scale differs significantly.</p>
-<h2 id="step-3-establish-baseline">Step 3 – Establish Baseline<a class="headerlink" href="#step-3-establish-baseline" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Mute the suspect log and play the baseline log for two minutes.</li>
-<li>Observe normal fan operation: command and feedback align, temperature remains stable.</li>
-<li>Add a bookmark “Baseline behavior” at the 2-minute mark.</li>
-</ol>
-<h2 id="step-4-analyze-suspect-log">Step 4 – Analyze Suspect Log<a class="headerlink" href="#step-4-analyze-suspect-log" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Enable the suspect log and disable the baseline log.</li>
-<li>Set playback speed to 2× to scan quickly.</li>
-<li>Watch for divergences between fan command and feedback.</li>
-</ol>
-<h2 id="step-5-filtering">Step 5 – Filtering<a class="headerlink" href="#step-5-filtering" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Use the Messages filter builder:</li>
-<li>IDs related to cooling module (e.g., <code>0x421</code>, <code>0x422</code>).</li>
-<li>Time range 00:05:00 to 00:12:00 (suspected window).</li>
-<li>Enable <strong>Filter to Range</strong> so charts update accordingly.</li>
-<li>Observe message intervals; look for gaps when feedback drops to zero.</li>
-</ol>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Highlight frames with fan feedback <code>0x00</code> using color rules for quick visual identification.</p>
-</div>
-<h2 id="step-6-quantify-temperature-rise">Step 6 – Quantify Temperature Rise<a class="headerlink" href="#step-6-quantify-temperature-rise" title="Permanent link">&para;</a></h2>
-<ol>
-<li>When you spot a fan dropout, pause and add an annotation (e.g., “Fan dropout #1”).</li>
-<li>Add cursors at the start and end of the temperature spike.</li>
-<li>Note the delta (e.g., +12 °C over 45 seconds).</li>
-<li>Repeat for subsequent dropouts.</li>
-</ol>
-<h2 id="step-7-compare-against-baseline">Step 7 – Compare Against Baseline<a class="headerlink" href="#step-7-compare-against-baseline" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Enable both logs simultaneously.</li>
-<li>Align via the timeline using the start marker.</li>
-<li>Use chart legend to toggle baseline vs. suspect signals for comparison.</li>
-<li>Capture a screenshot when dropout occurs to include in the summary.</li>
-</ol>
-<h2 id="step-8-export-data-for-review">Step 8 – Export Data for Review<a class="headerlink" href="#step-8-export-data-for-review" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Select a 60-second range around the worst spike.</li>
-<li>Export the segment to CSV with decoded signals.</li>
-<li>Export the annotation list (includes dropout timestamps).</li>
-<li>Save the chart screenshot to your exports folder.</li>
-</ol>
-<h2 id="step-9-summarize-findings">Step 9 – Summarize Findings<a class="headerlink" href="#step-9-summarize-findings" title="Permanent link">&para;</a></h2>
-<p>Create a text summary in project notes or annotations:
-- Number of dropouts observed
-- Duration and temperature rise for each event
-- Impact on vehicle speed or other dependencies
-- Differences compared to baseline</p>
-<h2 id="step-10-report">Step 10 – Report<a class="headerlink" href="#step-10-report" title="Permanent link">&para;</a></h2>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>Before starting this tutorial, ensure you have:</p>
 <ul>
-<li>Launch Report Builder with the <code>Operational Anomaly</code> template.</li>
-<li>Include annotations, charts, and CSV exports.</li>
-<li>Add narrative describing root-cause hypothesis (e.g., fan relay overheating).</li>
+<li>TrueFidelity Desktop application running</li>
+<li>A system with at least one CAN network configured</li>
+<li>Sample BLF log files for playback</li>
+<li>DBC file with signal definitions</li>
+<li>Basic understanding of CAN signals and data analysis</li>
 </ul>
-<h2 id="optional-enhancements">Optional Enhancements<a class="headerlink" href="#optional-enhancements" title="Permanent link">&para;</a></h2>
+<h2 id="learning-objectives">Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permanent link">&para;</a></h2>
+<p>By completing this tutorial, you will:</p>
 <ul>
-<li>Use derived signals to calculate fan duty cycle percentage.</li>
-<li>Apply the batch export feature to process multiple ranges automatically.</li>
-<li>Automate detection via scripting if dropouts follow a pattern.</li>
+<li>Master the Signal Player panel for BLF playback</li>
+<li>Understand signal decoding with DBC files</li>
+<li>Learn to identify patterns in time-series data</li>
+<li>Use filtering to focus on relevant signals</li>
+<li>Export data for external analysis</li>
+<li>Troubleshoot common playback issues</li>
 </ul>
-<h2 id="what-you-learned">What You Learned<a class="headerlink" href="#what-you-learned" title="Permanent link">&para;</a></h2>
+<h2 id="scenario-overview">Scenario Overview<a class="headerlink" href="#scenario-overview" title="Permanent link">&para;</a></h2>
+<p>You're investigating cooling system behavior during a thermal endurance test. The test engineers report intermittent cooling fan issues that may be causing temperature spikes. Your task is to:</p>
+<ol>
+<li>Load and analyze the captured CAN log</li>
+<li>Identify cooling system signals</li>
+<li>Find anomalies in fan operation</li>
+<li>Quantify temperature variations</li>
+<li>Document findings for the team</li>
+</ol>
+<p>The log contains 15 minutes of data from a vehicle test, including engine parameters, cooling system status, and diagnostic messages.</p>
+<h2 id="part-1-system-preparation">Part 1: System Preparation<a class="headerlink" href="#part-1-system-preparation" title="Permanent link">&para;</a></h2>
+<h3 id="step-1-create-or-load-a-system">Step 1: Create or Load a System<a class="headerlink" href="#step-1-create-or-load-a-system" title="Permanent link">&para;</a></h3>
+<p>Before analyzing logs, you need a configured system with a CAN network.</p>
+<ol>
+<li><strong>Launch TrueFidelity Desktop</strong>:</li>
+<li>The application opens in System Design mode</li>
+<li>
+<p>Check if you have an existing system or need to create one</p>
+</li>
+<li>
+<p><strong>Create a new system</strong> (if needed):</p>
+</li>
+<li>Click <strong>File → New System</strong></li>
+<li>Name it <code>CoolingSystemAnalysis</code></li>
+<li>
+<p>Click <strong>Create</strong></p>
+</li>
+<li>
+<p><strong>Add a CAN network</strong>:</p>
+</li>
+<li>From the Toolbox, drag a <strong>CAN Bus</strong> to the canvas</li>
+<li>Select the CAN bus</li>
+<li>In Properties panel:<ul>
+<li>Name: <code>Vehicle-CAN</code></li>
+<li>DBC File: Browse and select <code>powertrain.dbc</code></li>
+<li>Click <strong>Apply Changes</strong></li>
+</ul>
+</li>
+</ol>
+<p><img alt="System with CAN network configured" src="../../images/projects-files-can-properties.png" /></p>
+<ol>
+<li><strong>Add analysis ECUs</strong> (optional but recommended):</li>
+<li>Drag a Generic ECU from Toolbox</li>
+<li>Name it <code>DataLogger-ECU</code></li>
+<li>Connect it to the CAN bus</li>
+<li>This ECU will receive the played back messages</li>
+</ol>
+<p><img alt="Complete system ready for analysis" src="../../images/tutorial-step5-complete-network.png" /></p>
+<ol>
+<li><strong>Save the system</strong>:</li>
+<li>Click <strong>File → Save</strong></li>
+<li>Save as <code>CoolingSystemAnalysis.json</code></li>
+</ol>
+<h3 id="step-2-build-and-start-the-system">Step 2: Build and Start the System<a class="headerlink" href="#step-2-build-and-start-the-system" title="Permanent link">&para;</a></h3>
+<p>Deploy the system to enable playback functionality.</p>
+<ol>
+<li><strong>Build the system</strong>:</li>
+<li>Click <strong>Build System</strong> in the toolbar</li>
+<li>Wait for "Build completed successfully"</li>
+<li>If using Mock Mode, build completes immediately</li>
+</ol>
+<p><img alt="Build System button in toolbar" src="../../images/first-launch-system-design-toolbar.png" /></p>
+<ol>
+<li><strong>Start the system</strong>:</li>
+<li>Click <strong>Start</strong> button (green play icon)</li>
+<li>Status bar shows "Starting system..."</li>
+<li>
+<p>Wait for containers to start (10-30 seconds)</p>
+</li>
+<li>
+<p><strong>Verify system is running</strong>:</p>
+</li>
+<li>Status bar shows container count</li>
+<li>No error messages in console</li>
+<li>Ready for playback operations</li>
+</ol>
+<h2 id="part-2-can-log-analysis-setup">Part 2: CAN Log Analysis Setup<a class="headerlink" href="#part-2-can-log-analysis-setup" title="Permanent link">&para;</a></h2>
+<h3 id="step-3-switch-to-can-log-analysis-mode">Step 3: Switch to CAN Log Analysis Mode<a class="headerlink" href="#step-3-switch-to-can-log-analysis-mode" title="Permanent link">&para;</a></h3>
+<p>Configure the workspace for signal analysis.</p>
+<ol>
+<li><strong>Change to analysis mode</strong>:</li>
+<li>Click <strong>View → CAN Log Analysis</strong></li>
+<li>
+<p>The layout reconfigures automatically</p>
+</li>
+<li>
+<p><strong>Understand the analysis layout</strong>:</p>
+</li>
+<li><strong>Signal Viewer</strong> (left) - Hierarchical signal tree</li>
+<li><strong>Network Traffic</strong> (center) - Live CAN frames</li>
+<li><strong>Signal Chart</strong> (right) - Time-series visualization</li>
+<li><strong>Signal Player &amp; Injection</strong> (bottom) - Playback controls</li>
+</ol>
+<p><img alt="CAN Log Analysis mode layout" src="../../images/first-launch-can-log-analysis.png" /></p>
+<ol>
+<li><strong>Adjust panel sizes if needed</strong>:</li>
+<li>Drag panel borders to resize</li>
+<li>Maximize Signal Chart for better visibility</li>
+<li>Ensure Signal Player is fully visible</li>
+</ol>
+<h3 id="step-4-load-the-blf-log-file">Step 4: Load the BLF Log File<a class="headerlink" href="#step-4-load-the-blf-log-file" title="Permanent link">&para;</a></h3>
+<p>Import the captured data for analysis.</p>
+<ol>
+<li><strong>Open Signal Player panel</strong>:</li>
+<li>Located at the bottom of the screen</li>
+<li>
+<p>If not visible: <strong>View → Panels → Signal Player</strong></p>
+</li>
+<li>
+<p><strong>Load the BLF file</strong>:</p>
+</li>
+<li>Click <strong>Select BLF</strong> button</li>
+<li>Navigate to your log file: <code>cooling_endurance_test.blf</code></li>
+<li>Click <strong>Open</strong></li>
+</ol>
+<p><img alt="Signal Player panel with BLF controls" src="../../images/playback-signal-player.png" /></p>
+<ol>
+<li><strong>Inspect the loaded data</strong>:</li>
+<li>Click <strong>Inspect bundle</strong> to view details:<ul>
+<li>File size and duration</li>
+<li>Number of CAN frames</li>
+<li>Detected channels</li>
+<li>Average data rate</li>
+</ul>
+</li>
+<li>
+<p>Verify the log loaded correctly</p>
+</li>
+<li>
+<p><strong>Check DBC association</strong>:</p>
+</li>
+<li>The Networks section shows <code>Vehicle-CAN</code></li>
+<li>Confirms DBC file is linked</li>
+<li>Signals will be decoded during playback</li>
+</ol>
+<h3 id="step-5-configure-playback-settings">Step 5: Configure Playback Settings<a class="headerlink" href="#step-5-configure-playback-settings" title="Permanent link">&para;</a></h3>
+<p>Prepare for optimal playback performance.</p>
+<ol>
+<li><strong>Set initial playback speed</strong>:</li>
+<li>Default is 1x (real-time)</li>
+<li>Can adjust during playback</li>
+<li>
+<p>Start with 1x for initial review</p>
+</li>
+<li>
+<p><strong>Verify system readiness</strong>:</p>
+</li>
+<li>System must be running (toolbar shows Stop button)</li>
+<li>Signal Player shows Play button enabled</li>
+<li>
+<p>Network Traffic panel is clear and ready</p>
+</li>
+<li>
+<p><strong>Prepare monitoring panels</strong>:</p>
+</li>
+<li>Position Network Traffic for visibility</li>
+<li>Clear any existing data with Clear button</li>
+<li>Ready Signal Viewer for navigation</li>
+</ol>
+<h2 id="part-3-signal-identification-and-selection">Part 3: Signal Identification and Selection<a class="headerlink" href="#part-3-signal-identification-and-selection" title="Permanent link">&para;</a></h2>
+<h3 id="step-6-locate-cooling-system-signals">Step 6: Locate Cooling System Signals<a class="headerlink" href="#step-6-locate-cooling-system-signals" title="Permanent link">&para;</a></h3>
+<p>Find the relevant signals for analysis.</p>
+<ol>
+<li><strong>Open Signal Viewer</strong>:</li>
+<li>Click on the Signal Viewer panel (left)</li>
+<li>
+<p>Shows all signals from the DBC file</p>
+</li>
+<li>
+<p><strong>Search for cooling signals</strong>:</p>
+</li>
+<li>Use the search box at top</li>
+<li>Enter "cool" to find cooling-related signals</li>
+<li>
+<p>Results filter as you type</p>
+</li>
+<li>
+<p><strong>Identify key signals</strong>:</p>
+</li>
+</ol>
+<p>Look for these critical signals:
+   - <code>Engine_Coolant_Temp</code> - Temperature reading
+   - <code>Cooling_Fan_Command</code> - Fan control signal
+   - <code>Cooling_Fan_Speed</code> - Actual fan RPM
+   - <code>Cooling_Fan_Status</code> - Operational status</p>
+<p><img alt="Signal Viewer with filtered signals" src="../../images/dbc-signal-viewer-decoded.png" /></p>
+<ol>
+<li><strong>Expand signal details</strong>:</li>
+<li>Click arrows next to CAN frames</li>
+<li>View signal properties:<ul>
+<li>Signal name and units</li>
+<li>Min/max values</li>
+<li>Scaling factors</li>
+<li>Current value (during playback)</li>
+</ul>
+</li>
+</ol>
+<h3 id="step-7-select-signals-for-monitoring">Step 7: Select Signals for Monitoring<a class="headerlink" href="#step-7-select-signals-for-monitoring" title="Permanent link">&para;</a></h3>
+<p>Choose signals to chart and analyze.</p>
+<ol>
+<li><strong>Select primary signals</strong>:</li>
+<li>Check the box next to <code>Engine_Coolant_Temp</code></li>
+<li>Select <code>Cooling_Fan_Command</code></li>
+<li>Select <code>Cooling_Fan_Speed</code></li>
+<li>
+<p>These will appear in the Signal Chart</p>
+</li>
+<li>
+<p><strong>Add supporting signals</strong>:</p>
+</li>
+<li><code>Vehicle_Speed</code> - For context</li>
+<li><code>Engine_RPM</code> - Load correlation</li>
+<li>
+<p><code>Ambient_Temp</code> - Environmental factor</p>
+</li>
+<li>
+<p><strong>Clear search to see all signals</strong>:</p>
+</li>
+<li>Remove search text</li>
+<li>Full signal tree returns</li>
+<li>Selected signals remain checked</li>
+</ol>
+<h2 id="part-4-playback-and-analysis">Part 4: Playback and Analysis<a class="headerlink" href="#part-4-playback-and-analysis" title="Permanent link">&para;</a></h2>
+<h3 id="step-8-start-playback">Step 8: Start Playback<a class="headerlink" href="#step-8-start-playback" title="Permanent link">&para;</a></h3>
+<p>Begin replaying the captured data.</p>
+<ol>
+<li><strong>Start playback</strong>:</li>
+<li>In Signal Player, click <strong>Play</strong> button</li>
+<li>Playback begins from the start</li>
+<li>
+<p>Progress bar shows current position</p>
+</li>
+<li>
+<p><strong>Monitor Network Traffic</strong>:</p>
+</li>
+<li>CAN frames appear in real-time</li>
+<li>Observe frame rate and timing</li>
+<li>Each frame shows:<ul>
+<li>Timestamp</li>
+<li>CAN ID (hex)</li>
+<li>Data bytes</li>
+<li>Frame counter</li>
+</ul>
+</li>
+</ol>
+<p><img alt="Network Traffic during playback" src="../../images/ui-tour-messages-panel.png" /></p>
+<ol>
+<li><strong>Watch Signal Viewer</strong>:</li>
+<li>Selected signals show live values</li>
+<li>Values update as frames arrive</li>
+<li>
+<p>Color coding indicates changes</p>
+</li>
+<li>
+<p><strong>Observe Signal Chart</strong>:</p>
+</li>
+<li>Lines plot in real-time</li>
+<li>Each signal has unique color</li>
+<li>Time axis scrolls automatically</li>
+</ol>
+<p><img alt="Signal Chart showing live data" src="../../images/ui-tour-charts-panel.png" /></p>
+<h3 id="step-9-identify-anomalies">Step 9: Identify Anomalies<a class="headerlink" href="#step-9-identify-anomalies" title="Permanent link">&para;</a></h3>
+<p>Look for unusual patterns in the data.</p>
+<ol>
+<li><strong>Monitor temperature behavior</strong>:</li>
+<li>Watch <code>Engine_Coolant_Temp</code> line</li>
+<li>Normal range: 85-95°C</li>
+<li>
+<p>Look for sudden spikes or drops</p>
+</li>
+<li>
+<p><strong>Correlate fan operation</strong>:</p>
+</li>
+<li>Compare <code>Cooling_Fan_Command</code> with <code>Cooling_Fan_Speed</code></li>
+<li>They should align closely</li>
+<li>
+<p>Delays indicate potential issues</p>
+</li>
+<li>
+<p><strong>Identify problem areas</strong>:</p>
+</li>
+</ol>
+<p>When you spot an anomaly:
+   - Click <strong>Pause</strong> in Signal Player
+   - Note the timestamp
+   - Observe signal values
+   - Look for patterns:
+     - Fan command high but speed low
+     - Temperature rising despite fan command
+     - Intermittent fan speed drops</p>
+<ol>
+<li><strong>Document findings</strong>:</li>
+<li>Take screenshot of Signal Chart</li>
+<li>Record timestamp ranges</li>
+<li>Note signal values at anomaly</li>
+</ol>
+<h3 id="step-10-detailed-investigation">Step 10: Detailed Investigation<a class="headerlink" href="#step-10-detailed-investigation" title="Permanent link">&para;</a></h3>
+<p>Zoom into problem areas for closer analysis.</p>
+<ol>
+<li><strong>Navigate to specific timestamp</strong>:</li>
+<li>Use Signal Player progress bar</li>
+<li>Click and drag to scrub through log</li>
+<li>
+<p>Or enter specific time if known</p>
+</li>
+<li>
+<p><strong>Adjust playback speed</strong>:</p>
+</li>
+<li>Slow to 0.5x for detailed observation</li>
+<li>Speed up to 2x for quick scanning</li>
+<li>
+<p>Pause frequently to examine details</p>
+</li>
+<li>
+<p><strong>Focus on anomaly window</strong>:</p>
+</li>
+<li>Identify start of anomaly</li>
+<li>Play through event slowly</li>
+<li>Identify end of anomaly</li>
+<li>
+<p>Note total duration</p>
+</li>
+<li>
+<p><strong>Chart analysis</strong>:</p>
+</li>
+</ol>
+<p>In Signal Chart panel:
+   - <strong>Time Window</strong>: Adjust to 30 seconds
+   - <strong>Auto-scale</strong>: Enable for best fit
+   - <strong>Grid</strong>: Enable for measurement
+   - Zoom with mouse wheel on time axis</p>
+<h3 id="step-11-filter-network-traffic">Step 11: Filter Network Traffic<a class="headerlink" href="#step-11-filter-network-traffic" title="Permanent link">&para;</a></h3>
+<p>Focus on specific messages during analysis.</p>
+<ol>
+<li><strong>Apply CAN ID filter</strong>:</li>
+<li>In Network Traffic panel</li>
+<li>Enter CAN ID in filter field</li>
+<li>Example: <code>0x200</code> for cooling messages</li>
+<li>
+<p>Click <strong>Apply Filter</strong></p>
+</li>
+<li>
+<p><strong>Filter by data pattern</strong>:</p>
+</li>
+<li>Look for specific data values</li>
+<li>Useful for finding state changes</li>
+<li>
+<p>Can combine with ID filter</p>
+</li>
+<li>
+<p><strong>Clear filters when done</strong>:</p>
+</li>
+<li>Click <strong>Clear Filter</strong></li>
+<li>Returns to full traffic view</li>
+<li>Helps see context again</li>
+</ol>
+<h2 id="part-5-quantitative-analysis">Part 5: Quantitative Analysis<a class="headerlink" href="#part-5-quantitative-analysis" title="Permanent link">&para;</a></h2>
+<h3 id="step-12-measure-temperature-variations">Step 12: Measure Temperature Variations<a class="headerlink" href="#step-12-measure-temperature-variations" title="Permanent link">&para;</a></h3>
+<p>Quantify the severity of cooling issues.</p>
+<ol>
+<li><strong>Identify temperature spikes</strong>:</li>
+<li>Pause at each spike peak</li>
+<li>Record maximum temperature</li>
+<li>Note baseline temperature</li>
+<li>
+<p>Calculate delta (e.g., +15°C)</p>
+</li>
+<li>
+<p><strong>Measure event duration</strong>:</p>
+</li>
+<li>Note timestamp at spike start</li>
+<li>Note timestamp at recovery</li>
+<li>Calculate duration in seconds</li>
+<li>
+<p>Document recovery time</p>
+</li>
+<li>
+<p><strong>Create event summary</strong>:</p>
+</li>
+</ol>
+<p>Example findings:
+   ```
+   Event 1:
+   - Time: 00:03:45
+   - Peak temp: 108°C (baseline: 92°C)
+   - Duration: 35 seconds
+   - Fan speed during event: 0 RPM</p>
+<p>Event 2:
+   - Time: 00:07:22
+   - Peak temp: 105°C
+   - Duration: 28 seconds
+   - Fan speed: Intermittent
+   ```</p>
+<h3 id="step-13-pattern-analysis">Step 13: Pattern Analysis<a class="headerlink" href="#step-13-pattern-analysis" title="Permanent link">&para;</a></h3>
+<p>Identify recurring issues or triggers.</p>
+<ol>
+<li><strong>Look for patterns</strong>:</li>
+<li>Do spikes occur regularly?</li>
+<li>Any correlation with vehicle speed?</li>
+<li>Related to engine load (RPM)?</li>
+<li>
+<p>Environmental factors?</p>
+</li>
+<li>
+<p><strong>Check fan response</strong>:</p>
+</li>
+<li>Measure delay between command and speed</li>
+<li>Normal response: &lt;500ms</li>
+<li>Delayed response indicates problem</li>
+<li>
+<p>No response indicates failure</p>
+</li>
+<li>
+<p><strong>System behavior</strong>:</p>
+</li>
+<li>Does issue self-recover?</li>
+<li>Any diagnostic codes appear?</li>
+<li>Other systems affected?</li>
+</ol>
+<h2 id="part-6-data-export">Part 6: Data Export<a class="headerlink" href="#part-6-data-export" title="Permanent link">&para;</a></h2>
+<h3 id="step-14-export-network-traffic">Step 14: Export Network Traffic<a class="headerlink" href="#step-14-export-network-traffic" title="Permanent link">&para;</a></h3>
+<p>Save raw CAN data for detailed analysis.</p>
+<ol>
+<li><strong>Stop playback</strong>:</li>
+<li>Click <strong>Stop</strong> in Signal Player</li>
+<li>
+<p>Ensures complete data in buffer</p>
+</li>
+<li>
+<p><strong>Export from Network Traffic</strong>:</p>
+</li>
+<li>Click <strong>Export</strong> button</li>
+<li>Choose format:<ul>
+<li>CSV for spreadsheet analysis</li>
+<li>BLF for replay in other tools</li>
+</ul>
+</li>
+<li>Name: <code>cooling_analysis_traffic.csv</code></li>
+<li>
+<p>Click <strong>Save</strong></p>
+</li>
+<li>
+<p><strong>Export contents</strong>:</p>
+</li>
+<li>All frames from playback session</li>
+<li>Includes timestamps and raw data</li>
+<li>Can be filtered before export</li>
+</ol>
+<h3 id="step-15-export-signal-data">Step 15: Export Signal Data<a class="headerlink" href="#step-15-export-signal-data" title="Permanent link">&para;</a></h3>
+<p>Save decoded signal values.</p>
+<ol>
+<li><strong>Prepare for export</strong>:</li>
+<li>Ensure relevant signals selected</li>
+<li>Playback includes full anomaly</li>
+<li>
+<p>Chart shows complete event</p>
+</li>
+<li>
+<p><strong>Export signal values</strong>:</p>
+</li>
+<li>Focus on critical signals</li>
+<li>Include time range of interest</li>
+<li>Decoded values with units</li>
+<li>
+<p>Save as: <code>cooling_signals_decoded.csv</code></p>
+</li>
+<li>
+<p><strong>Export includes</strong>:</p>
+</li>
+<li>Timestamp column</li>
+<li>Selected signal columns</li>
+<li>Proper scaling applied</li>
+<li>Engineering units included</li>
+</ol>
+<h3 id="step-16-export-visualizations">Step 16: Export Visualizations<a class="headerlink" href="#step-16-export-visualizations" title="Permanent link">&para;</a></h3>
+<p>Capture charts for documentation.</p>
+<ol>
+<li><strong>Configure Signal Chart</strong>:</li>
+<li>Adjust time window to show anomaly</li>
+<li>Ensure all signals visible</li>
+<li>Enable grid for clarity</li>
+<li>
+<p>Show legend with signal names</p>
+</li>
+<li>
+<p><strong>Export chart</strong>:</p>
+</li>
+<li>Right-click on Signal Chart</li>
+<li>Select <strong>Export Chart</strong></li>
+<li>Choose format (PNG recommended)</li>
+<li>
+<p>Name: <code>temperature_spike_chart.png</code></p>
+</li>
+<li>
+<p><strong>Take additional screenshots</strong>:</p>
+</li>
+<li>Network Traffic during anomaly</li>
+<li>Signal Viewer with values</li>
+<li>Overall workspace layout</li>
+<li>Save for report inclusion</li>
+</ol>
+<h2 id="part-7-documentation">Part 7: Documentation<a class="headerlink" href="#part-7-documentation" title="Permanent link">&para;</a></h2>
+<h3 id="step-17-create-analysis-report">Step 17: Create Analysis Report<a class="headerlink" href="#step-17-create-analysis-report" title="Permanent link">&para;</a></h3>
+<p>Document findings for engineering team.</p>
+<ol>
+<li><strong>Compile findings document</strong>:</li>
+</ol>
+<p>Create a structured report:
+   ```
+   Cooling System Analysis Report
+   Date: [Current Date]
+   Analyst: [Your Name]
+   Log File: cooling_endurance_test.blf
+   Duration: 15 minutes</p>
+<p>Summary:
+   Identified 3 cooling fan dropout events causing
+   temperature spikes above 105°C.</p>
+<p>Details:
+   1. Event 1 - 00:03:45
+      - Temperature rise: 92°C to 108°C
+      - Duration: 35 seconds
+      - Fan status: Complete failure</p>
+<ol>
+<li>
+<p>Event 2 - 00:07:22</p>
 <ul>
-<li>Filtering techniques to isolate relevant frames.</li>
-<li>Measuring signal deviations using cursors and charts.</li>
-<li>Comparing baseline vs. suspect logs in a single workspace.</li>
-<li>Preparing evidence for downstream investigations.</li>
+<li>Temperature rise: 90°C to 105°C</li>
+<li>Duration: 28 seconds</li>
+<li>Fan status: Intermittent operation</li>
 </ul>
-<h2 id="next-tutorial">Next Tutorial<a class="headerlink" href="#next-tutorial" title="Permanent link">&para;</a></h2>
-<p>Proceed to <strong>Injection Scenario Walkthrough</strong> to simulate anomalies and validate remedies.</p>
+</li>
+<li>
+<p>Event 3 - 00:11:15</p>
+<ul>
+<li>Temperature rise: 91°C to 106°C</li>
+<li>Duration: 31 seconds</li>
+<li>Fan status: No response to command</li>
+</ul>
+</li>
+</ol>
+<p>Analysis:
+   - Fan fails to respond to command signal
+   - Failure occurs under high load conditions
+   - Recovery is automatic after temperature peak
+   - Pattern suggests electrical/relay issue</p>
+<p>Recommendations:
+   - Check fan relay connections
+   - Verify power supply under load
+   - Review fan control logic
+   - Consider redundant cooling strategy
+   ```</p>
+<ol>
+<li><strong>Attach supporting data</strong>:</li>
+<li>Exported CSV files</li>
+<li>Chart screenshots</li>
+<li>
+<p>Network traffic logs</p>
+</li>
+<li>
+<p><strong>Save documentation</strong>:</p>
+</li>
+<li>Store with project files</li>
+<li>Include in version control</li>
+<li>Share with team</li>
+</ol>
+<h2 id="troubleshooting-guide">Troubleshooting Guide<a class="headerlink" href="#troubleshooting-guide" title="Permanent link">&para;</a></h2>
+<h3 id="common-playback-issues">Common Playback Issues<a class="headerlink" href="#common-playback-issues" title="Permanent link">&para;</a></h3>
+<h4 id="blf-file-wont-load">BLF File Won't Load<a class="headerlink" href="#blf-file-wont-load" title="Permanent link">&para;</a></h4>
+<p><strong>Symptom</strong>: Select BLF fails or shows error</p>
+<p><strong>Solutions</strong>:</p>
+<ol>
+<li>Check file isn't corrupted</li>
+<li>Verify file size (&lt;2GB recommended)</li>
+<li>Ensure sufficient memory available</li>
+<li>Try different BLF file</li>
+<li>Check file permissions</li>
+</ol>
+<h4 id="no-signals-appearing">No Signals Appearing<a class="headerlink" href="#no-signals-appearing" title="Permanent link">&para;</a></h4>
+<p><strong>Symptom</strong>: Signal Viewer empty during playback</p>
+<p><strong>Solutions</strong>:</p>
+<ol>
+<li>Verify DBC file is loaded</li>
+<li>Check DBC matches log file</li>
+<li>Ensure CAN IDs align</li>
+<li>Reload the system</li>
+<li>Verify network configuration</li>
+</ol>
+<h4 id="playback-stutters-or-freezes">Playback Stutters or Freezes<a class="headerlink" href="#playback-stutters-or-freezes" title="Permanent link">&para;</a></h4>
+<p><strong>Symptom</strong>: Playback isn't smooth</p>
+<p><strong>Solutions</strong>:</p>
+<ol>
+<li>Reduce number of selected signals</li>
+<li>Close unnecessary panels</li>
+<li>Clear Network Traffic periodically</li>
+<li>Reduce chart time window</li>
+<li>Close other applications</li>
+</ol>
+<h4 id="signal-values-dont-update">Signal Values Don't Update<a class="headerlink" href="#signal-values-dont-update" title="Permanent link">&para;</a></h4>
+<p><strong>Symptom</strong>: Values stay at zero or don't change</p>
+<p><strong>Solutions</strong>:</p>
+<ol>
+<li>Verify playback is running</li>
+<li>Check signal selection</li>
+<li>Ensure DBC scaling is correct</li>
+<li>Verify signal exists in log</li>
+<li>Check frame filtering</li>
+</ol>
+<h4 id="chart-not-displaying">Chart Not Displaying<a class="headerlink" href="#chart-not-displaying" title="Permanent link">&para;</a></h4>
+<p><strong>Symptom</strong>: Signal Chart remains empty</p>
+<p><strong>Solutions</strong>:</p>
+<ol>
+<li>Select signals first in Signal Viewer</li>
+<li>Ensure playback has started</li>
+<li>Check time window settings</li>
+<li>Enable Auto-scale</li>
+<li>Refresh the panel</li>
+</ol>
+<h4 id="export-fails">Export Fails<a class="headerlink" href="#export-fails" title="Permanent link">&para;</a></h4>
+<p><strong>Symptom</strong>: Export button doesn't work or fails</p>
+<p><strong>Solutions</strong>:</p>
+<ol>
+<li>Stop playback first</li>
+<li>Check disk space</li>
+<li>Verify write permissions</li>
+<li>Try different format</li>
+<li>Reduce data size</li>
+</ol>
+<h2 id="performance-optimization">Performance Optimization<a class="headerlink" href="#performance-optimization" title="Permanent link">&para;</a></h2>
+<h3 id="for-large-log-files">For Large Log Files<a class="headerlink" href="#for-large-log-files" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Memory management</strong>:</li>
+<li>Close unused panels</li>
+<li>Limit selected signals</li>
+<li>Clear Network Traffic regularly</li>
+<li>
+<p>Export in segments</p>
+</li>
+<li>
+<p><strong>Playback optimization</strong>:</p>
+</li>
+<li>Start with fewer signals</li>
+<li>Add signals gradually</li>
+<li>Use filtering extensively</li>
+<li>
+<p>Disable auto-scroll</p>
+</li>
+<li>
+<p><strong>System resources</strong>:</p>
+</li>
+<li>Close other applications</li>
+<li>Increase Docker memory allocation</li>
+<li>Use SSD for log files</li>
+<li>Consider splitting large logs</li>
+</ol>
+<h3 id="for-complex-analysis">For Complex Analysis<a class="headerlink" href="#for-complex-analysis" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Workflow optimization</strong>:</li>
+<li>Pre-filter in Network Traffic</li>
+<li>Focus on specific time ranges</li>
+<li>Export incrementally</li>
+<li>
+<p>Document as you go</p>
+</li>
+<li>
+<p><strong>Signal management</strong>:</p>
+</li>
+<li>Group related signals</li>
+<li>Use consistent time windows</li>
+<li>Clear unneeded selections</li>
+<li>Save workspace layouts</li>
+</ol>
+<h2 id="advanced-techniques">Advanced Techniques<a class="headerlink" href="#advanced-techniques" title="Permanent link">&para;</a></h2>
+<h3 id="multi-stage-analysis">Multi-Stage Analysis<a class="headerlink" href="#multi-stage-analysis" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Initial scan</strong> (2x-4x speed):</li>
+<li>Identify regions of interest</li>
+<li>Note approximate timestamps</li>
+<li>
+<p>Get overall patterns</p>
+</li>
+<li>
+<p><strong>Detailed review</strong> (0.5x-1x speed):</p>
+</li>
+<li>Focus on problem areas</li>
+<li>Precise measurements</li>
+<li>
+<p>Correlation analysis</p>
+</li>
+<li>
+<p><strong>Verification</strong> (1x speed):</p>
+</li>
+<li>Confirm findings</li>
+<li>Check edge cases</li>
+<li>Validate patterns</li>
+</ol>
+<h3 id="signal-correlation">Signal Correlation<a class="headerlink" href="#signal-correlation" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Identify relationships</strong>:</li>
+<li>Command vs feedback signals</li>
+<li>Input vs output pairs</li>
+<li>
+<p>Cause and effect patterns</p>
+</li>
+<li>
+<p><strong>Timing analysis</strong>:</p>
+</li>
+<li>Measure response delays</li>
+<li>Identify synchronization issues</li>
+<li>
+<p>Check message periodicity</p>
+</li>
+<li>
+<p><strong>State analysis</strong>:</p>
+</li>
+<li>Track state transitions</li>
+<li>Identify invalid states</li>
+<li>Monitor state duration</li>
+</ol>
+<h3 id="pattern-recognition">Pattern Recognition<a class="headerlink" href="#pattern-recognition" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Anomaly characteristics</strong>:</li>
+<li>Sudden value changes</li>
+<li>Missing messages</li>
+<li>Out-of-range values</li>
+<li>
+<p>Unexpected patterns</p>
+</li>
+<li>
+<p><strong>Systematic approach</strong>:</p>
+</li>
+<li>Define normal behavior</li>
+<li>Identify deviations</li>
+<li>Classify anomaly types</li>
+<li>Track occurrence frequency</li>
+</ol>
+<h2 id="integration-with-external-tools">Integration with External Tools<a class="headerlink" href="#integration-with-external-tools" title="Permanent link">&para;</a></h2>
+<h3 id="matlab-integration">MATLAB Integration<a class="headerlink" href="#matlab-integration" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Export for MATLAB</strong>:</li>
+<li>Use CSV format</li>
+<li>Include timestamps</li>
+<li>Maintain signal names</li>
+<li>
+<p>Preserve scaling</p>
+</li>
+<li>
+<p><strong>MATLAB analysis</strong>:
+   ```matlab
+   % Load exported data
+   data = readtable('cooling_signals_decoded.csv');</p>
+</li>
+</ol>
+<p>% Plot temperature
+   plot(data.Timestamp, data.Engine_Coolant_Temp);
+   xlabel('Time (s)');
+   ylabel('Temperature (°C)');
+   title('Coolant Temperature Analysis');</p>
+<p>% Find peaks
+   [peaks, locations] = findpeaks(data.Engine_Coolant_Temp);
+   ```</p>
+<h3 id="python-analysis">Python Analysis<a class="headerlink" href="#python-analysis" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Python script example</strong>:
+   ```python
+   import pandas as pd
+   import matplotlib.pyplot as plt</li>
+</ol>
+<p># Load data
+   df = pd.read_csv('cooling_signals_decoded.csv')</p>
+<p># Analyze temperature spikes
+   threshold = 100  # °C
+   spikes = df[df['Engine_Coolant_Temp'] &gt; threshold]</p>
+<p># Plot results
+   plt.plot(df['Timestamp'], df['Engine_Coolant_Temp'])
+   plt.axhline(y=threshold, color='r', linestyle='--')
+   plt.xlabel('Time (s)')
+   plt.ylabel('Temperature (°C)')
+   plt.show()
+   ```</p>
+<h3 id="excel-analysis">Excel Analysis<a class="headerlink" href="#excel-analysis" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Import CSV data</strong>:</li>
+<li>Open in Excel</li>
+<li>Use Text Import Wizard</li>
+<li>Specify delimiters</li>
+<li>
+<p>Format timestamp column</p>
+</li>
+<li>
+<p><strong>Analysis features</strong>:</p>
+</li>
+<li>Pivot tables for statistics</li>
+<li>Charts for visualization</li>
+<li>Conditional formatting for anomalies</li>
+<li>Formulas for calculations</li>
+</ol>
+<h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h2>
+<h3 id="systematic-approach">Systematic Approach<a class="headerlink" href="#systematic-approach" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Planning</strong>:</li>
+<li>Define analysis goals</li>
+<li>Identify key signals</li>
+<li>Set success criteria</li>
+<li>
+<p>Allocate sufficient time</p>
+</li>
+<li>
+<p><strong>Execution</strong>:</p>
+</li>
+<li>Follow structured workflow</li>
+<li>Document continuously</li>
+<li>Verify findings</li>
+<li>
+<p>Export frequently</p>
+</li>
+<li>
+<p><strong>Review</strong>:</p>
+</li>
+<li>Validate results</li>
+<li>Cross-check patterns</li>
+<li>Peer review if possible</li>
+<li>Archive properly</li>
+</ol>
+<h3 id="documentation-standards">Documentation Standards<a class="headerlink" href="#documentation-standards" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>During analysis</strong>:</li>
+<li>Record timestamps immediately</li>
+<li>Screenshot important findings</li>
+<li>Note signal values</li>
+<li>
+<p>Track anomaly patterns</p>
+</li>
+<li>
+<p><strong>Report creation</strong>:</p>
+</li>
+<li>Clear summary upfront</li>
+<li>Detailed findings section</li>
+<li>Supporting evidence</li>
+<li>Actionable recommendations</li>
+</ol>
+<h3 id="data-management">Data Management<a class="headerlink" href="#data-management" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>File organization</strong>:
+   <code>CoolingAnalysis/
+   ├── logs/
+   │   └── cooling_endurance_test.blf
+   ├── exports/
+   │   ├── cooling_analysis_traffic.csv
+   │   └── cooling_signals_decoded.csv
+   ├── charts/
+   │   └── temperature_spike_chart.png
+   └── reports/
+       └── analysis_report.txt</code></p>
+</li>
+<li>
+<p><strong>Version control</strong>:</p>
+</li>
+<li>Track analysis iterations</li>
+<li>Document changes</li>
+<li>Maintain history</li>
+<li>Enable collaboration</li>
+</ol>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>You've completed a comprehensive playback analysis workflow:</p>
+<ul>
+<li>✅ Configured system with CAN network and DBC</li>
+<li>✅ Loaded and inspected BLF log file</li>
+<li>✅ Identified and selected relevant signals</li>
+<li>✅ Performed real-time playback analysis</li>
+<li>✅ Located and quantified anomalies</li>
+<li>✅ Filtered network traffic for focus</li>
+<li>✅ Exported data for external analysis</li>
+<li>✅ Created comprehensive documentation</li>
+</ul>
+<p>This tutorial covered the essential skills for analyzing CAN logs in TrueFidelity. The techniques you've learned apply to various automotive debugging scenarios, from powertrain analysis to body electronics troubleshooting.</p>
+<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Practice with different logs</strong>:</li>
+<li>Try various system types</li>
+<li>Analyze different anomalies</li>
+<li>
+<p>Build pattern recognition skills</p>
+</li>
+<li>
+<p><strong>Expand your analysis</strong>:</p>
+</li>
+<li>Add more signals</li>
+<li>Correlate multiple systems</li>
+<li>
+<p>Develop custom workflows</p>
+</li>
+<li>
+<p><strong>Advanced topics</strong>:</p>
+</li>
+<li>Signal injection testing</li>
+<li>Multi-bus analysis</li>
+<li>Automated detection scripts</li>
+</ol>
+<p>Continue to the <strong>Injection Scenario Walkthrough</strong> to learn how to test system responses with controlled signal injection.</p>
 
 
 
@@ -2015,10 +3332,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "toc.integrate", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "toc.integrate", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

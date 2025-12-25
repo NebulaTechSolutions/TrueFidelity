@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -760,34 +760,6 @@
     
   
     Filters & Search
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../using-the-app/annotations-and-bookmarks/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Annotations & Bookmarks
   
 
     
@@ -1603,21 +1575,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#h" class="md-nav__link">
+  <a href="#j" class="md-nav__link">
     <span class="md-ellipsis">
       
-        H
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#i" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        I
+        J
       
     </span>
   </a>
@@ -1735,10 +1696,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#z" class="md-nav__link">
+  <a href="#container-and-docker-terms" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Z
+        Container and Docker Terms
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Formats
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#status-indicators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Status Indicators
       
     </span>
   </a>
@@ -1894,68 +1877,83 @@
 
 
 <h1 id="glossary">Glossary<a class="headerlink" href="#glossary" title="Permanent link">&para;</a></h1>
-<p>Key terms used throughout the TrueFidelity documentation.</p>
+<p>Key terms used throughout the TrueFidelity Desktop documentation.</p>
 <h2 id="a">A<a class="headerlink" href="#a" title="Permanent link">&para;</a></h2>
-<p><strong>Annotation</strong> – A user-created note tied to a specific timestamp or range, including title, description, tags, and optional attachments.</p>
-<p><strong>Autosave</strong> – Automatic saving of project state at defined intervals.</p>
+<p><strong>Application Modes</strong> – The three main operational modes: System Design, Monitoring, and CAN Log Analysis.</p>
 <h2 id="b">B<a class="headerlink" href="#b" title="Permanent link">&para;</a></h2>
-<p><strong>Bookmark</strong> – A lightweight marker on the timeline with a title and timestamp.</p>
-<p><strong>Burst (Injection)</strong> – Schedule sending multiple messages rapidly followed by a pause.</p>
+<p><strong>BLF</strong> – Binary Logging Format, a compact file format for storing CAN bus data and other automotive network traffic.</p>
+<p><strong>Bus Node</strong> – Connection point on a network where ECUs attach. CAN networks have CAN bus nodes, Ethernet networks have switch ports.</p>
 <h2 id="c">C<a class="headerlink" href="#c" title="Permanent link">&para;</a></h2>
 <p><strong>CAN Frame</strong> – A single message on a CAN bus, defined by ID, DLC, payload, timestamp, and flags.</p>
-<p><strong>Charts panel</strong> – Visualization area plotting decoded signals over time.</p>
-<p><strong>Command Palette</strong> – Global search interface for commands (Ctrl/Cmd + P).</p>
-<p><strong>CSV</strong> – Comma-separated values text format for logs or exports.</p>
+<p><strong>CAN Log Analysis Mode</strong> – Application mode for analyzing recorded BLF/MDF4 files with playback and signal decoding capabilities.</p>
+<p><strong>Console Panel</strong> – Panel showing output logs from running ECU containers (replaced Terminal panel in some contexts).</p>
 <h2 id="d">D<a class="headerlink" href="#d" title="Permanent link">&para;</a></h2>
-<p><strong>Data Injection</strong> – Feature that transmits CAN frames from TrueFidelity to simulate or modify traffic.</p>
-<p><strong>DBC</strong> – CAN database file defining messages, signals, scaling, and metadata.</p>
-<p><strong>Derived Signal</strong> – A calculated signal based on other signals or raw data via custom formulas.</p>
+<p><strong>Data Injection</strong> – Feature in Signal Player that transmits CAN frames to simulate or modify traffic using Start/Pause/Stop controls.</p>
+<p><strong>DBC</strong> – CAN database file defining messages, signals, scaling, and metadata for decoding raw CAN data.</p>
+<p><strong>Delete Confirmations</strong> – Currently the only configurable setting in TrueFidelity, controls whether deletion actions require confirmation.</p>
+<p><strong>Docker Desktop</strong> – Required software for running ECU containers. Must be installed and running for ECU simulation features.</p>
 <h2 id="e">E<a class="headerlink" href="#e" title="Permanent link">&para;</a></h2>
-<p><strong>Export Queue</strong> – Panel managing pending export tasks (segments, reports, etc.).</p>
-<p><strong>Export Segment</strong> – Export of a selected timeline range to CSV/MDF.</p>
+<p><strong>ECU</strong> – Electronic Control Unit, simulated as Docker containers in TrueFidelity Desktop.</p>
+<p><strong>ECU Hardware Status Panel</strong> – Panel displaying the operational status of ECUs with color-coded indicators (green=running, red=error, gray=stopped).</p>
+<p><strong>Export</strong> – Save data to external files. Supports CSV format for signal data and BLF format for raw CAN data.</p>
 <h2 id="f">F<a class="headerlink" href="#f" title="Permanent link">&para;</a></h2>
-<p><strong>Filter-to-Range</strong> – Restricts visible data to the currently selected timeline segment.</p>
-<p><strong>Floating Panel</strong> – Panel detached from the main window, useful on multi-monitor setups.</p>
+<p><strong>FlexLayout</strong> – The React-based docking framework used for panel management in TrueFidelity Desktop.</p>
 <h2 id="g">G<a class="headerlink" href="#g" title="Permanent link">&para;</a></h2>
-<p><strong>Glossary</strong> – This page, containing definitions of commonly used terms.</p>
-<h2 id="h">H<a class="headerlink" href="#h" title="Permanent link">&para;</a></h2>
-<p><strong>Heartbeat</strong> – Periodic message ensuring systems remain synchronized; often simulated during injection.</p>
-<h2 id="i">I<a class="headerlink" href="#i" title="Permanent link">&para;</a></h2>
-<p><strong>Injection Profile</strong> – Saved configuration (<code>.tfinject</code>) containing message templates and schedules.</p>
-<p><strong>Interval (Injection)</strong> – Schedule sending messages at a fixed cadence.</p>
+<p><strong>Gateway</strong> – ECU component that bridges between different network segments in system design.</p>
+<h2 id="j">J<a class="headerlink" href="#j" title="Permanent link">&para;</a></h2>
+<p><strong>JSON System File</strong> – File format (.json) used to save and load system designs including ECU configurations and network topology.</p>
 <h2 id="l">L<a class="headerlink" href="#l" title="Permanent link">&para;</a></h2>
-<p><strong>Layout</strong> – Arrangement of panels saved within a project; interchangeable via the layout switcher.</p>
-<p><strong>Loop Mode</strong> – Playback mode that repeats the selected timeline range.</p>
+<p><strong>Layout</strong> – Arrangement of panels in the workspace. Can be reset via Window → Reset Layout.</p>
+<p><strong>LIN</strong> – Local Interconnect Network, a lower-cost automotive serial network protocol supported alongside CAN.</p>
 <h2 id="m">M<a class="headerlink" href="#m" title="Permanent link">&para;</a></h2>
-<p><strong>MDF4</strong> – Measurement Data Format 4, binary log format optimized for large datasets.</p>
-<p><strong>Messages panel</strong> – Displays raw CAN frames with filtering and export capabilities.</p>
+<p><strong>MDF4</strong> – Measurement Data Format version 4, binary log format optimized for large datasets, supported for import alongside BLF.</p>
+<p><strong>Mock Mode</strong> – Operating mode that simulates ECUs without Docker containers, useful for UI testing and development.</p>
+<p><strong>Monitoring Mode</strong> – Application mode for real-time monitoring of running ECU systems with resource tracking and terminal access.</p>
 <h2 id="n">N<a class="headerlink" href="#n" title="Permanent link">&para;</a></h2>
-<p><strong>Normalization</strong> – Process of aligning timestamps (absolute vs. relative) during import.</p>
+<p><strong>Network Traffic Panel</strong> – Displays raw CAN frames during playback or monitoring with filtering capabilities.</p>
+<p><strong>Network</strong> – Communication bus (CAN, LIN, or Ethernet) connecting ECUs in a system design.</p>
 <h2 id="p">P<a class="headerlink" href="#p" title="Permanent link">&para;</a></h2>
 <p><strong>Payload</strong> – Raw byte content of a CAN frame.</p>
-<p><strong>Pinned Signal</strong> – Signal saved to the watch list for quick access.</p>
-<p><strong>Playback Buffer</strong> – Number of frames preloaded for smooth playback.</p>
-<p><strong>Profile (Layout)</strong> – Saved workspace arrangement or injection configuration.</p>
+<p><strong>Playback</strong> – Controlled replay of recorded BLF/MDF4 files with adjustable speed (0.5x to 10x).</p>
+<p><strong>Project Explorer Panel</strong> – File browser panel showing system components and structure in System Design mode.</p>
+<p><strong>Properties Panel</strong> – Panel for configuring selected elements (ECUs, networks) in System Design mode.</p>
 <h2 id="r">R<a class="headerlink" href="#r" title="Permanent link">&para;</a></h2>
-<p><strong>Ramp (Injection)</strong> – Schedule that gradually changes message rate over time.</p>
-<p><strong>Report Builder</strong> – Tool generating PDF/HTML summaries including annotations, charts, and metrics.</p>
+<p><strong>Resource Monitor Panel</strong> – Displays CPU, memory, and disk usage metrics for running ECU containers.</p>
+<p><strong>Reset Layout</strong> – Menu option to restore default panel arrangement when UI becomes corrupted.</p>
 <h2 id="s">S<a class="headerlink" href="#s" title="Permanent link">&para;</a></h2>
-<p><strong>Segment</strong> – Time selection on the timeline used for playback looping or export.</p>
-<p><strong>Signals panel</strong> – Interface for searching, pinning, and managing decoded signals.</p>
-<p><strong>Snapshot</strong> – Screenshot of charts or panels stored in the export folder.</p>
+<p><strong>Settings Dialog</strong> – Configuration interface currently offering only delete confirmation toggle, accessed via File → Settings.</p>
+<p><strong>Signal Chart Panel</strong> – Visualization area plotting decoded signals over time, supports 4-6 signals simultaneously.</p>
+<p><strong>Signal Player Panel</strong> – Primary control interface for BLF/MDF4 playback and CAN injection with timeline and transport controls.</p>
+<p><strong>Signal Viewer Panel</strong> – Interface for viewing and selecting decoded signals from loaded DBC files.</p>
+<p><strong>System Canvas</strong> – Main drawing area in System Design mode where ECUs and networks are visually arranged and connected.</p>
+<p><strong>System Design Mode</strong> – Application mode for creating and editing ECU network topologies.</p>
 <h2 id="t">T<a class="headerlink" href="#t" title="Permanent link">&para;</a></h2>
-<p><strong>Timeline</strong> – Topmost bar showing playback progress, selections, and markers.</p>
-<p><strong>Transport Controls</strong> – Play, pause, step, and loop buttons located in the footer.</p>
-<p><strong>TrueFidelity Project (.tfproj)</strong> – File storing project configuration, layout references, filters, and metadata.</p>
+<p><strong>Task Monitor Panel</strong> – Displays running processes within ECU containers when available.</p>
+<p><strong>Terminal Panel</strong> – Provides interactive terminal access to running ECU containers, with dropdown selection for multiple ECUs.</p>
+<p><strong>Timeline</strong> – Visual representation of playback progress in Signal Player, showing current position and allowing navigation.</p>
+<p><strong>Toolbox Panel</strong> – Component palette in System Design mode containing ECUs, networks, and other system elements.</p>
+<p><strong>Transport Controls</strong> – Play, pause, stop buttons in Signal Player for controlling playback and injection.</p>
 <h2 id="u">U<a class="headerlink" href="#u" title="Permanent link">&para;</a></h2>
-<p><strong>UI Scaling</strong> – Setting controlling interface size for accessibility.</p>
+<p><strong>UI Theme</strong> – Currently only dark theme is available, with light theme planned for future release.</p>
 <h2 id="v">V<a class="headerlink" href="#v" title="Permanent link">&para;</a></h2>
-<p><strong>Verbose Logging</strong> – Enhanced logging mode for troubleshooting.</p>
+<p><strong>Vector</strong> – Company that created the BLF format, commonly referenced in CAN tool compatibility.</p>
 <h2 id="w">W<a class="headerlink" href="#w" title="Permanent link">&para;</a></h2>
-<p><strong>Watch List</strong> – Collection of pinned signals displayed in the sidebar.</p>
-<p><strong>Workspace</strong> – The overall UI environment containing panels, timeline, and controls.</p>
-<h2 id="z">Z<a class="headerlink" href="#z" title="Permanent link">&para;</a></h2>
-<p><strong>Zero-copy Import</strong> – Links files without copying, preserving disk space (default behavior when importing logs).</p>
+<p><strong>Workspace</strong> – The overall UI environment containing panels, canvas, and controls specific to each application mode.</p>
+<h2 id="container-and-docker-terms">Container and Docker Terms<a class="headerlink" href="#container-and-docker-terms" title="Permanent link">&para;</a></h2>
+<p><strong>Container</strong> – Isolated runtime environment for an ECU, managed by Docker.</p>
+<p><strong>Docker Image</strong> – Template used to create ECU containers, containing the operating system and software.</p>
+<p><strong>Docker Stats</strong> – Command and metrics showing resource usage of running containers.</p>
+<h2 id="file-formats">File Formats<a class="headerlink" href="#file-formats" title="Permanent link">&para;</a></h2>
+<p><strong>.json</strong> – System definition files containing ECU and network configurations.</p>
+<p><strong>.blf</strong> – Binary Logging Format files for CAN data recordings.</p>
+<p><strong>.mdf/.mf4</strong> – Measurement Data Format files for automotive data logging.</p>
+<p><strong>.dbc</strong> – CAN database files for signal definitions.</p>
+<p><strong>.csv</strong> – Comma-separated values export format for human-readable data.</p>
+<h2 id="status-indicators">Status Indicators<a class="headerlink" href="#status-indicators" title="Permanent link">&para;</a></h2>
+<p><strong>Green</strong> – ECU is running normally.</p>
+<p><strong>Red</strong> – ECU has encountered an error.</p>
+<p><strong>Yellow/Orange</strong> – ECU is starting or in transitional state.</p>
+<p><strong>Gray</strong> – ECU is stopped or not started.</p>
 
 
 
@@ -2053,10 +2051,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "toc.integrate", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "toc.integrate", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

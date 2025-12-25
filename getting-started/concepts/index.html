@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -641,21 +641,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#projects-files" class="md-nav__link">
+  <a href="#layouts-and-panels" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Projects &amp; Files
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#can-log-analysis" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        CAN Log Analysis
+        Layouts and Panels
       
     </span>
   </a>
@@ -668,21 +657,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#data-terminology" class="md-nav__link">
+  <a href="#can-data-terminology" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Data Terminology
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#file-types" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        File Types
+        CAN &amp; Data Terminology
       
     </span>
   </a>
@@ -712,17 +690,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#project-collaboration-terms" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Project Collaboration Terms
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#monitoring-runtime-terminology" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -738,39 +705,6 @@
     <span class="md-ellipsis">
       
         Status Indicators
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#keyboard-shortcut-vocabulary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Keyboard Shortcut Vocabulary
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reporting-exports" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reporting &amp; Exports
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting-vocabulary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Troubleshooting Vocabulary
       
     </span>
   </a>
@@ -983,34 +917,6 @@
     
   
     Filters & Search
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../using-the-app/annotations-and-bookmarks/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Annotations & Bookmarks
   
 
     
@@ -1845,108 +1751,65 @@
 
 
 <h1 id="concepts-terminology">Concepts &amp; Terminology<a class="headerlink" href="#concepts-terminology" title="Permanent link">&para;</a></h1>
-<p>This glossary clarifies the key terms TrueFidelity users encounter when navigating projects, decoding signals, and injecting data. Understanding these concepts up front reduces onboarding friction and ensures consistent communication across teams.</p>
+<p>This glossary aligns with the current TrueFidelity desktop UI and the system-based workflow. Use it as a reference while reading the rest of the docs.</p>
 <h2 id="core-objects">Core Objects<a class="headerlink" href="#core-objects" title="Permanent link">&para;</a></h2>
 <h3 id="system-design">System Design<a class="headerlink" href="#system-design" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>System</strong> – A configuration defining multiple ECUs, their connections, network topologies, and build settings. Systems are saved as <code>.tfsystem</code> files.</li>
-<li><strong>ECU</strong> (Electronic Control Unit) – A virtual ECU instance running in a Docker container. Each ECU has a name, binary, network interfaces, and runtime configuration.</li>
-<li><strong>System Canvas</strong> – The visual workspace for designing ECU topologies by dragging and connecting components.</li>
-<li><strong>Network Edge</strong> – A connection between ECUs representing a CAN bus, Ethernet link, or other network interface.</li>
-<li><strong>Toolbox</strong> – A panel containing reusable ECU types, network components, and gateway elements that can be dragged onto the canvas.</li>
+<li><strong>System</strong> – A JSON configuration that defines ECUs, networks, diagrams, and runtime settings.</li>
+<li><strong>Diagram</strong> – A canvas-based view (for example, Network Topology) within a system. Each diagram opens as a tab.</li>
+<li><strong>ECU</strong> (Electronic Control Unit) – A virtual ECU that runs in a Docker container with firmware, OS, and network settings.</li>
+<li><strong>Network</strong> – A shared bus (for example, CAN) that connects ECUs in a diagram.</li>
+<li><strong>System Canvas</strong> – The visual workspace where you place ECUs and networks and wire connections.</li>
+<li><strong>Toolbox</strong> – The component palette used to drag ECUs and networks onto the canvas.</li>
+<li><strong>Properties Panel</strong> – The inspector that edits the selected ECU, network, edge, or diagram.</li>
 </ul>
-<h3 id="projects-files">Projects &amp; Files<a class="headerlink" href="#projects-files" title="Permanent link">&para;</a></h3>
+<h3 id="layouts-and-panels">Layouts and Panels<a class="headerlink" href="#layouts-and-panels" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Project</strong> – A container that remembers open files, panel layouts, watch lists, annotations, and definitions. Projects are saved as <code>.tfproj</code> files referencing data stored elsewhere.</li>
-<li><strong>Workspace/Layout</strong> – The arrangement of panels in the main window (timeline, charts, messages, monitoring panels). Layouts can be saved within a project and reused.</li>
-<li><strong>Panel</strong> – Any dockable UI component such as System Canvas, ECU Status, Console, Messages, Charts, Signals, Annotations, or Data Injection. Panels can be docked, floated, or collapsed.</li>
+<li><strong>Layout</strong> – A named workspace arrangement (System Design, Monitoring, ECU Monitoring, Network Analysis, Debugging).</li>
+<li><strong>Panel</strong> – A dockable UI surface such as Signal Viewer, Network Traffic, or ECU Console.</li>
+<li><strong>Tabset</strong> – A stack of panels organized as tabs in a single docked area.</li>
 </ul>
-<h3 id="can-log-analysis">CAN Log Analysis<a class="headerlink" href="#can-log-analysis" title="Permanent link">&para;</a></h3>
+<h2 id="can-data-terminology">CAN &amp; Data Terminology<a class="headerlink" href="#can-data-terminology" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Timeline</strong> – The visual bar representing elapsed time in the loaded CAN log(s). The playhead moves along it, and users can select ranges for export or looping.</li>
-<li><strong>Channel/Bus</strong> – A logical CAN interface (e.g., <code>can0</code>, <code>can1</code>). When injecting or filtering data, you select which channel to use.</li>
-<li><strong>Segment/Range</strong> – A highlighted portion of the timeline defined by dragging or specifying start/end times. Segments drive exports, looped playback, filtering, and reporting.</li>
-</ul>
-<h2 id="data-terminology">Data Terminology<a class="headerlink" href="#data-terminology" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>CAN Frame</strong> – A single message on the CAN bus, defined by ID, DLC, payload, timestamp, and optional flags (extended ID, RTR).</li>
-<li><strong>Signal</strong> – A decoded value derived from a CAN payload using a definition file (usually DBC). Signals have units, scaling, and offsets.</li>
-<li><strong>Message Definition</strong> – Metadata that explains how to decode a CAN frame into one or more signals. Stored in DBC or other definition formats.</li>
-<li><strong>Event Marker</strong> – A bookmark or annotation added at a specific time to capture context, issues, or observations.</li>
-<li><strong>Counters/Statistics</strong> – Real-time metrics displayed during playback (messages per second, dropped frames, current time).</li>
-</ul>
-<h2 id="file-types">File Types<a class="headerlink" href="#file-types" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>Log File</strong> – Recorded CAN traffic. Common formats: MDF4 (<code>.mf4</code>, <code>.mdf</code>), BLF (<code>.blf</code>), ASC (<code>.asc</code>), CSV.</li>
-<li><strong>Definition File</strong> – DBC (<code>.dbc</code>), ARXML, or other mapping files that define signals and scaling for raw frames.</li>
-<li><strong>Export File</strong> – Data generated from TrueFidelity (CSV segments, charts as images, annotation reports, injection profiles).</li>
-<li><strong>Profile</strong> – Serialized configuration for injection schedules or saved filters (depending on feature).</li>
+<li><strong>CAN Frame</strong> – A single message on the CAN bus with ID, DLC, payload, and timestamp.</li>
+<li><strong>Signal</strong> – A decoded value derived from a CAN payload using a DBC definition.</li>
+<li><strong>DBC File</strong> – The definition file that maps CAN frames to signals and scaling.</li>
+<li><strong>Channel / Bus</strong> – A logical CAN interface (for example, <code>CAN</code>, <code>CAN1</code>).</li>
+<li><strong>Dataset (BLF)</strong> – A playback file that contains recorded frames used by Signal Player.</li>
 </ul>
 <h2 id="playback-concepts">Playback Concepts<a class="headerlink" href="#playback-concepts" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Playback Speed</strong> – The rate at which the timeline advances relative to recorded time (0.25× to 8×).</li>
-<li><strong>Loop Mode</strong> – Repeats the selected range on the timeline until disabled. Useful for investigating short events.</li>
-<li><strong>Cursors</strong> – Vertical markers in Charts used to measure time difference between two points.</li>
-<li><strong>Auto-Scale</strong> – Chart mode that adjusts Y-axis bounds automatically based on visible data. Disable to compare runs with consistent scaling.</li>
-<li><strong>Filter-to-Range</strong> – Restricts visible data (Messages, Charts) to the currently selected timeline range.</li>
+<li><strong>Signal Player &amp; Injection</strong> – The panel used to configure datasets, control playback, and manage injection.</li>
+<li><strong>Dataset Inspection</strong> – Reading metadata such as channels and frame counts for a dataset.</li>
+<li><strong>Channel Mapping</strong> – Selecting which dataset channel corresponds to each CAN network.</li>
+<li><strong>Playback State</strong> – Play, pause, or stop state for streaming frames into the system.</li>
 </ul>
 <h2 id="injection-concepts">Injection Concepts<a class="headerlink" href="#injection-concepts" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Injection Panel</strong> – Panel used to schedule CAN frames for transmission alongside playback or live monitoring.</li>
-<li><strong>Message Template</strong> – Defines ID, DLC, payload, and optional flags for a single injected message.</li>
-<li><strong>Schedule</strong> – Timing definition for an injection (once, interval, burst, ramp).</li>
-<li><strong>Profile</strong> – Grouping of templates and schedules saved for reuse. Profiles can be exported/imported for collaboration.</li>
-<li><strong>Safety Guard</strong> – A mechanism that warns or blocks injection when certain risk conditions are met (e.g., missing hardware acknowledgement).</li>
-</ul>
-<h2 id="project-collaboration-terms">Project Collaboration Terms<a class="headerlink" href="#project-collaboration-terms" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>Pinned Signal</strong> – A signal flagged in the Signals panel to keep it readily available across sessions.</li>
-<li><strong>Watch List</strong> – A curated list of pinned signals displayed in the sidebar for quick charting.</li>
-<li><strong>Annotation Tag</strong> – A keyword applied to annotations (e.g., <code>safety</code>, <code>powertrain</code>, <code>regression</code>). Tags help filter notes and build thematic reports.</li>
-<li><strong>Shared Layout</strong> – A project layout exported and imported by teammates to synchronize workspace arrangement.</li>
-<li><strong>Session Log</strong> – Auto-generated background logs capturing errors, warnings, and telemetry (if enabled). Access via <strong>Help → Show Logs</strong>.</li>
+<li><strong>Draft</strong> – A configured override in the Signal Player tree that can be queued.</li>
+<li><strong>Injection Session</strong> – A running override stream applied to a signal.</li>
+<li><strong>Sync with playback</strong> – Keeps injection lifecycle aligned with playback state.</li>
 </ul>
 <h2 id="monitoring-runtime-terminology">Monitoring &amp; Runtime Terminology<a class="headerlink" href="#monitoring-runtime-terminology" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>ECU Status</strong> – Current state of an ECU container (Running, Stopped, Starting, Error). Displayed in ECU Status panel with color-coded indicators.</li>
-<li><strong>Container</strong> – Docker container instance running an ECU binary. Each ECU in a system runs as a separate container.</li>
-<li><strong>Console Logs</strong> – Aggregated standard output and error streams from all ECU containers. Viewable in the Console panel with filtering.</li>
-<li><strong>Resource Metrics</strong> – CPU and memory usage data collected from running ECU containers. Displayed as real-time graphs in Resource Monitor panel.</li>
-<li><strong>Terminal Access</strong> – Interactive shell access to ECU operating systems through the Terminal panel. Provides command-line debugging and configuration.</li>
-<li><strong>Network Traffic</strong> – CAN messages flowing between ECUs. Captured and displayed in real-time in the Network Traffic panel.</li>
-<li><strong>Process Monitor</strong> – View of running processes within ECU containers, including CPU/memory per process.</li>
+<li><strong>ECU Hardware Status</strong> – Summary table of ECU state, architecture, board, and memory.</li>
+<li><strong>ECU Resource Monitor</strong> – CPU and memory charts for a selected ECU.</li>
+<li><strong>ECU Task Monitor</strong> – Per-process view with CPU and stack usage.</li>
+<li><strong>ECU Console</strong> – Runtime log stream from ECU containers.</li>
+<li><strong>Terminal</strong> – Interactive shell access to ECU containers.</li>
+<li><strong>Network Traffic</strong> – Live CAN frame table with filters, recording, and export.</li>
 </ul>
 <h2 id="status-indicators">Status Indicators<a class="headerlink" href="#status-indicators" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Activation Badge</strong> – An icon in the status bar showing license status (green for activated, amber for trial, red for expired).</li>
-<li><strong>ECU Status Indicators</strong> – Color-coded states in ECU Status panel: green (running), yellow (starting), red (error), gray (stopped).</li>
-<li><strong>Terminal Connection Status</strong> – Indicators in Terminal panel: green (connected), yellow (connecting), red (connection failed).</li>
-<li><strong>Autosave Indicator</strong> – Flashes when the project autosaves; disable or adjust frequency in <strong>Settings → General</strong>.</li>
-<li><strong>Hardware Status</strong> – For systems with CAN hardware integration, device state is shown in the footer (connected, disconnected, error).</li>
-</ul>
-<h2 id="keyboard-shortcut-vocabulary">Keyboard Shortcut Vocabulary<a class="headerlink" href="#keyboard-shortcut-vocabulary" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>Toggle Panels</strong> – Use Ctrl/Cmd + number (e.g., 1 for Signals, 2 for Messages) to show or hide panels quickly.</li>
-<li><strong>Command Palette</strong> – Press Ctrl/Cmd + P to bring up a search-driven command list (if enabled in your build).</li>
-<li><strong>Cursors</strong> – Add with <code>Shift + C</code> (configurable) to mark points on charts.</li>
-</ul>
-<h2 id="reporting-exports">Reporting &amp; Exports<a class="headerlink" href="#reporting-exports" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>Report Builder</strong> – A guided wizard that combines annotations, screenshots, and summary metrics into PDF/HTML outputs.</li>
-<li><strong>Batch Export Queue</strong> – A task list that processes multiple timeline segments or files overnight.</li>
-<li><strong>Snapshot</strong> – A quick capture of the current chart or panel state saved as an image.</li>
-</ul>
-<h2 id="troubleshooting-vocabulary">Troubleshooting Vocabulary<a class="headerlink" href="#troubleshooting-vocabulary" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>Safe Mode</strong> – Launch flag that disables hardware acceleration (<code>--safe-mode</code>). Use for diagnosing display issues.</li>
-<li><strong>Verbose Logging</strong> – Start TrueFidelity with <code>--verbose</code> to capture additional diagnostics in log files.</li>
-<li><strong>Compatibility Mode</strong> – A playback option that relaxes parsing strictness for older log formats; configure under <strong>Settings → Data</strong>.</li>
+<li><strong>Docker status</strong> – Connected/Disconnected indicator in the status bar.</li>
+<li><strong>Container count</strong> – Running vs total containers shown in the status bar.</li>
+<li><strong>License status</strong> – License tier and state shown in the status bar.</li>
+<li><strong>Version</strong> – Desktop app version shown in the status bar.</li>
 </ul>
 <h2 id="using-this-glossary">Using This Glossary<a class="headerlink" href="#using-this-glossary" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Keep this page open in a split view while onboarding new team members.</li>
-<li>Link definitions in documentation or runbooks using anchors (e.g., <code>#signal</code>).</li>
-<li>Encourage consistent terminology when filing support tickets to speed up triage.</li>
+<li>Keep this page open while onboarding new team members.</li>
+<li>Link definitions in documentation or runbooks using anchors (for example, <code>#system</code>).</li>
 </ul>
 
 
@@ -2045,10 +1908,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "toc.integrate", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "toc.integrate", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -785,34 +785,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../annotations-and-bookmarks/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Annotations & Bookmarks
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../dbc-and-signal-definitions/" class="md-nav__link">
         
   
@@ -929,10 +901,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#export-types-overview" class="md-nav__link">
+  <a href="#where-exports-live" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Export Types Overview
+        Where Exports Live
       
     </span>
   </a>
@@ -940,10 +912,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#segment-export-workflow" class="md-nav__link">
+  <a href="#file-menu-export" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Segment Export Workflow
+        File Menu Export
       
     </span>
   </a>
@@ -951,10 +923,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#message-export" class="md-nav__link">
+  <a href="#network-traffic-export" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Message Export
+        Network Traffic Export
       
     </span>
   </a>
@@ -962,10 +934,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#annotation-export" class="md-nav__link">
+  <a href="#signal-chart-export" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Annotation Export
+        Signal Chart Export
       
     </span>
   </a>
@@ -973,10 +945,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#screenshot-export" class="md-nav__link">
+  <a href="#ecu-console-export" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Screenshot Export
+        ECU Console Export
       
     </span>
   </a>
@@ -984,38 +956,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#report-builder" class="md-nav__link">
+  <a href="#tips-for-reliable-exports" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Report Builder
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Report Builder">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#customizing-templates" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Customizing Templates
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#export-queue-management" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Export Queue Management
+        Tips for Reliable Exports
       
     </span>
   </a>
@@ -1023,54 +967,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#automation-hooks" class="md-nav__link">
+  <a href="#troubleshooting" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Automation Hooks
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#best-practices" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Best Practices
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting-exports" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Troubleshooting Exports
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#compliance-traceability" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Compliance &amp; Traceability
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Next Steps
+        Troubleshooting
       
     </span>
   </a>
@@ -1823,125 +1723,59 @@
 
 
 <h1 id="exports-reports">Exports &amp; Reports<a class="headerlink" href="#exports-reports" title="Permanent link">&para;</a></h1>
-<p>TrueFidelity offers flexible export options so you can share findings with teammates, customers, or automated pipelines. This guide covers segment exports, message exports, report builder usage, and best practices.</p>
-<h2 id="export-types-overview">Export Types Overview<a class="headerlink" href="#export-types-overview" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Export</th>
-<th>Description</th>
-<th>Typical Use</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Segment Export</td>
-<td>Exports selected timeline range to CSV, MDF4, or other supported formats.</td>
-<td>Share subsets of data without releasing full logs.</td>
-</tr>
-<tr>
-<td>Message Export</td>
-<td>Exports filtered frames from the Messages panel.</td>
-<td>Provide raw data for downstream tools.</td>
-</tr>
-<tr>
-<td>Screenshot</td>
-<td>Captures the current chart or panel as PNG.</td>
-<td>Include visuals in presentations or reports.</td>
-</tr>
-<tr>
-<td>Annotation CSV</td>
-<td>List of annotations/bookmarks with timestamps and tags.</td>
-<td>Review session notes, build test case documentation.</td>
-</tr>
-<tr>
-<td>Report Builder</td>
-<td>Generates PDF/HTML summary with charts, annotations, statistics, and attachments.</td>
-<td>Formal documentation for design reviews or audits.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="segment-export-workflow">Segment Export Workflow<a class="headerlink" href="#segment-export-workflow" title="Permanent link">&para;</a></h2>
+<p>This page explains how exports work in the current desktop UI. Exports are focused on capturing live or playback data (frames, charts, and logs) so you can share results or archive a run. The desktop app does not include a separate report builder panel, so exports are the primary way to package evidence.</p>
+<h2 id="where-exports-live">Where Exports Live<a class="headerlink" href="#where-exports-live" title="Permanent link">&para;</a></h2>
+<p>Exports are started from the panel you are using. Each export action opens a save dialog so you can choose the destination and filename. If you are working on a team, use a shared folder so others can open the output quickly.</p>
+<h2 id="file-menu-export">File Menu Export<a class="headerlink" href="#file-menu-export" title="Permanent link">&para;</a></h2>
+<p>The File menu exposes the top-level export entry so you can access it without hunting for a panel button.</p>
+<p><img alt="File menu showing Export Data" src="../../images/projects-files-file-menu.png" /></p>
+<p>Use this path when you want a general export action but are not sure which panel owns the data you need. If you are already working in a specific panel, use its Export button instead.</p>
+<h2 id="network-traffic-export">Network Traffic Export<a class="headerlink" href="#network-traffic-export" title="Permanent link">&para;</a></h2>
+<p>The Network Traffic panel is the canonical place to export raw frames. It shows the live CAN stream and includes an Export button in the panel header.</p>
+<p><img alt="Network Traffic panel with Export button" src="../../images/ui-tour-messages-panel.png" /></p>
+<p>Common use cases:</p>
+<ul>
+<li><strong>Capture a live run</strong> while the system is running.</li>
+<li><strong>Share a filtered view</strong> after narrowing by CAN ID or data pattern.</li>
+<li><strong>Archive a short test</strong> without exporting the full dataset.</li>
+</ul>
+<p>Typical workflow:</p>
 <ol>
-<li>Select a range on the timeline.</li>
-<li>Verify filters are applied as desired (Filter-to-Range, message filters).</li>
-<li>Click <strong>File → Export Segment</strong> or use the toolbar button.</li>
-<li>Choose format:</li>
-<li><strong>CSV:</strong> Wide table of timestamp, ID, payload, decoded signals.</li>
-<li><strong>MDF4/BLF:</strong> Maintains binary format for compatibility with other CAN tools.</li>
-<li><strong>JSON (optional):</strong> Structured export if your build supports it.</li>
-<li>Configure options:</li>
-<li>Include annotations within the range.</li>
-<li>Include decoded signals or raw payload only.</li>
-<li>Choose delimiter and decimal precision for CSV.</li>
-<li>Set destination filename and folder.</li>
-<li>Click <strong>Export</strong>. Monitor progress in the Export Queue.</li>
+<li>Start your system so traffic is flowing.</li>
+<li>Apply filters if you only need a subset of frames.</li>
+<li>Click <strong>Export</strong> in the Network Traffic panel.</li>
+<li>Choose a filename and destination folder.</li>
+<li>Save and verify the exported file in your OS file browser.</li>
 </ol>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Name exports using <code>YYYY-MM-DD_project_signal_range</code> to keep them sorted chronologically and contextually.</p>
-</div>
-<h2 id="message-export">Message Export<a class="headerlink" href="#message-export" title="Permanent link">&para;</a></h2>
+<p>If you are not seeing frames, confirm the correct bus is selected and reminds you that traffic only appears when the system is running.</p>
+<h2 id="signal-chart-export">Signal Chart Export<a class="headerlink" href="#signal-chart-export" title="Permanent link">&para;</a></h2>
+<p>The Signal Chart panel lets you export the plotted view of selected signals. This is ideal for sharing a trend or a behavior snapshot.</p>
+<p><img alt="Signal Chart panel with Export control" src="../../images/ui-tour-charts-panel.png" /></p>
+<p>Best practices:</p>
 <ul>
-<li>Apply filters in the Messages panel to isolate data.</li>
-<li>Click <strong>Export → Visible Rows</strong>.</li>
-<li>Choose CSV or binary format depending on downstream needs.</li>
-<li>Saved filters ensure exports remain consistent across iterations.</li>
+<li><strong>Select signals first</strong> in the Signal Viewer so the chart contains meaningful series.</li>
+<li><strong>Set the time window</strong> to keep the chart readable.</li>
+<li><strong>Pause</strong> the chart before export if you want a stable capture.</li>
 </ul>
-<h2 id="annotation-export">Annotation Export<a class="headerlink" href="#annotation-export" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Open the Annotations panel.</li>
-<li>Filter by tags (e.g., <code>safety</code> or <code>testday-05</code>).</li>
-<li>Click <strong>Export → CSV</strong>.</li>
-<li>The CSV includes timestamp, tag, description, and linked segment info.</li>
-</ul>
-<h2 id="screenshot-export">Screenshot Export<a class="headerlink" href="#screenshot-export" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Use the camera icon in Charts or the toolbar to capture the current view.</li>
-<li>Screenshots are saved to the export folder by default.</li>
-<li>Naming includes timestamp; rename to match the associated annotation or report section.</li>
-</ul>
-<h2 id="report-builder">Report Builder<a class="headerlink" href="#report-builder" title="Permanent link">&para;</a></h2>
-<p>Report Builder packages your analysis into a polished deliverable.</p>
+<p>Use chart exports when you need a quick visual for a report, slide deck, or a ticket update.</p>
+<h2 id="ecu-console-export">ECU Console Export<a class="headerlink" href="#ecu-console-export" title="Permanent link">&para;</a></h2>
+<p>The ECU Console panel includes an Export button for log capture. This is useful when diagnosing startup problems or runtime errors.</p>
+<p><img alt="ECU Console showing Export button" src="../../images/first-launch-monitoring-ecu-console.png" /></p>
+<p>Recommended flow:</p>
 <ol>
-<li>Open <strong>Reports</strong> panel and click <strong>New Report</strong>.</li>
-<li>Select a template (e.g., <code>Validation</code>, <code>Regression Summary</code>). Templates define cover pages, sections, and branding.</li>
-<li>Add content:</li>
-<li><strong>Overview</strong> – Enter summary text, objectives, and test context.</li>
-<li><strong>Annotations</strong> – Choose which annotations to include; they populate tables with time, tags, and notes.</li>
-<li><strong>Charts</strong> – Attach live charts or imported screenshots. For live charts, specify the signals and time ranges to render.</li>
-<li><strong>Key Metrics</strong> – Import statistics from performance panels (message rates, peaks, etc.).</li>
-<li><strong>Attachments</strong> – Include links to exported segments or external documents.</li>
-<li>Preview the report in the right-hand pane.</li>
-<li>Export to <strong>PDF</strong> or <strong>HTML</strong>. PDF is ideal for signing/archiving; HTML works for web-based portals.</li>
+<li>Filter the console to the ECU or keyword you care about.</li>
+<li>Pause if needed so the log view stops scrolling.</li>
+<li>Click <strong>Export</strong> and save the log file.</li>
 </ol>
-<h3 id="customizing-templates">Customizing Templates<a class="headerlink" href="#customizing-templates" title="Permanent link">&para;</a></h3>
+<p>Log exports provide a lightweight record of what happened during a run and are often requested by support teams.</p>
+<h2 id="tips-for-reliable-exports">Tips for Reliable Exports<a class="headerlink" href="#tips-for-reliable-exports" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Navigate to <strong>Reports → Manage Templates</strong>.</li>
-<li>Clone an existing template and edit branding, section order, and default text.</li>
-<li>Share template files with teammates so everyone produces consistent reports.</li>
+<li><strong>Name files clearly</strong> with system name, date, and purpose (for example: <code>drive-cycle-2025-01-05-can-traffic.csv</code>).</li>
+<li><strong>Keep filters visible</strong> so it is obvious what is included in the export.</li>
+<li><strong>Export in smaller chunks</strong> when troubleshooting to avoid huge files.</li>
+<li><strong>Store exports with the system</strong> so the context is preserved.</li>
 </ul>
-<h2 id="export-queue-management">Export Queue Management<a class="headerlink" href="#export-queue-management" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Open the <strong>Export Queue</strong> panel to view active exports.</li>
-<li>Reorder tasks to prioritize urgent exports.</li>
-<li>Pause/resume or delete queued tasks as needed.</li>
-<li>Export logs record success/failure messages; review them if an export fails.</li>
-</ul>
-<h2 id="automation-hooks">Automation Hooks<a class="headerlink" href="#automation-hooks" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Some deployments include CLI tools: <code>truefidelity-cli export --project file.tfproj --range 0-60s --format csv</code>.</li>
-<li>Schedule exports overnight via OS task schedulers or CI pipelines using these CLI utilities.</li>
-<li>Combine automation with version-controlled projects to deliver reproducible export bundles.</li>
-</ul>
-<h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Use consistent naming conventions and include ticket IDs or experiment numbers in filenames.</li>
-<li>Store exports alongside the originating project to preserve context.</li>
-<li>Keep a <code>README</code> with exports describing their purpose, filters, and responsible engineer.</li>
-<li>For long sessions, export multiple shorter segments instead of a single large file to simplify review.</li>
-</ul>
-<h2 id="troubleshooting-exports">Troubleshooting Exports<a class="headerlink" href="#troubleshooting-exports" title="Permanent link">&para;</a></h2>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -1951,35 +1785,23 @@
 </thead>
 <tbody>
 <tr>
-<td>Export queue stuck</td>
-<td>Check that the destination drive has free space; resume or restart the export queue.</td>
+<td>Export button disabled</td>
+<td>Start the system and confirm the panel is receiving data.</td>
 </tr>
 <tr>
-<td>CSV columns misaligned</td>
-<td>Verify delimiter and line ending options. Use UTF-8 encoding for international characters.</td>
+<td>Empty export</td>
+<td>Clear filters or choose the correct bus before exporting.</td>
 </tr>
 <tr>
-<td>Report missing images</td>
-<td>Ensure screenshots remained in place when exporting; relative paths should be inside the project folder.</td>
+<td>Export not found</td>
+<td>Re-run export and note the destination folder in the save dialog.</td>
 </tr>
 <tr>
-<td>Exported data empty</td>
-<td>Confirm range selection contains data and filters are not excluding everything.</td>
+<td>Logs incomplete</td>
+<td>Pause the console before exporting to capture a stable range.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="compliance-traceability">Compliance &amp; Traceability<a class="headerlink" href="#compliance-traceability" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Include hash values of exported files in audit logs (compute via OS tools) when compliance requires verification.</li>
-<li>Store report PDFs in document management systems with version history.</li>
-<li>Attach exported segments and reports to issue tracking tickets for test evidence.</li>
-</ul>
-<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Explore <strong>Performance Tips</strong> to tune system resources before large exports.</li>
-<li>Continue to <strong>Tutorials</strong> for end-to-end scenarios that culminate in deliverables.</li>
-<li>Review <strong>Support</strong> to learn where to send exports when requesting assistance.</li>
-</ul>
 
 
 
@@ -2077,10 +1899,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "toc.integrate", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "toc.integrate", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

@@ -13,7 +13,7 @@
       
       
       
-        <link rel="prev" href="../annotations-and-bookmarks/">
+        <link rel="prev" href="../filters-and-search/">
       
       
         <link rel="next" href="../controls-and-panels/">
@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -782,34 +782,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../annotations-and-bookmarks/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Annotations & Bookmarks
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -873,10 +845,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#supported-formats" class="md-nav__link">
+  <a href="#where-dbcs-are-used" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Supported Formats
+        Where DBCs Are Used
       
     </span>
   </a>
@@ -884,10 +856,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#importing-definitions" class="md-nav__link">
+  <a href="#assigning-a-dbc-to-a-can-network" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Importing Definitions
+        Assigning a DBC to a CAN Network
       
     </span>
   </a>
@@ -895,10 +867,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#definition-priority" class="md-nav__link">
+  <a href="#what-gets-decoded" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Definition Priority
+        What Gets Decoded
       
     </span>
   </a>
@@ -906,10 +878,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#syncing-definitions-with-projects" class="md-nav__link">
+  <a href="#validating-a-dbc" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Syncing Definitions With Projects
+        Validating a DBC
       
     </span>
   </a>
@@ -917,54 +889,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#signal-metadata" class="md-nav__link">
+  <a href="#signal-player-matching" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Signal Metadata
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#editing-definitions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Editing Definitions
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#derived-signals-and-formulas" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Derived Signals and Formulas
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#diagnostic-dictionaries" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Diagnostic Dictionaries
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting-definitions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Troubleshooting Definitions
+        Signal Player Matching
       
     </span>
   </a>
@@ -983,10 +911,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#automation-validation" class="md-nav__link">
+  <a href="#troubleshooting" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Automation &amp; Validation
+        Troubleshooting
       
     </span>
   </a>
@@ -1806,113 +1734,94 @@
 
 
 <h1 id="dbc-signal-definitions">DBC &amp; Signal Definitions<a class="headerlink" href="#dbc-signal-definitions" title="Permanent link">&para;</a></h1>
-<p>Signal definitions translate raw CAN payloads into human-readable values. TrueFidelity supports DBC and other metadata files so you can analyze signals with units, scaling, and diagnostics. This page explains how to import, manage, and troubleshoot definitions.</p>
-<h2 id="supported-formats">Supported Formats<a class="headerlink" href="#supported-formats" title="Permanent link">&para;</a></h2>
+<p>DBC files are the bridge between raw CAN frames and readable signal values. In TrueFidelity, DBCs are configured per CAN network from the <strong>Properties</strong> panel, and their definitions drive decoding in <strong>Signal Viewer</strong>, <strong>Signal Chart</strong>, and <strong>Signal Player</strong> matching.</p>
+<h2 id="where-dbcs-are-used">Where DBCs Are Used<a class="headerlink" href="#where-dbcs-are-used" title="Permanent link">&para;</a></h2>
+<p>DBC files affect the UI in several places:</p>
 <ul>
-<li><strong>DBC</strong> – Common CAN database format containing message and signal definitions.</li>
-<li><strong>ARXML</strong> (read-only support depending on your build).</li>
-<li><strong>JSON</strong>/custom mapping files if provided by your organization.</li>
+<li><strong>Signal Viewer</strong> uses DBCs to expand frames into individual signals.</li>
+<li><strong>Signal Chart</strong> uses DBC scaling, units, and value ranges for plotting.</li>
+<li><strong>Signal Player</strong> uses DBC message IDs to match dataset channels to networks.</li>
+<li><strong>Network Traffic</strong> remains raw, but DBC selection helps validate IDs and payloads.</li>
 </ul>
-<p>Consult release notes for additional supported formats in your distribution.</p>
-<h2 id="importing-definitions">Importing Definitions<a class="headerlink" href="#importing-definitions" title="Permanent link">&para;</a></h2>
+<p>If a DBC is missing or mismatched, you’ll see fewer decoded signals and weaker channel matching.</p>
+<h2 id="assigning-a-dbc-to-a-can-network">Assigning a DBC to a CAN Network<a class="headerlink" href="#assigning-a-dbc-to-a-can-network" title="Permanent link">&para;</a></h2>
+<p>DBC selection happens on the network node in System Design.</p>
 <ol>
-<li>Open your project in TrueFidelity.</li>
-<li>Choose <strong>Project → Import Definitions</strong>.</li>
-<li>Select one or more DBC files.</li>
-<li>Confirm the import summary—messages, signals, and comments are listed.</li>
-<li>Definitions appear under <strong>Definitions</strong> in the sidebar.</li>
+<li>Open your system and double-click a diagram to open it on the canvas.</li>
+<li>Select a CAN network (for example, <strong>CAN Bus 1</strong>).</li>
+<li>In <strong>Properties</strong>, choose a DBC file using <strong>Browse</strong>.</li>
 </ol>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Store DBC files inside your project directory or in a shared network location. Relative paths keep projects portable across machines.</p>
-</div>
-<h2 id="definition-priority">Definition Priority<a class="headerlink" href="#definition-priority" title="Permanent link">&para;</a></h2>
-<p>When multiple files define the same message or signal:</p>
+<p><img alt="Properties panel showing DBC selection for a CAN network" src="../../images/projects-files-can-properties.png" /></p>
+<p>When the DBC is loaded:</p>
 <ul>
-<li>Open the <strong>Definitions</strong> panel.</li>
-<li>Drag definitions to reorder them. Higher entries take precedence.</li>
-<li>Use the conflict indicator (exclamation mark) to review overlapping signals.</li>
-<li>Disable a definition temporarily via the checkbox for testing.</li>
+<li>The <strong>Baudrate</strong> field updates based on the DBC metadata.</li>
+<li>Signal Viewer begins listing frames and signals defined in the DBC.</li>
+<li>Signal Player can map dataset channels to the network using message IDs.</li>
 </ul>
-<h2 id="syncing-definitions-with-projects">Syncing Definitions With Projects<a class="headerlink" href="#syncing-definitions-with-projects" title="Permanent link">&para;</a></h2>
+<p><img alt="Signal Viewer showing decoded frames and signals" src="../../images/dbc-signal-viewer-decoded.png" /></p>
+<p>If you move the DBC file later, update the path in <strong>Properties</strong> to restore decoding.</p>
+<h2 id="what-gets-decoded">What Gets Decoded<a class="headerlink" href="#what-gets-decoded" title="Permanent link">&para;</a></h2>
+<p>A DBC typically includes:</p>
 <ul>
-<li>Definitions are referenced by path. If the file moves, you’ll see a warning in the Definitions panel.</li>
-<li>Click <strong>Locate</strong> to update the path.</li>
-<li>Use <strong>Project → Export Definitions</strong> to package all referenced files for teammates.</li>
+<li><strong>Messages</strong> (frame IDs) with human-readable names.</li>
+<li><strong>Signals</strong> inside each message, including scaling and units.</li>
+<li>Optional min/max values, comments, and metadata.</li>
 </ul>
-<h2 id="signal-metadata">Signal Metadata<a class="headerlink" href="#signal-metadata" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Signals inherit their name, unit, scaling, offset, min/max, and comments from the definition.</li>
-<li>Tooltips show this metadata in the Signals panel and Charts legend.</li>
-<li>If definitions include categories or tags, they become search filters in the Signals panel.</li>
-</ul>
-<h2 id="editing-definitions">Editing Definitions<a class="headerlink" href="#editing-definitions" title="Permanent link">&para;</a></h2>
-<p>TrueFidelity does not modify DBC files directly. To edit definitions:</p>
+<p>These details surface directly in the UI. For example, Signal Chart labels inherit the DBC signal name and unit, and value scaling is applied automatically so charts show real-world units instead of raw payload bytes.</p>
+<h2 id="validating-a-dbc">Validating a DBC<a class="headerlink" href="#validating-a-dbc" title="Permanent link">&para;</a></h2>
+<p>After assigning a DBC, confirm it is working:</p>
 <ol>
-<li>Open the DBC in your preferred editor (e.g., Vector CANdb++, open-source editors).</li>
-<li>Adjust messages or signals.</li>
-<li>Save the DBC.</li>
-<li>Back in TrueFidelity, click <strong>Reload</strong> in the Definitions panel to pick up changes.</li>
+<li>Open <strong>Signal Viewer</strong> and search for a known frame name.</li>
+<li>Check that signals appear under the frame and update while data is flowing.</li>
+<li>Plot a signal in <strong>Signal Chart</strong> and confirm the unit and scale look correct.</li>
 </ol>
-<h2 id="derived-signals-and-formulas">Derived Signals and Formulas<a class="headerlink" href="#derived-signals-and-formulas" title="Permanent link">&para;</a></h2>
+<p>If signals appear but never update, the dataset or live traffic may not contain those message IDs.</p>
+<h2 id="signal-player-matching">Signal Player Matching<a class="headerlink" href="#signal-player-matching" title="Permanent link">&para;</a></h2>
+<p>Signal Player uses the DBC to align datasets with networks:</p>
 <ul>
-<li>Some releases support derived signals using mathematical expressions.</li>
-<li>Configure derived signals via <strong>Project → Manage Derived Signals</strong>.</li>
-<li>Derived signals appear alongside decoded signals and follow the same pinning/export rules.</li>
+<li><strong>Inspect bundle</strong> reads frame IDs from the dataset.</li>
+<li><strong>Auto-select channels</strong> chooses the dataset channel with the highest overlap.</li>
+<li>The <strong>Matches</strong> filter highlights signals that have a dataset match.</li>
 </ul>
-<h2 id="diagnostic-dictionaries">Diagnostic Dictionaries<a class="headerlink" href="#diagnostic-dictionaries" title="Permanent link">&para;</a></h2>
+<p>If matching fails, the DBC is likely for a different network or firmware version. Swap to the correct DBC and re-run <strong>Inspect bundle</strong>.</p>
+<h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Import diagnostic mapping files (if available) to decode UDS/KWP responses.</li>
-<li>Diagnostics view uses these dictionaries to label service IDs and parameter values.</li>
+<li>Keep DBC files versioned and named clearly (for example, <code>powertrain_v2025.dbc</code>).</li>
+<li>Store DBCs near the system file or in a shared, stable directory.</li>
+<li>Update DBCs when firmware changes introduce new signals or IDs.</li>
+<li>Document which DBC version belongs to each system to avoid decoding mismatches.</li>
 </ul>
-<h2 id="troubleshooting-definitions">Troubleshooting Definitions<a class="headerlink" href="#troubleshooting-definitions" title="Permanent link">&para;</a></h2>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
 <th>Issue</th>
-<th>Suggested Action</th>
+<th>Suggested Fix</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Signals show raw hex instead of values</td>
-<td>Ensure the correct DBC is imported and prioritized. Check that the message ID matches the bus (standard vs. extended).</td>
+<td>Signal Viewer is empty</td>
+<td>Confirm a DBC is assigned to the CAN network.</td>
 </tr>
 <tr>
-<td>Units incorrect</td>
-<td>Verify the DBC scaling; if the definition is outdated, request the latest version from your calibration team.</td>
+<td>Signals show incorrect units</td>
+<td>Verify the DBC scaling and unit definitions.</td>
 </tr>
 <tr>
-<td>DBC file missing after clone</td>
-<td>Confirm relative paths; store definitions inside the project or update the path using <strong>Locate</strong>.</td>
+<td>Signal Player “Matches” is empty</td>
+<td>Use the correct DBC for the dataset and re-run <strong>Inspect bundle</strong>.</td>
 </tr>
 <tr>
-<td>Newly added signals not visible</td>
-<td>Reload definitions or restart the application to clear cached metadata.</td>
-</tr>
-<tr>
-<td>Conflicting definitions</td>
-<td>Reorder or disable alternate DBC files until the intended signals decode correctly.</td>
+<td>Baudrate looks wrong</td>
+<td>Check the DBC metadata or confirm the file is not a placeholder.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Version-control your DBC files; include version numbers in filenames (<code>Powertrain_v2025.dbc</code>).</li>
-<li>Maintain a change log so engineers know what signals were added or altered.</li>
-<li>Bundle DBC files with projects when sharing externally to preserve decoding fidelity.</li>
-<li>Use tags within DBC comments to drive signal grouping (e.g., <code>[category=brakes]</code>).</li>
-</ul>
-<h2 id="automation-validation">Automation &amp; Validation<a class="headerlink" href="#automation-validation" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Scripts can compare DBC versions by exporting signal lists from TrueFidelity (<code>Project → Export Definition Summary</code>).</li>
-<li>When updating firmware, load both old and new DBC files and use the priority system to validate differences.</li>
-</ul>
 <h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Proceed to <strong>Controls &amp; Panels</strong> to work with decoded signals in charts and watch lists.</li>
-<li>Review <strong>Exports &amp; Reports</strong> to include decoded values in deliverables.</li>
-<li>Keep <strong>Glossary</strong> handy for terminology used in definitions dialogs.</li>
+<li>Use <strong>Filters &amp; Search</strong> to narrow signals once decoding is active.</li>
+<li>Review <strong>Playback</strong> to understand dataset mapping and control flows.</li>
 </ul>
 
 
@@ -1951,7 +1860,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../annotations-and-bookmarks/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Annotations &amp; Bookmarks">
+          <a href="../filters-and-search/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Filters &amp; Search">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1961,7 +1870,7 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Annotations & Bookmarks
+                Filters & Search
               </div>
             </div>
           </a>
@@ -2011,10 +1920,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "toc.integrate", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "toc.integrate", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
