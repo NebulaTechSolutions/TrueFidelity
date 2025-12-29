@@ -1823,7 +1823,7 @@
 - macOS: <code>~/Library/Application Support/TrueFidelity</code>
 - Linux: <code>~/.config/TrueFidelity</code></p>
 <p><strong>Q: Does TrueFidelity require Docker?</strong></p>
-<p>A: Yes, Docker Desktop is required for ECU simulation. However, you can use Mock Mode for UI testing without Docker.</p>
+<p>A: Yes, Docker Desktop is required for ECU simulation.</p>
 <h2 id="system-design-files">System Design &amp; Files<a class="headerlink" href="#system-design-files" title="Permanent link">&para;</a></h2>
 <p><strong>Q: How do I share a system design with colleagues?</strong></p>
 <p>A: Share the <code>.json</code> system definition file. Include any referenced BLF/MDF4 log files and DBC signal definition files.</p>
@@ -1845,8 +1845,7 @@
 <p>A:
 1. Ensure Docker Desktop is running
 2. Check Docker has sufficient resources (8+ GB RAM, 4+ CPU cores)
-3. Review ECU Console panel for error messages
-4. Try Mock Mode if Docker has issues</p>
+3. Review ECU Console panel for error messages</p>
 <p><strong>Q: How do I connect ECUs to networks?</strong></p>
 <p>A: ECUs connect to bus nodes, not directly to each other:
 - Drag from ECU port to a bus node on the network
@@ -1871,6 +1870,7 @@
 <p>A: In the ECU Console panel, use the ECU dropdown filter at the top to select a specific ECU. You can also filter by log level (INFO, WARNING, ERROR, DEBUG).</p>
 <p><strong>Q: Why are Resource Monitor graphs showing zero?</strong></p>
 <p>A:
+- Verify agent code is included in your firmware build (resource data is collected by agent code running on the ECU)
 - Ensure ECUs are actually running
 - Check time range dropdown includes recent activity
 - Verify Resource Monitor panel is visible
@@ -1944,8 +1944,7 @@
 - Increase Docker Desktop resources (memory and CPU)
 - Use local SSD storage for files
 - Clear accumulated data in panels
-- Close unnecessary panels
-- Enable Mock Mode for testing without Docker</p>
+- Close unnecessary panels</p>
 <p><strong>Q: The app feels sluggish after hours of use.</strong></p>
 <p>A:
 - Clear Network Traffic panel
@@ -1959,7 +1958,7 @@
 - Docker Desktop should have 8+ GB allocated</p>
 <h2 id="docker-containers">Docker &amp; Containers<a class="headerlink" href="#docker-containers" title="Permanent link">&para;</a></h2>
 <p><strong>Q: Do I need Docker Desktop?</strong></p>
-<p>A: Yes, for ECU simulation. You can use Mock Mode for UI testing without Docker.</p>
+<p>A: Yes, Docker Desktop is required for ECU simulation.</p>
 <p><strong>Q: How do I configure Docker resources?</strong></p>
 <p>A: Open Docker Desktop Settings:
 - Memory: Allocate at least 8 GB

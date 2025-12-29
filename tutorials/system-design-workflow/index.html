@@ -2314,7 +2314,7 @@
 <li>TrueFidelity Desktop installed and license activated</li>
 <li>Docker Desktop running and accessible</li>
 <li>Basic understanding of automotive ECU concepts</li>
-<li>(Optional) ECU firmware binaries for deployment, or use mock mode for learning</li>
+<li>ECU firmware binaries for deployment</li>
 </ul>
 <h2 id="step-1-create-a-new-system">Step 1: Create a New System<a class="headerlink" href="#step-1-create-a-new-system" title="Permanent link">&para;</a></h2>
 <p>Let's begin by creating a new TrueFidelity system project. This will be the container for all your ECUs, networks, and configurations.</p>
@@ -2451,7 +2451,7 @@
 </ul>
 </li>
 <li>For this tutorial, select <strong>Binary File</strong> mode</li>
-<li><strong>Firmware Binary</strong>: Click "Browse" to select a file, or leave empty for mock mode</li>
+<li><strong>Firmware Binary</strong>: Click "Browse" to select a firmware file</li>
 </ul>
 <p><img alt="Properties panel SOFTWARE section showing OS and Firmware settings" src="../../images/tutorial-step3-software-settings-annotated.png" /></p>
 <ol>
@@ -2497,10 +2497,6 @@
 <li><strong>Source Code Mode</strong>: Full build integration with TrueFidelity's build system</li>
 <li>The "Build Firmware" button (green) becomes active when source code mode is selected</li>
 </ul>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Mock Mode</p>
-<p>If you don't have firmware binaries, leave the firmware path empty. TrueFidelity will run in mock mode, simulating ECU behavior for learning purposes.</p>
 </div>
 <h2 id="step-4-add-network-bus-and-create-connections">Step 4: Add Network Bus and Create Connections<a class="headerlink" href="#step-4-add-network-bus-and-create-connections" title="Permanent link">&para;</a></h2>
 <p>In TrueFidelity, networks are represented as separate bus nodes that ECUs connect to, accurately modeling real automotive architectures where multiple ECUs share a common communication bus.</p>
@@ -2642,7 +2638,7 @@
 - Project metadata and version information</p>
 </div>
 <h2 id="step-7-build-firmware-optional">Step 7: Build Firmware (Optional)<a class="headerlink" href="#step-7-build-firmware-optional" title="Permanent link">&para;</a></h2>
-<p>If you have firmware source code and want to build it within TrueFidelity, this section guides you through the integrated build process. Skip this if you're using pre-built binaries or mock mode.</p>
+<p>If you have firmware source code and want to build it within TrueFidelity, this section guides you through the integrated build process. Skip this if you're using pre-built binaries.</p>
 <h3 id="understanding-the-build-system">Understanding the Build System<a class="headerlink" href="#understanding-the-build-system" title="Permanent link">&para;</a></h3>
 <p>TrueFidelity includes an integrated firmware build system that:</p>
 <ul>
@@ -3304,7 +3300,6 @@
 </li>
 <li>Firmware must actively send CAN messages</li>
 <li>Check Console for "CAN init" or network startup messages</li>
-<li>Mock mode may not generate traffic without simulation</li>
 </ol>
 <h4 id="high-resource-usage">High Resource Usage<a class="headerlink" href="#high-resource-usage" title="Permanent link">&para;</a></h4>
 <p><strong>Symptoms</strong>: Host system slows down, high CPU/memory usage</p>

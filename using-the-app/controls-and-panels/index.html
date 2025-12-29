@@ -1912,6 +1912,10 @@
 <p>Start here when a system fails to run or an ECU looks misconfigured.</p>
 <h3 id="ecu-resource-monitor">ECU Resource Monitor<a class="headerlink" href="#ecu-resource-monitor" title="Permanent link">&para;</a></h3>
 <p>The Resource Monitor tracks CPU and memory usage for the selected ECU. The chart provides instant visibility into performance spikes and steady-state load.</p>
+<div class="admonition note">
+<p class="admonition-title">Agent Code Required</p>
+<p>Resource monitoring data is collected by agent code that runs on the ECU and is built along with the ECU firmware. If the agent code is not included in your firmware build, the Resource Monitor will not display any data.</p>
+</div>
 <p><img alt="ECU Resource Monitor showing CPU and memory charts" src="../../images/first-launch-monitoring-resource-monitor.png" /></p>
 <p>What to watch:</p>
 <ul>

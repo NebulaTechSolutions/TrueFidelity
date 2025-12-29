@@ -2270,15 +2270,7 @@
 </li>
 <li>Check ECU Console panel for startup errors</li>
 <li>Filter by specific ECU using the dropdown</li>
-<li>
-<p>Look for port conflicts or resource limitations</p>
-</li>
-<li>
-<p><strong>Try Mock Mode</strong>:</p>
-</li>
-<li>Enable Mock Mode in toolbar or settings</li>
-<li>This simulates ECUs without Docker containers</li>
-<li>Useful for testing when Docker has issues</li>
+<li>Look for port conflicts or resource limitations</li>
 </ol>
 <h3 id="system-canvas-wont-save">System Canvas Won't Save<a class="headerlink" href="#system-canvas-wont-save" title="Permanent link">&para;</a></h3>
 <p><strong>Problem</strong>: Cannot save system design to JSON file.</p>
@@ -2372,6 +2364,7 @@
 <p><strong>Problem</strong>: Resource Monitor displays zero or no metrics.</p>
 <p><strong>Solutions</strong>:</p>
 <ul>
+<li><strong>Verify agent code is included</strong>: Resource monitoring data is collected by agent code that runs on the ECU. If the agent code is not included in your firmware build, no data will be available</li>
 <li>Ensure ECUs are actually running (not just defined)</li>
 <li>Adjust time range dropdown to include recent activity</li>
 <li>Verify Resource Monitor panel is visible and not minimized</li>

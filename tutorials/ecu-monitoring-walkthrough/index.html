@@ -2498,12 +2498,8 @@
 <li>TrueFidelity Desktop installed and license activated</li>
 <li>A running ECU system (or complete the System Design Workflow tutorial first)</li>
 <li>Basic understanding of system monitoring concepts</li>
-<li>Docker Desktop running (for real container monitoring) or mock mode</li>
+<li>Docker Desktop running</li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">Mock Mode vs Real Docker</p>
-<p>This tutorial works with both mock data (for learning) and real Docker containers. In mock mode, data is simulated but the monitoring principles and techniques remain the same. The interface and tools function identically in both modes.</p>
-</div>
 <h2 id="step-1-set-up-monitoring-layout">Step 1: Set Up Monitoring Layout<a class="headerlink" href="#step-1-set-up-monitoring-layout" title="Permanent link">&para;</a></h2>
 <p>TrueFidelity provides predefined layouts optimized for different workflows. Let's set up the ideal monitoring environment for tracking running ECUs.</p>
 <h3 id="understanding-layout-modes">Understanding Layout Modes<a class="headerlink" href="#understanding-layout-modes" title="Permanent link">&para;</a></h3>
@@ -2847,6 +2843,10 @@
 </div>
 <h2 id="step-4-track-resource-usage">Step 4: Track Resource Usage<a class="headerlink" href="#step-4-track-resource-usage" title="Permanent link">&para;</a></h2>
 <p>The ECU Resource Monitor provides real-time visualization of system performance, helping you identify bottlenecks, detect memory leaks, and understand resource consumption patterns across your ECU network.</p>
+<div class="admonition note">
+<p class="admonition-title">Agent Code Required</p>
+<p>Resource monitoring data is collected by agent code that runs on the ECU and is built along with the ECU firmware. If the agent code is not included in your firmware build, the Resource Monitor will not display any data.</p>
+</div>
 <h3 id="understanding-the-resource-monitor">Understanding the Resource Monitor<a class="headerlink" href="#understanding-the-resource-monitor" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>Open the ECU Resource Monitor panel</strong></li>
