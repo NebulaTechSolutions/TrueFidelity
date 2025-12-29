@@ -1486,6 +1486,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#rtos-ecu-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RTOS ECU Considerations
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2146,6 +2157,12 @@
 - Simulates ECU containers without Docker
 - Significantly reduces resource usage
 - Ideal for UI development and testing</p>
+<h3 id="rtos-ecu-considerations">RTOS ECU Considerations<a class="headerlink" href="#rtos-ecu-considerations" title="Permanent link">&para;</a></h3>
+<p>When working with Zephyr or FreeRTOS ECUs:
+- Terminal access is not available for RTOS-based ECUs
+- Use ECU Console panel for log viewing instead
+- Enable GDB debugging in ECU properties for detailed analysis
+- Console logging works with all ECU types</p>
 <h2 id="file-and-data-management">File and Data Management<a class="headerlink" href="#file-and-data-management" title="Permanent link">&para;</a></h2>
 <h3 id="blf-file-optimization">BLF File Optimization<a class="headerlink" href="#blf-file-optimization" title="Permanent link">&para;</a></h3>
 <ol>

@@ -1052,6 +1052,56 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Opening Signal Injection Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-open-signal-player-injection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Open Signal Player &amp; Injection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-locate-the-signal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Locate the Signal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-open-the-signal-options-dialog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Open the Signal Options Dialog
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-configure-and-save" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Configure and Save
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1092,17 +1142,6 @@
     <span class="md-ellipsis">
       
         Length
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-this-replaces-profiles" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How This Replaces Profiles
       
     </span>
   </a>
@@ -1735,24 +1774,29 @@
 
 <h1 id="schedules-profiles">Schedules &amp; Profiles<a class="headerlink" href="#schedules-profiles" title="Permanent link">&para;</a></h1>
 <p>This page explains how signal-level injection options work in the current UI. Injection is configured per signal, and each signal can define how it starts, how long it runs, and how its value is encoded. These options live inside the signal injection dialog.</p>
-<p><img alt="Signal injection options dialog" src="../../images/injection-signal-options.png" /></p>
 <h2 id="opening-signal-injection-options">Opening Signal Injection Options<a class="headerlink" href="#opening-signal-injection-options" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Open <strong>Signal Player &amp; Injection</strong>.</li>
-<li>Expand a network and locate the signal you want to inject.</li>
-<li>Open the injection options dialog for that signal (for example, via the injection action on the signal row).</li>
-<li>Configure the options described below and click <strong>Save</strong>.</li>
-</ol>
-<p>Once saved, the signal is ready to participate in injection runs.</p>
+<h3 id="step-1-open-signal-player-injection">Step 1: Open Signal Player &amp; Injection<a class="headerlink" href="#step-1-open-signal-player-injection" title="Permanent link">&para;</a></h3>
+<p>Navigate to <strong>View &gt; Panels &gt; Signal Player &amp; Injection</strong> to open the panel.</p>
+<p><img alt="View menu showing Panels submenu with Signal Player &amp; Injection option" src="../../images/view-menu-panels-signal-player-annotated.png" /></p>
+<h3 id="step-2-locate-the-signal">Step 2: Locate the Signal<a class="headerlink" href="#step-2-locate-the-signal" title="Permanent link">&para;</a></h3>
+<p>In the <strong>Networks</strong> section, expand a network and locate the signal you want to inject.</p>
+<p><img alt="Signal tree showing expandable frames and signals" src="../../images/injection-signal-tree-annotated.png" /></p>
+<h3 id="step-3-open-the-signal-options-dialog">Step 3: Open the Signal Options Dialog<a class="headerlink" href="#step-3-open-the-signal-options-dialog" title="Permanent link">&para;</a></h3>
+<p>Click on the signal row to open the injection options dialog.</p>
+<p><img alt="Signal injection options dialog showing all configuration sections" src="../../images/injection-signal-options-annotated.png" /></p>
+<h3 id="step-4-configure-and-save">Step 4: Configure and Save<a class="headerlink" href="#step-4-configure-and-save" title="Permanent link">&para;</a></h3>
+<p>Configure the options described in the sections below, then click <strong>Save</strong>. Once saved, the signal is ready to participate in injection runs.</p>
 <h2 id="override-value">Override Value<a class="headerlink" href="#override-value" title="Permanent link">&para;</a></h2>
 <p>The override value sets the injected signal value that will be sent during the run.</p>
+<p><img alt="Override value field in the signal options dialog" src="../../images/injection-options-override-value.png" /></p>
 <ul>
 <li><strong>Physical value</strong> lets you enter the real-world value (for example, <code>48.5 km/h</code>).</li>
-<li>The UI validates the range so you do not accidentally send out-of-bounds values.</li>
+<li>The UI shows the <strong>Valid range</strong> so you do not accidentally send out-of-bounds values.</li>
 <li>Use a value that makes sense for the system under test so the ECU response is predictable.</li>
 </ul>
 <h2 id="value-encoding">Value Encoding<a class="headerlink" href="#value-encoding" title="Permanent link">&para;</a></h2>
 <p>Encoding determines how the physical value is translated into the raw CAN payload.</p>
+<p><img alt="Value encoding dropdown in the signal options dialog" src="../../images/injection-options-encoding.png" /></p>
 <ul>
 <li><strong>Physical</strong> uses the DBC scaling and offset, so the injected value respects engineering units.</li>
 <li>If your DBC includes multiple encodings, use the one that matches the signal definition your ECU expects.</li>
@@ -1760,27 +1804,28 @@
 <p>A mismatch in encoding can cause the ECU to interpret injected values incorrectly, so verify your DBC is loaded and up to date.</p>
 <h2 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h2>
 <p>These toggles control when the signal starts and whether it participates in bulk actions.</p>
+<p><img alt="Options checkboxes in the signal options dialog" src="../../images/injection-options-toggles.png" /></p>
 <ul>
 <li><strong>Start with playback</strong>: begins injection as soon as playback starts. Use this when you need injected values to align with recorded datasets.</li>
 <li><strong>Include in Start all</strong>: ensures the signal is included when you use the <strong>Start all</strong> button. Disable this for signals you want to trigger manually.</li>
 </ul>
 <h2 id="length">Length<a class="headerlink" href="#length" title="Permanent link">&para;</a></h2>
 <p>Length controls how long the injection stays active.</p>
+<p><img alt="Length options in the signal options dialog" src="../../images/injection-options-length.png" /></p>
 <ul>
 <li><strong>Continuous</strong> keeps the value injected until you stop or pause injection.</li>
 <li><strong>Frames</strong> sends a fixed number of frames, then stops.</li>
 <li><strong>Duration</strong> sends for a specific time window, then stops automatically.</li>
 </ul>
 <p>Use Frames or Duration when you need deterministic bursts or temporary overrides. Continuous is best for sustained overrides like sensor substitution.</p>
-<h2 id="how-this-replaces-profiles">How This Replaces Profiles<a class="headerlink" href="#how-this-replaces-profiles" title="Permanent link">&para;</a></h2>
-<p>Previous builds referenced profiles and complex schedule editors. The current UI instead focuses on per-signal configuration that you combine using <strong>Start all</strong> and <strong>Sync with playback</strong>. This keeps injection lightweight and closer to how operators actually use it during testing.</p>
-<p>If you need repeatable setups, document the chosen signals and their options in your test plan so you can recreate the same configuration later.</p>
 <h2 id="tips-for-reliable-injection">Tips for Reliable Injection<a class="headerlink" href="#tips-for-reliable-injection" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Configure only the signals you intend to override; leave others untouched to avoid confusing the ECU.</li>
 <li>Use <strong>Frames</strong> or <strong>Duration</strong> for fault injections so the system returns to normal automatically.</li>
 <li>Always verify injected signals in <strong>Network Traffic</strong> or <strong>Signal Chart</strong> immediately after starting.</li>
+<li>For repeatable setups, document the chosen signals and their options in your test plan so you can recreate the same configuration later.</li>
 </ul>
+<p><img alt="Network Traffic panel showing injected frames for verification" src="../../images/injection-network-traffic-annotated.png" /></p>
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <table>
 <thead>

@@ -601,10 +601,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-1-create-a-project" class="md-nav__link">
+  <a href="#step-1-create-a-new-system" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1 – Create a Project
+        Step 1 – Create a New System
       
     </span>
   </a>
@@ -612,10 +612,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-import-a-log-file" class="md-nav__link">
+  <a href="#step-2-add-an-ecu" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2 – Import a Log File
+        Step 2 – Add an ECU
       
     </span>
   </a>
@@ -623,10 +623,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-play-and-explore" class="md-nav__link">
+  <a href="#step-3-add-a-can-network" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 3 – Play and Explore
+        Step 3 – Add a CAN Network
       
     </span>
   </a>
@@ -634,10 +634,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-pin-and-plot-signals" class="md-nav__link">
+  <a href="#step-4-connect-ecu-to-network" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 4 – Pin and Plot Signals
+        Step 4 – Connect ECU to Network
       
     </span>
   </a>
@@ -645,10 +645,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-5-annotate-an-event" class="md-nav__link">
+  <a href="#step-5-configure-the-ecu" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 5 – Annotate an Event
+        Step 5 – Configure the ECU
       
     </span>
   </a>
@@ -656,10 +656,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-6-optional-injection-burst" class="md-nav__link">
+  <a href="#step-6-save-your-system" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 6 – Optional Injection Burst
+        Step 6 – Save Your System
       
     </span>
   </a>
@@ -667,10 +667,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-7-select-a-range-for-export" class="md-nav__link">
+  <a href="#step-7-start-the-system-optional" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 7 – Select a Range for Export
+        Step 7 – Start the System (Optional)
       
     </span>
   </a>
@@ -678,10 +678,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-8-export-the-segment" class="md-nav__link">
+  <a href="#step-8-stop-and-clean-up" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 8 – Export the Segment
+        Step 8 – Stop and Clean Up
       
     </span>
   </a>
@@ -689,21 +689,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-9-review-deliverables" class="md-nav__link">
+  <a href="#what-youve-accomplished" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 9 – Review Deliverables
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cleanup-optional" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cleanup (Optional)
+        What You've Accomplished
       
     </span>
   </a>
@@ -1780,111 +1769,124 @@
 <h1 id="quick-start-5-minutes">Quick Start (5 Minutes)<a class="headerlink" href="#quick-start-5-minutes" title="Permanent link">&para;</a></h1>
 <p>Use this hands-on walkthrough to experience a complete TrueFidelity workflow in about five minutes. It assumes you have already installed the app and completed first-boot activation.</p>
 <h2 id="scenario-overview">Scenario Overview<a class="headerlink" href="#scenario-overview" title="Permanent link">&para;</a></h2>
-<p>Goal: Load a CAN log, analyze a signal, annotate an event, inject a brief message, and export a segment for review.</p>
-<p>Time estimate: 5–7 minutes.</p>
-<p>Prerequisites:
-- A sample CAN log file (MDF4/BLF/ASC)
-- Optional DBC file for decoding
-- Activation completed and default folders defined</p>
-<h2 id="step-1-create-a-project">Step 1 – Create a Project<a class="headerlink" href="#step-1-create-a-project" title="Permanent link">&para;</a></h2>
+<p><strong>Goal</strong>: Create a simple ECU system with a CAN network, configure the elements, and verify everything works.</p>
+<p><strong>Time estimate</strong>: 5–7 minutes.</p>
+<p><strong>Prerequisites</strong>:</p>
+<ul>
+<li>TrueFidelity Desktop installed and license activated</li>
+<li>Docker Desktop running</li>
+<li>(Optional) A DBC file for signal decoding</li>
+</ul>
+<h2 id="step-1-create-a-new-system">Step 1 – Create a New System<a class="headerlink" href="#step-1-create-a-new-system" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Launch TrueFidelity.</li>
-<li>Go to <strong>File → New Project</strong>.</li>
+<li>Go to <strong>File → New</strong> (or press <code>Ctrl+N</code> / <code>Cmd+N</code>).</li>
 </ol>
-<p><img alt="TODO: Show File menu with New Project option highlighted" src="images/quick-start-file-new-project.png" /></p>
+<p><img alt="File menu with New option highlighted" src="../../images/projects-files-file-menu-annotated.png" /></p>
 <ol>
-<li>Name the project <code>QS-demo</code> and select your project folder.</li>
+<li>In the New System dialog:</li>
+<li><strong>System name</strong>: Enter <code>quick-start-demo</code></li>
+<li><strong>Save location</strong>: Select your preferred folder</li>
+<li>Click <strong>Create</strong>.</li>
 </ol>
-<p><img alt="TODO: Show New Project dialog with project name &quot;QS-demo&quot; filled in and folder selection" src="images/quick-start-new-project-dialog.png" /></p>
-<ol>
-<li>Click <strong>Create</strong>. The project appears in the left sidebar.</li>
-</ol>
-<p><img alt="TODO: Show Project Explorer with QS-demo project visible in sidebar" src="images/quick-start-project-created.png" /></p>
+<p><img alt="New System dialog with system name and configuration" src="../../images/projects-files-new-system-dialog-annotated.png" /></p>
+<p>The System Design workspace opens with an empty canvas ready for your topology.</p>
+<p><img alt="Empty System Canvas ready for design" src="../../images/first-launch-system-design-canvas.png" /></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Projects remember which files, layouts, filters, and panels you are using. Create dedicated projects for recurring test cases.</p>
+<p>Systems store your ECU configurations, network topology, and diagram layouts. Create dedicated systems for different test scenarios.</p>
 </div>
-<h2 id="step-2-import-a-log-file">Step 2 – Import a Log File<a class="headerlink" href="#step-2-import-a-log-file" title="Permanent link">&para;</a></h2>
+<h2 id="step-2-add-an-ecu">Step 2 – Add an ECU<a class="headerlink" href="#step-2-add-an-ecu" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Choose <strong>File → Open</strong>.</li>
-<li>Select your sample log file.</li>
-<li>Confirm it appears under <strong>Files</strong> in the project explorer.</li>
-<li>The timeline auto-populates with duration and counters.</li>
+<li>Locate the <strong>Toolbox</strong> panel on the left side.</li>
+<li>Expand the <strong>Components</strong> category.</li>
+<li>Drag an <strong>ECU</strong> onto the canvas.</li>
 </ol>
-<p>Optional: If you have a DBC file, choose <strong>Project → Import Definitions</strong> and load it now for signal decoding.</p>
-<h2 id="step-3-play-and-explore">Step 3 – Play and Explore<a class="headerlink" href="#step-3-play-and-explore" title="Permanent link">&para;</a></h2>
+<p><img alt="Toolbox panel showing ECU component to drag" src="../../images/first-launch-system-design-toolbox-annotated.png" /></p>
 <ol>
-<li>Press <strong>Space</strong> (or click the play button) to start playback.</li>
+<li>Position the ECU in the upper area of the canvas.</li>
 </ol>
-<p><img alt="TODO: Show status bar with Play button pressed/highlighted and timeline playhead moving" src="images/quick-start-playback-started.png" /></p>
+<p><img alt="Dragging ECU from Toolbox to Canvas" src="../../images/tutorial-step2-drag-ecu-annotated.png" /></p>
+<h2 id="step-3-add-a-can-network">Step 3 – Add a CAN Network<a class="headerlink" href="#step-3-add-a-can-network" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Adjust speed using the playback speed dropdown (1×, 2×, 0.5×).</li>
+<li>In the Toolbox, expand the <strong>Networks</strong> category.</li>
+<li>Drag a <strong>CAN Bus</strong> onto the canvas below the ECU.</li>
+<li>The CAN bus appears as a red horizontal bar.</li>
 </ol>
-<p><img alt="TODO: Show playback speed dropdown open with speed options (0.25×, 0.5×, 1×, 2×, etc.) visible" src="images/quick-start-playback-speed.png" /></p>
+<h2 id="step-4-connect-ecu-to-network">Step 4 – Connect ECU to Network<a class="headerlink" href="#step-4-connect-ecu-to-network" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Use the mouse wheel over the timeline to zoom into detail.</li>
-<li>Click a specific timestamp to jump the playhead and observe the Messages panel update.</li>
+<li>Hover over the ECU to reveal blue connection handles.</li>
+<li>Click and drag from a handle toward the CAN bus.</li>
+<li>Release when the bus highlights to create the connection.</li>
 </ol>
-<p><img alt="TODO: Show Timeline with playhead at specific timestamp and Messages panel showing corresponding CAN frames" src="images/quick-start-timeline-seek.png" /></p>
-<h2 id="step-4-pin-and-plot-signals">Step 4 – Pin and Plot Signals<a class="headerlink" href="#step-4-pin-and-plot-signals" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Open the <strong>Signals</strong> panel (Ctrl/Cmd + 1 if you prefer shortcuts).</li>
-<li>Search for a signal (for example <code>vehicle_speed</code>).</li>
-<li>Click the pin icon to add it to the watch list.</li>
-<li>Open the <strong>Charts</strong> panel; drag the pinned signal into the chart.</li>
-<li>Watch real-time trends as playback continues.</li>
-</ol>
+<p><img alt="Gateway ECU connected to CAN Bus" src="../../images/tutorial-step4-gateway-to-can-annotated.png" /></p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Multiple signals can be overlaid on a single chart. Adjust axes or enable auto-scale if ranges differ significantly.</p>
-</div>
-<h2 id="step-5-annotate-an-event">Step 5 – Annotate an Event<a class="headerlink" href="#step-5-annotate-an-event" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Pause playback at an interesting moment.</li>
-<li>Press <strong>A</strong> or click the <strong>Add Annotation</strong> button.</li>
-<li>Enter a title (e.g., “Speed spike”) and optional description.</li>
-<li>Add tags such as <code>validation</code>, <code>spike</code>, or <code>investigate</code>.</li>
-<li>Save the annotation; it becomes part of the project and can be exported later.</li>
-</ol>
-<h2 id="step-6-optional-injection-burst">Step 6 – Optional Injection Burst<a class="headerlink" href="#step-6-optional-injection-burst" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Open the <strong>Data Injection</strong> panel from the sidebar.</li>
-<li>Choose the active channel (e.g., <code>can0</code>).</li>
-<li>Add a message ID, DLC, and payload (for example <code>0x321</code>, DLC 8, payload <code>DE AD BE EF 00 00 00 01</code>).</li>
-<li>Set a schedule to <strong>Once</strong> with a 0 second delay.</li>
-<li>Click <strong>Start</strong> to inject; observe the Messages panel to confirm the frame appears.</li>
-<li>Click <strong>Stop</strong> to prevent further injections.</li>
-</ol>
-<h2 id="step-7-select-a-range-for-export">Step 7 – Select a Range for Export<a class="headerlink" href="#step-7-select-a-range-for-export" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Drag the timeline to highlight 20 seconds that include your annotation.</li>
-<li>Click <strong>Loop</strong> (optional) to play the range repeatedly for verification.</li>
-<li>Ensure the annotation marker lies within the selected range.</li>
-</ol>
-<h2 id="step-8-export-the-segment">Step 8 – Export the Segment<a class="headerlink" href="#step-8-export-the-segment" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Go to <strong>File → Export Segment</strong>.</li>
-<li>Choose <strong>CSV</strong> or <strong>MDF4</strong> depending on downstream tools.</li>
-<li>Enter a descriptive filename such as <code>qs-demo_speed-spike.csv</code>.</li>
-<li>Confirm the destination folder matches your export defaults.</li>
-<li>Click <strong>Export</strong>. A toast notification confirms success; the file opens in your file explorer if OS integration permits.</li>
-</ol>
-<h2 id="step-9-review-deliverables">Step 9 – Review Deliverables<a class="headerlink" href="#step-9-review-deliverables" title="Permanent link">&para;</a></h2>
+<p class="admonition-title">Connection Tips</p>
 <ul>
-<li>Open the exported file in your preferred viewer to confirm data looks correct.</li>
-<li>Navigate to <strong>Annotations</strong> panel and verify your note is listed.</li>
-<li>Use <strong>Help → Show Logs</strong> to familiarize yourself with diagnostic file locations.</li>
+<li>Drag from ECU handle to network bus</li>
+<li>A blue line indicates a successful connection</li>
+<li>Multiple ECUs can connect to the same bus</li>
 </ul>
-<h2 id="cleanup-optional">Cleanup (Optional)<a class="headerlink" href="#cleanup-optional" title="Permanent link">&para;</a></h2>
+</div>
+<h2 id="step-5-configure-the-ecu">Step 5 – Configure the ECU<a class="headerlink" href="#step-5-configure-the-ecu" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Click the ECU to select it.</li>
+<li>In the <strong>Properties</strong> panel on the right, configure:</li>
+<li><strong>Name</strong>: <code>Gateway</code></li>
+<li><strong>Board</strong>: <code>S32K3X4EVB</code> (NXP S32K3 evaluation board)</li>
+<li><strong>Memory</strong>: <code>16MB</code></li>
+<li><strong>Operating System</strong>: <code>Zephyr</code></li>
+<li>Click <strong>Apply Changes</strong>.</li>
+</ol>
+<p><img alt="Properties panel showing ECU configuration" src="../../images/tutorial-step3-ecu-selected-annotated.png" /></p>
+<h2 id="step-6-save-your-system">Step 6 – Save Your System<a class="headerlink" href="#step-6-save-your-system" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Press <strong>Ctrl+S</strong> (or <strong>Cmd+S</strong> on macOS).</li>
+<li>Confirm the save location.</li>
+<li>The status bar shows "System saved" when complete.</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Save Often</p>
+<p>Save your work frequently using <strong>Ctrl+S</strong> / <strong>Cmd+S</strong> to avoid losing changes. There is no auto-save feature currently.</p>
+</div>
+<h2 id="step-7-start-the-system-optional">Step 7 – Start the System (Optional)<a class="headerlink" href="#step-7-start-the-system-optional" title="Permanent link">&para;</a></h2>
+<p>If you have Docker running and want to see monitoring:</p>
+<ol>
+<li>Click the <strong>Start</strong> button (green play icon) in the toolbar.</li>
+<li>Wait for ECUs to reach "Running" status.</li>
+<li>Open the <strong>ECU Monitoring</strong> layout via <strong>View → Layouts → ECU Monitoring</strong>.</li>
+</ol>
+<p><img alt="Monitoring mode showing running ECUs" src="../../images/first-launch-monitoring-annotated.png" /></p>
+<ol>
+<li>Observe real-time metrics in the ECU Status and Resource Monitor panels.</li>
+</ol>
+<p><img alt="ECU Status panel with running ECUs" src="../../images/tutorial-step8-ecus-running-annotated.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Terminal Availability</p>
+<p>Terminal access is only available for Linux-based ECUs. For Zephyr RTOS ECUs (like this example), use the <strong>ECU Console</strong> panel to view runtime logs instead.</p>
+</div>
+<h2 id="step-8-stop-and-clean-up">Step 8 – Stop and Clean Up<a class="headerlink" href="#step-8-stop-and-clean-up" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Click the <strong>Stop</strong> button (red square) in the toolbar.</li>
+<li>Wait for all ECUs to show "Stopped" status.</li>
+<li>Close the system via <strong>File → Close</strong> or continue experimenting.</li>
+</ol>
+<h2 id="what-youve-accomplished">What You've Accomplished<a class="headerlink" href="#what-youve-accomplished" title="Permanent link">&para;</a></h2>
+<p>In just a few minutes, you've:</p>
 <ul>
-<li>Delete the sample project via the project explorer context menu if you want a clean slate.</li>
-<li>Otherwise, keep it to use as a baseline for future quick demonstrations.</li>
+<li>Created a new TrueFidelity system</li>
+<li>Added an ECU and CAN network to the topology</li>
+<li>Connected the ECU to the network bus</li>
+<li>Configured ECU properties</li>
+<li>Saved your system configuration</li>
+<li>(Optionally) Started and monitored the running system</li>
 </ul>
 <h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Dive deeper into panel configuration in <strong>Workspaces &amp; Layouts</strong>.</li>
-<li>Learn filtering strategies in <strong>Filters &amp; Search</strong>.</li>
-<li>Explore the <strong>End-to-End Example</strong> tutorial for a longer scenario.</li>
+<li><strong>Full Tutorial</strong>: Follow the <a href="../../tutorials/system-design-workflow/">System Design Workflow</a> for a comprehensive 30-minute walkthrough with multiple ECUs.</li>
+<li><strong>Signal Analysis</strong>: Learn about <a href="../../using-the-app/dbc-and-signal-definitions/">DBC &amp; Signal Definitions</a> to decode CAN messages.</li>
+<li><strong>Workspaces</strong>: Explore <a href="../../using-the-app/workspaces-and-layouts/">Workspaces &amp; Layouts</a> to customize your interface.</li>
+<li><strong>Playback</strong>: Set up signal playback in the <a href="../../tutorials/playback-analysis/">Playback Analysis</a> tutorial.</li>
 </ul>
 
 

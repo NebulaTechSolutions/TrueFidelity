@@ -2309,6 +2309,75 @@
 </ol>
 <h2 id="export-formats">Export Formats<a class="headerlink" href="#export-formats" title="Permanent link">&para;</a></h2>
 <h3 id="available-export-options">Available Export Options<a class="headerlink" href="#available-export-options" title="Permanent link">&para;</a></h3>
+<p><strong>Traffic Export (from Network Traffic panel):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Extension</th>
+<th>Contents</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Text</td>
+<td><code>.txt</code></td>
+<td>Human-readable CAN frames</td>
+<td>Documentation, quick review</td>
+</tr>
+<tr>
+<td>CSV</td>
+<td><code>.csv</code></td>
+<td>Structured CAN data with timestamps</td>
+<td>Spreadsheet analysis</td>
+</tr>
+<tr>
+<td>JSON</td>
+<td><code>.json</code></td>
+<td>Structured data format</td>
+<td>Programmatic processing</td>
+</tr>
+<tr>
+<td>candump</td>
+<td><code>.log</code></td>
+<td>Standard CAN log format</td>
+<td>Linux CAN tools compatibility</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Capture Recording (for longer recordings):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Extension</th>
+<th>Contents</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BLF</td>
+<td><code>.blf</code></td>
+<td>Vector Binary Logger format</td>
+<td>Industry standard, replay</td>
+</tr>
+<tr>
+<td>MDF4</td>
+<td><code>.mf4</code></td>
+<td>Measurement Data Format v4</td>
+<td>Large datasets, metadata</td>
+</tr>
+<tr>
+<td>CSV</td>
+<td><code>.csv</code></td>
+<td>Timestamped CAN frames</td>
+<td>Simple analysis</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Other Exports:</strong></p>
 <table>
 <thead>
 <tr>
@@ -2316,64 +2385,43 @@
 <th>Format</th>
 <th>Extension</th>
 <th>Exported From</th>
-<th>Contents</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Network Traffic</td>
-<td>CSV</td>
-<td><code>.csv</code></td>
-<td>Network Traffic panel</td>
-<td>Raw CAN frames with timestamps</td>
-</tr>
-<tr>
-<td>Network Traffic</td>
-<td>BLF</td>
-<td><code>.blf</code></td>
-<td>Network Traffic panel</td>
-<td>Binary log for replay</td>
-</tr>
-<tr>
 <td>Signal Data</td>
 <td>CSV</td>
 <td><code>.csv</code></td>
-<td>Signal export</td>
-<td>Decoded signal values with units</td>
+<td>Signal Viewer</td>
 </tr>
 <tr>
 <td>Chart Image</td>
 <td>PNG</td>
 <td><code>.png</code></td>
 <td>Signal Chart panel</td>
-<td>Visualization screenshot</td>
 </tr>
 <tr>
-<td>Chart Image</td>
-<td>PDF</td>
-<td><code>.pdf</code></td>
-<td>Signal Chart panel</td>
-<td>Vector graphics export</td>
+<td>Console Logs</td>
+<td>Text/CSV/JSON</td>
+<td><code>.txt</code>/<code>.csv</code>/<code>.json</code></td>
+<td>ECU Console</td>
 </tr>
 </tbody>
 </table>
 <h3 id="export-details">Export Details<a class="headerlink" href="#export-details" title="Permanent link">&para;</a></h3>
-<p><strong>CSV Exports</strong>:
-- Human-readable format
-- Compatible with Excel, MATLAB, Python
-- Includes headers with signal names
-- Timestamps in first column
-- Proper scaling applied to signals</p>
-<p><strong>BLF Re-export</strong>:
-- Maintains binary efficiency
-- Can be replayed in TrueFidelity
-- Preserves exact timing
-- Useful for sharing test scenarios</p>
+<p><strong>Traffic Export Formats</strong>:
+- <strong>Text</strong>: Plain text, human-readable format
+- <strong>CSV</strong>: Spreadsheet-compatible with headers
+- <strong>JSON</strong>: Machine-readable structured data
+- <strong>candump</strong>: Standard Linux CAN utilities format</p>
+<p><strong>Capture Recording Formats</strong>:
+- <strong>BLF</strong>: Vector Binary Logger format, industry standard
+- <strong>MDF4</strong>: ASAM standard, efficient for large datasets
+- <strong>CSV</strong>: Simple timestamped format</p>
 <p><strong>Chart Exports</strong>:
-- PNG for documentation
-- PDF for reports
+- PNG format for documentation
 - Includes legend and axes
-- Time window as displayed</p>
+- Exports visible time window</p>
 <h2 id="data-flow">Data Flow<a class="headerlink" href="#data-flow" title="Permanent link">&para;</a></h2>
 <h3 id="typical-workflow">Typical Workflow<a class="headerlink" href="#typical-workflow" title="Permanent link">&para;</a></h3>
 <pre><code>Input Files:
@@ -2478,7 +2526,7 @@ Output Files:
 <th>Feature</th>
 <th>BLF</th>
 <th>MDF4</th>
-<th>CSV Export</th>
+<th>Text/CSV/JSON</th>
 <th>DBC</th>
 </tr>
 </thead>
@@ -2505,10 +2553,17 @@ Output Files:
 <td>✅</td>
 </tr>
 <tr>
-<td>Export Source</td>
+<td>Capture Output</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅ (CSV only)</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Traffic Export</td>
 <td>✅</td>
 <td>❌</td>
-<td>N/A</td>
+<td>✅</td>
 <td>N/A</td>
 </tr>
 <tr>
@@ -2588,15 +2643,16 @@ mean_rpm = signal_values.mean()
     └── test_reports.txt
 </code></pre>
 <h3 id="naming-conventions">Naming Conventions<a class="headerlink" href="#naming-conventions" title="Permanent link">&para;</a></h3>
+<p><strong>System Files</strong>:
+- Default name: <code>truefidelity-system.json</code>
+- Contains complete system configuration
+- Portable between installations</p>
 <p><strong>Log Files</strong>:
 - Format: <code>YYYYMMDD_testname_run#.blf</code>
 - Example: <code>20240315_brake_test_run3.blf</code></p>
 <p><strong>Export Files</strong>:
 - Format: <code>YYYYMMDD_datatype_description.csv</code>
 - Example: <code>20240315_signals_rpm_analysis.csv</code></p>
-<p><strong>System Files</strong>:
-- Format: <code>system_name_v#.json</code>
-- Example: <code>powertrain_test_v2.json</code></p>
 <h2 id="version-control-considerations">Version Control Considerations<a class="headerlink" href="#version-control-considerations" title="Permanent link">&para;</a></h2>
 <h3 id="files-to-track">Files to Track<a class="headerlink" href="#files-to-track" title="Permanent link">&para;</a></h3>
 <p><strong>Include in Version Control</strong>:

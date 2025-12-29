@@ -1243,10 +1243,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#configuring-the-gateway-ecu" class="md-nav__link">
+  <a href="#configuring-the-vcu-vehicle-control-unit" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Configuring the Gateway ECU
+        Configuring the VCU (Vehicle Control Unit)
       
     </span>
   </a>
@@ -1254,10 +1254,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#configuring-the-pcm" class="md-nav__link">
+  <a href="#configuring-the-mcu-motor-control-unit" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Configuring the PCM
+        Configuring the MCU (Motor Control Unit)
       
     </span>
   </a>
@@ -1265,10 +1265,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#configuring-the-bcm" class="md-nav__link">
+  <a href="#configuring-the-bms-battery-management-system" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Configuring the BCM
+        Configuring the BMS (Battery Management System)
       
     </span>
   </a>
@@ -1376,6 +1376,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#understanding-the-build-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Understanding the Build System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#switching-to-source-code-mode" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1408,6 +1419,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#firmware-source-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Firmware Source Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1426,10 +1448,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#understanding-the-ecu-status-panel" class="md-nav__link">
+  <a href="#starting-the-system" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Understanding the ECU Status Panel
+        Starting the System
       
     </span>
   </a>
@@ -1437,10 +1459,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#starting-the-system" class="md-nav__link">
+  <a href="#understanding-the-ecu-status-panel" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Starting the System
+        Understanding the ECU Status Panel
       
     </span>
   </a>
@@ -1541,50 +1563,11 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-10-make-changes-to-running-system" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 10: Make Changes to Running System
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 10: Make Changes to Running System">
-      <ul class="md-nav__list">
-        
           <li class="md-nav__item">
-  <a href="#stop-the-system" class="md-nav__link">
+  <a href="#stopping-the-system" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Stop the System
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#modify-network-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Modify Network Configuration
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#save-and-restart" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Save and Restart
+        Stopping the System
       
     </span>
   </a>
@@ -1597,22 +1580,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-11-export-system-configuration" class="md-nav__link">
+  <a href="#step-10-debugging-ecus-optional" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 11: Export System Configuration
+        Step 10: Debugging ECUs (Optional)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Step 11: Export System Configuration">
+    <nav class="md-nav" aria-label="Step 10: Debugging ECUs (Optional)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#export-as-docker-compose" class="md-nav__link">
+  <a href="#enable-debug-mode" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Export as Docker Compose
+        Enable Debug Mode
       
     </span>
   </a>
@@ -1620,10 +1603,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#export-system-definition" class="md-nav__link">
+  <a href="#get-debug-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Export System Definition
+        Get Debug Configuration
       
     </span>
   </a>
@@ -1631,10 +1614,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#share-with-team" class="md-nav__link">
+  <a href="#using-vs-code-for-debugging" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Share with Team
+        Using VS Code for Debugging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-gdb-command-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using GDB Command Line
       
     </span>
   </a>
@@ -1647,22 +1641,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-12-cleanup-and-best-practices" class="md-nav__link">
+  <a href="#step-11-cleanup-and-best-practices" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 12: Cleanup and Best Practices
+        Step 11: Cleanup and Best Practices
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Step 12: Cleanup and Best Practices">
+    <nav class="md-nav" aria-label="Step 11: Cleanup and Best Practices">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#stop-and-clean-up-resources" class="md-nav__link">
+  <a href="#clean-up-resources" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Stop and Clean Up Resources
+        Clean Up Resources
       
     </span>
   </a>
@@ -2303,7 +2297,7 @@
 <h1 id="system-design-workflow-tutorial">System Design Workflow Tutorial<a class="headerlink" href="#system-design-workflow-tutorial" title="Permanent link">&para;</a></h1>
 <p>This comprehensive tutorial guides you through the complete process of designing, configuring, and deploying a multi-ECU automotive system in TrueFidelity Desktop. You'll learn how to create a realistic ECU network topology, configure hardware settings, build firmware, and monitor running systems in real-time.</p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p><strong>Goal</strong>: Build a complete automotive gateway system with multiple ECUs connected via CAN bus, configure their properties, deploy them as Docker containers, and monitor their real-time execution using TrueFidelity's comprehensive monitoring tools.</p>
+<p><strong>Goal</strong>: Build a complete automotive drive cycle simulation system with multiple ECUs connected via CAN bus, configure their properties, deploy them as Docker containers, and monitor their real-time execution using TrueFidelity's comprehensive monitoring tools.</p>
 <p><strong>What You'll Learn</strong>:</p>
 <ul>
 <li>Creating and organizing system projects in TrueFidelity</li>
@@ -2336,15 +2330,15 @@
 <li>Navigate to <strong>File → New</strong> in the menu bar</li>
 <li>Alternatively, use the keyboard shortcut <code>Ctrl+N</code> (Windows/Linux) or <code>Cmd+N</code> (macOS)</li>
 </ol>
-<p><img alt="File menu with New option highlighted" src="../../images/projects-files-file-menu.png" /></p>
+<p><img alt="File menu with New option highlighted" src="../../images/projects-files-file-menu-annotated.png" /></p>
 <ol>
 <li><strong>Configure your new system</strong> in the New System dialog:</li>
-<li><strong>System name</strong>: Enter <code>tutorial-gateway-system</code> - this will be your project identifier</li>
-<li><strong>Description</strong> (optional): Add "Tutorial system for learning TrueFidelity workflows"</li>
+<li><strong>System name</strong>: Enter <code>Drive Cycle</code> - this will be your project identifier</li>
+<li><strong>Description</strong> (optional): Add "Electric vehicle drive cycle simulation with pedal inputs and motor control"</li>
 <li><strong>Save location</strong>: Click Browse and select your projects folder (e.g., <code>~/Documents/TrueFidelity/Projects</code>)</li>
 <li>Leave other settings at their defaults for now</li>
 </ol>
-<p><img alt="New System dialog with system name and configuration" src="../../images/projects-files-new-system-dialog.png" /></p>
+<p><img alt="New System dialog with system name and configuration" src="../../images/projects-files-new-system-dialog-annotated.png" /></p>
 <ol>
 <li><strong>Click Create</strong> to generate your system</li>
 </ol>
@@ -2354,7 +2348,7 @@
 <li><strong>Center</strong>: System Canvas (currently empty) where you'll build your topology</li>
 <li><strong>Right panel</strong>: Properties panel for configuring selected elements</li>
 </ul>
-<p><img alt="Empty System Canvas ready for design" src="../../images/first-launch-system-design-canvas.png" /></p>
+<p><img alt="System Design workspace showing Toolbox, Canvas, and Properties panels" src="../../images/system-design-workspace-full-annotated.png" /></p>
 <div class="admonition info">
 <p class="admonition-title">Understanding the Workspace</p>
 <p>The System Design mode is specifically optimized for creating ECU topologies. The layout is inspired by professional CAD tools, with a component library on the left, workspace in the center, and properties on the right. This arrangement allows for efficient drag-and-drop system design.</p>
@@ -2371,7 +2365,7 @@
 <li>It contains two main categories: <strong>Components</strong> and <strong>Networks</strong></li>
 <li>Each category can be expanded to show available items</li>
 </ol>
-<p><img alt="Toolbox panel showing Components and Networks categories" src="../../images/first-launch-system-design-toolbox.png" /></p>
+<p><img alt="Toolbox panel showing Components and Networks categories" src="../../images/first-launch-system-design-toolbox-annotated.png" /></p>
 <ol>
 <li><strong>Expand the Components category</strong> by clicking the arrow next to "Components (1)"</li>
 <li>You'll see "ECU - Electronic Control Unit" listed</li>
@@ -2379,15 +2373,15 @@
 </ol>
 <h3 id="adding-your-first-ecu">Adding Your First ECU<a class="headerlink" href="#adding-your-first-ecu" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>Add a Gateway ECU</strong> to the canvas:</li>
+<li><strong>Add a VCU (Vehicle Control Unit)</strong> to the canvas:</li>
 <li>Click and hold on the "ECU" item in the Toolbox</li>
 <li>Drag it onto the empty canvas area</li>
 <li>Release the mouse button to place the ECU</li>
 <li>The ECU appears as a UML-style component box with the label "«ECU»"</li>
 </ol>
-<p><img alt="Dragging ECU from Toolbox to Canvas" src="../../images/tutorial-step2-drag-ecu.png" /></p>
+<p><img alt="Dragging ECU from Toolbox to Canvas" src="../../images/tutorial-step2-drag-ecu-annotated.png" /></p>
 <ol>
-<li><strong>Position the Gateway ECU</strong> in the upper-center area of the canvas</li>
+<li><strong>Position the VCU</strong> in the upper-left area of the canvas</li>
 <li>Click on the ECU to select it (you'll see blue selection handles)</li>
 <li>The ECU label will initially show a generic name</li>
 <li>We'll configure its specific properties in the next step</li>
@@ -2395,12 +2389,12 @@
 <h3 id="adding-additional-ecus">Adding Additional ECUs<a class="headerlink" href="#adding-additional-ecus" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>Add two more ECUs</strong> for a complete system:</li>
-<li>Drag another ECU from the Toolbox and place it in the lower-left area</li>
-<li>This will be your <strong>PCM</strong> (Powertrain Control Module)</li>
-<li>Drag a third ECU and place it in the lower-right area</li>
-<li>This will be your <strong>BCM</strong> (Body Control Module)</li>
+<li>Drag another ECU from the Toolbox and place it in the upper-right area</li>
+<li>This will be your <strong>MCU</strong> (Motor Control Unit)</li>
+<li>Drag a third ECU and place it in the lower area</li>
+<li>This will be your <strong>BMS</strong> (Battery Management System)</li>
 </ol>
-<p>Your canvas should now display three ECU nodes arranged in a triangle formation:</p>
+<p>Your canvas should now display three ECU nodes:</p>
 <p><img alt="Three ECUs positioned on the System Canvas" src="../../images/tutorial-step2-three-ecus.png" /></p>
 <div class="admonition tip">
 <p class="admonition-title">Canvas Navigation</p>
@@ -2417,14 +2411,14 @@
 <p>ECUs are displayed using UML component notation (rectangular boxes with small squares on the side). This is a standard representation familiar to automotive engineers. The gray color indicates they're not yet configured or running.</p>
 </div>
 <h2 id="step-3-configure-ecu-properties">Step 3: Configure ECU Properties<a class="headerlink" href="#step-3-configure-ecu-properties" title="Permanent link">&para;</a></h2>
-<p>Each ECU needs to be configured with hardware specifications, software settings, and firmware options. Let's start with the Gateway ECU.</p>
-<h3 id="configuring-the-gateway-ecu">Configuring the Gateway ECU<a class="headerlink" href="#configuring-the-gateway-ecu" title="Permanent link">&para;</a></h3>
+<p>Each ECU needs to be configured with hardware specifications, software settings, and firmware options. Let's start with the VCU.</p>
+<h3 id="configuring-the-vcu-vehicle-control-unit">Configuring the VCU (Vehicle Control Unit)<a class="headerlink" href="#configuring-the-vcu-vehicle-control-unit" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>Select the Gateway ECU</strong> by clicking on it</li>
+<li><strong>Select the VCU</strong> by clicking on it</li>
 <li>The ECU will show blue selection handles around its border</li>
 <li>The Properties panel on the right automatically updates to show ECU settings</li>
 </ol>
-<p><img alt="Gateway ECU selected on canvas with blue highlight" src="../../images/tutorial-step3-ecu-selected.png" /></p>
+<p><img alt="VCU selected on canvas with Properties panel" src="../../images/tutorial-step3-ecu-selected-annotated.png" /></p>
 <ol>
 <li><strong>Review the Properties Panel</strong> structure on the right side:</li>
 <li><strong>GENERAL section</strong>: Basic identification (Name, ID)</li>
@@ -2434,23 +2428,23 @@
 <p><strong>DEBUG section</strong>: Development and debugging options</p>
 </li>
 <li>
-<p><strong>Configure the Gateway ECU properties</strong>:</p>
+<p><strong>Configure the VCU properties</strong>:</p>
 </li>
 </ol>
 <p><strong>GENERAL Settings:</strong></p>
 <ul>
-<li><strong>Name</strong>: Change from default to <code>Gateway</code></li>
-<li><strong>ID</strong>: Automatically generated (e.g., <code>ecu-1766568942949</code>) - leave as is</li>
+<li><strong>Name</strong>: Change from default to <code>VCU</code></li>
+<li><strong>ID</strong>: Automatically generated (e.g., <code>ecu-1763540145789</code>) - leave as is</li>
 </ul>
 <p><strong>HARDWARE Settings:</strong></p>
 <ul>
-<li><strong>Board</strong>: Select <code>S32G274A Rdb2</code> from the dropdown</li>
-<li><strong>Memory</strong>: Enter <code>512MB</code> (typical for gateway ECUs)</li>
+<li><strong>Board</strong>: Select <code>S32K3X4EVB</code> from the dropdown</li>
+<li><strong>Memory</strong>: Enter <code>16MB</code> (appropriate for Zephyr-based MCUs)</li>
 <li><strong>Flash</strong>: Enter <code>2MB</code> for flash storage</li>
 </ul>
 <p><strong>SOFTWARE Settings:</strong></p>
 <ul>
-<li><strong>Operating System</strong>: Select <code>FSL Linux</code> from the dropdown</li>
+<li><strong>Operating System</strong>: Select <code>Zephyr</code> from the dropdown</li>
 <li><strong>Firmware Mode</strong>: Choose between:<ul>
 <li><strong>Binary File</strong>: Use a pre-compiled firmware binary (.elf, .bin, .hex)</li>
 <li><strong>Source Code</strong>: Build from source using TrueFidelity's build system</li>
@@ -2459,31 +2453,31 @@
 <li>For this tutorial, select <strong>Binary File</strong> mode</li>
 <li><strong>Firmware Binary</strong>: Click "Browse" to select a file, or leave empty for mock mode</li>
 </ul>
-<p><img alt="Properties panel showing Gateway ECU configuration" src="../../images/tutorial-step3-ecu-selected.png" /></p>
+<p><img alt="Properties panel SOFTWARE section showing OS and Firmware settings" src="../../images/tutorial-step3-software-settings-annotated.png" /></p>
 <ol>
 <li><strong>Click "Apply Changes"</strong> button at the bottom of the Properties panel</li>
 <li>This saves your configuration to the ECU node</li>
-<li>The ECU label updates to show "Gateway" and the board type</li>
+<li>The ECU label updates to show "VCU" and the board type</li>
 </ol>
-<h3 id="configuring-the-pcm">Configuring the PCM<a class="headerlink" href="#configuring-the-pcm" title="Permanent link">&para;</a></h3>
+<h3 id="configuring-the-mcu-motor-control-unit">Configuring the MCU (Motor Control Unit)<a class="headerlink" href="#configuring-the-mcu-motor-control-unit" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>Select the PCM ECU</strong> (lower-left node) and configure:</li>
-<li><strong>Name</strong>: <code>PCM</code></li>
-<li><strong>Board</strong>: <code>S32K3X4EVB</code> (a typical automotive MCU board)</li>
-<li><strong>Memory</strong>: <code>256MB</code></li>
-<li><strong>Flash</strong>: <code>1MB</code></li>
-<li><strong>Operating System</strong>: <code>FreeRTOS</code> or <code>Zephyr</code></li>
+<li><strong>Select the MCU</strong> (upper-right node) and configure:</li>
+<li><strong>Name</strong>: <code>MCU</code></li>
+<li><strong>Board</strong>: <code>S32K3X4EVB</code> (same board family as VCU)</li>
+<li><strong>Memory</strong>: <code>16MB</code></li>
+<li><strong>Flash</strong>: <code>2MB</code></li>
+<li><strong>Operating System</strong>: <code>Zephyr</code></li>
 <li><strong>Firmware Mode</strong>: Binary File</li>
 <li>Click <strong>Apply Changes</strong></li>
 </ol>
-<h3 id="configuring-the-bcm">Configuring the BCM<a class="headerlink" href="#configuring-the-bcm" title="Permanent link">&para;</a></h3>
+<h3 id="configuring-the-bms-battery-management-system">Configuring the BMS (Battery Management System)<a class="headerlink" href="#configuring-the-bms-battery-management-system" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>Select the BCM ECU</strong> (lower-right node) and configure:</li>
-<li><strong>Name</strong>: <code>BCM</code></li>
-<li><strong>Board</strong>: <code>S32K3X4EVB</code> (same as PCM for this example)</li>
-<li><strong>Memory</strong>: <code>256MB</code></li>
-<li><strong>Flash</strong>: <code>1MB</code></li>
-<li><strong>Operating System</strong>: <code>FreeRTOS</code> or <code>Zephyr</code></li>
+<li><strong>Select the BMS</strong> (lower node) and configure:</li>
+<li><strong>Name</strong>: <code>BMS</code></li>
+<li><strong>Board</strong>: <code>S32K3X4EVB</code> (same board family)</li>
+<li><strong>Memory</strong>: <code>16MB</code></li>
+<li><strong>Flash</strong>: <code>2MB</code></li>
+<li><strong>Operating System</strong>: <code>Zephyr</code></li>
 <li><strong>Firmware Mode</strong>: Binary File</li>
 <li>Click <strong>Apply Changes</strong></li>
 </ol>
@@ -2522,42 +2516,40 @@
 <ol>
 <li><strong>Expand the Networks category</strong> in the Toolbox</li>
 <li>Click the arrow next to "Networks (1)"</li>
-<li>
-<p>You'll see "CAN Bus - Controller Area Network" listed</p>
-</li>
-<li>
-<p><strong>Drag a CAN Bus onto the canvas</strong>:</p>
-</li>
+<li>You'll see "CAN Bus - Controller Area Network" listed</li>
+</ol>
+<p><img alt="Toolbox with Networks category expanded showing CAN Bus option" src="../../images/tutorial-step4-toolbox-networks-annotated.png" /></p>
+<ol>
+<li><strong>Drag a CAN Bus onto the canvas</strong>:</li>
 <li>Click and hold on "CAN Bus" in the Toolbox</li>
 <li>Drag it to the center area between your three ECUs</li>
 <li>Release to place the network bus</li>
-<li>
-<p>The CAN bus appears as a red horizontal bar (red is the standard color for CAN)</p>
-</li>
-<li>
-<p><strong>Position the CAN Bus</strong> centrally:</p>
-</li>
+<li>The CAN bus appears as a red horizontal bar (red is the standard color for CAN)</li>
+</ol>
+<p><img alt="CAN Bus placed on canvas between ECUs" src="../../images/tutorial-step4-can-bus-placed-annotated.png" /></p>
+<ol>
+<li><strong>Position the CAN Bus</strong> centrally:</li>
 <li>Place it roughly in the middle of your three ECUs</li>
 <li>The bus can be resized by dragging its edges if needed</li>
 </ol>
 <h3 id="connecting-ecus-to-the-network">Connecting ECUs to the Network<a class="headerlink" href="#connecting-ecus-to-the-network" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>Connect the Gateway ECU to the CAN Bus</strong>:</li>
-<li>Hover over the Gateway ECU - you'll see small blue connection handles appear</li>
+<li><strong>Connect the VCU to the CAN Bus</strong>:</li>
+<li>Hover over the VCU - you'll see small blue connection handles appear</li>
 <li>Click and drag from one of the handles</li>
 <li>Drag the connection line to the CAN bus</li>
 <li>Release when the bus highlights, indicating a valid connection</li>
 <li>A blue connection line appears between the ECU and the bus</li>
 </ol>
-<p><img alt="Gateway ECU connected to CAN Bus" src="../../images/tutorial-step4-gateway-to-can.png" /></p>
+<p><img alt="VCU connected to CAN Bus" src="../../images/tutorial-step4-gateway-to-can-annotated.png" /></p>
 <ol>
 <li><strong>Connect the remaining ECUs</strong>:</li>
-<li>Connect the PCM ECU to the same CAN bus using the same drag technique</li>
-<li>Connect the BCM ECU to the CAN bus</li>
+<li>Connect the MCU to the same CAN bus using the same drag technique</li>
+<li>Connect the BMS to the CAN bus</li>
 <li>All three ECUs are now on the same network</li>
 </ol>
 <p>Your system should now show all three ECUs connected to a central CAN bus:</p>
-<p><img alt="Complete system with three ECUs connected to CAN Bus" src="../../images/tutorial-step5-complete-network.png" /></p>
+<p><img alt="Complete system with VCU, MCU, and BMS connected to CAN Bus" src="../../images/tutorial-step5-complete-network.png" /></p>
 <h3 id="understanding-network-visualization">Understanding Network Visualization<a class="headerlink" href="#understanding-network-visualization" title="Permanent link">&para;</a></h3>
 <p>Notice the visual elements:</p>
 <ul>
@@ -2571,12 +2563,11 @@
 <ol>
 <li><strong>Select the CAN Bus</strong> by clicking on the red network bar</li>
 <li>The bus will show selection highlights</li>
-<li>
-<p>The Properties panel updates to show network configuration</p>
-</li>
-<li>
-<p><strong>Configure network settings</strong> in the Properties Panel:</p>
-</li>
+<li>The Properties panel updates to show network configuration</li>
+</ol>
+<p><img alt="CAN Bus selected with Properties panel showing network settings" src="../../images/tutorial-step5-can-properties-annotated.png" /></p>
+<ol>
+<li><strong>Configure network settings</strong> in the Properties Panel:</li>
 </ol>
 <p><strong>GENERAL Settings:</strong></p>
 <ul>
@@ -2620,16 +2611,15 @@
 <li><strong>Save your system</strong> using one of these methods:</li>
 <li>Press <strong>Ctrl+S</strong> (Windows/Linux) or <strong>Cmd+S</strong> (macOS)</li>
 <li>Click <strong>File → Save</strong> from the menu bar</li>
-<li>
-<p>Click the Save icon in the toolbar</p>
-</li>
-<li>
-<p><strong>Verify the save location</strong>:</p>
-</li>
+<li>Click the Save icon in the toolbar</li>
+</ol>
+<p><img alt="File menu with Save option highlighted" src="../../images/tutorial-step6-file-save-annotated.png" /></p>
+<ol>
+<li><strong>Verify the save location</strong>:</li>
 <li>The save dialog shows your project folder</li>
-<li>File name: <code>tutorial-gateway-system.tfsystem</code></li>
+<li>File name: <code>truefidelity-system.json</code> (default name)</li>
 <li>
-<p>This is a JSON-based file containing your complete system definition</p>
+<p>This is a JSON file containing your complete system definition</p>
 </li>
 <li>
 <p><strong>Confirm the save</strong> was successful:</p>
@@ -2644,7 +2634,7 @@
 </div>
 <div class="admonition info">
 <p class="admonition-title">File Format</p>
-<p>The <code>.tfsystem</code> file format contains:
+<p>The <code>truefidelity-system.json</code> file contains:
 - ECU configurations and properties
 - Network topology and connections
 - Firmware paths and build settings
@@ -2653,88 +2643,151 @@
 </div>
 <h2 id="step-7-build-firmware-optional">Step 7: Build Firmware (Optional)<a class="headerlink" href="#step-7-build-firmware-optional" title="Permanent link">&para;</a></h2>
 <p>If you have firmware source code and want to build it within TrueFidelity, this section guides you through the integrated build process. Skip this if you're using pre-built binaries or mock mode.</p>
+<h3 id="understanding-the-build-system">Understanding the Build System<a class="headerlink" href="#understanding-the-build-system" title="Permanent link">&para;</a></h3>
+<p>TrueFidelity includes an integrated firmware build system that:</p>
+<ul>
+<li>Uses <strong>Docker containers</strong> with pre-configured toolchains (Zephyr SDK, ARM GCC, etc.)</li>
+<li>Supports <strong>Zephyr RTOS</strong> projects with west build integration</li>
+<li>Provides <strong>real-time progress</strong> feedback during compilation</li>
+<li>Automatically <strong>detects board configurations</strong> from your source code</li>
+</ul>
 <h3 id="switching-to-source-code-mode">Switching to Source Code Mode<a class="headerlink" href="#switching-to-source-code-mode" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
-<p><strong>Select an ECU</strong> that you want to build firmware for (e.g., Gateway)</p>
+<p><strong>Select an ECU</strong> that you want to build firmware for (e.g., VCU)</p>
 </li>
 <li>
-<p><strong>Change to Source Code mode</strong> in Properties:</p>
+<p><strong>Change to Source Code mode</strong> in the Properties panel:</p>
 </li>
-<li>In the SOFTWARE section, find "Firmware Mode"</li>
+<li>Scroll to the <strong>SOFTWARE</strong> section</li>
+<li>Find the <strong>Firmware Mode</strong> option</li>
 <li>Select <strong>Source Code</strong> radio button</li>
-<li>
-<p>New fields appear for source configuration</p>
-</li>
-<li>
-<p><strong>Configure source settings</strong>:</p>
-</li>
-<li><strong>Source Path</strong>: Browse to your firmware source directory</li>
-<li><strong>Build Target</strong>: Select the appropriate target (e.g., <code>zephyr-native-posix</code>)</li>
-<li><strong>Build Configuration</strong>: Choose Debug or Release</li>
-<li><strong>Compiler</strong>: Auto-detected based on target</li>
+<li>New configuration fields appear below</li>
+</ol>
+<p><img alt="Properties panel showing Source Code mode with configuration fields" src="../../images/tutorial-step7-source-code-mode-annotated.png" /></p>
+<ol>
+<li><strong>Configure the source code paths</strong>:</li>
+</ol>
+<p><strong>Source Root:</strong>
+   - Click <strong>Browse</strong> next to the Source Root field
+   - Navigate to your firmware application directory (e.g., <code>s32k3-vcu-demo/app</code>)
+   - This should be the directory containing your Zephyr application
+   - The path appears in the field after selection</p>
+<p><strong>CMakeLists.txt Path:</strong>
+   - Click <strong>Browse</strong> next to the CMakeLists Path field
+   - Select the <code>CMakeLists.txt</code> file in your application directory
+   - This file defines your Zephyr build configuration</p>
+<ol>
+<li><strong>Verify source configuration</strong>:</li>
+<li>Both paths should point to valid locations</li>
+<li>The Source Root should contain a <code>boards/</code> directory with your board definition</li>
+<li>The CMakeLists.txt should reference the correct board (e.g., <code>s32k3x4evb</code>)</li>
 </ol>
 <h3 id="starting-the-build">Starting the Build<a class="headerlink" href="#starting-the-build" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>Initiate the build process</strong>:</li>
-<li>Click the green <strong>Build Firmware</strong> button in Properties</li>
+<li>Click the green <strong>Build Firmware</strong> button in the Properties panel</li>
+<li>A build dialog appears showing your configuration</li>
+</ol>
+<p><img alt="Build firmware dialog with Start button" src="../../images/tutorial-step7-build-dialog-annotated.png" /></p>
+<ol>
+<li><strong>Start the build</strong>:</li>
+<li>Review the build configuration in the dialog</li>
+<li>Click the <strong>Start</strong> button to begin compilation</li>
 <li>
-<p>A progress dialog appears showing build stages</p>
+<p>The dialog transitions to show build progress</p>
 </li>
 <li>
 <p><strong>Monitor build progress</strong>:</p>
 </li>
-<li>The <strong>Build Console</strong> panel automatically opens at the bottom</li>
-<li>Shows real-time compiler output and warnings</li>
-<li>Progress bar indicates completion percentage</li>
-<li>Typical build time: 2-5 minutes depending on firmware complexity</li>
+<li>The dialog shows real-time progress percentage (0% → 100%)</li>
+<li>Build stages include:<ul>
+<li>Loading Zephyr modules</li>
+<li>Configuring CMake</li>
+<li>Compiling source files</li>
+<li>Linking executable</li>
+</ul>
+</li>
+<li>Typical build time: 1-3 minutes for a simple application</li>
+</ol>
+<p><img alt="Build progress dialog showing compilation status" src="../../images/tutorial-step7-build-progress-annotated.png" /></p>
+<ol>
+<li><strong>Observe the build output</strong>:</li>
+<li>Component messages appear as drivers are included:
+     <code>Load components for S32K344:
+     driver_common component is included.
+     driver_flexcan component is included.
+     driver_lpspi component is included.
+     driver_lpuart component is included.</code></li>
+<li>Compilation progress shows files being built:
+     <code>[120/170] Building C object zephyr/drivers/spi/...
+     [150/170] Linking C static library...
+     [169/170] Linking C executable zephyr/zephyr.elf</code></li>
 </ol>
 <h3 id="build-output">Build Output<a class="headerlink" href="#build-output" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>Review build results</strong>:</li>
-<li><strong>Success</strong>: Binary path automatically updates in ECU properties</li>
-<li><strong>Warnings</strong>: Listed in Build Console, usually safe to proceed</li>
-<li><strong>Errors</strong>: Build fails, check console for specific issues</li>
 </ol>
+<p><strong>On Success:</strong>
+   - A success message displays confirming the build completed
+   - The firmware binary path automatically updates in ECU properties
+   - The binary is ready for deployment (typically <code>zephyr.elf</code>)
+   - Click <strong>Close</strong> to dismiss the dialog</p>
+<p><img alt="Build success dialog with close button" src="../../images/tutorial-step7-build-success-annotated.png" /></p>
+<p><strong>On Failure:</strong>
+   - Error messages display in the build output
+   - Common issues include:
+     - Missing board definition files
+     - Incorrect CMakeLists.txt configuration
+     - Missing device tree nodes
+   - Check the error message for specific file and line information</p>
+<ol>
+<li><strong>Click Apply Changes</strong> to save the firmware configuration</li>
+</ol>
+<h3 id="firmware-source-requirements">Firmware Source Requirements<a class="headerlink" href="#firmware-source-requirements" title="Permanent link">&para;</a></h3>
+<p>For successful builds, your firmware source should include:</p>
+<pre><code>app/
+├── CMakeLists.txt          # Zephyr build configuration
+├── prj.conf                # Kconfig settings
+├── src/
+│   └── main.c              # Application source code
+└── boards/
+    └── arm/
+        └── s32k3x4evb/     # Custom board definition
+            ├── s32k3x4evb.dts
+            ├── s32k3x4evb_defconfig
+            ├── s32k3x4evb-pinctrl.dtsi
+            └── Kconfig.board
+</code></pre>
 <div class="admonition info">
 <p class="admonition-title">TrueFidelity Build System</p>
-<p>The integrated build system uses:
-- <strong>tf-build</strong>: Containerized toolchain management
-- <strong>Cross-compilation</strong>: Automatic toolchain selection per target
-- <strong>Dependency management</strong>: Handles SDK and library dependencies
-- <strong>Cache optimization</strong>: Incremental builds for faster iteration</p>
+<p>The integrated build system uses:</p>
+<ul>
+<li><strong>Docker containers</strong>: Pre-configured Zephyr SDK and toolchains</li>
+<li><strong>West build</strong>: Standard Zephyr build tool integration</li>
+<li><strong>Board auto-detection</strong>: Reads board name from CMakeLists.txt</li>
+<li><strong>Incremental builds</strong>: Faster rebuilds after initial compilation</li>
+</ul>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Build Best Practices</p>
 <ul>
-<li>Start with Debug configuration for development</li>
-<li>Use Release configuration for performance testing</li>
-<li>Keep Build Console open to monitor progress</li>
-<li>Save build logs for troubleshooting</li>
+<li>Ensure your board definition matches the ECU's Board setting in Properties</li>
+<li>Keep the Source Root path as short as possible to avoid path length issues</li>
+<li>If builds fail, check that all required device tree nodes are defined</li>
+<li>Use the Memory region output to verify your application fits in available flash/RAM</li>
+</ul>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Common Build Errors</p>
+<ul>
+<li><strong>"No board named 'xyz' found"</strong>: Add board definition to <code>boards/arm/&lt;board&gt;/</code> directory</li>
+<li><strong>"BOARD_ROOT element without 'boards' subdirectory"</strong>: Set <code>BOARD_ROOT</code> in CMakeLists.txt to the directory containing <code>boards/</code></li>
+<li><strong>Device tree errors</strong>: Ensure all referenced nodes (like <code>&amp;lpspi1</code>) are enabled in the DTS file</li>
 </ul>
 </div>
 <h2 id="step-8-deploy-and-start-ecus">Step 8: Deploy and Start ECUs<a class="headerlink" href="#step-8-deploy-and-start-ecus" title="Permanent link">&para;</a></h2>
 <p>Now we'll deploy your ECUs as Docker containers and start them running. This is where your static design becomes a live, executing system.</p>
-<h3 id="understanding-the-ecu-status-panel">Understanding the ECU Status Panel<a class="headerlink" href="#understanding-the-ecu-status-panel" title="Permanent link">&para;</a></h3>
-<ol>
-<li><strong>Locate the ECU Status panel</strong>:</li>
-<li>If not visible, open it via <strong>View → Panels → ECU Status</strong></li>
-<li>By default, it appears in the bottom area in Monitoring mode</li>
-<li>
-<p>Shows a table with all ECUs in your system</p>
-</li>
-<li>
-<p><strong>Review the ECU Status columns</strong>:</p>
-</li>
-<li><strong>ECU</strong>: Name of each ECU</li>
-<li><strong>STATUS</strong>: Current state (Stopped/Running)</li>
-<li><strong>IMAGE</strong>: Docker image being used</li>
-<li><strong>CPU</strong>: Processor usage percentage</li>
-<li><strong>MEMORY</strong>: RAM usage</li>
-<li><strong>NETWORK I/O</strong>: Data transfer rates</li>
-<li><strong>UPTIME</strong>: How long the ECU has been running</li>
-</ol>
-<p><img alt="ECU Status panel showing stopped ECUs" src="../../images/first-launch-monitoring-hardware-status.png" /></p>
 <h3 id="starting-the-system">Starting the System<a class="headerlink" href="#starting-the-system" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>Start the entire system</strong> from the toolbar:</li>
@@ -2742,6 +2795,7 @@
 <li>Click it to begin system deployment</li>
 <li>A progress dialog appears showing "Starting ECUs..."</li>
 </ol>
+<p><img alt="Main toolbar with Start button highlighted" src="../../images/tutorial-step8-toolbar-start-annotated.png" /></p>
 <div class="admonition important">
 <p class="admonition-title">Toolbar Start vs Individual Start</p>
 <p>The toolbar Start button deploys all ECUs simultaneously. There's no right-click context menu on individual ECUs - use the toolbar for system-wide control.</p>
@@ -2757,11 +2811,22 @@
 <li>
 <p><strong>Wait for all ECUs to reach Running state</strong>:</p>
 </li>
-<li>Gateway ECU typically starts first (being the coordinator)</li>
-<li>BCM and PCM follow shortly after</li>
+<li>All three ECUs (VCU, MCU, BMS) start in parallel</li>
 <li>Full system startup usually takes 10-30 seconds</li>
 </ol>
-<p><img alt="ECU Status panel with all ECUs running" src="../../images/tutorial-step8-ecus-running.png" /></p>
+<p><img alt="ECU Status panel with all ECUs running" src="../../images/tutorial-step8-ecus-running-annotated.png" /></p>
+<h3 id="understanding-the-ecu-status-panel">Understanding the ECU Status Panel<a class="headerlink" href="#understanding-the-ecu-status-panel" title="Permanent link">&para;</a></h3>
+<p>The ECU Status panel shows the state of all ECUs in your system:</p>
+<ul>
+<li><strong>ECU</strong>: Name of each ECU</li>
+<li><strong>STATUS</strong>: Current state (Stopped/Running)</li>
+<li><strong>IMAGE</strong>: Docker image being used</li>
+<li><strong>CPU</strong>: Processor usage percentage</li>
+<li><strong>MEMORY</strong>: RAM usage</li>
+<li><strong>NETWORK I/O</strong>: Data transfer rates</li>
+<li><strong>UPTIME</strong>: How long the ECU has been running</li>
+</ul>
+<p>If the ECU Status panel is not visible, open it via <strong>View → Panels → ECU Status</strong>.</p>
 <h3 id="understanding-status-indicators">Understanding Status Indicators<a class="headerlink" href="#understanding-status-indicators" title="Permanent link">&para;</a></h3>
 <p>The ECU Status panel uses visual indicators:</p>
 <ul>
@@ -2807,11 +2872,11 @@
 <li>
 <p><strong>Identify resource patterns</strong>:</p>
 </li>
-<li>Gateway ECU may show slightly higher CPU due to routing duties</li>
-<li>BCM and PCM should have similar resource profiles</li>
-<li>Network I/O spikes indicate active communication</li>
+<li>VCU may show slightly higher CPU when processing pedal sensor inputs</li>
+<li>MCU and BMS should have similar resource profiles</li>
+<li>Network I/O spikes indicate active CAN communication</li>
 </ol>
-<p><img alt="ECU Status with resource columns highlighted" src="../../images/tutorial-step8-ecus-running.png" /></p>
+<p><img alt="ECU Status with resource columns highlighted" src="../../images/tutorial-step8-ecus-running-annotated.png" /></p>
 <h3 id="view-console-logs">View Console Logs<a class="headerlink" href="#view-console-logs" title="Permanent link">&para;</a></h3>
 <p>The ECU Console aggregates logs from all running ECUs in real-time:</p>
 <ol>
@@ -2861,12 +2926,11 @@
 <li><strong>Open the Resource Monitor panel</strong>:</li>
 <li>Shows real-time CPU and memory graphs</li>
 <li>Each ECU has its own colored line</li>
-<li>
-<p>X-axis shows time, Y-axis shows percentage/MB</p>
-</li>
-<li>
-<p><strong>Interpret the graphs</strong>:</p>
-</li>
+<li>X-axis shows time, Y-axis shows percentage/MB</li>
+</ol>
+<p><img alt="Resource Monitor panel showing CPU and memory graphs" src="../../images/tutorial-step9-resource-monitor-annotated.png" /></p>
+<ol>
+<li><strong>Interpret the graphs</strong>:</li>
 <li><strong>Steady lines</strong>: System running normally</li>
 <li><strong>Spikes</strong>: Processing events or message handling</li>
 <li><strong>Gradual increase</strong>: Possible memory leak</li>
@@ -2886,12 +2950,11 @@
 <li><strong>Monitor CAN messages</strong>:</li>
 <li>Real-time display of all CAN frames</li>
 <li>Shows ID, DLC, Data, Timestamp, and Count</li>
-<li>
-<p>Updates as ECUs exchange messages</p>
-</li>
-<li>
-<p><strong>Filter traffic</strong>:</p>
-</li>
+<li>Updates as ECUs exchange messages</li>
+</ol>
+<p><img alt="Network Traffic panel showing live CAN messages" src="../../images/tutorial-step9-network-traffic-annotated.png" /></p>
+<ol>
+<li><strong>Filter traffic</strong>:</li>
 <li>By CAN ID (e.g., <code>0x123</code>)</li>
 <li>By source ECU</li>
 <li>
@@ -2915,7 +2978,7 @@
 <li>
 <p><strong>Select an ECU for terminal access</strong>:</p>
 </li>
-<li>Use the dropdown to choose an ECU (e.g., "Gateway")</li>
+<li>Use the dropdown to choose an ECU (e.g., "VCU")</li>
 <li>Terminal connects automatically if the OS supports it</li>
 <li>Shell prompt appears when connected</li>
 </ol>
@@ -2939,7 +3002,7 @@
 - ECU running Linux-based OS (FSL Linux, Ubuntu, etc.)
 - Debug mode enabled in ECU configuration
 - Proper shell binary in the container image
-- FreeRTOS and Zephyr ECUs typically don't support terminal access</p>
+- Note: The VCU, MCU, and BMS in this tutorial use Zephyr OS, which has limited terminal support. For full terminal access, use Linux-based ECUs.</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Monitoring Best Practices</p>
@@ -2950,193 +3013,160 @@
 <li>Terminal access is powerful but should be used carefully in production</li>
 </ul>
 </div>
-<h2 id="step-10-make-changes-to-running-system">Step 10: Make Changes to Running System<a class="headerlink" href="#step-10-make-changes-to-running-system" title="Permanent link">&para;</a></h2>
-<p>TrueFidelity allows you to modify system behavior while running, helping you test different scenarios and configurations. Here's how to manage runtime changes safely.</p>
-<h3 id="stop-the-system">Stop the System<a class="headerlink" href="#stop-the-system" title="Permanent link">&para;</a></h3>
-<p>Since there's no individual ECU control, you work with the complete system:</p>
+<h3 id="stopping-the-system">Stopping the System<a class="headerlink" href="#stopping-the-system" title="Permanent link">&para;</a></h3>
+<p>When you're done monitoring or need to make changes:</p>
 <ol>
 <li><strong>Stop all ECUs</strong> using the toolbar:</li>
 <li>Click the <strong>Stop</strong> button (red square icon) in the main toolbar</li>
 <li>All ECUs begin shutting down simultaneously</li>
 <li>STATUS changes from "Running" to "Stopping" to "Stopped"</li>
-<li>
-<p>Console shows shutdown messages from each ECU</p>
-</li>
-<li>
-<p><strong>Verify clean shutdown</strong>:</p>
-</li>
+</ol>
+<p><img alt="Main toolbar with Stop button highlighted" src="../../images/tutorial-step9-toolbar-stop-annotated.png" /></p>
+<ol>
+<li><strong>Verify clean shutdown</strong>:</li>
 <li>Check Console for any error messages during shutdown</li>
 <li>ECU Status panel shows all ECUs with gray "Stopped" status</li>
-<li>Resource graphs flatline as ECUs stop consuming resources</li>
 </ol>
-<h3 id="modify-network-configuration">Modify Network Configuration<a class="headerlink" href="#modify-network-configuration" title="Permanent link">&para;</a></h3>
-<p>With the system stopped, you can safely modify configurations:</p>
+<h2 id="step-10-debugging-ecus-optional">Step 10: Debugging ECUs (Optional)<a class="headerlink" href="#step-10-debugging-ecus-optional" title="Permanent link">&para;</a></h2>
+<p>TrueFidelity supports remote debugging of ECU firmware using GDB. This allows you to set breakpoints, inspect variables, and step through code while the ECU runs in the simulated environment.</p>
+<h3 id="enable-debug-mode">Enable Debug Mode<a class="headerlink" href="#enable-debug-mode" title="Permanent link">&para;</a></h3>
+<p>Before starting the system, you must enable debugging for the ECU you want to debug:</p>
 <ol>
-<li><strong>Return to System Canvas</strong>:</li>
-<li>Click on the System Canvas tab</li>
 <li>
-<p>Your topology diagram reappears</p>
+<p><strong>Select the ECU</strong> on the System Canvas (e.g., VCU)</p>
 </li>
 <li>
-<p><strong>Select and modify the CAN Bus</strong>:</p>
+<p><strong>Enable debug options</strong> in the Properties panel:</p>
 </li>
-<li>Click on the red CAN bus bar</li>
-<li>In Properties panel, change <strong>Baud Rate</strong> from 500000 to 250000</li>
-<li>This simulates switching to a lower-speed bus configuration</li>
-<li>
-<p>Click <strong>Apply Changes</strong></p>
-</li>
-<li>
-<p><strong>Modify an ECU configuration</strong>:</p>
-</li>
-<li>Select the Gateway ECU</li>
-<li>Change <strong>Memory</strong> from 512MB to 256MB (simulating resource constraints)</li>
-<li>Enable <strong>Debug</strong> checkbox for additional logging</li>
-<li>Click <strong>Apply Changes</strong></li>
+<li>Scroll to the <strong>DEBUG</strong> section</li>
+<li>Check <strong>Enable Debug Mode</strong> to activate the GDB server</li>
+<li>Optionally check <strong>Wait for Debugger</strong> if you want the ECU to pause at startup until a debugger connects</li>
 </ol>
-<h3 id="save-and-restart">Save and Restart<a class="headerlink" href="#save-and-restart" title="Permanent link">&para;</a></h3>
+<p><img alt="ECU Properties panel with Debug section highlighted" src="../../images/tutorial-step10-debug-properties-annotated.png" /></p>
 <ol>
-<li><strong>Save the modified system</strong>:</li>
-<li>Press <strong>Ctrl+S</strong> to save changes</li>
+<li><strong>Click Apply Changes</strong> to save the debug settings</li>
+</ol>
+<div class="admonition important">
+<p class="admonition-title">Enable Before Starting</p>
+<p>Debug mode must be enabled <strong>before</strong> starting the system. If the system is already running, stop it first, enable debug mode, then restart.</p>
+</div>
+<h3 id="get-debug-configuration">Get Debug Configuration<a class="headerlink" href="#get-debug-configuration" title="Permanent link">&para;</a></h3>
+<p>Once debug mode is enabled, TrueFidelity provides ready-to-use debug configurations:</p>
+<ol>
 <li>
-<p>Configuration file updates with new settings</p>
+<p><strong>Select the ECU</strong> with debug mode enabled</p>
 </li>
 <li>
-<p><strong>Restart with new configuration</strong>:</p>
+<p><strong>Locate the debug configuration options</strong> in the Properties panel DEBUG section:</p>
 </li>
-<li>Click the <strong>Start</strong> button in toolbar</li>
-<li>ECUs redeploy with updated settings</li>
-<li>Gateway now runs with reduced memory</li>
+<li><strong>GDB Client Command</strong>: The command line to connect a GDB client</li>
+<li><strong>VS Code Launch Config</strong>: A JSON configuration for VS Code debugging</li>
+</ol>
+<p><img alt="Debug configuration options in Properties panel" src="../../images/tutorial-step10-debug-config-annotated.png" /></p>
+<ol>
+<li><strong>Copy the configuration</strong> you need:</li>
+<li>Click the <strong>Copy</strong> button next to the GDB command or VS Code config</li>
+<li>The configuration is copied to your clipboard</li>
+</ol>
+<h3 id="using-vs-code-for-debugging">Using VS Code for Debugging<a class="headerlink" href="#using-vs-code-for-debugging" title="Permanent link">&para;</a></h3>
+<p>To debug your ECU firmware in VS Code:</p>
+<ol>
+<li><strong>Start the system</strong> with debug mode enabled</li>
+<li>The ECU will start with GDB server listening</li>
 <li>
-<p>CAN bus operates at lower baud rate</p>
+<p>If "Wait for Debugger" is enabled, the ECU pauses until you connect</p>
 </li>
 <li>
-<p><strong>Verify changes in monitoring</strong>:</p>
+<p><strong>Open your firmware project</strong> in VS Code</p>
 </li>
-<li>Console shows debug-level messages (if enabled)</li>
-<li>Resource Monitor reflects new memory limits</li>
-<li>Network Traffic shows adjusted timing for lower baud rate</li>
+<li>
+<p><strong>Create or update launch.json</strong>:</p>
+</li>
+<li>Open the Run and Debug panel (Ctrl+Shift+D)</li>
+<li>Click "create a launch.json file" or open existing <code>.vscode/launch.json</code></li>
+<li>Paste the copied VS Code Launch Config</li>
+</ol>
+<p>Example configuration:
+   <code>json
+   {
+       "version": "0.2.0",
+       "configurations": [
+           {
+               "name": "Debug VCU",
+               "type": "cppdbg",
+               "request": "launch",
+               "program": "${workspaceFolder}/build/firmware.elf",
+               "MIMode": "gdb",
+               "miDebuggerPath": "/usr/bin/gdb-multiarch",
+               "miDebuggerServerAddress": "localhost:3333",
+               "setupCommands": [
+                   {
+                       "description": "Enable pretty-printing",
+                       "text": "-enable-pretty-printing",
+                       "ignoreFailures": true
+                   }
+               ]
+           }
+       ]
+   }</code></p>
+<p><img alt="VS Code launch.json configuration file" src="../../images/tutorial-step10-vscode-launch-annotated.png" /></p>
+<ol>
+<li><strong>Set breakpoints</strong> in your source code:</li>
+<li>Open your firmware source file</li>
+<li>
+<p>Click in the gutter (left margin) to set a breakpoint (red dot appears)</p>
+</li>
+<li>
+<p><strong>Start debugging</strong>:</p>
+</li>
+<li>Select the debug configuration from the dropdown</li>
+<li>Press F5 or click the green play button</li>
+<li>VS Code connects to the GDB server running in TrueFidelity</li>
+</ol>
+<p><img alt="VS Code with breakpoint set and Start Debugging button" src="../../images/tutorial-step10-vscode-start-annotated.png" /></p>
+<ol>
+<li><strong>Debug your firmware</strong>:</li>
+<li>Execution pauses at your breakpoint</li>
+<li>Use the debug toolbar to step through code (Step Over, Step Into, Continue)</li>
+<li>Inspect variables in the Variables panel</li>
+<li>View the call stack in the Call Stack panel</li>
+</ol>
+<p><img alt="VS Code debugging session with breakpoint hit and variables" src="../../images/tutorial-step10-vscode-breakpoint-annotated.png" /></p>
+<h3 id="using-gdb-command-line">Using GDB Command Line<a class="headerlink" href="#using-gdb-command-line" title="Permanent link">&para;</a></h3>
+<p>For command-line debugging:</p>
+<ol>
+<li>
+<p><strong>Start the system</strong> with debug mode enabled</p>
+</li>
+<li>
+<p><strong>Open a terminal</strong> and run the GDB client command:
+   <code>bash
+   gdb-multiarch -ex "target remote localhost:3333" build/firmware.elf</code></p>
+</li>
+<li>
+<p><strong>Use standard GDB commands</strong>:
+   <code>(gdb) break main          # Set breakpoint at main
+   (gdb) continue            # Continue execution
+   (gdb) next                # Step over
+   (gdb) step                # Step into
+   (gdb) print variable      # Print variable value
+   (gdb) backtrace           # Show call stack</code></p>
+</li>
 </ol>
 <div class="admonition tip">
-<p class="admonition-title">Hot Reload vs Cold Restart</p>
-<p>Currently, TrueFidelity requires stopping ECUs to apply configuration changes. Future versions will support hot-reload for certain properties.</p>
+<p class="admonition-title">Debug Multiple ECUs</p>
+<p>Each ECU with debug enabled gets its own GDB port. Check the Properties panel for the specific port assigned to each ECU.</p>
 </div>
 <div class="admonition warning">
-<p class="admonition-title">Configuration Dependencies</p>
-<p>Some changes require coordinated updates:
-- Changing baud rate affects all ECUs on that bus
-- Modifying network topology may break existing connections
-- Always verify system integrity after changes</p>
+<p class="admonition-title">Performance Impact</p>
+<p>Debug mode adds overhead to ECU execution. Disable it for performance testing or when debugging is not needed.</p>
 </div>
-<h2 id="step-11-export-system-configuration">Step 11: Export System Configuration<a class="headerlink" href="#step-11-export-system-configuration" title="Permanent link">&para;</a></h2>
-<p>TrueFidelity provides multiple export options for sharing configurations, deploying to different environments, and integrating with CI/CD pipelines.</p>
-<h3 id="export-as-docker-compose">Export as Docker Compose<a class="headerlink" href="#export-as-docker-compose" title="Permanent link">&para;</a></h3>
-<p>The most common export format for deployment:</p>
-<ol>
-<li><strong>Access export options</strong>:</li>
-<li>Click <strong>File → Export → Docker Compose</strong> from the menu</li>
-<li>
-<p>Or use the toolbar Export button</p>
-</li>
-<li>
-<p><strong>Configure Docker export settings</strong>:</p>
-</li>
-<li><strong>Output path</strong>: Choose where to save docker-compose.yml</li>
-<li><strong>Include volumes</strong>: Check to persist ECU data between runs</li>
-<li><strong>Network mode</strong>: Bridge (default) or Host networking</li>
-<li>
-<p><strong>Resource limits</strong>: Apply CPU/memory constraints</p>
-</li>
-<li>
-<p><strong>Review generated configuration</strong>:
-   <code>yaml
-   version: '3.8'
-   services:
-     gateway-ecu:
-       image: truefidelity/ecu-runtime:latest
-       container_name: gateway-ecu
-       environment:
-         - ECU_NAME=Gateway
-         - CAN_INTERFACE=can0
-         - BAUD_RATE=500000
-       networks:
-         - can-network</code></p>
-</li>
-<li>
-<p><strong>Deploy with Docker Compose</strong>:
-   <code>bash
-   docker-compose up -d
-   docker-compose logs -f</code></p>
-</li>
-</ol>
-<h3 id="export-system-definition">Export System Definition<a class="headerlink" href="#export-system-definition" title="Permanent link">&para;</a></h3>
-<p>For version control and team collaboration:</p>
-<ol>
-<li><strong>Export as JSON</strong>:</li>
-<li>Click <strong>File → Export → System Definition (JSON)</strong></li>
-<li>Creates a structured JSON file with complete system state</li>
-<li>
-<p>Ideal for programmatic processing and APIs</p>
-</li>
-<li>
-<p><strong>Export as YAML</strong>:</p>
-</li>
-<li>Click <strong>File → Export → System Definition (YAML)</strong></li>
-<li>Human-readable format perfect for version control</li>
-<li>Supports comments and is diff-friendly</li>
-</ol>
-<p>Example YAML structure:</p>
-<pre><code class="language-yaml">system:
-  name: tutorial-gateway-system
-  version: 1.0.0
-  ecus:
-    - name: Gateway
-      board: S32G274A-RDB2
-      memory: 512MB
-      firmware: binary
-  networks:
-    - type: CAN
-      baud_rate: 500000
-      connected_ecus: [Gateway, BCM, PCM]
-</code></pre>
-<h3 id="share-with-team">Share with Team<a class="headerlink" href="#share-with-team" title="Permanent link">&para;</a></h3>
-<ol>
-<li><strong>Collaboration options</strong>:</li>
-<li><strong>Git integration</strong>: Commit .tfsystem and export files</li>
-<li><strong>Cloud storage</strong>: Share via Teams, Slack, or cloud drives</li>
-<li><strong>TrueFidelity Cloud</strong>: (Future) Direct project sharing</li>
-</ol>
-<div class="admonition tip">
-<p class="admonition-title">Export Best Practices</p>
-<ul>
-<li>Export both .tfsystem (complete project) and docker-compose.yml (deployment)</li>
-<li>Use YAML for configurations you'll edit manually</li>
-<li>Include exports in version control for change tracking</li>
-<li>Document any manual modifications needed for deployment</li>
-</ul>
-</div>
-<div class="admonition info">
-<p class="admonition-title">Import Capabilities</p>
-<p>Exported configurations can be imported into TrueFidelity:
-- <strong>File → Import</strong> to load system definitions
-- Preserves all ECU settings and network topology
-- Automatically validates imported configurations</p>
-</div>
-<h2 id="step-12-cleanup-and-best-practices">Step 12: Cleanup and Best Practices<a class="headerlink" href="#step-12-cleanup-and-best-practices" title="Permanent link">&para;</a></h2>
+<h2 id="step-11-cleanup-and-best-practices">Step 11: Cleanup and Best Practices<a class="headerlink" href="#step-11-cleanup-and-best-practices" title="Permanent link">&para;</a></h2>
 <p>After completing your tutorial session, properly clean up resources and prepare for future work.</p>
-<h3 id="stop-and-clean-up-resources">Stop and Clean Up Resources<a class="headerlink" href="#stop-and-clean-up-resources" title="Permanent link">&para;</a></h3>
+<h3 id="clean-up-resources">Clean Up Resources<a class="headerlink" href="#clean-up-resources" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>Stop the running system</strong>:</li>
-<li>Click the <strong>Stop</strong> button in the toolbar</li>
-<li>Wait for all ECUs to show "Stopped" status</li>
-<li>
-<p>This ensures clean container shutdown and resource release</p>
-</li>
-<li>
-<p><strong>Export valuable data</strong> before closing:</p>
-</li>
+<li><strong>Export valuable data</strong> before closing:</li>
 <li><strong>Export logs</strong>: Click Export in Console panel to save diagnostic data</li>
-<li><strong>Save charts</strong>: Export Resource Monitor graphs for performance analysis</li>
 <li>
 <p><strong>Document findings</strong>: Note any issues or observations for future reference</p>
 </li>
@@ -3163,7 +3193,7 @@
 <ol>
 <li><strong>Archive or delete tutorial files</strong>:</li>
 <li>Navigate to your project folder</li>
-<li>Archive <code>tutorial-gateway-system.tfsystem</code> for reference</li>
+<li>Archive <code>truefidelity-system.json</code> for reference</li>
 <li>Or delete if this was just for learning</li>
 </ol>
 <h3 id="what-youve-learned">What You've Learned<a class="headerlink" href="#what-youve-learned" title="Permanent link">&para;</a></h3>
@@ -3174,9 +3204,7 @@
 <li>✅ Built network topology with CAN bus connections</li>
 <li>✅ Deployed ECUs as Docker containers</li>
 <li>✅ Monitored real-time system behavior</li>
-<li>✅ Debugged using logs and terminal access</li>
-<li>✅ Modified and redeployed configurations</li>
-<li>✅ Exported system for sharing and deployment</li>
+<li>✅ Debugged using logs and console access</li>
 </ul>
 <h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
 <h3 id="immediate-next-steps">Immediate Next Steps<a class="headerlink" href="#immediate-next-steps" title="Permanent link">&para;</a></h3>

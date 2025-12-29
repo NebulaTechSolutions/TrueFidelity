@@ -585,10 +585,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#file-based-license" class="md-nav__link">
+  <a href="#step-1-collect-hardware-information" class="md-nav__link">
     <span class="md-ellipsis">
       
-        File-Based License
+        Step 1: Collect Hardware Information
       
     </span>
   </a>
@@ -596,10 +596,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#self-hosted-license" class="md-nav__link">
+  <a href="#step-2-activate-your-license" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Self-Hosted License
+        Step 2: Activate Your License
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 2: Activate Your License">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#license-file-recommended-for-offline-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        License File (Recommended for Offline Use)
       
     </span>
   </a>
@@ -607,10 +619,48 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#cloud-license" class="md-nav__link">
+  <a href="#self-hosted-server-for-enterprise-deployments" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cloud License
+        Self-Hosted Server (For Enterprise Deployments)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#truefidelity-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TrueFidelity Cloud
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#license-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        License Status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managing-your-license" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Managing Your License
       
     </span>
   </a>
@@ -1849,27 +1899,73 @@
 </ol>
 <p>If the app cannot reach Docker, you will see a connection error screen. Start Docker and relaunch the app.</p>
 <h2 id="license-activation">License &amp; Activation<a class="headerlink" href="#license-activation" title="Permanent link">&para;</a></h2>
-<p>TrueFidelity uses a license dialog on first launch (or any time a valid license is missing). The dialog supports file, self-hosted, and cloud activation.</p>
-<h3 id="file-based-license">File-Based License<a class="headerlink" href="#file-based-license" title="Permanent link">&para;</a></h3>
+<p>TrueFidelity requires a valid license to operate. On first launch (or whenever a valid license is missing), the License Configuration dialog appears automatically. The dialog supports three activation modes: License File, Self-Hosted Server, and TrueFidelity Cloud.</p>
+<h3 id="step-1-collect-hardware-information">Step 1: Collect Hardware Information<a class="headerlink" href="#step-1-collect-hardware-information" title="Permanent link">&para;</a></h3>
+<p>Before requesting a license, you need to collect your machine's hardware information and send it to Nebula support.</p>
+<p><img alt="License Configuration dialog showing the Collect Hardware Info button" src="../../images/license-dialog-collect-hwinfo-annotated.png" /></p>
 <ol>
-<li>Open the license dialog if it is not already visible.</li>
-<li>Select <strong>File</strong> mode.</li>
-<li>Click <strong>Browse</strong> and select the license file provided by your admin.</li>
-<li>Click <strong>Validate</strong> to activate.</li>
+<li>In the License Configuration dialog, click <strong>Collect Hardware Info</strong> at the bottom</li>
+<li>The Hardware Information modal opens and automatically collects your system details</li>
 </ol>
-<h3 id="self-hosted-license">Self-Hosted License<a class="headerlink" href="#self-hosted-license" title="Permanent link">&para;</a></h3>
+<p><img alt="Hardware Information modal showing collected hardware data with Save to File button" src="../../images/license-hwinfo-modal-annotated.png" /></p>
 <ol>
-<li>Select <strong>Self-hosted</strong> mode.</li>
-<li>Enter the license server URL and any required API key.</li>
-<li>Click <strong>Validate</strong> and confirm the status is valid.</li>
+<li>Review the collected hardware information (includes hostname, CPU ID, MAC addresses, and disk serials)</li>
+<li>Click <strong>Save to File</strong> to save the hardware info as a JSON file</li>
+<li>Send the saved <code>hardware-info.json</code> file to <a href="mailto:support@nebula-automotive.com">support@nebula-automotive.com</a></li>
+<li>Click <strong>Close</strong> to return to the License Configuration dialog</li>
 </ol>
-<h3 id="cloud-license">Cloud License<a class="headerlink" href="#cloud-license" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Hardware-Locked Licenses</p>
+<p>Node-locked licenses are tied to your specific hardware. If you change major hardware components (CPU, network adapter, or disk), you may need to request a new license.</p>
+</div>
+<h3 id="step-2-activate-your-license">Step 2: Activate Your License<a class="headerlink" href="#step-2-activate-your-license" title="Permanent link">&para;</a></h3>
+<p>Once you receive your license file from Nebula support, you can activate it.</p>
+<p><img alt="License Configuration dialog with License File mode selected and Browse button highlighted" src="../../images/license-dialog-file-mode-annotated.png" /></p>
+<h4 id="license-file-recommended-for-offline-use">License File (Recommended for Offline Use)<a class="headerlink" href="#license-file-recommended-for-offline-use" title="Permanent link">&para;</a></h4>
 <ol>
-<li>Select <strong>Cloud</strong> mode.</li>
-<li>Enter your API key or token.</li>
-<li>Click <strong>Validate</strong> to complete activation.</li>
+<li>In the License Configuration dialog, select <strong>License File</strong> mode</li>
+<li>Click <strong>Browse...</strong> to open the file picker</li>
+<li>Navigate to and select your license file (<code>.json</code> or <code>.lic</code>)</li>
+<li>Click <strong>Validate License</strong> to activate</li>
 </ol>
-<p>When activation succeeds, the status bar shows the license tier and state.</p>
+<p>When validation succeeds:
+- The dialog shows your license details (type, edition, expiration date)
+- The status bar displays your license tier
+- The main application window becomes accessible</p>
+<h4 id="self-hosted-server-for-enterprise-deployments">Self-Hosted Server (For Enterprise Deployments)<a class="headerlink" href="#self-hosted-server-for-enterprise-deployments" title="Permanent link">&para;</a></h4>
+<p>If your organization runs a license server:</p>
+<ol>
+<li>Select <strong>Self-Hosted Server</strong> mode</li>
+<li>Enter the <strong>Server URL</strong> provided by your IT administrator (e.g., <code>https://licenses.yourcompany.com</code>)</li>
+<li>Enter your <strong>API Key</strong> if required</li>
+<li>Click <strong>Validate License</strong></li>
+</ol>
+<h4 id="truefidelity-cloud">TrueFidelity Cloud<a class="headerlink" href="#truefidelity-cloud" title="Permanent link">&para;</a></h4>
+<p>For cloud-based license management:</p>
+<ol>
+<li>Select <strong>TrueFidelity Cloud</strong> mode</li>
+<li>The server URL defaults to <code>https://licenses.truefidelity.io</code></li>
+<li>Enter your <strong>API Key</strong> provided during purchase</li>
+<li>Click <strong>Validate License</strong></li>
+</ol>
+<h3 id="license-status">License Status<a class="headerlink" href="#license-status" title="Permanent link">&para;</a></h3>
+<p>After successful activation, the status bar at the bottom of the application shows:</p>
+<ul>
+<li><strong>License tier</strong>: Community, Professional, or Enterprise</li>
+<li><strong>License type</strong>: Node-locked or Floating</li>
+<li><strong>Connection status</strong>: Valid, Grace Period, or Expired</li>
+</ul>
+<h3 id="managing-your-license">Managing Your License<a class="headerlink" href="#managing-your-license" title="Permanent link">&para;</a></h3>
+<p>To view or change your license after activation:</p>
+<ol>
+<li>Go to <strong>File → Settings</strong> or click the settings icon</li>
+<li>Navigate to the License section</li>
+<li>View current license details or click <strong>Clear License</strong> to remove and re-activate</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">License Expiration</p>
+<p>If your license expires or the license server becomes unreachable, TrueFidelity enters a grace period. You'll see a warning in the status bar. Contact support to renew your license before the grace period ends.</p>
+</div>
 <h2 id="verify-docker-connectivity">Verify Docker Connectivity<a class="headerlink" href="#verify-docker-connectivity" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Confirm the status bar shows <strong>Docker Connected</strong>.</li>

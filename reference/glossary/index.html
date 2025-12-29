@@ -1886,7 +1886,7 @@
 <h2 id="c">C<a class="headerlink" href="#c" title="Permanent link">&para;</a></h2>
 <p><strong>CAN Frame</strong> – A single message on a CAN bus, defined by ID, DLC, payload, timestamp, and flags.</p>
 <p><strong>CAN Log Analysis Mode</strong> – Application mode for analyzing recorded BLF/MDF4 files with playback and signal decoding capabilities.</p>
-<p><strong>Console Panel</strong> – Panel showing output logs from running ECU containers (replaced Terminal panel in some contexts).</p>
+<p><strong>Console Panel (ECU Console)</strong> – Panel showing aggregated output logs from all running ECUs with filtering by ECU and log level. Works with all ECU types including Zephyr and FreeRTOS.</p>
 <h2 id="d">D<a class="headerlink" href="#d" title="Permanent link">&para;</a></h2>
 <p><strong>Data Injection</strong> – Feature in Signal Player that transmits CAN frames to simulate or modify traffic using Start/Pause/Stop controls.</p>
 <p><strong>DBC</strong> – CAN database file defining messages, signals, scaling, and metadata for decoding raw CAN data.</p>
@@ -1895,7 +1895,7 @@
 <h2 id="e">E<a class="headerlink" href="#e" title="Permanent link">&para;</a></h2>
 <p><strong>ECU</strong> – Electronic Control Unit, simulated as Docker containers in TrueFidelity Desktop.</p>
 <p><strong>ECU Hardware Status Panel</strong> – Panel displaying the operational status of ECUs with color-coded indicators (green=running, red=error, gray=stopped).</p>
-<p><strong>Export</strong> – Save data to external files. Supports CSV format for signal data and BLF format for raw CAN data.</p>
+<p><strong>Export</strong> – Save data to external files. Traffic export supports Text, CSV, JSON, and candump formats. Capture recording supports BLF, MDF4, and CSV formats.</p>
 <h2 id="f">F<a class="headerlink" href="#f" title="Permanent link">&para;</a></h2>
 <p><strong>FlexLayout</strong> – The React-based docking framework used for panel management in TrueFidelity Desktop.</p>
 <h2 id="g">G<a class="headerlink" href="#g" title="Permanent link">&para;</a></h2>
@@ -1903,7 +1903,7 @@
 <h2 id="j">J<a class="headerlink" href="#j" title="Permanent link">&para;</a></h2>
 <p><strong>JSON System File</strong> – File format (.json) used to save and load system designs including ECU configurations and network topology.</p>
 <h2 id="l">L<a class="headerlink" href="#l" title="Permanent link">&para;</a></h2>
-<p><strong>Layout</strong> – Arrangement of panels in the workspace. Can be reset via Window → Reset Layout.</p>
+<p><strong>Layout</strong> – Arrangement of panels in the workspace. Switch layouts via View → Layouts menu. Available layouts include System Design, ECU Monitoring, and CAN Log Analysis.</p>
 <p><strong>LIN</strong> – Local Interconnect Network, a lower-cost automotive serial network protocol supported alongside CAN.</p>
 <h2 id="m">M<a class="headerlink" href="#m" title="Permanent link">&para;</a></h2>
 <p><strong>MDF4</strong> – Measurement Data Format version 4, binary log format optimized for large datasets, supported for import alongside BLF.</p>
@@ -1919,7 +1919,7 @@
 <p><strong>Properties Panel</strong> – Panel for configuring selected elements (ECUs, networks) in System Design mode.</p>
 <h2 id="r">R<a class="headerlink" href="#r" title="Permanent link">&para;</a></h2>
 <p><strong>Resource Monitor Panel</strong> – Displays CPU, memory, and disk usage metrics for running ECU containers.</p>
-<p><strong>Reset Layout</strong> – Menu option to restore default panel arrangement when UI becomes corrupted.</p>
+<p><strong>Reset Layout</strong> – Restore default panel arrangement by switching to a predefined layout via View → Layouts menu.</p>
 <h2 id="s">S<a class="headerlink" href="#s" title="Permanent link">&para;</a></h2>
 <p><strong>Settings Dialog</strong> – Configuration interface currently offering only delete confirmation toggle, accessed via File → Settings.</p>
 <p><strong>Signal Chart Panel</strong> – Visualization area plotting decoded signals over time, supports 4-6 signals simultaneously.</p>
@@ -1929,7 +1929,7 @@
 <p><strong>System Design Mode</strong> – Application mode for creating and editing ECU network topologies.</p>
 <h2 id="t">T<a class="headerlink" href="#t" title="Permanent link">&para;</a></h2>
 <p><strong>Task Monitor Panel</strong> – Displays running processes within ECU containers when available.</p>
-<p><strong>Terminal Panel</strong> – Provides interactive terminal access to running ECU containers, with dropdown selection for multiple ECUs.</p>
+<p><strong>Terminal Panel</strong> – Provides interactive shell access to running ECU containers. Only available for Linux-based ECUs (FSL Linux, Ubuntu). Not available for RTOS-based ECUs (Zephyr, FreeRTOS). Use ECU Console for log viewing on all ECU types.</p>
 <p><strong>Timeline</strong> – Visual representation of playback progress in Signal Player, showing current position and allowing navigation.</p>
 <p><strong>Toolbox Panel</strong> – Component palette in System Design mode containing ECUs, networks, and other system elements.</p>
 <p><strong>Transport Controls</strong> – Play, pause, stop buttons in Signal Player for controlling playback and injection.</p>
@@ -1944,7 +1944,7 @@
 <p><strong>Docker Image</strong> – Template used to create ECU containers, containing the operating system and software.</p>
 <p><strong>Docker Stats</strong> – Command and metrics showing resource usage of running containers.</p>
 <h2 id="file-formats">File Formats<a class="headerlink" href="#file-formats" title="Permanent link">&para;</a></h2>
-<p><strong>.json</strong> – System definition files containing ECU and network configurations.</p>
+<p><strong>.json</strong> – System definition files (<code>truefidelity-system.json</code>) containing ECU and network configurations.</p>
 <p><strong>.blf</strong> – Binary Logging Format files for CAN data recordings.</p>
 <p><strong>.mdf/.mf4</strong> – Measurement Data Format files for automotive data logging.</p>
 <p><strong>.dbc</strong> – CAN database files for signal definitions.</p>

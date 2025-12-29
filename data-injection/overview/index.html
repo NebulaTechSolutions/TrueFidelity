@@ -1038,17 +1038,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#where-injection-lives-in-the-ui" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Where Injection Lives in the UI
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#starting-injection" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1056,6 +1045,89 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Starting Injection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-start-your-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Start Your System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-open-signal-player-injection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Open Signal Player &amp; Injection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-understand-the-panel-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Understand the Panel Layout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-configure-signal-injection-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Configure Signal Injection (Optional)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-start-injection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Start Injection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-control-injection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6: Control Injection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7-sync-with-playback-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7: Sync with Playback (Optional)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1067,6 +1139,45 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Verifying Injection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#watch-network-traffic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Watch Network Traffic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-signal-viewer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check Signal Viewer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitor-ecu-console" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitor ECU Console
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1737,32 +1848,84 @@
 <li>Keep a quick way to stop the system if something goes wrong.</li>
 <li>Document injected signals so results are traceable.</li>
 </ul>
-<h2 id="where-injection-lives-in-the-ui">Where Injection Lives in the UI<a class="headerlink" href="#where-injection-lives-in-the-ui" title="Permanent link">&para;</a></h2>
-<p>Injection controls sit next to playback controls in the <strong>Signal Player &amp; Injection</strong> panel. This panel is usually opened from the Network Analysis layout.</p>
-<p><img alt="Signal Player &amp; Injection panel with playback and injection controls" src="../../images/playback-signal-player.png" /></p>
-<p>Key items to notice in the panel:</p>
-<ul>
-<li><strong>Injection controls</strong> on the right (Start all, Pause all, Stop all, Clear all).</li>
-<li><strong>Sync with playback</strong> toggle to align injection start with playback.</li>
-<li><strong>Networks list</strong> to confirm which CAN bus is active and mapped.</li>
-<li><strong>Dataset selector</strong> for playback (injection controls stay disabled until the system is running).</li>
-</ul>
 <h2 id="starting-injection">Starting Injection<a class="headerlink" href="#starting-injection" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Start your system from the main toolbar so the runtime is active.</li>
-<li>Open <strong>Signal Player &amp; Injection</strong>.</li>
-<li>Confirm the correct network is selected in the Networks list.</li>
-<li>Use <strong>Start all</strong> to begin injection.</li>
-<li>If needed, use <strong>Pause all</strong> to temporarily stop sending without clearing state.</li>
-<li>Use <strong>Stop all</strong> to end injection and reset the run.</li>
-<li>Use <strong>Clear all</strong> to remove pending injection items from the queue.</li>
-</ol>
-<p>If you need injection to line up with playback, enable <strong>Sync with playback</strong> before you press Play.</p>
-<h2 id="verifying-injection">Verifying Injection<a class="headerlink" href="#verifying-injection" title="Permanent link">&para;</a></h2>
+<h3 id="step-1-start-your-system">Step 1: Start Your System<a class="headerlink" href="#step-1-start-your-system" title="Permanent link">&para;</a></h3>
+<p>Before injection can work, your system must be running. Click the <strong>Start System</strong> button (play icon) in the main toolbar.</p>
+<p><img alt="Main toolbar with Start System button highlighted" src="../../images/first-launch-system-design-toolbar-annotated.png" /></p>
+<p>Wait until all ECUs show a green <strong>Running</strong> status in the ECU Status panel.</p>
+<p><img alt="ECU Status panel showing three ECUs in Running state" src="../../images/tutorial-step8-ecus-running-annotated.png" /></p>
+<p>The status bar at the bottom should also confirm containers are running (e.g., "8 / 8 Containers Running").</p>
+<h3 id="step-2-open-signal-player-injection">Step 2: Open Signal Player &amp; Injection<a class="headerlink" href="#step-2-open-signal-player-injection" title="Permanent link">&para;</a></h3>
+<p>Navigate to <strong>View &gt; Panels &gt; Signal Player &amp; Injection</strong> to open the panel.</p>
+<p><img alt="View menu showing Panels submenu with Signal Player &amp; Injection option highlighted" src="../../images/view-menu-panels-signal-player-annotated.png" /></p>
+<p>Alternatively, switch to the <strong>Network Analysis</strong> layout from <strong>View &gt; Layouts &gt; Network Analysis</strong>, which provides a comprehensive view for CAN bus analysis.</p>
+<p><img alt="Network Analysis layout showing Signal Viewer, Network Traffic, and Signal Chart panels" src="../../images/ui-tour-can-analysis-mode.png" /></p>
+<h3 id="step-3-understand-the-panel-layout">Step 3: Understand the Panel Layout<a class="headerlink" href="#step-3-understand-the-panel-layout" title="Permanent link">&para;</a></h3>
+<p>The <strong>Signal Player &amp; Injection</strong> panel contains both playback and injection controls.</p>
+<p><img alt="Signal Player &amp; Injection panel with playback and injection controls" src="../../images/playback-signal-player-annotated.png" /></p>
+<p>Key areas in the panel:</p>
 <ul>
-<li>Watch <strong>Network Traffic</strong> to confirm frames are being transmitted.</li>
-<li>Use <strong>Signal Viewer</strong> to see decoded signals update in real time.</li>
-<li>Keep <strong>ECU Console</strong> open when testing to catch runtime errors as they occur.</li>
+<li><strong>Playback controls</strong> (left) - Play, Pause, Stop buttons for BLF dataset playback.</li>
+<li><strong>Injection controls</strong> (right) - Start all, Pause all, Stop all, Clear all buttons.</li>
+<li><strong>Sync with playback</strong> toggle - Align injection timing with playback.</li>
+<li><strong>Networks list</strong> (bottom) - Shows matched frames between your dataset and DBC file. Verify the correct CAN bus is selected here.</li>
+</ul>
+<p><img alt="Networks list showing CAN bus selection and matched frames" src="../../images/injection-networks-list.png" /></p>
+<h3 id="step-4-configure-signal-injection-optional">Step 4: Configure Signal Injection (Optional)<a class="headerlink" href="#step-4-configure-signal-injection-optional" title="Permanent link">&para;</a></h3>
+<p>To configure individual signal values for injection, click on a signal in the network tree.</p>
+<p><img alt="Signal tree showing expandable frames and signals for injection" src="../../images/injection-signal-tree-annotated.png" /></p>
+<p>This opens the signal options dialog:</p>
+<p><img alt="Signal injection options dialog showing override value, options, and length settings" src="../../images/injection-signal-options-annotated.png" /></p>
+<p>In the signal options dialog you can:</p>
+<ul>
+<li><strong>Override value</strong> - Enter a physical value to inject (e.g., vehicle speed in km/h).</li>
+<li><strong>Start with playback</strong> - Automatically begin injecting when playback starts.</li>
+<li><strong>Include in Start all</strong> - Include this signal when using the Start all button.</li>
+<li><strong>Length</strong> - Choose Continuous, Frames count, or Duration-based injection.</li>
+<li><strong>Value encoding</strong> - Select Physical or Raw encoding.</li>
+</ul>
+<p>After configuring the signal options, click <strong>Save</strong> to confirm. Then select the signal for injection by clicking on its checkbox in the signal tree.</p>
+<p><img alt="Signal selected for injection by clicking the checkbox" src="../../images/injection-signal-selected-annotated.png" /></p>
+<h3 id="step-5-start-injection">Step 5: Start Injection<a class="headerlink" href="#step-5-start-injection" title="Permanent link">&para;</a></h3>
+<p>Use <strong>Start all</strong> to begin injecting all configured signals. The button turns active (green) when the system is running.</p>
+<p><img alt="Injection controls with Start all button highlighted" src="../../images/injection-start-all-annotated.png" /></p>
+<h3 id="step-6-control-injection">Step 6: Control Injection<a class="headerlink" href="#step-6-control-injection" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Pause all</strong> - Temporarily stop sending without clearing state.</li>
+<li><strong>Stop all</strong> - End injection and reset the run.</li>
+<li><strong>Clear all</strong> - Remove pending injection items from the queue.</li>
+</ul>
+<h3 id="step-7-sync-with-playback-optional">Step 7: Sync with Playback (Optional)<a class="headerlink" href="#step-7-sync-with-playback-optional" title="Permanent link">&para;</a></h3>
+<p>If you need injection to line up with recorded playback data, enable <strong>Sync with playback</strong> before pressing Play. This ensures injected signals start at the same time as playback.</p>
+<h2 id="verifying-injection">Verifying Injection<a class="headerlink" href="#verifying-injection" title="Permanent link">&para;</a></h2>
+<p>Once injection is active, use these panels to confirm frames are being transmitted correctly.</p>
+<h3 id="watch-network-traffic">Watch Network Traffic<a class="headerlink" href="#watch-network-traffic" title="Permanent link">&para;</a></h3>
+<p>Open the <strong>Network Traffic</strong> panel to see live CAN frames on the bus. Injected frames appear alongside other traffic.</p>
+<p><img alt="Network Traffic panel showing injected CAN frames" src="../../images/injection-network-traffic-annotated.png" /></p>
+<p>Look for:</p>
+<ul>
+<li><strong>Live indicator</strong> - Green "Live" badge confirms real-time capture.</li>
+<li><strong>CAN ID column</strong> - Verify your injected frame IDs appear.</li>
+<li><strong>DATA column</strong> - Check that data bytes match expected values.</li>
+<li><strong>Filter</strong> - Use the filter box to isolate specific CAN IDs.</li>
+</ul>
+<h3 id="check-signal-viewer">Check Signal Viewer<a class="headerlink" href="#check-signal-viewer" title="Permanent link">&para;</a></h3>
+<p>The <strong>Signal Viewer</strong> panel shows decoded signal values in real time. Expand frames to see individual signals update as injection runs.</p>
+<p><img alt="Signal Viewer panel showing injected signal values updating" src="../../images/injection-signal-viewer-annotated.png" /></p>
+<p>Key indicators:</p>
+<ul>
+<li><strong>Green dots</strong> - Signals receiving live updates.</li>
+<li><strong>Real-time values</strong> - Current decoded values (e.g., 48.67 km/h).</li>
+<li><strong>Active count</strong> - Number of signals currently updating.</li>
+</ul>
+<h3 id="monitor-ecu-console">Monitor ECU Console<a class="headerlink" href="#monitor-ecu-console" title="Permanent link">&para;</a></h3>
+<p>Keep the <strong>ECU Console</strong> open to catch any runtime errors or unexpected behavior from ECUs responding to injected signals.</p>
+<p><img alt="ECU Console showing log messages from running ECUs" src="../../images/first-launch-monitoring-ecu-console.png" /></p>
+<p>Use the console to:</p>
+<ul>
+<li><strong>Filter by source</strong> - Select specific ECU logs from the dropdown.</li>
+<li><strong>Watch for errors</strong> - Look for ERR or WRN level messages.</li>
+<li><strong>Pause scrolling</strong> - Click Pause to inspect specific log entries.</li>
 </ul>
 <h2 id="troubleshooting-injection">Troubleshooting Injection<a class="headerlink" href="#troubleshooting-injection" title="Permanent link">&para;</a></h2>
 <table>
@@ -1788,6 +1951,10 @@
 <tr>
 <td>Injection causes instability</td>
 <td>Stop injection and verify ECU configuration and bus load.</td>
+</tr>
+<tr>
+<td>Signal values not updating</td>
+<td>Ensure the DBC file is loaded and signals are selected in Signal Viewer.</td>
 </tr>
 </tbody>
 </table>

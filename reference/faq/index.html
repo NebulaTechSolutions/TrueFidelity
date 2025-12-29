@@ -1503,10 +1503,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#monitoring-terminal" class="md-nav__link">
+  <a href="#monitoring-console" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Monitoring &amp; Terminal
+        Monitoring &amp; Console
       
     </span>
   </a>
@@ -1828,15 +1828,16 @@
 <p><strong>Q: How do I share a system design with colleagues?</strong></p>
 <p>A: Share the <code>.json</code> system definition file. Include any referenced BLF/MDF4 log files and DBC signal definition files.</p>
 <p><strong>Q: Can I open multiple systems at once?</strong></p>
-<p>A: TrueFidelity Desktop works with one system at a time. Switch between saved systems using File → Open System.</p>
+<p>A: TrueFidelity Desktop works with one system at a time. Switch between saved systems using File → Open.</p>
 <p><strong>Q: How do I recover a system after a crash?</strong></p>
 <p>A: Reload the last saved <code>.json</code> system file. Always save your work frequently as there's no autosave feature currently.</p>
 <p><strong>Q: What file formats are supported?</strong></p>
 <p>A:
-- System definitions: JSON format
+- System definitions: JSON format (<code>truefidelity-system.json</code>)
 - Log files: BLF and MDF4 (version 4.x)
 - Signal definitions: DBC files
-- Exports: CSV and BLF</p>
+- Traffic export: Text, CSV, JSON, candump
+- Capture recording: BLF, MDF4, CSV</p>
 <h2 id="ecu-management">ECU Management<a class="headerlink" href="#ecu-management" title="Permanent link">&para;</a></h2>
 <p><strong>Q: How do I add an ECU to my system?</strong></p>
 <p>A: In System Design mode, drag an ECU from the Toolbox onto the System Canvas. Configure its properties in the Properties panel.</p>
@@ -1844,7 +1845,7 @@
 <p>A:
 1. Ensure Docker Desktop is running
 2. Check Docker has sufficient resources (8+ GB RAM, 4+ CPU cores)
-3. Review Terminal panel for error messages
+3. Review ECU Console panel for error messages
 4. Try Mock Mode if Docker has issues</p>
 <p><strong>Q: How do I connect ECUs to networks?</strong></p>
 <p>A: ECUs connect to bus nodes, not directly to each other:
@@ -1855,18 +1856,19 @@
 <p><strong>Q: Can I run multiple ECU systems simultaneously?</strong></p>
 <p>A: Yes, but each ECU container consumes CPU and memory. Monitor resources using the Resource Monitor panel and Docker stats.</p>
 <p><strong>Q: What happens if an ECU crashes?</strong></p>
-<p>A: The ECU Hardware Status panel shows error state (red indicator). Check Terminal panel for error messages. Stop and restart the system from the toolbar.</p>
+<p>A: The ECU Hardware Status panel shows error state (red indicator). Check ECU Console panel for error messages. Stop and restart the system from the toolbar.</p>
 <p><strong>Q: Can I modify ECU configuration while running?</strong></p>
 <p>A: No, you must stop the system first. Make changes, save the system, then restart.</p>
-<h2 id="monitoring-terminal">Monitoring &amp; Terminal<a class="headerlink" href="#monitoring-terminal" title="Permanent link">&para;</a></h2>
+<h2 id="monitoring-console">Monitoring &amp; Console<a class="headerlink" href="#monitoring-console" title="Permanent link">&para;</a></h2>
 <p><strong>Q: Why can't I connect to an ECU terminal?</strong></p>
 <p>A:
+- Terminal access is only available for Linux-based ECUs (FSL Linux, Ubuntu)
+- ECUs running Zephyr or FreeRTOS do not support terminal access
 - Verify ECU is running (green status in ECU Hardware Status panel)
-- Some ECU images don't have terminal support
-- Check Terminal panel for connection errors
-- Try the reconnect button</p>
+- Use ECU Console for log viewing on all ECU types
+- For Zephyr ECUs, use GDB debugging instead of terminal</p>
 <p><strong>Q: How do I filter logs from a specific ECU?</strong></p>
-<p>A: In the Terminal panel, select the ECU from the dropdown menu at the top. Each ECU has its own terminal output.</p>
+<p>A: In the ECU Console panel, use the ECU dropdown filter at the top to select a specific ECU. You can also filter by log level (INFO, WARNING, ERROR, DEBUG).</p>
 <p><strong>Q: Why are Resource Monitor graphs showing zero?</strong></p>
 <p>A:
 - Ensure ECUs are actually running
@@ -1875,9 +1877,10 @@
 - Docker stats must be accessible</p>
 <p><strong>Q: Can I export monitoring data?</strong></p>
 <p>A: Yes, you can export:
-- Network Traffic as BLF or CSV
+- Network Traffic view: Text, CSV, JSON, or candump format
+- Capture recordings: BLF, MDF4, or CSV format
 - Signal data as CSV
-- Screenshots of charts and graphs</p>
+- Screenshots of charts (PNG format)</p>
 <h2 id="playback-analysis">Playback &amp; Analysis<a class="headerlink" href="#playback-analysis" title="Permanent link">&para;</a></h2>
 <p><strong>Q: Why does playback stutter on large logs?</strong></p>
 <p>A:
@@ -1909,10 +1912,11 @@
 <p>A: No, use external DBC editors. TrueFidelity imports DBC files for signal decoding only.</p>
 <h2 id="data-injection">Data Injection<a class="headerlink" href="#data-injection" title="Permanent link">&para;</a></h2>
 <p><strong>Q: How do I inject CAN messages?</strong></p>
-<p>A: Use the Signal Player panel's injection controls:
-1. Load a BLF file or configure messages
-2. Start the system (ECUs must be running)
-3. Use Start/Pause/Stop injection controls</p>
+<p>A: Use the Signal Player &amp; Injection panel:
+1. Open Signal Viewer and click on a signal row to configure injection
+2. Set the override value and injection options
+3. Start the system (ECUs must be running)
+4. Click "Start all" in the Injection controls section</p>
 <p><strong>Q: Can I schedule injection patterns?</strong></p>
 <p>A: Currently only simple Start/Pause/Stop controls are available. Complex scheduling features are not yet implemented.</p>
 <p><strong>Q: How do I stop injection quickly?</strong></p>
@@ -1928,9 +1932,10 @@
 <p>A: You choose the location when exporting. There's no default export folder setting.</p>
 <p><strong>Q: What export formats are available?</strong></p>
 <p>A:
-- CSV for signal data (human-readable)
-- BLF for raw CAN data (binary format)
-- Screenshots for charts and visualizations</p>
+- <strong>Traffic export</strong> (from Network Traffic panel): Text, CSV, JSON, candump
+- <strong>Capture recording</strong>: BLF (Vector), MDF4, CSV
+- <strong>Signal data</strong>: CSV with decoded values
+- <strong>Charts</strong>: PNG screenshots</p>
 <p><strong>Q: Can I customize export formats?</strong></p>
 <p>A: No, export formats are fixed. CSV includes timestamps and signal values. BLF maintains raw CAN frame data.</p>
 <h2 id="performance-stability">Performance &amp; Stability<a class="headerlink" href="#performance-stability" title="Permanent link">&para;</a></h2>
@@ -2009,6 +2014,9 @@ docker system prune -a  # Complete cleanup
 <h2 id="keyboard-shortcuts">Keyboard Shortcuts<a class="headerlink" href="#keyboard-shortcuts" title="Permanent link">&para;</a></h2>
 <p><strong>Q: What keyboard shortcuts are available?</strong></p>
 <p>A:
+- <strong>Ctrl/Cmd + N</strong>: Create new system
+- <strong>Ctrl/Cmd + O</strong>: Open system
+- <strong>Ctrl/Cmd + S</strong>: Save system
 - <strong>Ctrl/Cmd + R</strong>: Refresh application
 - <strong>F12</strong>: Open developer console
 - <strong>Escape</strong>: Close dialogs

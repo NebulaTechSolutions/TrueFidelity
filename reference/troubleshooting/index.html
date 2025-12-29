@@ -2241,7 +2241,7 @@
 <ul>
 <li>Save any unsaved work before switching modes</li>
 <li>Allow mode transitions to complete fully (don't click repeatedly)</li>
-<li>If UI becomes corrupted, use Window → Reset Layout if available</li>
+<li>Switch layouts using View → Layouts menu</li>
 <li>Stop any active playback or monitoring sessions before switching</li>
 <li>Restart the application if mode switching remains unresponsive</li>
 </ul>
@@ -2268,8 +2268,8 @@
 <li>
 <p><strong>Review error messages</strong>:</p>
 </li>
-<li>Check Terminal panel for container startup errors</li>
-<li>Select specific ECU from dropdown to see its logs</li>
+<li>Check ECU Console panel for startup errors</li>
+<li>Filter by specific ECU using the dropdown</li>
 <li>
 <p>Look for port conflicts or resource limitations</p>
 </li>
@@ -2319,8 +2319,8 @@
 <p><strong>Problem</strong>: ECUs show incorrect status in ECU Hardware Status panel.</p>
 <p><strong>Solutions</strong>:</p>
 <ol>
-<li><strong>Check Console/Terminal panel</strong>:</li>
-<li>Select the problematic ECU from dropdown</li>
+<li><strong>Check ECU Console panel</strong>:</li>
+<li>Filter by the problematic ECU using dropdown</li>
 <li>Look for error messages indicating the cause</li>
 <li>
 <p>Common issues: missing binaries, port conflicts, resource limits</p>
@@ -2350,11 +2350,12 @@
 <p><strong>Problem</strong>: Cannot connect to ECU terminal.</p>
 <p><strong>Solutions</strong>:</p>
 <ul>
+<li><strong>Important</strong>: Terminal access is only available for Linux-based ECUs (FSL Linux, Ubuntu)</li>
+<li>ECUs running Zephyr or FreeRTOS do not support terminal access</li>
+<li>For RTOS ECUs, use ECU Console for log viewing instead</li>
+<li>For Zephyr ECUs, enable GDB debugging in ECU properties for detailed analysis</li>
 <li>Verify ECU is running (green status in ECU Hardware Status panel)</li>
-<li>Check that the selected ECU supports terminal access</li>
 <li>Try reconnecting using the reconnect button in Terminal panel</li>
-<li>Review Console logs for terminal service errors</li>
-<li>Some ECU images may not have terminal support built-in</li>
 </ul>
 <h3 id="network-traffic-empty">Network Traffic Empty<a class="headerlink" href="#network-traffic-empty" title="Permanent link">&para;</a></h3>
 <p><strong>Problem</strong>: Network Traffic panel shows no CAN messages.</p>
@@ -2547,8 +2548,8 @@
 <p><strong>Solutions</strong>:</p>
 <ol>
 <li><strong>Reset layout</strong>:</li>
-<li>Use Window → Reset Layout if available</li>
-<li>Returns to default panel arrangement</li>
+<li>Use View → Layouts to switch to a predefined layout</li>
+<li>This restores default panel arrangement</li>
 <li>
 <p>Save working layouts when stable</p>
 </li>
@@ -2753,7 +2754,7 @@
 </tr>
 <tr>
 <td>ECU won't start</td>
-<td>Check Docker resources, review Terminal panel logs</td>
+<td>Check Docker resources, review ECU Console logs</td>
 </tr>
 <tr>
 <td>No CAN traffic</td>
@@ -2773,7 +2774,7 @@
 </tr>
 <tr>
 <td>UI panels missing</td>
-<td>Window → Reset Layout, restart application</td>
+<td>View → Layouts to reset, restart application</td>
 </tr>
 <tr>
 <td>High memory usage</td>
@@ -2782,6 +2783,10 @@
 <tr>
 <td>Docker errors</td>
 <td>Restart Docker Desktop, check resources</td>
+</tr>
+<tr>
+<td>Terminal not available</td>
+<td>Terminal only for Linux ECUs; use Console for Zephyr</td>
 </tr>
 </tbody>
 </table>

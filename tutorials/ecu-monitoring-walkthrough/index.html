@@ -1686,6 +1686,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#export-traffic-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export Traffic Data
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2505,10 +2516,13 @@
 <h3 id="switch-to-monitoring-mode">Switch to Monitoring Mode<a class="headerlink" href="#switch-to-monitoring-mode" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>Open the View menu</strong> from the menu bar</li>
-<li>Click <strong>View → Layouts → Monitoring</strong></li>
-<li>
-<p>The workspace reorganizes automatically for monitoring tasks</p>
-</li>
+<li>Click <strong>View → Layouts → ECU Monitoring</strong></li>
+<li>The workspace reorganizes automatically for monitoring tasks</li>
+</ol>
+<p><img alt="View menu showing Layouts submenu with ECU Monitoring option" src="../../images/view-menu-layouts-monitoring-annotated.png" /></p>
+<p>After switching, the workspace displays the monitoring layout:</p>
+<p><img alt="ECU Monitoring layout with status, console, and resource panels" src="../../images/first-launch-monitoring.png" /></p>
+<ol>
 <li>
 <p><strong>Verify essential panels are visible</strong>:</p>
 </li>
@@ -2540,17 +2554,7 @@
 <p>Make Console larger if focusing on logs</p>
 </li>
 <li>Expand Resource Monitor for performance analysis</li>
-<li>
-<p>Minimize panels you don't need immediately</p>
-</li>
-<li>
-<p><strong>Save your custom layout</strong>:</p>
-</li>
-<li>
-<p>Click <strong>View → Save Layout As...</strong></p>
-</li>
-<li>Name it descriptively (e.g., "My Monitoring Setup")</li>
-<li>Access it later from <strong>View → Layouts → [Your Layout Name]</strong></li>
+<li>Minimize panels you don't need immediately</li>
 </ol>
 <div class="admonition tip">
 <p class="admonition-title">Layout Best Practices</p>
@@ -2610,23 +2614,22 @@
 <li><strong>Starting the system</strong>:</li>
 <li>Click the <strong>Start button</strong> (green play icon) in the toolbar</li>
 <li>All ECUs begin deployment simultaneously</li>
-<li>
-<p>Status changes from Stopped → Starting → Running</p>
-</li>
-<li>
-<p><strong>Stopping the system</strong>:</p>
-</li>
+<li>Status changes from Stopped → Starting → Running</li>
+</ol>
+<p><img alt="Toolbar with Start button highlighted" src="../../images/tutorial-step8-toolbar-start-annotated.png" /></p>
+<ol>
+<li><strong>Stopping the system</strong>:</li>
 <li>Click the <strong>Stop button</strong> (red square) in the toolbar</li>
 <li>All ECUs shut down gracefully</li>
-<li>
-<p>Status changes from Running → Stopping → Stopped</p>
-</li>
-<li>
-<p><strong>System validation</strong>:</p>
-</li>
+<li>Status changes from Running → Stopping → Stopped</li>
+</ol>
+<p><img alt="Toolbar with Stop button highlighted" src="../../images/tutorial-step9-toolbar-stop-annotated.png" /></p>
+<ol>
+<li><strong>System validation</strong>:</li>
 <li>Click the <strong>Validate button</strong> to check configuration</li>
 <li>Ensures all ECU settings are correct before starting</li>
 </ol>
+<p><img alt="Toolbar with Validate button highlighted" src="../../images/monitoring-toolbar-validate-annotated.png" /></p>
 <div class="admonition important">
 <p class="admonition-title">No Individual ECU Control</p>
 <p>Unlike some systems, TrueFidelity operates ECUs as a coordinated system. There are no right-click menus or individual start/stop controls for ECUs. Use the toolbar buttons for all system control operations.</p>
@@ -2703,7 +2706,7 @@
 <ol>
 <li><strong>Use the ECU dropdown filter</strong>:</li>
 <li>Click the dropdown selector at the top of Console</li>
-<li>Select a specific ECU (e.g., "Gateway")</li>
+<li>Select a specific ECU (e.g., "VCU")</li>
 <li>
 <p>Only logs from that ECU are displayed</p>
 </li>
@@ -2823,7 +2826,7 @@
 <p><strong>Save with descriptive filename</strong>:</p>
 </li>
 <li>Include date and test scenario</li>
-<li>Example: <code>2024-01-15_gateway_test_logs.txt</code></li>
+<li>Example: <code>2024-01-15_vcu_test_logs.txt</code></li>
 </ol>
 <div class="admonition tip">
 <p class="admonition-title">Log Analysis Best Practices</p>
@@ -3049,6 +3052,7 @@
 <li>Messages appear as they're transmitted</li>
 <li>Columns show: Timestamp, ID, DLC, Payload, Channel, Source</li>
 </ol>
+<p><img alt="Network Traffic panel showing live CAN messages" src="../../images/monitoring-network-traffic-annotated.png" /></p>
 <h3 id="filter-messages">Filter Messages<a class="headerlink" href="#filter-messages" title="Permanent link">&para;</a></h3>
 <ol>
 <li>In filter bar, enter:</li>
@@ -3071,21 +3075,46 @@
 </ol>
 <h3 id="capture-traffic-to-log">Capture Traffic to Log<a class="headerlink" href="#capture-traffic-to-log" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Click <strong>Start Capture</strong></li>
-<li>Traffic is recorded to memory</li>
-<li>Click <strong>Stop Capture</strong></li>
-<li>Click <strong>Export</strong> to save as:</li>
-<li><strong>BLF</strong>: Vector format</li>
-<li><strong>MDF4</strong>: MDF format</li>
-<li><strong>CSV</strong>: Spreadsheet format</li>
+<li><strong>Configure capture first</strong>:</li>
+<li>Click the <strong>Configure</strong> button in the toolbar</li>
+<li>Select the network/channel to capture</li>
+<li>Choose capture type and output format</li>
+<li>Available formats: BLF (Vector), MDF4, CSV</li>
+</ol>
+<p><img alt="Capture configuration dialog showing network and format options" src="../../images/monitoring-capture-config-annotated.png" /></p>
+<ol>
+<li><strong>Start recording</strong>:</li>
+<li>Click <strong>Start Capture</strong> to begin recording</li>
+<li>
+<p>Traffic is recorded to the configured output</p>
+</li>
+<li>
+<p><strong>Stop and save</strong>:</p>
+</li>
+<li>Click <strong>Stop Capture</strong> when done</li>
+<li>Capture file is saved to the configured location</li>
+</ol>
+<h3 id="export-traffic-data">Export Traffic Data<a class="headerlink" href="#export-traffic-data" title="Permanent link">&para;</a></h3>
+<p>To export the current traffic view (not capture):</p>
+<ol>
+<li>Click <strong>Export</strong> in the Network Traffic toolbar</li>
+<li>Choose export format:</li>
+<li><strong>Text (.txt)</strong>: Plain text format</li>
+<li><strong>CSV (.csv)</strong>: Spreadsheet-compatible</li>
+<li><strong>JSON (.json)</strong>: Structured data format</li>
+<li><strong>candump</strong>: Standard CAN log format</li>
 </ol>
 <h2 id="step-6-use-terminal-access">Step 6: Use Terminal Access<a class="headerlink" href="#step-6-use-terminal-access" title="Permanent link">&para;</a></h2>
 <p>The Terminal panel provides direct shell access to ECU containers, enabling advanced debugging, system inspection, and real-time diagnostics. This powerful tool gives you command-line access to the Linux environment running inside each ECU.</p>
 <h3 id="understanding-terminal-access">Understanding Terminal Access<a class="headerlink" href="#understanding-terminal-access" title="Permanent link">&para;</a></h3>
-<p><strong>Important limitations</strong>:
-- Only available for Linux-based ECUs (FSL Linux, Ubuntu)
-- Not supported for RTOS-based ECUs (FreeRTOS, Zephyr)
-- Requires debug mode enabled in ECU configuration
+<div class="admonition warning">
+<p class="admonition-title">Terminal Only Available for Linux ECUs</p>
+<p>Terminal access is <strong>only available</strong> for Linux-based ECUs (FSL Linux, Ubuntu). ECUs running RTOS firmware (FreeRTOS, Zephyr) do not support terminal access because these real-time operating systems do not include a shell environment.</p>
+<p>If you followed the System Design Workflow tutorial with the Drive Cycle system, all ECUs (VCU, MCU, BMS) run Zephyr OS and will not have terminal access. Use the ECU Console logs and GDB debugging instead.</p>
+</div>
+<p><strong>Requirements for terminal access</strong>:
+- Linux-based OS (FSL Linux, Ubuntu)
+- Debug mode enabled in ECU configuration
 - Container must have shell binaries installed</p>
 <h3 id="connect-to-an-ecu">Connect to an ECU<a class="headerlink" href="#connect-to-an-ecu" title="Permanent link">&para;</a></h3>
 <ol>
@@ -3098,7 +3127,7 @@
 <p><strong>Select an ECU from the dropdown</strong>:</p>
 </li>
 <li>Click the dropdown menu</li>
-<li>Choose the target ECU (e.g., "Gateway")</li>
+<li>Choose the target ECU (e.g., "VCU")</li>
 <li>
 <p>Terminal attempts connection automatically</p>
 </li>
@@ -3336,9 +3365,10 @@ df -h
 <p><strong>Troubleshooting steps</strong>:</p>
 <ol>
 <li><strong>Verify ECU compatibility</strong>:</li>
-<li>Only Linux-based OS (FSL Linux, Ubuntu)</li>
+<li>Terminal only works with Linux-based OS (FSL Linux, Ubuntu)</li>
+<li>RTOS ECUs (FreeRTOS, Zephyr) <strong>do not support</strong> terminal</li>
 <li>
-<p>RTOS ECUs (FreeRTOS, Zephyr) don't support terminal</p>
+<p>The Drive Cycle tutorial ECUs (VCU, MCU, BMS) run Zephyr - use Console logs or GDB instead</p>
 </li>
 <li>
 <p><strong>Check ECU state</strong>:</p>
@@ -3362,11 +3392,11 @@ df -h
 <li>Check image documentation for shell support</li>
 <li>May need custom image with debug tools</li>
 </ol>
-<p><strong>Alternative debugging methods</strong>:
-- Use Console logs for debugging RTOS ECUs
-- Add debug output to firmware
-- Use JTAG/SWD for hardware debugging
-- Implement custom debug protocol</p>
+<p><strong>Alternative debugging methods for RTOS ECUs</strong>:
+- Use <strong>ECU Console</strong> logs for runtime debugging
+- Enable <strong>GDB debugging</strong> in ECU properties (see System Design Workflow tutorial)
+- Add debug print statements to firmware code
+- Use JTAG/SWD for hardware-level debugging</p>
 <h2 id="step-8-export-and-analyze-monitoring-data">Step 8: Export and Analyze Monitoring Data<a class="headerlink" href="#step-8-export-and-analyze-monitoring-data" title="Permanent link">&para;</a></h2>
 <p>Exporting monitoring data is crucial for documentation, analysis, and sharing results with team members. TrueFidelity provides comprehensive export capabilities across all monitoring panels.</p>
 <h3 id="create-monitoring-report">Create Monitoring Report<a class="headerlink" href="#create-monitoring-report" title="Permanent link">&para;</a></h3>
@@ -3383,9 +3413,10 @@ df -h
    - Content: Time-series CPU and memory data
    - Naming: <code>[date]_[test]_resources.csv</code></p>
 <p><strong>Network Traffic exports</strong>:
-   - Format: BLF for Vector tools, CSV for general analysis
+   - Format: Text, CSV, JSON, or candump for traffic view
+   - Format: BLF, MDF4, CSV for capture recordings
    - Content: CAN frames with timestamps
-   - Naming: <code>[date]_[test]_can_traffic.blf</code></p>
+   - Naming: <code>[date]_[test]_can_traffic.csv</code></p>
 <p><strong>Terminal session exports</strong>:
    - Copy important command outputs
    - Save as text files for reference
@@ -3494,7 +3525,7 @@ df -h
 </ul>
 <p><strong>File organization</strong>:</p>
 <pre><code>TestResults/
-├── 2024-01-15_Gateway_Test/
+├── 2024-01-15_VCU_Test/
 │   ├── console_logs/
 │   │   ├── startup_console.txt
 │   │   ├── runtime_console.txt
@@ -3504,7 +3535,7 @@ df -h
 │   │   ├── load_test_resources.png
 │   │   └── memory_leak_analysis.csv
 │   └── network/
-│       ├── can_traffic.blf
+│       ├── can_traffic.csv
 │       └── message_analysis.csv
 </code></pre>
 <h3 id="establish-performance-baselines">Establish Performance Baselines<a class="headerlink" href="#establish-performance-baselines" title="Permanent link">&para;</a></h3>
