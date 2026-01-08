@@ -109,9 +109,9 @@ Each release includes:
 - **Platform-specific installers** (`install-linux.sh`, `install-macos.sh`, `install-windows.ps1`)
 - **Version manifest** with Docker image tags and configuration
 
-## 📚 Documentation (coming soon)
+## 📚 Documentation
 
-For more information about TrueFidelity, there will soon be a site here with documentation and examples
+For more information about TrueFidelity, you can find the full documentation [here](https://nebulatechsolutions.github.io/TrueFidelity/)
 
 ## 🔐 Getting a License
 
